@@ -517,10 +517,15 @@ export function Header() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.2, ease: "easeOut" }}
-                      className="fixed left-1/2 -translate-x-1/2 pt-4 z-50"
-                      style={{ top: 'calc(var(--header-top, 44px) + 92px)' }}
+                      className="fixed pt-4 z-50"
+                      style={{ 
+                        top: 'calc(var(--header-top, 44px) + 92px)',
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        maxWidth: 'calc(100vw - 32px)'
+                      }}
                     >
-                      <div className="bg-white dark:bg-card rounded-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] border border-gray-100/80 dark:border-border/50 overflow-hidden grid grid-cols-12" style={{ width: '1100px' }}>
+                      <div className="bg-white dark:bg-card rounded-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] border border-gray-100/80 dark:border-border/50 overflow-hidden grid grid-cols-12 w-[1100px] max-w-full">
                         {/* Left Side - Menu Items (8 columns) */}
                         <div className="col-span-8 p-8">
                           <div className="grid grid-cols-2 gap-x-6 gap-y-4">
@@ -656,10 +661,15 @@ export function Header() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.2, ease: "easeOut" }}
-                      className="fixed left-1/2 -translate-x-1/2 pt-4 z-50"
-                      style={{ top: 'calc(var(--header-top, 44px) + 92px)' }}
+                      className="fixed pt-4 z-50"
+                      style={{ 
+                        top: 'calc(var(--header-top, 44px) + 92px)',
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        maxWidth: 'calc(100vw - 32px)'
+                      }}
                     >
-                      <div className="bg-white dark:bg-card rounded-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] border border-gray-100/80 dark:border-border/50 overflow-hidden grid grid-cols-12" style={{ width: '1100px' }}>
+                      <div className="bg-white dark:bg-card rounded-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] border border-gray-100/80 dark:border-border/50 overflow-hidden grid grid-cols-12 w-[1100px] max-w-full">
                         {/* Left Panel - Service Categories (8 columns) */}
                         <div className="col-span-8 p-8">
                           <div className="grid grid-cols-2 gap-x-6 gap-y-4">
@@ -783,10 +793,15 @@ export function Header() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.2, ease: "easeOut" }}
-                      className="fixed left-1/2 -translate-x-1/2 pt-4 z-50"
-                      style={{ top: 'calc(var(--header-top, 44px) + 92px)' }}
+                      className="fixed pt-4 z-50"
+                      style={{ 
+                        top: 'calc(var(--header-top, 44px) + 92px)',
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        maxWidth: 'calc(100vw - 32px)'
+                      }}
                     >
-                      <div className="bg-white dark:bg-card rounded-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] border border-gray-100/80 dark:border-border/50 overflow-hidden grid grid-cols-12" style={{ width: '1100px' }}>
+                      <div className="bg-white dark:bg-card rounded-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] border border-gray-100/80 dark:border-border/50 overflow-hidden grid grid-cols-12 w-[1100px] max-w-full">
                         {/* Left Panel - Industry Categories (8 columns) */}
                         <div className="col-span-8 p-8">
                           <div className="grid grid-cols-2 gap-x-6 gap-y-4">
@@ -899,10 +914,15 @@ export function Header() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.2, ease: "easeOut" }}
-                      className="fixed left-1/2 -translate-x-1/2 pt-4 z-50"
-                      style={{ top: 'calc(var(--header-top, 44px) + 92px)' }}
+                      className="fixed pt-4 z-50"
+                      style={{ 
+                        top: 'calc(var(--header-top, 44px) + 92px)',
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        maxWidth: 'calc(100vw - 32px)'
+                      }}
                     >
-                      <div className="bg-white dark:bg-card rounded-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] border border-gray-100/80 dark:border-border/50 overflow-hidden grid grid-cols-12" style={{ width: '1100px' }}>
+                      <div className="bg-white dark:bg-card rounded-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] border border-gray-100/80 dark:border-border/50 overflow-hidden grid grid-cols-12 w-[1100px] max-w-full">
                         {/* Left Side - Menu Items (8 columns) */}
                         <div className="col-span-8 p-8">
                           <div className="grid grid-cols-2 gap-x-6 gap-y-4">
