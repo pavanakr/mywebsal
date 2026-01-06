@@ -1,8 +1,9 @@
-import { ReactNode } from 'react';
+import { ReactNode, Suspense } from 'react';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { FloatingButtons } from './FloatingButtons';
 import { PageTransition } from './PageTransition';
+import { PageSkeleton } from '@/components/loading';
 
 interface LayoutProps {
   children: ReactNode;
@@ -13,7 +14,9 @@ export function Layout({ children }: LayoutProps) {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-1">
-        <PageTransition>{children}</PageTransition>
+        <Suspense fallback={<PageSkeleton />}>
+          <PageTransition>{children}</PageTransition>
+        </Suspense>
       </main>
       <Footer />
       <FloatingButtons />
