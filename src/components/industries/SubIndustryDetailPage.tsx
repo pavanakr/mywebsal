@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
+import { SEO } from '@/components/SEO';
 import { ArrowRight, CheckCircle, Lightbulb, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { LucideIcon } from 'lucide-react';
@@ -45,8 +46,15 @@ export function SubIndustryDetailPage({
   benefits,
   stats,
 }: SubIndustryDetailProps) {
+  const seoKeywords = `${name.toLowerCase()}, ${parentIndustry.toLowerCase()} solutions, ${technologies.slice(0, 4).join(', ').toLowerCase()}, enterprise software, digital transformation`;
+
   return (
     <Layout>
+      <SEO
+        title={`${name} - ${parentIndustry} Solutions`}
+        description={description}
+        keywords={seoKeywords}
+      />
       {/* Hero Section */}
       <section className="pt-40 pb-24 md:pt-48 md:pb-32 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 relative overflow-hidden min-h-[60vh] flex items-center">
         {/* Enhanced Background Effects */}

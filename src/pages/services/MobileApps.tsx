@@ -1,9 +1,11 @@
 import { Smartphone } from 'lucide-react';
 import { ServiceDetailPage } from '@/components/services/ServiceDetailPage';
+import heroMobileApps from '@/assets/hero-mobile-apps.png';
 
 const MobileApps = () => {
   return (
     <ServiceDetailPage
+      heroImage={heroMobileApps}
       icon={Smartphone}
       color="from-violet-500 to-violet-600"
       title="Mobile App Development"

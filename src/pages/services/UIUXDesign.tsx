@@ -1,9 +1,11 @@
 import { Palette } from 'lucide-react';
 import { ServiceDetailPage } from '@/components/services/ServiceDetailPage';
+import heroUiuxDesign from '@/assets/hero-uiux-design.png';
 
 const UIUXDesign = () => {
   return (
     <ServiceDetailPage
+      heroImage={heroUiuxDesign}
       icon={Palette}
       color="from-pink-500 to-pink-600"
       title="UI/UX Design"

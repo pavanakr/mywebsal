@@ -1,9 +1,11 @@
 import { Globe } from 'lucide-react';
 import { ServiceDetailPage } from '@/components/services/ServiceDetailPage';
+import heroWebDevelopment from '@/assets/hero-web-development.png';
 
 const WebDevelopment = () => {
   return (
     <ServiceDetailPage
+      heroImage={heroWebDevelopment}
       icon={Globe}
       color="from-emerald-500 to-emerald-600"
       title="Web Development"

@@ -32,6 +32,7 @@ interface ServiceDetailProps {
   technologies: string[];
   caseStudies: CaseStudy[];
   useCases: string[];
+  heroImage?: string;
   seoKeywords?: string;
 }
 
@@ -46,6 +47,7 @@ export function ServiceDetailPage({
   technologies,
   caseStudies,
   useCases,
+  heroImage,
   seoKeywords,
 }: ServiceDetailProps) {
   const defaultKeywords = `${title.toLowerCase()}, software development, enterprise solutions, custom software, ${technologies.slice(0, 5).join(', ').toLowerCase()}`;
@@ -59,6 +61,17 @@ export function ServiceDetailPage({
       />
       {/* Hero Section */}
       <section className="pt-40 pb-24 md:pt-48 md:pb-32 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 relative overflow-hidden min-h-[60vh] flex items-center">
+        {/* Hero Image Background */}
+        {heroImage && (
+          <div className="absolute inset-0">
+            <img 
+              src={heroImage} 
+              alt={`${title} service`}
+              className="w-full h-full object-cover opacity-20"
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-indigo-950/85 to-slate-900/90" />
+          </div>
+        )}
         {/* Enhanced Background Effects */}
         <div className="absolute inset-0">
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-indigo-500/30 via-purple-500/20 to-transparent rounded-full blur-3xl" />

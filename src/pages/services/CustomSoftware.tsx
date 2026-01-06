@@ -1,9 +1,11 @@
 import { Code } from 'lucide-react';
 import { ServiceDetailPage } from '@/components/services/ServiceDetailPage';
+import heroCustomSoftware from '@/assets/hero-custom-software.png';
 
 const CustomSoftware = () => {
   return (
     <ServiceDetailPage
+      heroImage={heroCustomSoftware}
       icon={Code}
       color="from-blue-500 to-blue-600"
       title="Custom Software Development"

@@ -1,9 +1,11 @@
 import { Cpu } from 'lucide-react';
 import { ServiceDetailPage } from '@/components/services/ServiceDetailPage';
+import heroAiAutomation from '@/assets/hero-ai-automation.png';
 
 const AIAutomation = () => {
   return (
     <ServiceDetailPage
+      heroImage={heroAiAutomation}
       icon={Cpu}
       color="from-pink-500 to-pink-600"
       title="AI & Automation"
