@@ -14,49 +14,65 @@ const aboutMenuItems = [
     name: 'Company Profile', 
     href: '/about/company-profile', 
     icon: Building2,
-    description: "Discover Softurecs' journey, expertise, and commitment to digital excellence."
+    description: "Discover Softurecs' journey, expertise, and commitment to digital excellence.",
+    gradient: 'from-blue-400 via-cyan-400 to-teal-400',
+    bgGradient: 'from-blue-50 to-cyan-50 dark:from-blue-950/50 dark:to-cyan-950/50'
   },
   { 
     name: 'Infrastructure', 
     href: '/about/infrastructure', 
     icon: Server,
-    description: 'Explore our advanced development environment and robust technology setup.'
+    description: 'Explore our advanced development environment and robust technology setup.',
+    gradient: 'from-violet-400 via-purple-400 to-fuchsia-400',
+    bgGradient: 'from-violet-50 to-purple-50 dark:from-violet-950/50 dark:to-purple-950/50'
   },
   { 
     name: 'Careers @ Softurecs', 
     href: '/about/careers', 
     icon: Briefcase,
-    description: 'Join our team to build future-ready digital solutions together.'
+    description: 'Join our team to build future-ready digital solutions together.',
+    gradient: 'from-emerald-400 via-green-400 to-lime-400',
+    bgGradient: 'from-emerald-50 to-green-50 dark:from-emerald-950/50 dark:to-green-950/50'
   },
   { 
     name: 'Partnership', 
     href: '/about/partnerships', 
     icon: Handshake,
-    description: 'Collaborate with us to build impactful and scalable solutions.'
+    description: 'Collaborate with us to build impactful and scalable solutions.',
+    gradient: 'from-orange-400 via-amber-400 to-yellow-400',
+    bgGradient: 'from-orange-50 to-amber-50 dark:from-orange-950/50 dark:to-amber-950/50'
   },
   { 
     name: 'Leadership', 
     href: '/about/leadership', 
     icon: Users,
-    description: 'Meet the visionary minds driving Softurecs\' growth and innovation.'
+    description: "Meet the visionary minds driving Softurecs' growth and innovation.",
+    gradient: 'from-sky-400 via-blue-400 to-indigo-400',
+    bgGradient: 'from-sky-50 to-blue-50 dark:from-sky-950/50 dark:to-indigo-950/50'
   },
   { 
     name: 'Awards & Recognition', 
     href: '/about/awards-recognition', 
     icon: Award,
-    description: 'Recognized globally for innovation, quality, and client-centric solutions.'
+    description: 'Recognized globally for innovation, quality, and client-centric solutions.',
+    gradient: 'from-amber-400 via-yellow-400 to-orange-400',
+    bgGradient: 'from-amber-50 to-yellow-50 dark:from-amber-950/50 dark:to-yellow-950/50'
   },
   { 
     name: 'Client Testimonials', 
     href: '/about/testimonials', 
     icon: MessageSquare,
-    description: 'Hear what our satisfied clients say about working with us.'
+    description: 'Hear what our satisfied clients say about working with us.',
+    gradient: 'from-pink-400 via-rose-400 to-red-400',
+    bgGradient: 'from-pink-50 to-rose-50 dark:from-pink-950/50 dark:to-rose-950/50'
   },
   { 
     name: 'Alliances', 
     href: '/about/alliances', 
     icon: Network,
-    description: 'Strategic alliances that enhance our capabilities and global reach.'
+    description: 'Strategic alliances that enhance our capabilities and global reach.',
+    gradient: 'from-teal-400 via-cyan-400 to-sky-400',
+    bgGradient: 'from-teal-50 to-cyan-50 dark:from-teal-950/50 dark:to-cyan-950/50'
   },
 ];
 
@@ -171,39 +187,105 @@ export function Header() {
                       {/* Left Side - Menu Items (2 columns) */}
                       <div className="flex-1 p-6">
                         <div className="grid grid-cols-2 gap-x-8 gap-y-2">
-                          {aboutMenuItems.map((item) => (
-                            <Link
-                              key={item.href}
-                              to={item.href}
-                              className="flex items-start gap-3 px-3 py-3 rounded-lg hover:bg-secondary transition-colors group"
-                            >
-                              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-accent/20 to-cyan-light/20 flex items-center justify-center shrink-0 mt-0.5">
-                                <item.icon className="w-5 h-5 text-accent" />
-                              </div>
-                              <div>
-                                <span className="text-sm font-semibold text-foreground block">{item.name}</span>
-                                <span className="text-xs text-muted-foreground line-clamp-2">{item.description}</span>
-                              </div>
-                            </Link>
-                          ))}
+                          {aboutMenuItems.map((item, index) => {
+                            const iconColors = [
+                              { from: '#3b82f6', to: '#14b8a6' },  // blue to teal
+                              { from: '#8b5cf6', to: '#d946ef' },  // violet to fuchsia
+                              { from: '#10b981', to: '#84cc16' },  // emerald to lime
+                              { from: '#f97316', to: '#eab308' },  // orange to yellow
+                              { from: '#0ea5e9', to: '#6366f1' },  // sky to indigo
+                              { from: '#f59e0b', to: '#ef4444' },  // amber to red
+                              { from: '#ec4899', to: '#f43f5e' },  // pink to rose
+                              { from: '#14b8a6', to: '#0ea5e9' },  // teal to sky
+                            ];
+                            const colors = iconColors[index] || iconColors[0];
+                            
+                            return (
+                              <motion.div
+                                key={item.href}
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: index * 0.04 }}
+                              >
+                                <Link
+                                  to={item.href}
+                                  className="flex items-start gap-3 px-3 py-3 rounded-xl hover:bg-secondary/80 transition-all duration-300 group"
+                                >
+                                  <motion.div 
+                                    className={`w-11 h-11 rounded-xl bg-gradient-to-br ${item.bgGradient} flex items-center justify-center shrink-0 shadow-sm group-hover:shadow-lg transition-all duration-300 relative overflow-hidden`}
+                                    whileHover={{ scale: 1.08, rotate: 3 }}
+                                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                                  >
+                                    <svg width="0" height="0" className="absolute">
+                                      <defs>
+                                        <linearGradient id={`menu-icon-${index}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                                          <stop offset="0%" stopColor={colors.from} />
+                                          <stop offset="100%" stopColor={colors.to} />
+                                        </linearGradient>
+                                      </defs>
+                                    </svg>
+                                    <item.icon 
+                                      className="w-5 h-5" 
+                                      style={{ stroke: `url(#menu-icon-${index})` }}
+                                    />
+                                  </motion.div>
+                                  <div className="pt-0.5">
+                                    <span className="text-sm font-semibold text-foreground block group-hover:text-accent transition-colors duration-200">{item.name}</span>
+                                    <span className="text-xs text-muted-foreground line-clamp-2 leading-relaxed">{item.description}</span>
+                                  </div>
+                                </Link>
+                              </motion.div>
+                            );
+                          })}
                         </div>
                       </div>
 
                       {/* Right Side - Figures at a Glance */}
-                      <div className="w-[320px] bg-primary p-6">
+                      <div className="w-[320px] bg-gradient-to-br from-primary via-primary to-primary/95 p-6">
                         <h3 className="text-lg font-bold text-amber-400 mb-6">Figures at a Glance</h3>
                         <div className="space-y-5">
-                          {figuresAtGlance.map((figure) => (
-                            <div key={figure.label} className="flex items-start gap-3">
-                              <div className="w-10 h-10 rounded-lg bg-primary-foreground/10 flex items-center justify-center shrink-0">
-                                <figure.icon className="w-5 h-5 text-amber-400" />
-                              </div>
-                              <div>
-                                <span className="text-base font-bold text-primary-foreground block">{figure.value} {figure.label}</span>
-                                <span className="text-xs text-primary-foreground/70">{figure.description}</span>
-                              </div>
-                            </div>
-                          ))}
+                          {figuresAtGlance.map((figure, idx) => {
+                            const figureColors = [
+                              { from: '#fbbf24', to: '#f59e0b' },  // yellow to amber
+                              { from: '#34d399', to: '#10b981' },  // green
+                              { from: '#60a5fa', to: '#3b82f6' },  // blue
+                              { from: '#a78bfa', to: '#8b5cf6' },  // purple
+                            ];
+                            const fColors = figureColors[idx] || figureColors[0];
+                            
+                            return (
+                              <motion.div 
+                                key={figure.label} 
+                                className="flex items-start gap-3"
+                                initial={{ opacity: 0, x: 20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: idx * 0.1 }}
+                              >
+                                <motion.div 
+                                  className="w-11 h-11 rounded-xl bg-primary-foreground/10 flex items-center justify-center shrink-0 backdrop-blur-sm"
+                                  whileHover={{ scale: 1.1, rotate: -5 }}
+                                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                                >
+                                  <svg width="0" height="0" className="absolute">
+                                    <defs>
+                                      <linearGradient id={`figure-icon-${idx}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stopColor={fColors.from} />
+                                        <stop offset="100%" stopColor={fColors.to} />
+                                      </linearGradient>
+                                    </defs>
+                                  </svg>
+                                  <figure.icon 
+                                    className="w-5 h-5" 
+                                    style={{ stroke: `url(#figure-icon-${idx})` }}
+                                  />
+                                </motion.div>
+                                <div>
+                                  <span className="text-base font-bold text-primary-foreground block">{figure.value} {figure.label}</span>
+                                  <span className="text-xs text-primary-foreground/70 leading-relaxed">{figure.description}</span>
+                                </div>
+                              </motion.div>
+                            );
+                          })}
                         </div>
                       </div>
                     </div>
