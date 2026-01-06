@@ -297,6 +297,13 @@ export function Footer() {
                 <Link to="/terms" className="text-gray-600 hover:text-blue-600 transition-colors">
                   Terms & Conditions
                 </Link>
+                <span className="text-gray-400">|</span>
+                <Link 
+                  to="/contact" 
+                  className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-1.5 rounded-full hover:from-blue-700 hover:to-indigo-700 transition-all font-medium shadow-sm hover:shadow-md"
+                >
+                  Contact Us
+                </Link>
               </motion.div>
             </div>
           </div>
