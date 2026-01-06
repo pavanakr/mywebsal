@@ -61,6 +61,11 @@ import ConstructionManagement from "./pages/industries/solutions/ConstructionMan
 import TravelBooking from "./pages/industries/solutions/TravelBooking";
 import HotelManagement from "./pages/industries/solutions/HotelManagement";
 import TravelExperience from "./pages/industries/solutions/TravelExperience";
+import LMSPlatform from "./pages/industries/solutions/LMSPlatform";
+import ElectronicHealthRecords from "./pages/industries/solutions/ElectronicHealthRecords";
+import PatientEngagement from "./pages/industries/solutions/PatientEngagement";
+import PaymentProcessing from "./pages/industries/solutions/PaymentProcessing";
+import FraudDetection from "./pages/industries/solutions/FraudDetection";
 // Case study pages
 import HealthPulse from "./pages/portfolio/HealthPulse";
 import FinVault from "./pages/portfolio/FinVault";
@@ -153,6 +158,11 @@ const App = () => (
             <Route path="/industries/solutions/travel-booking" element={<TravelBooking />} />
             <Route path="/industries/solutions/hotel-management" element={<HotelManagement />} />
             <Route path="/industries/solutions/travel-experience" element={<TravelExperience />} />
+            <Route path="/industries/solutions/lms-platform" element={<LMSPlatform />} />
+            <Route path="/industries/solutions/electronic-health-records" element={<ElectronicHealthRecords />} />
+            <Route path="/industries/solutions/patient-engagement" element={<PatientEngagement />} />
+            <Route path="/industries/solutions/payment-processing" element={<PaymentProcessing />} />
+            <Route path="/industries/solutions/fraud-detection" element={<FraudDetection />} />
             {/* Portfolio */}
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/portfolio/healthpulse" element={<HealthPulse />} />
