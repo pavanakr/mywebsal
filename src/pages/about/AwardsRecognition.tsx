@@ -65,8 +65,8 @@ export default function AwardsRecognition() {
       />
       
       <PageHero
-        title="Awards & Recognition"
-        description="Recognized globally for innovation, quality, and client-centric solutions. Our achievements reflect our commitment to excellence."
+        title="Awards & Industry Recognition Earned by Softurecs AI Labs"
+        description="Recognized for Innovation & Quality. Trusted by Clients Across Industries. Commitment to Excellence."
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'About', href: '/about' },

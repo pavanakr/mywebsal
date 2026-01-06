@@ -16,8 +16,8 @@ export default function CompanyProfile() {
       />
       
       <PageHero
-        title="About Softurecs AI Labs"
-        description="Discover our journey, expertise, and unwavering commitment to digital excellence. We transform ideas into reality through innovative technology solutions."
+        title="About Softurecs AI Labs – Innovating Digital Solutions with AI"
+        description="Who We Are & What We Do. Our Vision, Mission & Core Values. Why Businesses Choose Softurecs AI Labs."
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'About', href: '/about' },

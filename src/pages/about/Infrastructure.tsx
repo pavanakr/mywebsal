@@ -64,8 +64,8 @@ export default function Infrastructure() {
       />
       
       <PageHero
-        title="Our Infrastructure"
-        description="Explore our advanced development environment and robust technology setup, designed for performance, security, and scalability."
+        title="Advanced Infrastructure for Scalable Software Development"
+        description="Secure Development Environment. Cloud-Enabled & Agile Infrastructure. Tools, Technologies & Delivery Capabilities."
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'About', href: '/about' },

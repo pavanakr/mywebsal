@@ -160,8 +160,8 @@ const Industries = () => {
         keywords="industry solutions, healthcare technology, fintech solutions, retail ecommerce, education technology, logistics software, enterprise solutions"
       />
       <PageHero
-        title="Tailored Solutions for Every Industry"
-        description="We bring deep domain expertise to deliver industry-specific digital transformation solutions that address unique challenges and drive measurable results across verticals."
+        title="Industry-Focused Software Solutions for Digital Growth"
+        description="Technology Solutions Across Multiple Industries. Tailored Digital Platforms for Business Success."
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'Industries' }

@@ -43,8 +43,8 @@ export default function Leadership() {
       />
       
       <PageHero
-        title="Our Leadership Team"
-        description="Meet the visionary minds driving Softurecs' growth, innovation, and commitment to delivering exceptional technology solutions."
+        title="Leadership Team Driving Innovation at Softurecs AI Labs"
+        description="Founder & CEO – Pavan Kumar Naramala. Visionary Leadership & Engineering Excellence. Building a Future-Ready Technology Company."
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'About', href: '/about' },

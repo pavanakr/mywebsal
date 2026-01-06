@@ -8,8 +8,8 @@ const MobileApps = () => {
       heroImage={heroMobileApps}
       icon={Smartphone}
       color="from-violet-500 to-violet-600"
-      title="Mobile App Development"
-      tagline="Native and cross-platform mobile applications that deliver seamless experiences across iOS and Android."
+      title="Mobile App Development Services for iOS & Android"
+      tagline="Native & Cross-Platform App Development. Secure, Scalable & User-Focused Apps. End-to-End Mobile Solutions."
       description="We build mobile applications that users love and businesses rely on. Whether you need a native app for maximum performance or a cross-platform solution for faster time-to-market, our mobile team delivers exceptional results."
       benefits={[
         "Native & cross-platform",
