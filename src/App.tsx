@@ -30,6 +30,12 @@ import HealthPulse from "./pages/portfolio/HealthPulse";
 import FinVault from "./pages/portfolio/FinVault";
 import LogiTrack from "./pages/portfolio/LogiTrack";
 import ShopSphere from "./pages/portfolio/ShopSphere";
+// Blog pages
+import FutureOfAI from "./pages/blog/FutureOfAI";
+import MicroservicesArchitecture from "./pages/blog/MicroservicesArchitecture";
+import CloudMigration from "./pages/blog/CloudMigration";
+import SaasSecurity from "./pages/blog/SaasSecurity";
+import DevOpsCulture from "./pages/blog/DevOpsCulture";
 
 const queryClient = new QueryClient();
 
@@ -62,7 +68,11 @@ const App = () => (
           <Route path="/portfolio/shopsphere" element={<ShopSphere />} />
           <Route path="/portfolio/*" element={<Portfolio />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/*" element={<Blog />} />
+          <Route path="/blog/future-of-ai-enterprise" element={<FutureOfAI />} />
+          <Route path="/blog/microservices-architecture" element={<MicroservicesArchitecture />} />
+          <Route path="/blog/cloud-migration-2025" element={<CloudMigration />} />
+          <Route path="/blog/saas-security" element={<SaasSecurity />} />
+          <Route path="/blog/devops-culture" element={<DevOpsCulture />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
