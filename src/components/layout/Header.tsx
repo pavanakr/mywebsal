@@ -6,7 +6,7 @@ import {
   Menu, X, ChevronDown, ChevronRight, Code, Smartphone, Cloud, Cpu, Globe, Layers, Sun, Moon, RefreshCw,
   Building2, Server, Users, Handshake, Award, MessageSquare, Network, Briefcase,
   FolderCheck, UserCheck, Heart, Zap, Database, UserPlus, Rocket, Truck, GraduationCap,
-  ShoppingCart, Landmark, Film, Plane
+  ShoppingCart, Landmark, Film, Plane, FileText, BookOpen, HelpCircle, Newspaper, Phone
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTheme } from '@/hooks/use-theme';
@@ -306,6 +306,51 @@ const figuresAtGlance = [
   { icon: UserCheck, value: '250+', label: 'Expert Members', description: 'Team of 250+ seasoned experts driving digital innovation forward.' },
   { icon: Heart, value: '700+', label: 'Happy Clients', description: 'Trusted by 700+ clients for reliable, scalable digital solutions.' },
   { icon: Zap, value: '100+', label: 'Ongoing Projects', description: 'Managing 100+ active projects with precision and proven expertise.' },
+];
+
+const insightsMenuItems = [
+  { 
+    name: 'Case Studies', 
+    href: '/insights/case-studies', 
+    icon: FileText,
+    description: 'Real-world success stories showcasing our solutions and client impact.',
+    bgGradient: 'from-amber-50 to-orange-50 dark:from-amber-950/50 dark:to-orange-950/50'
+  },
+  { 
+    name: 'Blogs', 
+    href: '/insights/blogs', 
+    icon: BookOpen,
+    description: 'Insights, trends, and tips from our tech and business experts.',
+    bgGradient: 'from-emerald-50 to-teal-50 dark:from-emerald-950/50 dark:to-teal-950/50'
+  },
+  { 
+    name: 'Contact Us', 
+    href: '/contact', 
+    icon: Phone,
+    description: "Let's connect today and build your success story together.",
+    bgGradient: 'from-blue-50 to-cyan-50 dark:from-blue-950/50 dark:to-cyan-950/50'
+  },
+  { 
+    name: 'Our Portfolio', 
+    href: '/insights/portfolio', 
+    icon: Briefcase,
+    description: 'Explore our diverse projects across industries and technologies.',
+    bgGradient: 'from-purple-50 to-violet-50 dark:from-purple-950/50 dark:to-violet-950/50'
+  },
+  { 
+    name: 'FAQs', 
+    href: '/insights/faqs', 
+    icon: HelpCircle,
+    description: 'Quick answers to common questions about our services and process.',
+    bgGradient: 'from-pink-50 to-rose-50 dark:from-pink-950/50 dark:to-rose-950/50'
+  },
+  { 
+    name: 'Press Releases', 
+    href: '/insights/press-releases', 
+    icon: Newspaper,
+    description: 'Stay updated with our latest news, updates, and achievements.',
+    bgGradient: 'from-sky-50 to-blue-50 dark:from-sky-950/50 dark:to-blue-950/50'
+  },
 ];
 
 export function Header() {
@@ -766,23 +811,128 @@ export function Header() {
               </AnimatePresence>
             </div>
 
-            <Link
-              to="/portfolio"
-              className={`px-4 py-2 text-sm font-medium transition-colors rounded-lg hover:bg-accent/10 ${
-                isScrolled ? 'text-foreground' : 'text-primary-foreground'
-              }`}
+            {/* Softurecs Insights Mega Menu */}
+            <div
+              className="relative"
+              onMouseEnter={() => setActiveDropdown('insights')}
+              onMouseLeave={() => setActiveDropdown(null)}
             >
-              Portfolio
-            </Link>
+              <button
+                className={`px-4 py-2 text-sm font-medium transition-colors rounded-lg hover:bg-accent/10 flex items-center gap-1 ${
+                  isScrolled ? 'text-foreground' : 'text-primary-foreground'
+                }`}
+              >
+                Softurecs Insights
+                <ChevronDown className="w-4 h-4" />
+              </button>
 
-            <Link
-              to="/blog"
-              className={`px-4 py-2 text-sm font-medium transition-colors rounded-lg hover:bg-accent/10 ${
-                isScrolled ? 'text-foreground' : 'text-primary-foreground'
-              }`}
-            >
-              Blog
-            </Link>
+              <AnimatePresence>
+                {activeDropdown === 'insights' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-full right-0 pt-2"
+                  >
+                    <div className="bg-card rounded-xl shadow-elevated border border-border/50 overflow-hidden flex" style={{ width: '850px' }}>
+                      {/* Left Side - Menu Items (2 columns) */}
+                      <div className="flex-1 p-6">
+                        <div className="grid grid-cols-2 gap-x-6 gap-y-2">
+                          {insightsMenuItems.map((item, index) => {
+                            const iconColors = [
+                              { from: '#f59e0b', to: '#ea580c' },  // amber to orange
+                              { from: '#10b981', to: '#14b8a6' },  // emerald to teal
+                              { from: '#3b82f6', to: '#06b6d4' },  // blue to cyan
+                              { from: '#8b5cf6', to: '#a855f7' },  // violet to purple
+                              { from: '#ec4899', to: '#f43f5e' },  // pink to rose
+                              { from: '#0ea5e9', to: '#3b82f6' },  // sky to blue
+                            ];
+                            const colors = iconColors[index] || iconColors[0];
+                            
+                            return (
+                              <motion.div
+                                key={item.href}
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: index * 0.04 }}
+                              >
+                                <Link
+                                  to={item.href}
+                                  className="flex items-start gap-3 px-3 py-3 rounded-xl hover:bg-secondary/80 transition-all duration-300 group"
+                                >
+                                  <motion.div 
+                                    className={`w-11 h-11 rounded-xl bg-gradient-to-br ${item.bgGradient} flex items-center justify-center shrink-0 shadow-sm group-hover:shadow-lg transition-all duration-300 relative overflow-hidden`}
+                                    whileHover={{ scale: 1.08, rotate: 3 }}
+                                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                                  >
+                                    <svg width="0" height="0" className="absolute">
+                                      <defs>
+                                        <linearGradient id={`insights-icon-${index}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                                          <stop offset="0%" stopColor={colors.from} />
+                                          <stop offset="100%" stopColor={colors.to} />
+                                        </linearGradient>
+                                      </defs>
+                                    </svg>
+                                    <item.icon 
+                                      className="w-5 h-5" 
+                                      style={{ stroke: `url(#insights-icon-${index})` }}
+                                    />
+                                  </motion.div>
+                                  <div className="pt-0.5">
+                                    <span className="text-sm font-semibold text-foreground block group-hover:text-accent transition-colors duration-200">{item.name}</span>
+                                    <span className="text-xs text-muted-foreground line-clamp-2 leading-relaxed">{item.description}</span>
+                                  </div>
+                                </Link>
+                              </motion.div>
+                            );
+                          })}
+                        </div>
+                      </div>
+
+                      {/* Right Side - Highlight Panel */}
+                      <div className="w-[320px] bg-gradient-to-br from-primary via-navy to-navy-light p-6 relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full blur-3xl" />
+                        <div className="absolute bottom-0 left-0 w-24 h-24 bg-cyan-light/10 rounded-full blur-2xl" />
+                        
+                        <div className="relative z-10">
+                          <h3 className="text-lg font-bold text-amber-400 mb-4">
+                            Digital Solutions That Fit Every Business
+                          </h3>
+                          
+                          <div className="rounded-xl overflow-hidden mb-4 shadow-lg">
+                            <img 
+                              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=200&fit=crop" 
+                              alt="Softurecs Team" 
+                              className="w-full h-32 object-cover"
+                            />
+                          </div>
+                          
+                          <p className="text-sm text-primary-foreground/80 mb-4">
+                            We work with brands of all sizes—adapting to your needs, goals, and growth:
+                          </p>
+                          
+                          <div className="flex flex-wrap gap-3">
+                            <span className="flex items-center gap-1.5 text-primary-foreground text-sm">
+                              <span className="w-1.5 h-1.5 bg-amber-400 rounded-full" />
+                              Startups
+                            </span>
+                            <span className="flex items-center gap-1.5 text-primary-foreground text-sm">
+                              <span className="w-1.5 h-1.5 bg-amber-400 rounded-full" />
+                              SMEs
+                            </span>
+                            <span className="flex items-center gap-1.5 text-primary-foreground text-sm">
+                              <span className="w-1.5 h-1.5 bg-amber-400 rounded-full" />
+                              Enterprises
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
 
             <Link
               to="/contact"
