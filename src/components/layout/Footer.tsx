@@ -282,6 +282,10 @@ export function Footer() {
                   Sitemap
                 </Link>
                 <span className="text-gray-400">|</span>
+                <Link to="/shipping-policy" className="text-gray-600 hover:text-blue-600 transition-colors">
+                  Shipping Policy
+                </Link>
+                <span className="text-gray-400">|</span>
                 <Link to="/refund-policy" className="text-gray-600 hover:text-blue-600 transition-colors">
                   Refund Policy
                 </Link>
