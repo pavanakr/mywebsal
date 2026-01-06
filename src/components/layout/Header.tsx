@@ -229,7 +229,7 @@ const industryCategories = [
     bgGradient: 'from-pink-100 to-rose-100 dark:from-pink-900/40 dark:to-rose-900/40',
     iconColor: 'text-pink-600 dark:text-pink-400',
     subIndustries: [
-      { name: 'Learning management systems', href: '/industries/education' },
+      { name: 'Learning management systems', href: '/industries/solutions/lms-platform' },
       { name: 'Virtual classroom platforms', href: '/industries/solutions/virtual-learning' },
       { name: 'Student information systems', href: '/industries/solutions/student-management' },
     ]
@@ -256,8 +256,8 @@ const industryCategories = [
     iconColor: 'text-red-600 dark:text-red-400',
     subIndustries: [
       { name: 'Telemedicine platforms', href: '/industries/solutions/telemedicine-platform' },
-      { name: 'Electronic health records', href: '/industries/healthcare' },
-      { name: 'Patient engagement apps', href: '/industries/healthcare' },
+      { name: 'Electronic health records', href: '/industries/solutions/electronic-health-records' },
+      { name: 'Patient engagement apps', href: '/industries/solutions/patient-engagement' },
     ]
   },
   { 
@@ -269,8 +269,8 @@ const industryCategories = [
     iconColor: 'text-emerald-600 dark:text-emerald-400',
     subIndustries: [
       { name: 'Digital banking platforms', href: '/industries/solutions/digital-banking' },
-      { name: 'Payment processing systems', href: '/industries/banking-finance' },
-      { name: 'Fraud detection solutions', href: '/industries/banking-finance' },
+      { name: 'Payment processing systems', href: '/industries/solutions/payment-processing' },
+      { name: 'Fraud detection solutions', href: '/industries/solutions/fraud-detection' },
     ]
   },
   { 
