@@ -389,21 +389,21 @@ export function Header() {
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 text-white fixed top-0 left-0 right-0 z-[60]"
+        className="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 text-white fixed top-0 left-0 right-0 z-[60] shadow-lg"
       >
         <div className="container-custom">
-          <div className="flex items-center justify-between h-12">
+          <div className="flex items-center justify-between h-14 md:h-12">
             <div className="flex items-center gap-3">
               <motion.div
-                animate={{ scale: [1, 1.2, 1] }}
+                animate={{ scale: [1, 1.3, 1], opacity: [1, 0.8, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
-                className="w-2 h-2 rounded-full bg-cyan-400"
+                className="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-lg shadow-cyan-400/50"
               />
-              <span className="hidden sm:inline text-sm font-medium text-white">
+              <span className="hidden sm:inline text-sm font-semibold text-white tracking-wide">
                 Share Your Project Idea & Receive App Development Quote Instantly!
               </span>
-              <span className="sm:hidden text-xs font-medium text-white">
-                Get Your Free Quote!
+              <span className="sm:hidden text-xs font-semibold text-white">
+                Get Your Free Quote Today!
               </span>
             </div>
             
@@ -411,7 +411,7 @@ export function Header() {
               <Link to="/contact">
                 <Button 
                   size="sm" 
-                  className="bg-white hover:bg-white/90 text-indigo-700 font-semibold text-xs px-6 py-2 h-9 rounded-full shadow-lg shadow-black/10 transition-all hover:scale-105"
+                  className="bg-white hover:bg-white/95 text-indigo-700 font-bold text-xs px-6 py-2.5 h-10 rounded-full shadow-xl shadow-black/15 transition-all duration-300 hover:scale-105 hover:shadow-2xl"
                 >
                   Book a Free Consultation
                 </Button>
@@ -422,14 +422,14 @@ export function Header() {
                   href="https://wa.me/917396080902" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-full hover:bg-white/15 transition-colors"
+                  className="p-2.5 rounded-full hover:bg-white/20 transition-all duration-200 hover:scale-110"
                   aria-label="WhatsApp"
                 >
                   <MessageCircle className="w-5 h-5 text-white" />
                 </a>
                 <a 
                   href="tel:+917396080902" 
-                  className="p-2.5 rounded-full hover:bg-white/15 transition-colors"
+                  className="p-2.5 rounded-full hover:bg-white/20 transition-all duration-200 hover:scale-110"
                   aria-label="Call us"
                 >
                   <Phone className="w-5 h-5 text-white" />
@@ -442,42 +442,50 @@ export function Header() {
 
       {/* Main Navigation Header */}
       <header
-        className={`fixed top-12 left-0 right-0 z-50 transition-all duration-500 ease-out ${
+        className={`fixed top-14 md:top-12 left-0 right-0 z-50 transition-all duration-500 ease-out ${
           isScrolled
-            ? 'bg-white/98 dark:bg-card/98 backdrop-blur-xl shadow-[0_8px_30px_-12px_rgba(0,0,0,0.15)] border-b border-gray-100/80 dark:border-border/50'
-            : 'bg-white dark:bg-card shadow-sm border-b border-gray-100/50'
+            ? 'bg-white/98 dark:bg-card/98 backdrop-blur-2xl shadow-[0_12px_40px_-15px_rgba(0,0,0,0.12)] border-b border-gray-100/60 dark:border-border/40'
+            : 'bg-white dark:bg-card shadow-sm border-b border-gray-100/40 dark:border-border/30'
         }`}
       >
         <div className="container-custom">
-          <div className="flex items-center justify-between h-20">
-            {/* Logo */}
-            <Link to="/" className="flex items-center gap-3 group">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-600 via-purple-600 to-blue-600 flex items-center justify-center shadow-xl shadow-indigo-500/30 group-hover:shadow-indigo-500/50 transition-all duration-300 group-hover:scale-105">
-                <span className="text-white font-bold text-2xl">S</span>
-              </div>
+          <div className="flex items-center justify-between h-[72px] md:h-[80px] lg:h-[92px]">
+            {/* Logo with enhanced styling */}
+            <Link to="/" className="flex items-center gap-4 group py-2">
+              <motion.div 
+                className="relative"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              >
+                <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-gradient-to-br from-indigo-600 via-purple-600 to-blue-600 flex items-center justify-center shadow-2xl shadow-indigo-500/40 transition-all duration-300">
+                  <span className="text-white font-extrabold text-2xl lg:text-3xl">S</span>
+                </div>
+                {/* Subtle glow effect */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-indigo-400 to-purple-400 opacity-0 group-hover:opacity-30 blur-lg transition-opacity duration-300" />
+              </motion.div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold text-gray-900 dark:text-foreground leading-tight tracking-tight">
+                <span className="text-xl lg:text-2xl font-extrabold text-gray-900 dark:text-foreground leading-tight tracking-tight">
                   SOFTURECS AI LABS
                 </span>
-                <span className="text-xs font-medium text-gray-500 dark:text-muted-foreground leading-none tracking-wide">
+                <span className="text-[11px] lg:text-xs font-semibold text-indigo-600/80 dark:text-accent/80 leading-none tracking-widest uppercase mt-1">
                   AI • Software • Digital Transformation
                 </span>
               </div>
             </Link>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-0.5">
+            {/* Desktop Navigation - Enhanced spacing and typography */}
+            <nav className="hidden lg:flex items-center gap-2 xl:gap-3">
             {/* Start AI Journey - Featured Link */}
             <Link
               to="/services/ai-development"
-              className={`px-4 py-2 text-sm font-semibold transition-all rounded-lg relative group ${
+              className={`px-5 py-3 text-[15px] xl:text-base font-semibold transition-all duration-300 rounded-xl relative group ${
                 location.pathname === '/services/ai-development'
-                  ? 'text-indigo-600 dark:text-accent'
-                  : 'text-gray-800 dark:text-foreground hover:text-indigo-600 dark:hover:text-accent'
+                  ? 'text-indigo-600 dark:text-accent bg-indigo-50 dark:bg-accent/10'
+                  : 'text-gray-800 dark:text-foreground hover:text-indigo-600 dark:hover:text-accent hover:bg-gray-50 dark:hover:bg-secondary/50'
               }`}
             >
               Start AI Journey
-              <span className={`absolute bottom-0 left-4 right-4 h-0.5 bg-indigo-600 dark:bg-accent transition-transform origin-left ${
+              <span className={`absolute bottom-1 left-5 right-5 h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-accent dark:to-cyan-400 rounded-full transition-transform duration-300 origin-left ${
                 location.pathname === '/services/ai-development' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
               }`} />
             </Link>
@@ -489,15 +497,15 @@ export function Header() {
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button
-                className={`px-4 py-2 text-sm font-medium transition-all rounded-lg flex items-center gap-1 relative group ${
+                className={`px-5 py-3 text-[15px] xl:text-base font-medium transition-all duration-300 rounded-xl flex items-center gap-1.5 relative group ${
                   location.pathname.startsWith('/about')
-                    ? 'text-indigo-600 dark:text-accent'
-                    : 'text-gray-700 dark:text-foreground hover:text-indigo-600 dark:hover:text-accent'
+                    ? 'text-indigo-600 dark:text-accent bg-indigo-50 dark:bg-accent/10'
+                    : 'text-gray-700 dark:text-foreground hover:text-indigo-600 dark:hover:text-accent hover:bg-gray-50 dark:hover:bg-secondary/50'
                 }`}
               >
                 About Softurecs
-                <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === 'about' ? 'rotate-180' : 'group-hover:rotate-180'}`} />
-                <span className={`absolute bottom-0 left-4 right-4 h-0.5 bg-indigo-600 dark:bg-accent transition-transform origin-left ${
+                <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === 'about' ? 'rotate-180' : 'group-hover:rotate-180'}`} />
+                <span className={`absolute bottom-1 left-5 right-5 h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-accent dark:to-cyan-400 rounded-full transition-transform duration-300 origin-left ${
                   location.pathname.startsWith('/about') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                 }`} />
                 </button>
@@ -505,11 +513,11 @@ export function Header() {
                 <AnimatePresence>
                   {activeDropdown === 'about' && (
                     <motion.div
-                      initial={{ opacity: 0, y: 10 }}
+                      initial={{ opacity: 0, y: 15 }}
                       animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute top-full left-1/2 -translate-x-1/2 pt-3"
+                      exit={{ opacity: 0, y: 15 }}
+                      transition={{ duration: 0.25, ease: "easeOut" }}
+                      className="absolute top-full left-1/2 -translate-x-1/2 pt-5"
                     >
                       <div className="bg-white dark:bg-card rounded-2xl shadow-2xl border border-gray-100 dark:border-border/50 overflow-hidden flex" style={{ width: '920px' }}>
                         {/* Left Side - Menu Items (2 columns) */}
@@ -627,15 +635,15 @@ export function Header() {
               onMouseLeave={() => { setActiveDropdown(null); setActiveServiceCategory(null); }}
             >
               <button
-                className={`px-4 py-2 text-sm font-medium transition-all rounded-lg flex items-center gap-1 relative group ${
+                className={`px-5 py-3 text-[15px] xl:text-base font-medium transition-all duration-300 rounded-xl flex items-center gap-1.5 relative group ${
                   location.pathname.startsWith('/services')
-                    ? 'text-indigo-600 dark:text-accent'
-                    : 'text-gray-700 dark:text-foreground hover:text-indigo-600 dark:hover:text-accent'
+                    ? 'text-indigo-600 dark:text-accent bg-indigo-50 dark:bg-accent/10'
+                    : 'text-gray-700 dark:text-foreground hover:text-indigo-600 dark:hover:text-accent hover:bg-gray-50 dark:hover:bg-secondary/50'
                 }`}
               >
                 Services
-                <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === 'services' ? 'rotate-180' : 'group-hover:rotate-180'}`} />
-                <span className={`absolute bottom-0 left-4 right-4 h-0.5 bg-indigo-600 dark:bg-accent transition-transform origin-left ${
+                <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === 'services' ? 'rotate-180' : 'group-hover:rotate-180'}`} />
+                <span className={`absolute bottom-1 left-5 right-5 h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-accent dark:to-cyan-400 rounded-full transition-transform duration-300 origin-left ${
                   location.pathname.startsWith('/services') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                 }`} />
                 </button>
@@ -643,11 +651,11 @@ export function Header() {
                 <AnimatePresence>
                   {activeDropdown === 'services' && (
                     <motion.div
-                      initial={{ opacity: 0, y: 10 }}
+                      initial={{ opacity: 0, y: 15 }}
                       animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute top-full left-1/2 -translate-x-1/2 pt-3"
+                      exit={{ opacity: 0, y: 15 }}
+                      transition={{ duration: 0.25, ease: "easeOut" }}
+                      className="absolute top-full left-1/2 -translate-x-1/2 pt-5"
                     >
                       <div className="bg-white dark:bg-card rounded-2xl shadow-2xl border border-gray-100 dark:border-border/50 overflow-hidden flex" style={{ width: '980px' }}>
                         {/* Left Panel - Service Categories */}
@@ -752,15 +760,15 @@ export function Header() {
               onMouseLeave={() => { setActiveDropdown(null); setActiveIndustryCategory(null); }}
             >
               <button
-                className={`px-4 py-2 text-sm font-medium transition-all rounded-lg flex items-center gap-1 relative group ${
+                className={`px-5 py-3 text-[15px] xl:text-base font-medium transition-all duration-300 rounded-xl flex items-center gap-1.5 relative group ${
                   location.pathname.startsWith('/industries')
-                    ? 'text-indigo-600 dark:text-accent'
-                    : 'text-gray-700 dark:text-foreground hover:text-indigo-600 dark:hover:text-accent'
+                    ? 'text-indigo-600 dark:text-accent bg-indigo-50 dark:bg-accent/10'
+                    : 'text-gray-700 dark:text-foreground hover:text-indigo-600 dark:hover:text-accent hover:bg-gray-50 dark:hover:bg-secondary/50'
                 }`}
               >
                 Industries
-                <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === 'industries' ? 'rotate-180' : 'group-hover:rotate-180'}`} />
-                <span className={`absolute bottom-0 left-4 right-4 h-0.5 bg-indigo-600 dark:bg-accent transition-transform origin-left ${
+                <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === 'industries' ? 'rotate-180' : 'group-hover:rotate-180'}`} />
+                <span className={`absolute bottom-1 left-5 right-5 h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-accent dark:to-cyan-400 rounded-full transition-transform duration-300 origin-left ${
                   location.pathname.startsWith('/industries') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                 }`} />
                 </button>
@@ -768,11 +776,11 @@ export function Header() {
                 <AnimatePresence>
                   {activeDropdown === 'industries' && (
                     <motion.div
-                      initial={{ opacity: 0, y: 10 }}
+                      initial={{ opacity: 0, y: 15 }}
                       animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute top-full left-1/2 -translate-x-1/2 pt-3"
+                      exit={{ opacity: 0, y: 15 }}
+                      transition={{ duration: 0.25, ease: "easeOut" }}
+                      className="absolute top-full left-1/2 -translate-x-1/2 pt-5"
                     >
                       <div className="bg-white dark:bg-card rounded-2xl shadow-2xl border border-gray-100 dark:border-border/50 overflow-hidden flex" style={{ width: '980px' }}>
                         {/* Left Panel - Industry Categories */}
@@ -866,15 +874,15 @@ export function Header() {
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button
-                className={`px-4 py-2 text-sm font-medium transition-all rounded-lg flex items-center gap-1 relative group ${
+                className={`px-5 py-3 text-[15px] xl:text-base font-medium transition-all duration-300 rounded-xl flex items-center gap-1.5 relative group ${
                   location.pathname.startsWith('/insights')
-                    ? 'text-indigo-600 dark:text-accent'
-                    : 'text-gray-700 dark:text-foreground hover:text-indigo-600 dark:hover:text-accent'
+                    ? 'text-indigo-600 dark:text-accent bg-indigo-50 dark:bg-accent/10'
+                    : 'text-gray-700 dark:text-foreground hover:text-indigo-600 dark:hover:text-accent hover:bg-gray-50 dark:hover:bg-secondary/50'
                 }`}
               >
                 Softurecs Insights
-                <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === 'insights' ? 'rotate-180' : 'group-hover:rotate-180'}`} />
-                <span className={`absolute bottom-0 left-4 right-4 h-0.5 bg-indigo-600 dark:bg-accent transition-transform origin-left ${
+                <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === 'insights' ? 'rotate-180' : 'group-hover:rotate-180'}`} />
+                <span className={`absolute bottom-1 left-5 right-5 h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-accent dark:to-cyan-400 rounded-full transition-transform duration-300 origin-left ${
                   location.pathname.startsWith('/insights') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                 }`} />
                 </button>
@@ -882,11 +890,11 @@ export function Header() {
                 <AnimatePresence>
                   {activeDropdown === 'insights' && (
                     <motion.div
-                      initial={{ opacity: 0, y: 10 }}
+                      initial={{ opacity: 0, y: 15 }}
                       animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute top-full right-0 pt-3"
+                      exit={{ opacity: 0, y: 15 }}
+                      transition={{ duration: 0.25, ease: "easeOut" }}
+                      className="absolute top-full right-0 pt-5"
                     >
                       <div className="bg-white dark:bg-card rounded-2xl shadow-2xl border border-gray-100 dark:border-border/50 overflow-hidden flex" style={{ width: '850px' }}>
                         {/* Left Side - Menu Items */}
@@ -981,10 +989,10 @@ export function Header() {
             </nav>
 
             {/* CTA Buttons */}
-            <div className="hidden lg:flex items-center gap-3">
+            <div className="hidden lg:flex items-center gap-4">
               <button
                 onClick={toggleTheme}
-                className="p-2.5 rounded-lg text-gray-600 dark:text-foreground hover:bg-gray-100 dark:hover:bg-secondary transition-colors"
+                className="p-3 rounded-xl text-gray-600 dark:text-foreground hover:bg-gray-100 dark:hover:bg-secondary transition-all duration-200 hover:scale-105"
                 aria-label="Toggle theme"
               >
                 <motion.div
@@ -997,26 +1005,26 @@ export function Header() {
               </button>
               
               <Link to="/contact">
-                <Button 
-                  className="bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white font-semibold px-6 py-2.5 h-auto rounded-full shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-all group"
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  Get in Touch
-                  <motion.span
-                    className="ml-2 inline-flex"
-                    whileHover={{ x: 3 }}
+                  <Button 
+                    className="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 hover:from-indigo-700 hover:via-purple-700 hover:to-blue-700 text-white font-bold text-[15px] px-8 py-3.5 h-auto rounded-full shadow-xl shadow-indigo-500/30 hover:shadow-indigo-500/50 transition-all duration-300 group"
                   >
-                    <ArrowRight className="w-4 h-4" />
-                  </motion.span>
-                </Button>
+                    Get in Touch
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                  </Button>
+                </motion.div>
               </Link>
             </div>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 rounded-lg text-gray-700 dark:text-foreground hover:bg-gray-100 dark:hover:bg-secondary"
+              className="lg:hidden p-3 rounded-xl text-gray-700 dark:text-foreground hover:bg-gray-100 dark:hover:bg-secondary transition-all"
             >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
             </button>
           </div>
         </div>
@@ -1028,7 +1036,8 @@ export function Header() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden bg-white dark:bg-card border-t border-gray-100 dark:border-border/50 overflow-y-auto max-h-[80vh]"
+              transition={{ duration: 0.3 }}
+              className="lg:hidden bg-white dark:bg-card border-t border-gray-100 dark:border-border/50 overflow-y-auto max-h-[75vh] shadow-xl"
             >
               <div className="container-custom py-4 space-y-1">
                 <Link to="/services/ai-development" className="block px-4 py-3 text-gray-900 dark:text-foreground font-semibold rounded-lg hover:bg-gray-50 dark:hover:bg-secondary">
