@@ -137,6 +137,7 @@ import InsightsBlogs from "./pages/insights/Blogs";
 import InsightsFAQs from "./pages/insights/FAQs";
 import InsightsPressReleases from "./pages/insights/PressReleases";
 import CaseStudyDetail from "./pages/insights/CaseStudyDetail";
+import Sitemap from "./pages/Sitemap";
 
 const queryClient = new QueryClient();
 
@@ -283,6 +284,7 @@ const App = () => (
             {/* Other */}
             <Route path="/careers" element={<Careers />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/sitemap" element={<Sitemap />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

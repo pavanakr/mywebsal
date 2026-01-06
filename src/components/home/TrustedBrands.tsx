@@ -1,18 +1,25 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 
 const brands = [
   'Microsoft', 'Google', 'Amazon', 'IBM', 'Oracle', 'Salesforce', 'Adobe', 'SAP'
 ];
 
 export function TrustedBrands() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+  
+  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
+  const y = useTransform(scrollYProgress, [0, 0.3], [50, 0]);
+
   return (
-    <section className="py-16 bg-card border-y border-border/50">
+    <section ref={ref} className="py-16 bg-card border-y border-border/50 overflow-hidden">
       <div className="container-custom">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          style={{ opacity, y }}
           className="text-center mb-10"
         >
           <p className="text-muted-foreground text-sm font-medium uppercase tracking-wider">
@@ -27,12 +34,13 @@ export function TrustedBrands() {
             className="flex gap-16 items-center"
           >
             {[...brands, ...brands, ...brands].map((brand, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="flex-shrink-0 text-2xl font-bold text-muted-foreground/40 hover:text-muted-foreground/60 transition-colors cursor-pointer"
+                whileHover={{ scale: 1.1, color: 'hsl(var(--accent))' }}
+                className="flex-shrink-0 text-2xl font-bold text-muted-foreground/40 transition-colors cursor-pointer"
               >
                 {brand}
-              </div>
+              </motion.div>
             ))}
           </motion.div>
         </div>
