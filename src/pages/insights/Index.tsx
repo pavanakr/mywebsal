@@ -2,7 +2,8 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
 import { SEO } from '@/components/SEO';
-import { FileText, Briefcase, BookOpen, HelpCircle, Newspaper, ArrowRight, TrendingUp, Users, Award } from 'lucide-react';
+import { PageHero } from '@/components/layout/PageHero';
+import { FileText, Briefcase, BookOpen, HelpCircle, Newspaper, ArrowRight, TrendingUp, Users, Award, Lightbulb } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const insightCategories = [
@@ -57,64 +58,24 @@ const Insights = () => {
         description="Technology trends, case studies & expert insights from Softurecs AI Labs. Explore our knowledge base on AI, software development & digital transformation."
         keywords="technology insights, software trends, AI articles, case studies, tech expertise"
       />
-      {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-primary via-navy to-primary overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent" />
-        
-        <div className="container-custom relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <span className="inline-block px-4 py-2 bg-accent/20 text-accent rounded-full text-sm font-semibold mb-6">
-              Softurecs Insights
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              Softurecs Insights – Technology Trends, Case Studies & Expertise
-            </h1>
-            <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-              Industry Insights & Tech Articles. Real-World Case Studies. Expert Opinions & Updates.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Link to="/insights/case-studies">
-                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold">
-                  View Case Studies
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
-              <Link to="/contact">
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                  Get in Touch
-                </Button>
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        title="Softurecs Insights – Technology Trends, Case Studies & Expertise"
+        description="Industry Insights & Tech Articles. Real-World Case Studies. Expert Opinions & Updates."
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'Softurecs Insights' }
+        ]}
+        icon={Lightbulb}
+        iconColor="from-amber-500 to-orange-500"
+        badge="Softurecs Insights"
+        variant="centered"
+        stats={[
+          { value: '1500+', label: 'Projects Delivered' },
+          { value: '700+', label: 'Happy Clients' },
+          { value: '50+', label: 'Industry Awards' }
+        ]}
+      />
 
-      {/* Stats Section */}
-      <section className="py-12 bg-card border-b border-border">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center"
-              >
-                <stat.icon className="h-8 w-8 text-accent mx-auto mb-3" />
-                <div className="text-3xl font-bold text-foreground mb-1">{stat.value}</div>
-                <div className="text-muted-foreground">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Insights Categories Grid */}
       <section className="py-20 bg-background">

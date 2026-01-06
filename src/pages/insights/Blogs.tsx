@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
 import { SEO } from '@/components/SEO';
-import { ArrowRight, Search, Calendar, Clock, User } from 'lucide-react';
+import { PageHero } from '@/components/layout/PageHero';
+import { ArrowRight, Search, Calendar, Clock, User, BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
@@ -105,33 +106,19 @@ const Blogs = () => {
         description="Expert insights on AI, software development & digital transformation. Latest tech trends, guides & best practices from Softurecs AI Labs."
         keywords="technology blog, AI trends, software development tips, digital transformation insights, tech articles"
       />
-      {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-primary via-navy to-primary overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent" />
-        
-        <div className="container-custom relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <nav className="flex items-center justify-center gap-2 text-white/60 text-sm mb-6">
-              <Link to="/" className="hover:text-white transition-colors">Home</Link>
-              <span>/</span>
-              <Link to="/insights" className="hover:text-white transition-colors">Insights</Link>
-              <span>/</span>
-              <span className="text-accent">Blogs</span>
-            </nav>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Technology Blogs on AI, Software & Digital Transformation
-            </h1>
-            <p className="text-xl text-white/80 max-w-2xl mx-auto">
-              Latest Tech Trends & Innovations. Expert Insights from Our Team. Practical Guides & Best Practices.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        title="Technology Blogs on AI, Software & Digital Transformation"
+        description="Latest Tech Trends & Innovations. Expert Insights from Our Team. Practical Guides & Best Practices."
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'Softurecs Insights', href: '/insights' },
+          { label: 'Blogs' }
+        ]}
+        icon={BookOpen}
+        iconColor="from-emerald-500 to-teal-500"
+        badge="Technology Blogs"
+        variant="centered"
+      />
 
       {/* Featured Blog */}
       <section className="py-12 bg-background">

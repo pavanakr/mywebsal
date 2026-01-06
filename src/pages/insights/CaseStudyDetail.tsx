@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import { Link, useParams } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
-import { ArrowRight, ArrowLeft, CheckCircle, Target, Lightbulb, TrendingUp, Calendar, Building2, Users, Globe } from 'lucide-react';
+import { SEO } from '@/components/SEO';
+import { ArrowRight, ArrowLeft, CheckCircle, Target, Lightbulb, TrendingUp, Calendar, Building2, Users, Globe, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const caseStudiesData: Record<string, {
@@ -149,9 +150,18 @@ const CaseStudyDetail = () => {
 
   return (
     <Layout>
+      <SEO
+        title={`${caseStudy.title} | Case Study | Softurecs AI Labs`}
+        description={caseStudy.overview}
+        keywords={`case study, ${caseStudy.industry.toLowerCase()}, software development, ${caseStudy.client}`}
+      />
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-primary via-navy to-primary overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent" />
+      <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-indigo-500/20 via-purple-500/10 to-transparent rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-cyan-500/15 via-blue-500/10 to-transparent rounded-full blur-3xl" />
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
+        </div>
         
         <div className="container-custom relative z-10">
           <motion.div
@@ -159,14 +169,34 @@ const CaseStudyDetail = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <nav className="flex items-center gap-2 text-white/60 text-sm mb-6">
-              <Link to="/" className="hover:text-white transition-colors">Home</Link>
-              <span>/</span>
-              <Link to="/insights" className="hover:text-white transition-colors">Insights</Link>
-              <span>/</span>
-              <Link to="/insights/case-studies" className="hover:text-white transition-colors">Case Studies</Link>
-              <span>/</span>
-              <span className="text-accent">{caseStudy.client}</span>
+            <nav aria-label="Breadcrumb" className="mb-6">
+              <ol className="flex flex-wrap items-center gap-2 text-sm" itemScope itemType="https://schema.org/BreadcrumbList">
+                <li className="flex items-center gap-2" itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+                  <Link to="/" className="text-white/60 hover:text-cyan-400 transition-colors" itemProp="item">
+                    <span itemProp="name">Home</span>
+                  </Link>
+                  <meta itemProp="position" content="1" />
+                </li>
+                <ChevronRight className="w-4 h-4 text-white/30" />
+                <li className="flex items-center gap-2" itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+                  <Link to="/insights" className="text-white/60 hover:text-cyan-400 transition-colors" itemProp="item">
+                    <span itemProp="name">Softurecs Insights</span>
+                  </Link>
+                  <meta itemProp="position" content="2" />
+                </li>
+                <ChevronRight className="w-4 h-4 text-white/30" />
+                <li className="flex items-center gap-2" itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+                  <Link to="/insights/case-studies" className="text-white/60 hover:text-cyan-400 transition-colors" itemProp="item">
+                    <span itemProp="name">Case Studies</span>
+                  </Link>
+                  <meta itemProp="position" content="3" />
+                </li>
+                <ChevronRight className="w-4 h-4 text-white/30" />
+                <li className="flex items-center gap-2" itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+                  <span className="text-white/90 font-medium" itemProp="name">{caseStudy.client}</span>
+                  <meta itemProp="position" content="4" />
+                </li>
+              </ol>
             </nav>
             
             <div className="grid lg:grid-cols-2 gap-12 items-center">
