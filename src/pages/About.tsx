@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
+import { SEO } from '@/components/SEO';
+import { OrganizationSchema, BreadcrumbSchema } from '@/components/SchemaMarkup';
 import { Target, Eye, Award, Users, Building, Globe, CheckCircle, User } from 'lucide-react';
 import { CTASection } from '@/components/home/CTASection';
 
@@ -69,6 +71,17 @@ const whyUs = [
 const About = () => {
   return (
     <Layout>
+      <SEO
+        title="About Softurecs AI Labs"
+        description="Learn about Softurecs AI Labs, a leading AI-driven software company in Hyderabad. 5+ years delivering 200+ projects worldwide with innovative solutions."
+        keywords="about softurecs, AI software company, Hyderabad IT company, software development company India"
+      />
+      <OrganizationSchema />
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://softurecs.com/' },
+        { name: 'About', url: 'https://softurecs.com/about' }
+      ]} />
+      
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-gradient-to-br from-primary via-navy to-navy-light">
         <div className="container-custom">

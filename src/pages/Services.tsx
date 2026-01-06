@@ -79,8 +79,8 @@ const Services = () => {
     <Layout>
       <SEO
         title="Software Development Services"
-        description="Comprehensive technology solutions from AI and mobile apps to cloud services and custom software. Trusted by 700+ clients worldwide for digital transformation."
-        keywords="software development, AI solutions, mobile app development, cloud services, custom software, web development, SaaS development"
+        description="End-to-end AI-powered software development services. Custom apps, cloud solutions & digital transformation trusted by 700+ global clients."
+        keywords="software development services, AI solutions, mobile app development, cloud services, custom software development"
       />
       <PageHero
         title="End-to-End Software Development Services Powered by AI"

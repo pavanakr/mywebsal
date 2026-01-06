@@ -64,9 +64,9 @@ const Careers = () => {
   return (
     <Layout>
       <SEO
-        title="Careers & Job Opportunities"
-        description="Join our team of 200+ innovators across 20+ countries. Explore exciting career opportunities in software development, AI, design, and more."
-        keywords="tech careers, software jobs, remote work, developer jobs, AI engineer, product designer, devops engineer, tech opportunities"
+        title="Careers at Softurecs AI Labs"
+        description="Join Softurecs AI Labs! Explore tech careers in AI, software development & cloud. Remote-first culture, competitive pay, global team of 200+ innovators."
+        keywords="tech careers, software jobs India, remote developer jobs, AI engineer jobs, Hyderabad IT jobs"
       />
       <PageHero
         title="Careers at Softurecs AI Labs – Build the Future with Us"

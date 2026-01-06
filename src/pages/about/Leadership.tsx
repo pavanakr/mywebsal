@@ -37,9 +37,9 @@ export default function Leadership() {
   return (
     <Layout>
       <SEO 
-        title="Leadership Team"
-        description="Meet the visionary leadership team at Softurecs AI Labs led by Founder & CEO Pavan Kumar Naramala. 50+ years of combined experience in technology and innovation."
-        keywords="Softurecs leadership, Pavan Kumar Naramala, software company executives, IT leadership team"
+        title="Leadership Team | Softurecs AI Labs"
+        description="Meet Pavan Kumar Naramala, Founder & CEO of Softurecs AI Labs. Visionary leaders with 50+ years combined experience driving AI innovation."
+        keywords="Softurecs leadership, Pavan Kumar Naramala, software company CEO, IT leadership team Hyderabad"
       />
       
       <PageHero

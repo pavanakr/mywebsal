@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
+import { SEO } from '@/components/SEO';
 import { ArrowRight, Filter, Search, Building2, Heart, ShoppingCart, Truck, GraduationCap, Film } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -98,6 +99,11 @@ const CaseStudies = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Case Studies | Softurecs AI Labs"
+        description="Real success stories from healthcare, fintech, e-commerce & logistics. See how Softurecs AI Labs delivers measurable results for global clients."
+        keywords="software case studies, client success stories, healthcare software, fintech solutions, e-commerce platform"
+      />
       {/* Hero Section */}
       <section className="relative py-24 bg-gradient-to-br from-primary via-navy to-primary overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent" />
