@@ -389,43 +389,47 @@ export function Header() {
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 text-white fixed top-0 left-0 right-0 z-[60]"
+        className="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 text-white fixed top-0 left-0 right-0 z-[60]"
       >
         <div className="container-custom">
-          <div className="flex items-center justify-between py-2.5">
-            <div className="flex items-center gap-2">
-              <span className="hidden sm:inline text-sm font-medium text-white/95">
+          <div className="flex items-center justify-between h-12">
+            <div className="flex items-center gap-3">
+              <motion.div
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="w-2 h-2 rounded-full bg-cyan-400"
+              />
+              <span className="hidden sm:inline text-sm font-medium text-white">
                 Share Your Project Idea & Receive App Development Quote Instantly!
               </span>
-              <span className="sm:hidden text-xs font-medium text-white/95">
+              <span className="sm:hidden text-xs font-medium text-white">
                 Get Your Free Quote!
               </span>
             </div>
             
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-4">
               <Link to="/contact">
                 <Button 
                   size="sm" 
-                  className="bg-white hover:bg-white/90 text-indigo-700 font-semibold text-xs px-5 py-1.5 h-auto rounded-full shadow-lg shadow-black/10 transition-all hover:scale-105"
+                  className="bg-white hover:bg-white/90 text-indigo-700 font-semibold text-xs px-6 py-2 h-9 rounded-full shadow-lg shadow-black/10 transition-all hover:scale-105"
                 >
                   Book a Free Consultation
                 </Button>
               </Link>
               
-              <div className="hidden md:flex items-center gap-1 border-l border-white/30 pl-4">
+              <div className="hidden md:flex items-center gap-2 border-l border-white/30 pl-4">
                 <a 
                   href="https://wa.me/917396080902" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-full hover:bg-white/10 transition-colors"
+                  className="p-2.5 rounded-full hover:bg-white/15 transition-colors"
                   aria-label="WhatsApp"
                 >
                   <MessageCircle className="w-5 h-5 text-white" />
                 </a>
-                <span className="text-white/40">|</span>
                 <a 
                   href="tel:+917396080902" 
-                  className="p-2 rounded-full hover:bg-white/10 transition-colors"
+                  className="p-2.5 rounded-full hover:bg-white/15 transition-colors"
                   aria-label="Call us"
                 >
                   <Phone className="w-5 h-5 text-white" />
@@ -438,24 +442,24 @@ export function Header() {
 
       {/* Main Navigation Header */}
       <header
-        className={`fixed top-[44px] left-0 right-0 z-50 transition-all duration-500 ease-out ${
+        className={`fixed top-12 left-0 right-0 z-50 transition-all duration-500 ease-out ${
           isScrolled
-            ? 'bg-white/98 dark:bg-card/98 backdrop-blur-md shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] border-b border-gray-200/50 dark:border-border/50'
-            : 'bg-white dark:bg-card shadow-none border-b border-transparent'
+            ? 'bg-white/98 dark:bg-card/98 backdrop-blur-xl shadow-[0_8px_30px_-12px_rgba(0,0,0,0.15)] border-b border-gray-100/80 dark:border-border/50'
+            : 'bg-white dark:bg-card shadow-sm border-b border-gray-100/50'
         }`}
       >
         <div className="container-custom">
-          <div className="flex items-center justify-between h-[70px]">
+          <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3 group">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-600 to-blue-600 flex items-center justify-center shadow-lg shadow-indigo-500/25 group-hover:shadow-indigo-500/40 transition-all duration-300">
-                <span className="text-white font-bold text-xl">S</span>
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-600 via-purple-600 to-blue-600 flex items-center justify-center shadow-xl shadow-indigo-500/30 group-hover:shadow-indigo-500/50 transition-all duration-300 group-hover:scale-105">
+                <span className="text-white font-bold text-2xl">S</span>
               </div>
               <div className="flex flex-col">
-                <span className="text-lg font-bold text-gray-900 dark:text-foreground leading-tight tracking-tight">
+                <span className="text-xl font-bold text-gray-900 dark:text-foreground leading-tight tracking-tight">
                   SOFTURECS AI LABS
                 </span>
-                <span className="text-[11px] font-medium text-gray-500 dark:text-muted-foreground leading-none tracking-wide">
+                <span className="text-xs font-medium text-gray-500 dark:text-muted-foreground leading-none tracking-wide">
                   AI • Software • Digital Transformation
                 </span>
               </div>
