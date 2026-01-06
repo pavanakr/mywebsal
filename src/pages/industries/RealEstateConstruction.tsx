@@ -1,5 +1,6 @@
 import { Building2, MapPin, Camera, BarChart, Key, HardHat } from 'lucide-react';
 import { IndustryDetailPage } from '@/components/industries/IndustryDetailPage';
+import heroRealestateImage from '@/assets/hero-realestate.png';
 
 const RealEstateConstruction = () => {
   return (
@@ -9,6 +10,7 @@ const RealEstateConstruction = () => {
       name="Real Estate & Construction"
       tagline="PropTech & Construction Innovation"
       description="We build cutting-edge property technology and construction management solutions that transform how real estate is bought, sold, managed, and how projects are executed."
+      heroImage={heroRealestateImage}
       stats={[
         { value: "50K+", label: "Properties Listed" },
         { value: "35%", label: "Faster Sales" },

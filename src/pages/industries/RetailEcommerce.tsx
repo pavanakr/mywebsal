@@ -1,5 +1,6 @@
 import { ShoppingCart, Package, BarChart, CreditCard, Users, Truck } from 'lucide-react';
 import { IndustryDetailPage } from '@/components/industries/IndustryDetailPage';
+import heroRetailImage from '@/assets/hero-retail.png';
 
 const RetailEcommerce = () => {
   return (
@@ -9,6 +10,7 @@ const RetailEcommerce = () => {
       name="Retail & E-commerce"
       tagline="Digital Commerce Excellence"
       description="We build powerful e-commerce solutions that boost online sales, enhance customer experience, and streamline retail operations across all channels."
+      heroImage={heroRetailImage}
       stats={[
         { value: "$500M+", label: "Transaction Volume" },
         { value: "40%", label: "Conversion Increase" },

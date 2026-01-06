@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
+import { SEO } from '@/components/SEO';
 import { ArrowRight, CheckCircle, ExternalLink, AlertTriangle, Lightbulb } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { LucideIcon } from 'lucide-react';
@@ -35,6 +36,8 @@ interface IndustryDetailProps {
   capabilities: string[];
   caseStudies: CaseStudy[];
   stats: { value: string; label: string }[];
+  heroImage?: string;
+  seoKeywords?: string;
 }
 
 export function IndustryDetailPage({
@@ -48,9 +51,18 @@ export function IndustryDetailPage({
   capabilities,
   caseStudies,
   stats,
+  heroImage,
+  seoKeywords,
 }: IndustryDetailProps) {
+  const defaultKeywords = `${name.toLowerCase()} technology, ${name.toLowerCase()} software, digital transformation, enterprise solutions, ${capabilities.slice(0, 4).join(', ').toLowerCase()}`;
+  
   return (
     <Layout>
+      <SEO
+        title={`${name} Industry Solutions`}
+        description={description}
+        keywords={seoKeywords || defaultKeywords}
+      />
       {/* Hero Section */}
       <section className="pt-40 pb-24 md:pt-48 md:pb-32 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 relative overflow-hidden min-h-[60vh] flex items-center">
         {/* Enhanced Background Effects */}

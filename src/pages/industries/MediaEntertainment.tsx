@@ -1,5 +1,6 @@
 import { Film, Play, Users, BarChart, Tv, Music } from 'lucide-react';
 import { IndustryDetailPage } from '@/components/industries/IndustryDetailPage';
+import heroMediaImage from '@/assets/hero-media.png';
 
 const MediaEntertainment = () => {
   return (
@@ -9,6 +10,7 @@ const MediaEntertainment = () => {
       name="Media & Entertainment"
       tagline="Digital Content Excellence"
       description="We build engaging media platforms for content streaming, sharing, and monetization that captivate audiences and drive revenue growth."
+      heroImage={heroMediaImage}
       stats={[
         { value: "100M+", label: "Monthly Streams" },
         { value: "50+", label: "Media Clients" },
