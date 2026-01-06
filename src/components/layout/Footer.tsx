@@ -167,7 +167,11 @@ export function Footer() {
               </p>
 
               {/* Policy Links */}
-              <div className="flex items-center gap-2 text-sm">
+              <div className="flex items-center gap-2 text-sm flex-wrap justify-center md:justify-end">
+                <Link to="/sitemap" className="text-gray-600 hover:text-blue-600 transition-colors">
+                  Sitemap
+                </Link>
+                <span className="text-gray-400">|</span>
                 <Link to="/refund-policy" className="text-gray-600 hover:text-blue-600 transition-colors">
                   Refund Policy
                 </Link>
