@@ -213,6 +213,7 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [activeServiceCategory, setActiveServiceCategory] = useState<string | null>(null);
   const location = useLocation();
   const { theme, toggleTheme } = useTheme();
 
@@ -400,11 +401,11 @@ export function Header() {
               </AnimatePresence>
             </div>
 
-            {/* Services Dropdown */}
+            {/* Services Mega Menu */}
             <div
               className="relative"
               onMouseEnter={() => setActiveDropdown('services')}
-              onMouseLeave={() => setActiveDropdown(null)}
+              onMouseLeave={() => { setActiveDropdown(null); setActiveServiceCategory(null); }}
             >
               <button
                 className={`px-4 py-2 text-sm font-medium transition-colors rounded-lg hover:bg-accent/10 flex items-center gap-1 ${
@@ -422,22 +423,131 @@ export function Header() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 pt-2"
+                    className="absolute top-full left-1/2 -translate-x-1/2 pt-2"
                   >
-                    <div className="bg-card rounded-xl shadow-elevated border border-border/50 p-4 min-w-[320px]">
-                      <div className="grid gap-1">
-                        {services.map((service) => (
-                          <Link
-                            key={service.href}
-                            to={service.href}
-                            className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-secondary transition-colors group"
-                          >
-                            <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-                              <service.icon className="w-5 h-5 text-accent" />
-                            </div>
-                            <span className="text-sm font-medium text-foreground">{service.name}</span>
-                          </Link>
-                        ))}
+                    <div className="bg-card rounded-xl shadow-elevated border border-border/50 overflow-hidden flex" style={{ width: '950px' }}>
+                      {/* Left Panel - Service Categories (2 columns) */}
+                      <div className="flex-1 p-6">
+                        <div className="grid grid-cols-2 gap-x-6 gap-y-2">
+                          {serviceCategories.map((category, index) => {
+                            const iconColors = [
+                              { from: '#8b5cf6', to: '#a855f7' },
+                              { from: '#ec4899', to: '#f43f5e' },
+                              { from: '#3b82f6', to: '#06b6d4' },
+                              { from: '#10b981', to: '#14b8a6' },
+                              { from: '#0ea5e9', to: '#3b82f6' },
+                              { from: '#6366f1', to: '#8b5cf6' },
+                              { from: '#f59e0b', to: '#f97316' },
+                              { from: '#ef4444', to: '#ec4899' },
+                            ];
+                            const colors = iconColors[index] || iconColors[0];
+                            
+                            return (
+                              <motion.div
+                                key={category.href}
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: index * 0.03 }}
+                                onMouseEnter={() => setActiveServiceCategory(category.name)}
+                              >
+                                <Link
+                                  to={category.href}
+                                  className={`flex items-start gap-3 px-3 py-3 rounded-xl transition-all duration-300 group ${
+                                    activeServiceCategory === category.name ? 'bg-secondary/80' : 'hover:bg-secondary/50'
+                                  }`}
+                                >
+                                  <motion.div 
+                                    className={`w-11 h-11 rounded-xl bg-gradient-to-br ${category.bgGradient} flex items-center justify-center shrink-0 shadow-sm group-hover:shadow-lg transition-all duration-300 relative overflow-hidden`}
+                                    whileHover={{ scale: 1.08, rotate: 3 }}
+                                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                                  >
+                                    <svg width="0" height="0" className="absolute">
+                                      <defs>
+                                        <linearGradient id={`service-icon-${index}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                                          <stop offset="0%" stopColor={colors.from} />
+                                          <stop offset="100%" stopColor={colors.to} />
+                                        </linearGradient>
+                                      </defs>
+                                    </svg>
+                                    <category.icon 
+                                      className="w-5 h-5" 
+                                      style={{ stroke: `url(#service-icon-${index})` }}
+                                    />
+                                  </motion.div>
+                                  <div className="pt-0.5 flex-1">
+                                    <span className="text-sm font-semibold text-foreground block group-hover:text-accent transition-colors duration-200">{category.name}</span>
+                                    <span className="text-xs text-muted-foreground line-clamp-2 leading-relaxed">{category.description}</span>
+                                  </div>
+                                </Link>
+                              </motion.div>
+                            );
+                          })}
+                        </div>
+                      </div>
+
+                      {/* Right Panel - Sub-services */}
+                      <div className="w-[280px] bg-gradient-to-br from-primary via-primary to-primary/95 p-6">
+                        <AnimatePresence mode="wait">
+                          {activeServiceCategory && (
+                            <motion.div
+                              key={activeServiceCategory}
+                              initial={{ opacity: 0, x: 20 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              exit={{ opacity: 0, x: -20 }}
+                              transition={{ duration: 0.2 }}
+                            >
+                              <h3 className="text-lg font-bold text-amber-400 mb-5">{activeServiceCategory}</h3>
+                              <div className="space-y-2">
+                                {serviceCategories
+                                  .find(cat => cat.name === activeServiceCategory)
+                                  ?.subServices.map((sub, idx) => (
+                                    <motion.div
+                                      key={sub.href + idx}
+                                      initial={{ opacity: 0, x: 10 }}
+                                      animate={{ opacity: 1, x: 0 }}
+                                      transition={{ delay: idx * 0.05 }}
+                                    >
+                                      <Link
+                                        to={sub.href}
+                                        className="flex items-center gap-2 text-primary-foreground hover:text-amber-400 transition-colors group py-1.5"
+                                      >
+                                        <ChevronRight className="w-4 h-4 text-amber-400 group-hover:translate-x-1 transition-transform" />
+                                        <ChevronRight className="w-4 h-4 text-amber-400 -ml-3 group-hover:translate-x-1 transition-transform" />
+                                        <span className="text-sm font-medium">{sub.name}</span>
+                                      </Link>
+                                    </motion.div>
+                                  ))}
+                              </div>
+                            </motion.div>
+                          )}
+                          {!activeServiceCategory && (
+                            <motion.div
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: 1 }}
+                            >
+                              <h3 className="text-lg font-bold text-amber-400 mb-5">Artificial Intelligence</h3>
+                              <div className="space-y-2">
+                                {serviceCategories[0].subServices.map((sub, idx) => (
+                                  <motion.div
+                                    key={sub.href + idx}
+                                    initial={{ opacity: 0, x: 10 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: idx * 0.05 }}
+                                  >
+                                    <Link
+                                      to={sub.href}
+                                      className="flex items-center gap-2 text-primary-foreground hover:text-amber-400 transition-colors group py-1.5"
+                                    >
+                                      <ChevronRight className="w-4 h-4 text-amber-400 group-hover:translate-x-1 transition-transform" />
+                                      <ChevronRight className="w-4 h-4 text-amber-400 -ml-3 group-hover:translate-x-1 transition-transform" />
+                                      <span className="text-sm font-medium">{sub.name}</span>
+                                    </Link>
+                                  </motion.div>
+                                ))}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
                       </div>
                     </div>
                   </motion.div>
@@ -582,13 +692,13 @@ export function Header() {
               <div className="px-4 py-2">
                 <span className="text-sm font-semibold text-muted-foreground">Services</span>
               </div>
-              {services.map((service) => (
+              {serviceCategories.map((category) => (
                 <Link 
-                  key={service.href}
-                  to={service.href} 
+                  key={category.href}
+                  to={category.href} 
                   className="block px-8 py-2 text-foreground font-medium rounded-lg hover:bg-secondary"
                 >
-                  {service.name}
+                  {category.name}
                 </Link>
               ))}
 

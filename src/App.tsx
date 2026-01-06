@@ -20,6 +20,16 @@ import CloudDevOps from "./pages/services/CloudDevOps";
 import AIAutomation from "./pages/services/AIAutomation";
 import SaaSDevelopment from "./pages/services/SaaSDevelopment";
 import ApplicationModernization from "./pages/services/ApplicationModernization";
+import BigDataAnalytics from "./pages/services/BigDataAnalytics";
+import StaffAugmentation from "./pages/services/StaffAugmentation";
+import OnDemandSolutions from "./pages/services/OnDemandSolutions";
+import AIDevelopment from "./pages/services/AIDevelopment";
+import AIOps from "./pages/services/AIOps";
+import MachineLearning from "./pages/services/MachineLearning";
+import GenerativeAI from "./pages/services/GenerativeAI";
+import AIChatbot from "./pages/services/AIChatbot";
+import DeepLearning from "./pages/services/DeepLearning";
+import LLMDevelopment from "./pages/services/LLMDevelopment";
 // Industry pages
 import Healthcare from "./pages/industries/Healthcare";
 import Fintech from "./pages/industries/Fintech";
@@ -79,6 +89,16 @@ const App = () => (
             <Route path="/services/ai-automation" element={<AIAutomation />} />
             <Route path="/services/saas" element={<SaaSDevelopment />} />
             <Route path="/services/application-modernization" element={<ApplicationModernization />} />
+            <Route path="/services/big-data" element={<BigDataAnalytics />} />
+            <Route path="/services/staff-augmentation" element={<StaffAugmentation />} />
+            <Route path="/services/on-demand" element={<OnDemandSolutions />} />
+            <Route path="/services/ai-development" element={<AIDevelopment />} />
+            <Route path="/services/aiops" element={<AIOps />} />
+            <Route path="/services/machine-learning" element={<MachineLearning />} />
+            <Route path="/services/generative-ai" element={<GenerativeAI />} />
+            <Route path="/services/ai-chatbot" element={<AIChatbot />} />
+            <Route path="/services/deep-learning" element={<DeepLearning />} />
+            <Route path="/services/llm-development" element={<LLMDevelopment />} />
             {/* Industries */}
             <Route path="/industries/healthcare" element={<Healthcare />} />
             <Route path="/industries/fintech" element={<Fintech />} />
