@@ -331,13 +331,38 @@ export function Header() {
   }, [location]);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-card/95 backdrop-blur-xl shadow-soft border-b border-border/50'
-          : 'bg-transparent'
-      }`}
-    >
+    <>
+      {/* Announcement Bar */}
+      <div className="bg-gradient-to-r from-primary via-navy to-primary text-primary-foreground fixed top-0 left-0 right-0 z-[60]">
+        <div className="container-custom">
+          <div className="flex items-center justify-between py-2">
+            <div className="flex items-center gap-2 text-sm">
+              <span className="hidden sm:inline text-primary-foreground/90">
+                Share Your Project Idea & Receive App Development Quote Instantly!
+              </span>
+              <span className="sm:hidden text-primary-foreground/90 text-xs">
+                Get Your Free Quote!
+              </span>
+            </div>
+            <Link to="/contact">
+              <Button 
+                size="sm" 
+                className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-xs px-4 py-1 h-auto rounded-full"
+              >
+                Book a Free Consultation
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <header
+        className={`fixed top-10 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled
+            ? 'bg-card/95 backdrop-blur-xl shadow-soft border-b border-border/50'
+            : 'bg-transparent'
+        }`}
+      >
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -885,5 +910,6 @@ export function Header() {
         )}
       </AnimatePresence>
     </header>
+    </>
   );
 }
