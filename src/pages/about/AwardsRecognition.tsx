@@ -1,8 +1,11 @@
 import { Layout } from '@/components/layout/Layout';
+import { PageHero } from '@/components/layout/PageHero';
+import { SEO } from '@/components/SEO';
 import { motion } from 'framer-motion';
 import { Trophy, Award, Star, Medal, ArrowRight, Shield, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import heroAwards from '@/assets/hero-awards.png';
 
 export default function AwardsRecognition() {
   const awards = [
@@ -55,23 +58,31 @@ export default function AwardsRecognition() {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-primary via-primary/95 to-primary/90">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="max-w-3xl"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-              Awards & Recognition
-            </h1>
-            <p className="text-xl text-primary-foreground/80">
-              Recognized globally for innovation, quality, and client-centric solutions.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <SEO 
+        title="Awards & Recognition"
+        description="Explore Softurecs AI Labs' industry awards, certifications, and global recognitions. 25+ awards for excellence in AI, cloud services, and digital transformation."
+        keywords="software awards, IT company recognition, AI solutions awards, Clutch top company, ISO certified software company"
+      />
+      
+      <PageHero
+        title="Awards & Recognition"
+        description="Recognized globally for innovation, quality, and client-centric solutions. Our achievements reflect our commitment to excellence."
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'About', href: '/about' },
+          { label: 'Awards & Recognition' }
+        ]}
+        icon={Trophy}
+        iconColor="from-yellow-500 to-amber-600"
+        badge="Excellence"
+        image={heroAwards}
+        imageAlt="Awards and recognition trophies"
+        stats={[
+          { value: '25+', label: 'Industry Awards' },
+          { value: '10+', label: 'Certifications' },
+          { value: 'Top 10', label: 'Global Ranking' }
+        ]}
+      />
 
       {/* Overview */}
       <section className="py-20">

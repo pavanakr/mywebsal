@@ -1,5 +1,6 @@
 import { Layout } from '@/components/layout/Layout';
 import { PageHero } from '@/components/layout/PageHero';
+import { SEO } from '@/components/SEO';
 import { motion } from 'framer-motion';
 import { Target, Eye, Heart, Shield, Users, Lightbulb, ArrowRight, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -8,6 +9,12 @@ import { Link } from 'react-router-dom';
 export default function CompanyProfile() {
   return (
     <Layout>
+      <SEO 
+        title="Company Profile"
+        description="Learn about Softurecs AI Labs - a leading enterprise software development company in Hyderabad, India. 15+ years experience, 250+ engineers, 1500+ projects delivered."
+        keywords="Softurecs AI Labs, software development company, IT company Hyderabad, enterprise software, AI solutions company"
+      />
+      
       <PageHero
         title="About Softurecs AI Labs"
         description="Discover our journey, expertise, and unwavering commitment to digital excellence. We transform ideas into reality through innovative technology solutions."

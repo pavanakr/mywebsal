@@ -1,8 +1,11 @@
 import { Layout } from '@/components/layout/Layout';
+import { PageHero } from '@/components/layout/PageHero';
+import { SEO } from '@/components/SEO';
 import { motion } from 'framer-motion';
-import { Globe, Handshake, Network, Rocket, ArrowRight, Building, Users } from 'lucide-react';
+import { Globe, Network, Rocket, ArrowRight, Building, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import heroAlliances from '@/assets/hero-alliances.png';
 
 export default function Alliances() {
   const alliances = [
@@ -57,23 +60,31 @@ export default function Alliances() {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-primary via-primary/95 to-primary/90">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="max-w-3xl"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-              Strategic Alliances
-            </h1>
-            <p className="text-xl text-primary-foreground/80">
-              Strategic alliances that enhance our capabilities and global reach.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <SEO 
+        title="Strategic Alliances"
+        description="Explore Softurecs AI Labs' strategic alliances with AWS, Microsoft Azure, Google Cloud, Salesforce, and global technology leaders across 15+ countries."
+        keywords="strategic alliances, AWS advanced partner, Microsoft Gold partner, technology alliances, global IT partnerships"
+      />
+      
+      <PageHero
+        title="Strategic Alliances"
+        description="Strategic alliances that enhance our capabilities and global reach. Partnering with world-class technology leaders to deliver excellence."
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'About', href: '/about' },
+          { label: 'Strategic Alliances' }
+        ]}
+        icon={Network}
+        iconColor="from-violet-500 to-purple-600"
+        badge="Global Network"
+        image={heroAlliances}
+        imageAlt="Global strategic alliances network"
+        stats={[
+          { value: '20+', label: 'Strategic Alliances' },
+          { value: '15+', label: 'Countries' },
+          { value: '50+', label: 'Certifications' }
+        ]}
+      />
 
       {/* Alliance Overview */}
       <section className="py-20">

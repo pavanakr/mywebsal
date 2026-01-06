@@ -1,5 +1,6 @@
 import { Layout } from '@/components/layout/Layout';
 import { PageHero } from '@/components/layout/PageHero';
+import { SEO } from '@/components/SEO';
 import { motion } from 'framer-motion';
 import { Linkedin, Twitter, ArrowRight, Quote, UsersRound } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -35,6 +36,12 @@ export default function Leadership() {
 
   return (
     <Layout>
+      <SEO 
+        title="Leadership Team"
+        description="Meet the visionary leadership team at Softurecs AI Labs led by Founder & CEO Pavan Kumar Naramala. 50+ years of combined experience in technology and innovation."
+        keywords="Softurecs leadership, Pavan Kumar Naramala, software company executives, IT leadership team"
+      />
+      
       <PageHero
         title="Our Leadership Team"
         description="Meet the visionary minds driving Softurecs' growth, innovation, and commitment to delivering exceptional technology solutions."
