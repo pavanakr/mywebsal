@@ -19,7 +19,11 @@ const industries = [
     bgGradient: 'from-orange-100 to-amber-100 dark:from-orange-900/40 dark:to-amber-900/40',
     iconColor: 'text-orange-600 dark:text-orange-400',
     category: 'Supply Chain',
-    solutions: ['On-demand logistics', 'Fleet management', 'Route optimization'],
+    solutions: [
+      { name: 'On-demand logistics', href: '/industries/solutions/on-demand-logistics' },
+      { name: 'Transportation automation', href: '/industries/solutions/transportation-automation' },
+      { name: 'Shipping management', href: '/industries/solutions/shipping-management' },
+    ],
   },
   {
     icon: Building2,
@@ -30,7 +34,11 @@ const industries = [
     bgGradient: 'from-blue-100 to-cyan-100 dark:from-blue-900/40 dark:to-cyan-900/40',
     iconColor: 'text-blue-600 dark:text-blue-400',
     category: 'Property',
-    solutions: ['Property listings', 'Construction tracking', 'Virtual tours'],
+    solutions: [
+      { name: 'Property listings', href: '/industries/solutions/property-management' },
+      { name: 'Construction management', href: '/industries/solutions/construction-management' },
+      { name: 'Virtual tours', href: '/industries/solutions/virtual-tour' },
+    ],
   },
   {
     icon: GraduationCap,
@@ -41,7 +49,11 @@ const industries = [
     bgGradient: 'from-pink-100 to-rose-100 dark:from-pink-900/40 dark:to-rose-900/40',
     iconColor: 'text-pink-600 dark:text-pink-400',
     category: 'EdTech',
-    solutions: ['LMS platforms', 'Virtual classrooms', 'Student portals'],
+    solutions: [
+      { name: 'LMS platforms', href: '/industries/solutions/lms-platform' },
+      { name: 'Virtual classrooms', href: '/industries/solutions/virtual-learning' },
+      { name: 'Student management', href: '/industries/solutions/student-management' },
+    ],
   },
   {
     icon: ShoppingCart,
@@ -52,7 +64,11 @@ const industries = [
     bgGradient: 'from-purple-100 to-violet-100 dark:from-purple-900/40 dark:to-violet-900/40',
     iconColor: 'text-purple-600 dark:text-purple-400',
     category: 'Commerce',
-    solutions: ['E-commerce platforms', 'Marketplaces', 'Inventory systems'],
+    solutions: [
+      { name: 'E-commerce platforms', href: '/industries/solutions/ecommerce-platform' },
+      { name: 'Marketplaces', href: '/industries/solutions/marketplace-development' },
+      { name: 'Inventory systems', href: '/industries/retail-ecommerce' },
+    ],
   },
   {
     icon: Heart,
@@ -63,7 +79,11 @@ const industries = [
     bgGradient: 'from-red-100 to-rose-100 dark:from-red-900/40 dark:to-rose-900/40',
     iconColor: 'text-red-600 dark:text-red-400',
     category: 'HealthTech',
-    solutions: ['Telemedicine', 'EHR systems', 'Patient engagement'],
+    solutions: [
+      { name: 'Telemedicine', href: '/industries/solutions/telemedicine-platform' },
+      { name: 'EHR systems', href: '/industries/solutions/electronic-health-records' },
+      { name: 'Patient engagement', href: '/industries/solutions/patient-engagement' },
+    ],
   },
   {
     icon: Landmark,
@@ -74,7 +94,11 @@ const industries = [
     bgGradient: 'from-emerald-100 to-teal-100 dark:from-emerald-900/40 dark:to-teal-900/40',
     iconColor: 'text-emerald-600 dark:text-emerald-400',
     category: 'FinTech',
-    solutions: ['Digital banking', 'Payment processing', 'Fraud detection'],
+    solutions: [
+      { name: 'Digital banking', href: '/industries/solutions/digital-banking' },
+      { name: 'Payment processing', href: '/industries/solutions/payment-processing' },
+      { name: 'Fraud detection', href: '/industries/solutions/fraud-detection' },
+    ],
   },
   {
     icon: Film,
@@ -85,7 +109,11 @@ const industries = [
     bgGradient: 'from-violet-100 to-purple-100 dark:from-violet-900/40 dark:to-purple-900/40',
     iconColor: 'text-violet-600 dark:text-violet-400',
     category: 'Media',
-    solutions: ['OTT platforms', 'Content management', 'Live streaming'],
+    solutions: [
+      { name: 'OTT platforms', href: '/industries/solutions/streaming-platform' },
+      { name: 'Content management', href: '/industries/solutions/content-management' },
+      { name: 'Live streaming', href: '/industries/solutions/live-streaming' },
+    ],
   },
   {
     icon: Plane,
@@ -96,7 +124,11 @@ const industries = [
     bgGradient: 'from-sky-100 to-blue-100 dark:from-sky-900/40 dark:to-blue-900/40',
     iconColor: 'text-sky-600 dark:text-sky-400',
     category: 'Travel',
-    solutions: ['Booking systems', 'Hotel management', 'Travel apps'],
+    solutions: [
+      { name: 'Booking systems', href: '/industries/solutions/travel-booking' },
+      { name: 'Hotel management', href: '/industries/solutions/hotel-management' },
+      { name: 'Travel apps', href: '/industries/solutions/travel-experience' },
+    ],
   },
 ];
 
@@ -111,7 +143,7 @@ const Industries = () => {
     return industries.filter(industry => {
       const matchesSearch = industry.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         industry.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        industry.solutions.some(s => s.toLowerCase().includes(searchQuery.toLowerCase()));
+        industry.solutions.some(s => s.name.toLowerCase().includes(searchQuery.toLowerCase()));
       const matchesCategory = selectedCategory === 'All' || industry.category === selectedCategory;
       return matchesSearch && matchesCategory;
     });
@@ -256,9 +288,14 @@ const Industries = () => {
                       </p>
                       <div className="flex flex-wrap gap-1.5 mb-4">
                         {industry.solutions.slice(0, 2).map((solution) => (
-                          <span key={solution} className="text-xs bg-accent/10 text-accent px-2 py-0.5 rounded">
-                            {solution}
-                          </span>
+                          <Link 
+                            key={solution.href} 
+                            to={solution.href}
+                            className="text-xs bg-accent/10 text-accent px-2 py-0.5 rounded hover:bg-accent/20 transition-colors"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            {solution.name}
+                          </Link>
                         ))}
                       </div>
                       <div className="flex items-center gap-2 text-accent text-sm font-medium group-hover:gap-3 transition-all">
@@ -308,9 +345,14 @@ const Industries = () => {
                         </p>
                         <div className="flex flex-wrap gap-2">
                           {industry.solutions.map((solution) => (
-                            <span key={solution} className="text-xs bg-accent/10 text-accent px-2 py-1 rounded">
-                              {solution}
-                            </span>
+                            <Link 
+                              key={solution.href} 
+                              to={solution.href}
+                              className="text-xs bg-accent/10 text-accent px-2 py-1 rounded hover:bg-accent/20 transition-colors"
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              {solution.name}
+                            </Link>
                           ))}
                         </div>
                       </div>

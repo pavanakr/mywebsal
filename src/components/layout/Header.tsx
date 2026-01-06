@@ -218,7 +218,7 @@ const industryCategories = [
     subIndustries: [
       { name: 'Property listing platforms', href: '/industries/solutions/property-management' },
       { name: 'Construction management systems', href: '/industries/solutions/construction-management' },
-      { name: 'Virtual tour technology', href: '/industries/real-estate-construction' },
+      { name: 'Virtual tour technology', href: '/industries/solutions/virtual-tour' },
     ]
   },
   { 
@@ -243,7 +243,7 @@ const industryCategories = [
     iconColor: 'text-purple-600 dark:text-purple-400',
     subIndustries: [
       { name: 'Custom e-commerce platforms', href: '/industries/solutions/ecommerce-platform' },
-      { name: 'Marketplace development', href: '/industries/retail-ecommerce' },
+      { name: 'Marketplace development', href: '/industries/solutions/marketplace-development' },
       { name: 'Inventory management systems', href: '/industries/retail-ecommerce' },
     ]
   },
