@@ -2,8 +2,10 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
 import { PageHero } from '@/components/layout/PageHero';
+import { SEO } from '@/components/SEO';
 import { Calendar, Clock, ArrowRight, User, BookOpen } from 'lucide-react';
 import { NewsletterSignup } from '@/components/blog/NewsletterSignup';
+import heroBlogImage from '@/assets/hero-blog.png';
 
 const featuredPost = {
   title: 'The Future of AI in Enterprise Software Development',
@@ -83,6 +85,11 @@ const posts = [
 const Blog = () => {
   return (
     <Layout>
+      <SEO
+        title="Tech Blog & Insights"
+        description="Expert insights on software development, AI, cloud computing, and digital transformation. Stay updated with the latest trends and best practices."
+        keywords="tech blog, software development insights, AI trends, cloud computing, digital transformation, best practices, technology articles"
+      />
       <PageHero
         title="Insights & Ideas from Our Team"
         description="Stay updated with the latest trends, best practices, and expert insights in software development, AI, cloud computing, and digital transformation."
@@ -94,7 +101,8 @@ const Blog = () => {
         icon={BookOpen}
         iconColor="from-purple-500 to-pink-600"
         badge="Knowledge Hub"
-        variant="centered"
+        image={heroBlogImage}
+        imageAlt="Tech blog and insights illustration"
         stats={[
           { value: '100+', label: 'Articles' },
           { value: '50K+', label: 'Monthly Readers' },
