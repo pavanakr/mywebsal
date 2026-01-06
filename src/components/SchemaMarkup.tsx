@@ -257,3 +257,131 @@ export const ArticleSchema = ({
     </Helmet>
   );
 };
+
+// LocalBusiness Schema - Use on local/city pages
+export const LocalBusinessSchema = ({
+  city,
+  region,
+  country = 'India',
+}: {
+  city: string;
+  region?: string;
+  country?: string;
+}) => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://softurecs.com/#localbusiness",
+    "name": "SOFTURECS AI LABS PRIVATE LIMITED",
+    "alternateName": "Softurecs AI Labs",
+    "description": `Leading AI & software development company serving ${city}. Custom software, mobile apps, cloud solutions & digital transformation services.`,
+    "url": "https://softurecs.com",
+    "logo": "https://softurecs.com/logo.png",
+    "image": "https://softurecs.com/og-image.jpg",
+    "telephone": "+91-7396080902",
+    "email": "info@softurecs.com",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "5th Floor, Trinity Corporate Building, KPHB",
+      "addressLocality": "Hyderabad",
+      "addressRegion": "Telangana",
+      "postalCode": "500085",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "17.4933",
+      "longitude": "78.3914"
+    },
+    "areaServed": [
+      { "@type": "City", "name": city },
+      { "@type": "State", "name": region || "Telangana" },
+      { "@type": "Country", "name": country }
+    ],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/company/softurecs",
+      "https://twitter.com/softurecs",
+      "https://www.facebook.com/softurecs"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Software Development Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Development" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mobile App Development" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Development" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cloud & DevOps" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Software" } }
+      ]
+    }
+  };
+
+  return (
+    <Helmet>
+      <script type="application/ld+json">
+        {JSON.stringify(schema)}
+      </script>
+    </Helmet>
+  );
+};
+
+// AggregateRating Schema - Use on homepage and about pages
+export const AggregateRatingSchema = () => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SOFTURECS AI LABS PRIVATE LIMITED",
+    "url": "https://softurecs.com",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "127",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  };
+
+  return (
+    <Helmet>
+      <script type="application/ld+json">
+        {JSON.stringify(schema)}
+      </script>
+    </Helmet>
+  );
+};
+
+// Hreflang Tags - Use on all pages for international SEO
+export const HreflangTags = ({ currentPath = '/' }: { currentPath?: string }) => {
+  const baseUrl = 'https://softurecs.com';
+  
+  const hreflangConfig = [
+    { lang: 'en', region: 'in', path: currentPath },
+    { lang: 'en', region: 'us', path: '/software-development-company-in-new-york' },
+    { lang: 'en', region: 'gb', path: '/software-development-company-in-london' },
+    { lang: 'en', region: 'ae', path: '/software-development-company-in-dubai' },
+    { lang: 'en', region: 'sg', path: '/software-development-company-in-singapore' },
+  ];
+
+  return (
+    <Helmet>
+      {hreflangConfig.map(({ lang, region, path }) => (
+        <link
+          key={`${lang}-${region}`}
+          rel="alternate"
+          hrefLang={`${lang}-${region}`}
+          href={`${baseUrl}${path}`}
+        />
+      ))}
+      <link rel="alternate" hrefLang="x-default" href={`${baseUrl}/`} />
+    </Helmet>
+  );
+};
