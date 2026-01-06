@@ -438,10 +438,10 @@ export function Header() {
 
       {/* Main Navigation Header */}
       <header
-        className={`fixed top-[44px] left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-[44px] left-0 right-0 z-50 transition-all duration-500 ease-out ${
           isScrolled
-            ? 'bg-white dark:bg-card shadow-lg border-b border-gray-100 dark:border-border/50'
-            : 'bg-white dark:bg-card shadow-sm'
+            ? 'bg-white/98 dark:bg-card/98 backdrop-blur-md shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] border-b border-gray-200/50 dark:border-border/50'
+            : 'bg-white dark:bg-card shadow-none border-b border-transparent'
         }`}
       >
         <div className="container-custom">
@@ -463,27 +463,39 @@ export function Header() {
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-0.5">
-              {/* Start AI Journey - Featured Link */}
-              <Link
-                to="/services/ai-development"
-                className="px-4 py-2 text-sm font-semibold text-gray-800 dark:text-foreground transition-all rounded-lg hover:text-indigo-600 dark:hover:text-accent relative group"
-              >
-                Start AI Journey
-                <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-indigo-600 dark:bg-accent scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-              </Link>
+            {/* Start AI Journey - Featured Link */}
+            <Link
+              to="/services/ai-development"
+              className={`px-4 py-2 text-sm font-semibold transition-all rounded-lg relative group ${
+                location.pathname === '/services/ai-development'
+                  ? 'text-indigo-600 dark:text-accent'
+                  : 'text-gray-800 dark:text-foreground hover:text-indigo-600 dark:hover:text-accent'
+              }`}
+            >
+              Start AI Journey
+              <span className={`absolute bottom-0 left-4 right-4 h-0.5 bg-indigo-600 dark:bg-accent transition-transform origin-left ${
+                location.pathname === '/services/ai-development' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+              }`} />
+            </Link>
 
-              {/* About Softurecs Mega Menu */}
-              <div
-                className="relative"
-                onMouseEnter={() => setActiveDropdown('about')}
-                onMouseLeave={() => setActiveDropdown(null)}
+            {/* About Softurecs Mega Menu */}
+            <div
+              className="relative"
+              onMouseEnter={() => setActiveDropdown('about')}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
+              <button
+                className={`px-4 py-2 text-sm font-medium transition-all rounded-lg flex items-center gap-1 relative group ${
+                  location.pathname.startsWith('/about')
+                    ? 'text-indigo-600 dark:text-accent'
+                    : 'text-gray-700 dark:text-foreground hover:text-indigo-600 dark:hover:text-accent'
+                }`}
               >
-                <button
-                  className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-foreground transition-all rounded-lg hover:text-indigo-600 dark:hover:text-accent flex items-center gap-1 relative group"
-                >
-                  About Softurecs
-                  <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
-                  <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-indigo-600 dark:bg-accent scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                About Softurecs
+                <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === 'about' ? 'rotate-180' : 'group-hover:rotate-180'}`} />
+                <span className={`absolute bottom-0 left-4 right-4 h-0.5 bg-indigo-600 dark:bg-accent transition-transform origin-left ${
+                  location.pathname.startsWith('/about') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                }`} />
                 </button>
 
                 <AnimatePresence>
@@ -604,18 +616,24 @@ export function Header() {
                 </AnimatePresence>
               </div>
 
-              {/* Services Mega Menu */}
-              <div
-                className="relative"
-                onMouseEnter={() => setActiveDropdown('services')}
-                onMouseLeave={() => { setActiveDropdown(null); setActiveServiceCategory(null); }}
+            {/* Services Mega Menu */}
+            <div
+              className="relative"
+              onMouseEnter={() => setActiveDropdown('services')}
+              onMouseLeave={() => { setActiveDropdown(null); setActiveServiceCategory(null); }}
+            >
+              <button
+                className={`px-4 py-2 text-sm font-medium transition-all rounded-lg flex items-center gap-1 relative group ${
+                  location.pathname.startsWith('/services')
+                    ? 'text-indigo-600 dark:text-accent'
+                    : 'text-gray-700 dark:text-foreground hover:text-indigo-600 dark:hover:text-accent'
+                }`}
               >
-                <button
-                  className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-foreground transition-all rounded-lg hover:text-indigo-600 dark:hover:text-accent flex items-center gap-1 relative group"
-                >
-                  Services
-                  <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
-                  <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-indigo-600 dark:bg-accent scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                Services
+                <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === 'services' ? 'rotate-180' : 'group-hover:rotate-180'}`} />
+                <span className={`absolute bottom-0 left-4 right-4 h-0.5 bg-indigo-600 dark:bg-accent transition-transform origin-left ${
+                  location.pathname.startsWith('/services') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                }`} />
                 </button>
 
                 <AnimatePresence>
@@ -723,18 +741,24 @@ export function Header() {
                 </AnimatePresence>
               </div>
 
-              {/* Industries Mega Menu */}
-              <div
-                className="relative"
-                onMouseEnter={() => setActiveDropdown('industries')}
-                onMouseLeave={() => { setActiveDropdown(null); setActiveIndustryCategory(null); }}
+            {/* Industries Mega Menu */}
+            <div
+              className="relative"
+              onMouseEnter={() => setActiveDropdown('industries')}
+              onMouseLeave={() => { setActiveDropdown(null); setActiveIndustryCategory(null); }}
+            >
+              <button
+                className={`px-4 py-2 text-sm font-medium transition-all rounded-lg flex items-center gap-1 relative group ${
+                  location.pathname.startsWith('/industries')
+                    ? 'text-indigo-600 dark:text-accent'
+                    : 'text-gray-700 dark:text-foreground hover:text-indigo-600 dark:hover:text-accent'
+                }`}
               >
-                <button
-                  className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-foreground transition-all rounded-lg hover:text-indigo-600 dark:hover:text-accent flex items-center gap-1 relative group"
-                >
-                  Industries
-                  <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
-                  <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-indigo-600 dark:bg-accent scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                Industries
+                <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === 'industries' ? 'rotate-180' : 'group-hover:rotate-180'}`} />
+                <span className={`absolute bottom-0 left-4 right-4 h-0.5 bg-indigo-600 dark:bg-accent transition-transform origin-left ${
+                  location.pathname.startsWith('/industries') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                }`} />
                 </button>
 
                 <AnimatePresence>
@@ -831,18 +855,24 @@ export function Header() {
                 </AnimatePresence>
               </div>
 
-              {/* Softurecs Insights Mega Menu */}
-              <div
-                className="relative"
-                onMouseEnter={() => setActiveDropdown('insights')}
-                onMouseLeave={() => setActiveDropdown(null)}
+            {/* Softurecs Insights Mega Menu */}
+            <div
+              className="relative"
+              onMouseEnter={() => setActiveDropdown('insights')}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
+              <button
+                className={`px-4 py-2 text-sm font-medium transition-all rounded-lg flex items-center gap-1 relative group ${
+                  location.pathname.startsWith('/insights')
+                    ? 'text-indigo-600 dark:text-accent'
+                    : 'text-gray-700 dark:text-foreground hover:text-indigo-600 dark:hover:text-accent'
+                }`}
               >
-                <button
-                  className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-foreground transition-all rounded-lg hover:text-indigo-600 dark:hover:text-accent flex items-center gap-1 relative group"
-                >
-                  Softurecs Insights
-                  <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
-                  <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-indigo-600 dark:bg-accent scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                Softurecs Insights
+                <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === 'insights' ? 'rotate-180' : 'group-hover:rotate-180'}`} />
+                <span className={`absolute bottom-0 left-4 right-4 h-0.5 bg-indigo-600 dark:bg-accent transition-transform origin-left ${
+                  location.pathname.startsWith('/insights') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                }`} />
                 </button>
 
                 <AnimatePresence>
