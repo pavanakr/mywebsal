@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 
 const technologies = [
   { name: 'React', category: 'Frontend' },
@@ -27,36 +28,59 @@ const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.03 },
+    transition: { staggerChildren: 0.05 },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
+  hidden: { opacity: 0, scale: 0.8, y: 20 },
+  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.4 } },
 };
 
 export function TechStackSection() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+  
+  const y = useTransform(scrollYProgress, [0, 0.5], [100, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
+
   return (
-    <section className="section-padding bg-background">
+    <section ref={ref} className="section-padding bg-background overflow-hidden">
       <div className="container-custom">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          style={{ y, opacity }}
           className="text-center max-w-3xl mx-auto mb-12"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
+          <motion.span
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4"
+          >
             Technology Stack
-          </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6"
+          >
             Built with Best-in-Class Technologies
-          </h2>
-          <p className="text-lg text-muted-foreground">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-lg text-muted-foreground"
+          >
             We leverage the most advanced tools and frameworks to deliver solutions that are scalable, secure, and future-proof.
-          </p>
+          </motion.p>
         </motion.div>
 
         {/* Tech Grid */}
@@ -64,14 +88,19 @@ export function TechStackSection() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
           className="flex flex-wrap justify-center gap-3"
         >
           {technologies.map((tech) => (
             <motion.div
               key={tech.name}
               variants={itemVariants}
-              className="group px-5 py-3 bg-card rounded-xl border border-border/50 hover:border-accent/50 hover:shadow-soft transition-all cursor-pointer"
+              whileHover={{ 
+                scale: 1.08, 
+                y: -5,
+                boxShadow: '0 10px 30px -10px hsl(var(--accent) / 0.3)'
+              }}
+              className="group px-5 py-3 bg-card rounded-xl border border-border/50 hover:border-accent/50 transition-all cursor-pointer"
             >
               <span className="text-sm font-medium text-foreground group-hover:text-accent transition-colors">
                 {tech.name}
