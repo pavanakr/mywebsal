@@ -1,11 +1,13 @@
-import { motion } from 'framer-motion';
+import { useState, useMemo } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
 import { 
   Truck, Building2, GraduationCap, ShoppingCart, Heart, Landmark, 
-  Film, Plane, ArrowRight, CheckCircle 
+  Film, Plane, ArrowRight, CheckCircle, Search, Filter, Grid3X3, List
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 
 const industries = [
   {
@@ -16,6 +18,8 @@ const industries = [
     gradient: 'from-orange-500 to-orange-600',
     bgGradient: 'from-orange-100 to-amber-100 dark:from-orange-900/40 dark:to-amber-900/40',
     iconColor: 'text-orange-600 dark:text-orange-400',
+    category: 'Supply Chain',
+    solutions: ['On-demand logistics', 'Fleet management', 'Route optimization'],
   },
   {
     icon: Building2,
@@ -25,6 +29,8 @@ const industries = [
     gradient: 'from-blue-500 to-blue-600',
     bgGradient: 'from-blue-100 to-cyan-100 dark:from-blue-900/40 dark:to-cyan-900/40',
     iconColor: 'text-blue-600 dark:text-blue-400',
+    category: 'Property',
+    solutions: ['Property listings', 'Construction tracking', 'Virtual tours'],
   },
   {
     icon: GraduationCap,
@@ -34,6 +40,8 @@ const industries = [
     gradient: 'from-pink-500 to-pink-600',
     bgGradient: 'from-pink-100 to-rose-100 dark:from-pink-900/40 dark:to-rose-900/40',
     iconColor: 'text-pink-600 dark:text-pink-400',
+    category: 'EdTech',
+    solutions: ['LMS platforms', 'Virtual classrooms', 'Student portals'],
   },
   {
     icon: ShoppingCart,
@@ -43,6 +51,8 @@ const industries = [
     gradient: 'from-purple-500 to-purple-600',
     bgGradient: 'from-purple-100 to-violet-100 dark:from-purple-900/40 dark:to-violet-900/40',
     iconColor: 'text-purple-600 dark:text-purple-400',
+    category: 'Commerce',
+    solutions: ['E-commerce platforms', 'Marketplaces', 'Inventory systems'],
   },
   {
     icon: Heart,
@@ -52,6 +62,8 @@ const industries = [
     gradient: 'from-red-500 to-red-600',
     bgGradient: 'from-red-100 to-rose-100 dark:from-red-900/40 dark:to-rose-900/40',
     iconColor: 'text-red-600 dark:text-red-400',
+    category: 'HealthTech',
+    solutions: ['Telemedicine', 'EHR systems', 'Patient engagement'],
   },
   {
     icon: Landmark,
@@ -61,6 +73,8 @@ const industries = [
     gradient: 'from-emerald-500 to-emerald-600',
     bgGradient: 'from-emerald-100 to-teal-100 dark:from-emerald-900/40 dark:to-teal-900/40',
     iconColor: 'text-emerald-600 dark:text-emerald-400',
+    category: 'FinTech',
+    solutions: ['Digital banking', 'Payment processing', 'Fraud detection'],
   },
   {
     icon: Film,
@@ -70,6 +84,8 @@ const industries = [
     gradient: 'from-violet-500 to-violet-600',
     bgGradient: 'from-violet-100 to-purple-100 dark:from-violet-900/40 dark:to-purple-900/40',
     iconColor: 'text-violet-600 dark:text-violet-400',
+    category: 'Media',
+    solutions: ['OTT platforms', 'Content management', 'Live streaming'],
   },
   {
     icon: Plane,
@@ -79,14 +95,32 @@ const industries = [
     gradient: 'from-sky-500 to-sky-600',
     bgGradient: 'from-sky-100 to-blue-100 dark:from-sky-900/40 dark:to-blue-900/40',
     iconColor: 'text-sky-600 dark:text-sky-400',
+    category: 'Travel',
+    solutions: ['Booking systems', 'Hotel management', 'Travel apps'],
   },
 ];
 
+const categories = ['All', 'Supply Chain', 'Property', 'EdTech', 'Commerce', 'HealthTech', 'FinTech', 'Media', 'Travel'];
+
 const Industries = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+
+  const filteredIndustries = useMemo(() => {
+    return industries.filter(industry => {
+      const matchesSearch = industry.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        industry.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        industry.solutions.some(s => s.toLowerCase().includes(searchQuery.toLowerCase()));
+      const matchesCategory = selectedCategory === 'All' || industry.category === selectedCategory;
+      return matchesSearch && matchesCategory;
+    });
+  }, [searchQuery, selectedCategory]);
+
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-primary via-navy to-navy-light relative overflow-hidden">
+      <section className="pt-32 pb-16 bg-gradient-to-br from-primary via-navy to-navy-light relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-20 right-20 w-72 h-72 bg-accent/20 rounded-full blur-3xl" />
           <div className="absolute bottom-10 left-10 w-96 h-96 bg-cyan-light/10 rounded-full blur-3xl" />
@@ -112,43 +146,181 @@ const Industries = () => {
         </div>
       </section>
 
-      {/* Industries Grid */}
+      {/* Filter & Search Section */}
+      <section className="py-8 bg-card border-b border-border/50 sticky top-20 z-30">
+        <div className="container-custom">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
+            {/* Search */}
+            <div className="relative w-full lg:w-96">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+              <Input
+                placeholder="Search industries or solutions..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="pl-10 bg-secondary/50 border-border/50"
+              />
+            </div>
+
+            {/* Category Filters */}
+            <div className="flex flex-wrap items-center gap-2 justify-center">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                    selectedCategory === category
+                      ? 'bg-accent text-accent-foreground shadow-sm'
+                      : 'bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground'
+                  }`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+
+            {/* View Toggle */}
+            <div className="flex items-center gap-1 bg-secondary/50 rounded-lg p-1">
+              <button
+                onClick={() => setViewMode('grid')}
+                className={`p-2 rounded ${viewMode === 'grid' ? 'bg-card shadow-sm' : 'hover:bg-card/50'}`}
+                aria-label="Grid view"
+              >
+                <Grid3X3 className="w-4 h-4" />
+              </button>
+              <button
+                onClick={() => setViewMode('list')}
+                className={`p-2 rounded ${viewMode === 'list' ? 'bg-card shadow-sm' : 'hover:bg-card/50'}`}
+                aria-label="List view"
+              >
+                <List className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Industries Grid/List */}
       <section className="section-padding bg-background">
         <div className="container-custom">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {industries.map((industry, index) => (
+          <AnimatePresence mode="wait">
+            {filteredIndustries.length === 0 ? (
               <motion.div
-                key={industry.href}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="text-center py-16"
               >
-                <Link
-                  to={industry.href}
-                  className="group block bg-card p-6 rounded-2xl border border-border/50 hover:border-accent/30 hover:shadow-elevated transition-all duration-300 h-full"
+                <p className="text-muted-foreground text-lg">No industries found matching your criteria.</p>
+                <Button 
+                  variant="outline" 
+                  className="mt-4"
+                  onClick={() => { setSearchQuery(''); setSelectedCategory('All'); }}
                 >
-                  <motion.div
-                    className={`w-14 h-14 rounded-xl bg-gradient-to-br ${industry.bgGradient} flex items-center justify-center mb-4`}
-                    whileHover={{ scale: 1.05, rotate: 3 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                  >
-                    <industry.icon className={`w-7 h-7 ${industry.iconColor}`} />
-                  </motion.div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">
-                    {industry.name}
-                  </h3>
-                  <p className="text-muted-foreground text-sm mb-4">
-                    {industry.description}
-                  </p>
-                  <div className="flex items-center gap-2 text-accent text-sm font-medium group-hover:gap-3 transition-all">
-                    Explore Solutions
-                    <ArrowRight className="w-4 h-4" />
-                  </div>
-                </Link>
+                  Clear Filters
+                </Button>
               </motion.div>
-            ))}
-          </div>
+            ) : viewMode === 'grid' ? (
+              <motion.div
+                key="grid"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+              >
+                {filteredIndustries.map((industry, index) => (
+                  <motion.div
+                    key={industry.href}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: index * 0.05 }}
+                  >
+                    <Link
+                      to={industry.href}
+                      className="group block bg-card p-6 rounded-2xl border border-border/50 hover:border-accent/30 hover:shadow-elevated transition-all duration-300 h-full"
+                    >
+                      <motion.div
+                        className={`w-14 h-14 rounded-xl bg-gradient-to-br ${industry.bgGradient} flex items-center justify-center mb-4`}
+                        whileHover={{ scale: 1.05, rotate: 3 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                      >
+                        <industry.icon className={`w-7 h-7 ${industry.iconColor}`} />
+                      </motion.div>
+                      <span className="text-xs font-medium text-muted-foreground bg-secondary px-2 py-0.5 rounded mb-2 inline-block">
+                        {industry.category}
+                      </span>
+                      <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">
+                        {industry.name}
+                      </h3>
+                      <p className="text-muted-foreground text-sm mb-4">
+                        {industry.description}
+                      </p>
+                      <div className="flex flex-wrap gap-1.5 mb-4">
+                        {industry.solutions.slice(0, 2).map((solution) => (
+                          <span key={solution} className="text-xs bg-accent/10 text-accent px-2 py-0.5 rounded">
+                            {solution}
+                          </span>
+                        ))}
+                      </div>
+                      <div className="flex items-center gap-2 text-accent text-sm font-medium group-hover:gap-3 transition-all">
+                        Explore Solutions
+                        <ArrowRight className="w-4 h-4" />
+                      </div>
+                    </Link>
+                  </motion.div>
+                ))}
+              </motion.div>
+            ) : (
+              <motion.div
+                key="list"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="space-y-4"
+              >
+                {filteredIndustries.map((industry, index) => (
+                  <motion.div
+                    key={industry.href}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: index * 0.05 }}
+                  >
+                    <Link
+                      to={industry.href}
+                      className="group flex items-center gap-6 bg-card p-6 rounded-2xl border border-border/50 hover:border-accent/30 hover:shadow-elevated transition-all duration-300"
+                    >
+                      <motion.div
+                        className={`w-16 h-16 rounded-xl bg-gradient-to-br ${industry.bgGradient} flex items-center justify-center shrink-0`}
+                        whileHover={{ scale: 1.05 }}
+                      >
+                        <industry.icon className={`w-8 h-8 ${industry.iconColor}`} />
+                      </motion.div>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-1">
+                          <h3 className="text-xl font-semibold text-foreground group-hover:text-accent transition-colors">
+                            {industry.name}
+                          </h3>
+                          <span className="text-xs font-medium text-muted-foreground bg-secondary px-2 py-0.5 rounded">
+                            {industry.category}
+                          </span>
+                        </div>
+                        <p className="text-muted-foreground mb-3">
+                          {industry.description}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {industry.solutions.map((solution) => (
+                            <span key={solution} className="text-xs bg-accent/10 text-accent px-2 py-1 rounded">
+                              {solution}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                      <ArrowRight className="w-6 h-6 text-accent group-hover:translate-x-2 transition-transform" />
+                    </Link>
+                  </motion.div>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </section>
 
