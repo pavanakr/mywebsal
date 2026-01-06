@@ -8,8 +8,8 @@ const AIAutomation = () => {
       heroImage={heroAiAutomation}
       icon={Cpu}
       color="from-pink-500 to-pink-600"
-      title="AI & Automation"
-      tagline="Intelligent automation solutions powered by AI and machine learning to transform your business processes."
+      title="Artificial Intelligence Development Services for Smart Businesses"
+      tagline="AI-Powered Automation & Intelligence. Machine Learning & Deep Learning Solutions. Generative AI & LLM Development."
       description="Harness the power of artificial intelligence to automate complex tasks, gain actionable insights, and create intelligent experiences. From chatbots to predictive analytics, we help you leverage AI for competitive advantage."
       benefits={[
         "Process automation",

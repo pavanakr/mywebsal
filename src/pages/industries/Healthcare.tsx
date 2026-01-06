@@ -8,8 +8,8 @@ const Healthcare = () => {
       icon={Heart}
       color="from-red-500 to-red-600"
       name="Healthcare"
-      tagline="Digital Solutions for Modern Healthcare"
-      description="We build HIPAA-compliant software solutions that improve patient outcomes, streamline clinical workflows, and enable healthcare organizations to deliver better care at lower costs."
+      tagline="Healthcare Software Development for Digital Health Solutions"
+      description="Secure & Compliant Healthcare Applications. Patient Engagement & Workflow Automation. HIPAA-Ready Digital Platforms."
       heroImage={heroHealthcareImage}
       stats={[
         { value: "50+", label: "Healthcare Projects" },

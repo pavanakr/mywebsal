@@ -66,10 +66,10 @@ const Insights = () => {
               Softurecs Insights
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              Knowledge Hub for Digital Excellence
+              Softurecs Insights – Technology Trends, Case Studies & Expertise
             </h1>
             <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-              Explore our case studies, portfolio, expert blogs, and latest news to discover how we drive digital transformation.
+              Industry Insights & Tech Articles. Real-World Case Studies. Expert Opinions & Updates.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link to="/insights/case-studies">

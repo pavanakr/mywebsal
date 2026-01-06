@@ -69,8 +69,8 @@ const Careers = () => {
         keywords="tech careers, software jobs, remote work, developer jobs, AI engineer, product designer, devops engineer, tech opportunities"
       />
       <PageHero
-        title="Build the Future of Technology With Us"
-        description="Join a team of passionate innovators working on challenging problems for world-class clients. We're always looking for exceptional talent to shape the future."
+        title="Careers at Softurecs AI Labs – Build the Future with Us"
+        description="Work with Cutting-Edge Technologies. Culture of Innovation & Growth. Explore Career Opportunities."
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'About', href: '/about' },
@@ -99,7 +99,7 @@ const Careers = () => {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                A Culture of Innovation & Growth
+                Culture of Innovation & Growth
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
                 At Vertex Labs, we believe that great work comes from empowered teams. We foster an environment where creativity thrives, learning never stops, and every voice matters.

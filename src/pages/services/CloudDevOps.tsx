@@ -8,8 +8,8 @@ const CloudDevOps = () => {
       heroImage={heroCloudDevOps}
       icon={Cloud}
       color="from-orange-500 to-orange-600"
-      title="Cloud & DevOps"
-      tagline="Cloud infrastructure solutions and DevOps practices that ensure scalability, reliability, and continuous delivery."
+      title="Cloud & DevOps Solutions for Agile Digital Transformation"
+      tagline="Cloud Migration & Optimization. DevOps Automation & CI/CD. Secure & Scalable Cloud Architecture."
       description="Transform your infrastructure with cloud-native architecture and modern DevOps practices. We help organizations achieve faster deployments, improved reliability, and reduced operational costs through automation and best practices."
       benefits={[
         "Auto-scaling infrastructure",

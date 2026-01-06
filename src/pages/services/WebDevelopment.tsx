@@ -8,8 +8,8 @@ const WebDevelopment = () => {
       heroImage={heroWebDevelopment}
       icon={Globe}
       color="from-emerald-500 to-emerald-600"
-      title="Web Development"
-      tagline="Modern, responsive web applications built with cutting-edge technologies for optimal performance and user experience."
+      title="Custom Web Development Services for Scalable Digital Platforms"
+      tagline="Enterprise Web Applications. Secure & High-Performance Websites. Modern Tech Stack & UI/UX Design."
       description="We create stunning web experiences that engage users and drive conversions. From marketing websites to complex web applications, our team delivers pixel-perfect designs backed by robust, scalable architecture."
       benefits={[
         "Responsive design",

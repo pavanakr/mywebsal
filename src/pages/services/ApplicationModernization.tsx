@@ -6,8 +6,8 @@ const ApplicationModernization = () => {
     <ServiceDetailPage
       icon={RefreshCw}
       color="from-purple-500 to-purple-600"
-      title="Application Modernization"
-      tagline="Transform legacy systems into modern, scalable, and efficient applications that drive business growth."
+      title="Application Modernization Services for Legacy Systems"
+      tagline="Modernize Legacy Software. Improve Performance & Security. Cloud-Ready & API-Driven Systems."
       description="Our application modernization services help you breathe new life into aging systems, reducing technical debt while improving performance, security, and user experience. We migrate, refactor, and re-architect applications to meet today's demands."
       benefits={[
         "Reduced operational costs",

@@ -40,11 +40,10 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6"
             >
-              AI-Driven Software{' '}
+              AI-Driven Software Solutions{' '}
               <span className="bg-gradient-to-r from-accent to-cyan-light bg-clip-text text-transparent">
-                Solutions
-              </span>{' '}
-              for Tomorrow
+                for Modern Businesses
+              </span>
             </motion.h1>
 
             <motion.p

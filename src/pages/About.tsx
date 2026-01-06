@@ -82,7 +82,7 @@ const About = () => {
               About SOFTURECS AI LABS
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
-              Engineering Tomorrow's AI-Powered Solutions Today
+              About Softurecs AI Labs – Innovating Digital Solutions with AI
             </h1>
             <p className="text-xl text-primary-foreground/70">
               SOFTURECS AI LABS PRIVATE LIMITED is at the forefront of AI-driven software innovation, helping businesses worldwide transform their ideas into powerful digital realities.
@@ -123,7 +123,7 @@ const About = () => {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                A Legacy of Innovation & Excellence
+                Who We Are & What We Do
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
                 SOFTURECS AI LABS PRIVATE LIMITED was founded with a simple yet powerful vision: to bridge the gap between business challenges and AI-driven technological solutions. What started as a passionate team in Hyderabad has grown into a trusted technology partner for enterprises worldwide.
@@ -266,7 +266,7 @@ const About = () => {
               Our Values
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Principles That Guide Everything We Do
+              Our Vision, Mission & Core Values
             </h2>
           </motion.div>
 
@@ -305,7 +305,7 @@ const About = () => {
                 Why Choose Us
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                What Sets SOFTURECS AI LABS Apart
+                Why Businesses Choose Softurecs AI Labs
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
                 We combine technical excellence with business acumen to deliver AI-powered solutions that don't just work—they drive measurable results.

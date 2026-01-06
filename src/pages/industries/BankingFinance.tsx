@@ -8,8 +8,8 @@ const BankingFinance = () => {
       icon={Landmark}
       color="from-emerald-500 to-emerald-600"
       name="Banking & Finance"
-      tagline="Secure Fintech Innovation"
-      description="We build secure, compliant financial technology solutions that enable digital banking, payment processing, and investment management for financial institutions."
+      tagline="FinTech & Banking Software Solutions for Secure Transactions"
+      description="Digital Banking Platforms. Payment Processing Systems. Fraud Detection & Compliance Solutions."
       heroImage={heroBankingImage}
       stats={[
         { value: "$10B+", label: "Transactions Processed" },

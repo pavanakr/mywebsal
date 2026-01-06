@@ -117,10 +117,10 @@ const CaseStudies = () => {
               <span className="text-accent">Case Studies</span>
             </nav>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Case Studies
+              Case Studies Showcasing Our Software Development Success
             </h1>
             <p className="text-xl text-white/80 max-w-2xl mx-auto">
-              Real-world success stories showcasing how we've helped businesses achieve digital transformation.
+              Real Business Challenges & Solutions. Measurable Results & Impact. Client Success Stories.
             </p>
           </motion.div>
         </div>

@@ -83,8 +83,8 @@ const Services = () => {
         keywords="software development, AI solutions, mobile app development, cloud services, custom software, web development, SaaS development"
       />
       <PageHero
-        title="Comprehensive Technology Solutions"
-        description="From custom software to AI-powered platforms, we deliver end-to-end solutions that drive digital transformation and accelerate business growth."
+        title="End-to-End Software Development Services Powered by AI"
+        description="Custom Software & Application Development. AI-Driven Digital Transformation Services. Scalable, Secure & Future-Ready Solutions."
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'Services' }

@@ -118,10 +118,10 @@ const Blogs = () => {
               <span className="text-accent">Blogs</span>
             </nav>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Blogs & Articles
+              Technology Blogs on AI, Software & Digital Transformation
             </h1>
             <p className="text-xl text-white/80 max-w-2xl mx-auto">
-              Insights, trends, and tips from our tech and business experts.
+              Latest Tech Trends & Innovations. Expert Insights from Our Team. Practical Guides & Best Practices.
             </p>
           </motion.div>
         </div>

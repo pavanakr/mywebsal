@@ -8,8 +8,8 @@ const LogisticsTransportation = () => {
       icon={Truck}
       color="from-orange-500 to-orange-600"
       name="Logistics & Transportation"
-      tagline="Smart Supply Chain & Fleet Solutions"
-      description="We build intelligent logistics and transportation solutions that optimize operations, reduce costs, and provide real-time visibility across your entire distribution network."
+      tagline="Logistics & Transportation Software for Smart Supply Chains"
+      description="Fleet & Delivery Management Systems. On-Demand Logistics Platforms. Real-Time Tracking & Automation."
       heroImage={heroLogisticsImage}
       stats={[
         { value: "10M+", label: "Shipments Tracked" },
