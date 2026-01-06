@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
+import { SEO } from '@/components/SEO';
 import { ArrowRight, ArrowLeft, CheckCircle, Calendar, Clock, Users, Building } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -47,8 +48,16 @@ export function CaseStudyDetailPage({
   testimonial,
   screenshots,
 }: CaseStudyDetailProps) {
+  const seoKeywords = `${industry.toLowerCase()} case study, ${title.toLowerCase()}, ${technologies.slice(0, 5).join(', ').toLowerCase()}, software development, enterprise solutions`;
+
   return (
     <Layout>
+      <SEO
+        title={`${title} - Case Study`}
+        description={overview}
+        keywords={seoKeywords}
+        image={heroImage}
+      />
       {/* Hero Section */}
       <section className="pt-32 pb-12 bg-gradient-to-br from-primary via-navy to-navy-light">
         <div className="container-custom">
