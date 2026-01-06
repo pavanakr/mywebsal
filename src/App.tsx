@@ -19,6 +19,7 @@ import MobileApps from "./pages/services/MobileApps";
 import CloudDevOps from "./pages/services/CloudDevOps";
 import AIAutomation from "./pages/services/AIAutomation";
 import SaaSDevelopment from "./pages/services/SaaSDevelopment";
+import ApplicationModernization from "./pages/services/ApplicationModernization";
 // Industry pages
 import Healthcare from "./pages/industries/Healthcare";
 import Fintech from "./pages/industries/Fintech";
@@ -26,6 +27,7 @@ import Ecommerce from "./pages/industries/Ecommerce";
 import Logistics from "./pages/industries/Logistics";
 import RealEstate from "./pages/industries/RealEstate";
 import Education from "./pages/industries/Education";
+import TravelHospitality from "./pages/industries/TravelHospitality";
 // Case study pages
 import HealthPulse from "./pages/portfolio/HealthPulse";
 import FinVault from "./pages/portfolio/FinVault";
@@ -57,12 +59,14 @@ const App = () => (
             <Route path="/services/cloud-devops" element={<CloudDevOps />} />
             <Route path="/services/ai-automation" element={<AIAutomation />} />
             <Route path="/services/saas" element={<SaaSDevelopment />} />
+            <Route path="/services/application-modernization" element={<ApplicationModernization />} />
             <Route path="/industries/healthcare" element={<Healthcare />} />
             <Route path="/industries/fintech" element={<Fintech />} />
             <Route path="/industries/ecommerce" element={<Ecommerce />} />
             <Route path="/industries/logistics" element={<Logistics />} />
             <Route path="/industries/real-estate" element={<RealEstate />} />
             <Route path="/industries/education" element={<Education />} />
+            <Route path="/industries/travel-hospitality" element={<TravelHospitality />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/portfolio/healthpulse" element={<HealthPulse />} />
             <Route path="/portfolio/finvault" element={<FinVault />} />
