@@ -126,20 +126,31 @@ export function IndustryDetailPage({
       </section>
 
       {/* Stats */}
-      <section className="py-12 bg-card border-b border-border/50">
+      <section className="py-12 bg-card border-b border-border/50 overflow-hidden">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center"
+                initial={{ opacity: 0, scale: 0.5, y: 30 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: index * 0.15,
+                  type: "spring",
+                  stiffness: 100
+                }}
+                className="text-center group"
               >
-                <div className="text-3xl md:text-4xl font-bold text-accent mb-1">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
+                <motion.div 
+                  className="text-3xl md:text-4xl font-bold text-accent mb-1"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  {stat.value}
+                </motion.div>
+                <div className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -168,15 +179,25 @@ export function IndustryDetailPage({
             {challenges.map((challenge, index) => (
               <motion.div
                 key={challenge.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                initial={{ opacity: 0, rotateX: 45, y: 50 }}
+                whileInView={{ opacity: 1, rotateX: 0, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: index * 0.1,
+                  type: "spring",
+                  stiffness: 80
+                }}
+                whileHover={{ y: -8, scale: 1.02 }}
                 className="bg-card p-6 rounded-2xl border border-border/50 hover:border-destructive/30 transition-colors"
               >
-                <div className="w-12 h-12 rounded-xl bg-destructive/10 flex items-center justify-center mb-4">
+                <motion.div 
+                  className="w-12 h-12 rounded-xl bg-destructive/10 flex items-center justify-center mb-4"
+                  whileHover={{ rotate: 15, scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 200 }}
+                >
                   <AlertTriangle className="w-6 h-6 text-destructive" />
-                </div>
+                </motion.div>
                 <h3 className="text-lg font-semibold text-foreground mb-2">{challenge.title}</h3>
                 <p className="text-muted-foreground text-sm">{challenge.description}</p>
               </motion.div>
@@ -207,16 +228,26 @@ export function IndustryDetailPage({
             {solutions.map((solution, index) => (
               <motion.div
                 key={solution.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50, y: 30 }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: index * 0.1,
+                  type: "spring",
+                  stiffness: 80
+                }}
+                whileHover={{ y: -5, scale: 1.02 }}
                 className="bg-card p-6 rounded-2xl border border-border/50 hover:border-accent/30 hover:shadow-soft transition-all"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+                  <motion.div 
+                    className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0"
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.6 }}
+                  >
                     <solution.icon className="w-7 h-7 text-accent" />
-                  </div>
+                  </motion.div>
                   <div>
                     <h3 className="text-xl font-semibold text-foreground mb-2">{solution.title}</h3>
                     <p className="text-muted-foreground">{solution.description}</p>
