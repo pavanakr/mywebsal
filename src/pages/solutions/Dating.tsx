@@ -1,61 +1,34 @@
-import Layout from "@/components/layout/Layout";
-import SubIndustryDetailPage from "@/components/industries/SubIndustryDetailPage";
-import { Heart, Shield, MessageCircle, MapPin, Sparkles, Users } from "lucide-react";
+import { Heart, Users, Shield, MessageSquare, MapPin, Sparkles, Bell } from 'lucide-react';
+import { SubIndustryDetailPage } from '@/components/industries/SubIndustryDetailPage';
 
 const Dating = () => {
   return (
-    <Layout>
-      <SubIndustryDetailPage
-        title="Dating App Solutions"
-        subtitle="Build meaningful connection platforms"
-        description="Create engaging dating and social networking applications with advanced matching algorithms, secure messaging, and modern engagement features."
-        icon={<Heart className="w-12 h-12" />}
-        features={[
-          {
-            icon: <Sparkles className="w-6 h-6" />,
-            title: "Smart Matching",
-            description: "AI-powered matching based on preferences and behavior."
-          },
-          {
-            icon: <Shield className="w-6 h-6" />,
-            title: "Safety Features",
-            description: "Profile verification, reporting, and moderation tools."
-          },
-          {
-            icon: <MessageCircle className="w-6 h-6" />,
-            title: "Secure Chat",
-            description: "End-to-end encrypted messaging with media sharing."
-          },
-          {
-            icon: <MapPin className="w-6 h-6" />,
-            title: "Location-Based",
-            description: "Discover matches nearby with geolocation features."
-          },
-          {
-            icon: <Users className="w-6 h-6" />,
-            title: "Social Features",
-            description: "Events, groups, and community engagement."
-          },
-          {
-            icon: <Heart className="w-6 h-6" />,
-            title: "Premium Features",
-            description: "Subscription tiers with exclusive matching features."
-          }
-        ]}
-        benefits={[
-          "Engage users with gamified experiences",
-          "Build trust with verified profiles",
-          "Monetize with premium subscriptions",
-          "Ensure user safety with moderation"
-        ]}
-        useCases={[
-          "General dating apps",
-          "Niche community platforms",
-          "Professional networking",
-          "Friendship and social apps"
-        ]}
-      />
-    </Layout>
+    <SubIndustryDetailPage
+      icon={Heart}
+      color="from-pink-500 to-pink-600"
+      parentIndustry="Solutions"
+      parentHref="/services"
+      name="Dating App"
+      tagline="Modern Dating Apps That Connect People Meaningfully"
+      description="Build engaging dating platforms with smart matching, secure messaging, and features that foster genuine connections."
+      stats={[{ value: "5M+", label: "Matches Made" }, { value: "85%", label: "User Retention" }, { value: "4.8", label: "App Rating" }, { value: "50K+", label: "Daily Users" }]}
+      features={[
+        { title: "Smart Matching", description: "AI-powered compatibility algorithms.", icon: Sparkles },
+        { title: "User Profiles", description: "Rich profiles with photos and interests.", icon: Users },
+        { title: "Safety First", description: "Verification and reporting systems.", icon: Shield },
+        { title: "In-App Messaging", description: "Secure real-time chat features.", icon: MessageSquare },
+        { title: "Location-Based", description: "Find matches nearby.", icon: MapPin },
+        { title: "Push Notifications", description: "Engage users with timely alerts.", icon: Bell },
+      ]}
+      useCases={[
+        { title: "Casual Dating", description: "Swipe-based matching apps." },
+        { title: "Serious Relationships", description: "Compatibility-focused platforms." },
+        { title: "Niche Dating", description: "Community-specific dating apps." },
+        { title: "Social Discovery", description: "Friend-finding applications." },
+      ]}
+      technologies={["React Native", "Flutter", "Node.js", "MongoDB", "Firebase", "Socket.io", "AWS", "ML/AI"]}
+      benefits={["Scalable architecture", "Engaging UX", "Secure messaging", "Monetization ready", "Analytics built-in"]}
+    />
   );
 };
 

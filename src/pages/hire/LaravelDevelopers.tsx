@@ -1,56 +1,40 @@
-import Layout from "@/components/layout/Layout";
-import ServiceDetailPage from "@/components/services/ServiceDetailPage";
-import { Code, Database, Shield, Zap, Users, Cog } from "lucide-react";
+import { Code } from 'lucide-react';
+import { ServiceDetailPage } from '@/components/services/ServiceDetailPage';
 
 const LaravelDevelopers = () => {
   return (
-    <Layout>
-      <ServiceDetailPage
-        title="Hire Laravel Developers"
-        subtitle="Expert PHP Laravel developers"
-        description="Hire skilled Laravel developers who build robust, scalable web applications. From APIs to full-stack solutions, our Laravel experts deliver quality code."
-        icon={<Code className="w-12 h-12" />}
-        features={[
-          {
-            icon: <Code className="w-6 h-6" />,
-            title: "Laravel Expertise",
-            description: "Deep knowledge of Laravel ecosystem and best practices."
-          },
-          {
-            icon: <Database className="w-6 h-6" />,
-            title: "Database Design",
-            description: "Eloquent ORM and database optimization."
-          },
-          {
-            icon: <Zap className="w-6 h-6" />,
-            title: "API Development",
-            description: "RESTful and GraphQL API development."
-          },
-          {
-            icon: <Shield className="w-6 h-6" />,
-            title: "Security",
-            description: "Secure applications with Laravel's built-in features."
-          },
-          {
-            icon: <Cog className="w-6 h-6" />,
-            title: "Queue & Jobs",
-            description: "Background processing and task scheduling."
-          },
-          {
-            icon: <Users className="w-6 h-6" />,
-            title: "Team Integration",
-            description: "Collaborative development with your team."
-          }
-        ]}
-        technologies={["Laravel", "PHP", "MySQL", "Redis", "Vue.js", "Livewire", "Inertia.js", "PHPUnit"]}
-        benefits={[
-          "Build web apps faster with Laravel",
-          "Access PHP experts with modern skills",
-          "Scalable and maintainable codebases",
-          "Flexible hiring options"
-        ]}
-      />
-    </Layout>
+    <ServiceDetailPage
+      icon={Code}
+      color="from-red-400 to-red-500"
+      title="Hire Laravel Developers"
+      tagline="Expert PHP Laravel developers for robust web applications."
+      description="Hire skilled Laravel developers who build elegant, maintainable web applications. Our Laravel experts deliver quality code using modern PHP practices and the Laravel ecosystem."
+      benefits={[
+        "Laravel ecosystem mastery",
+        "Eloquent ORM expertise",
+        "RESTful API development",
+        "Queue & job processing",
+        "Laravel Livewire skills",
+        "Test-driven development",
+        "Security best practices",
+        "Performance optimization",
+      ]}
+      process={[
+        { number: "01", title: "Project Analysis", description: "Understand your web application requirements and goals." },
+        { number: "02", title: "Developer Selection", description: "Match Laravel experts with your project needs." },
+        { number: "03", title: "Environment Setup", description: "Configure development environment and CI/CD." },
+        { number: "04", title: "Agile Development", description: "Feature development in iterative sprints." },
+        { number: "05", title: "Testing & QA", description: "PHPUnit testing and quality assurance." },
+        { number: "06", title: "Deployment", description: "Production deployment and ongoing support." },
+      ]}
+      technologies={["Laravel 10+", "PHP 8", "MySQL", "Redis", "Livewire", "Inertia.js", "Vue.js", "Tailwind CSS", "PHPUnit", "Laravel Forge"]}
+      caseStudies={[
+        { title: "ShopSphere Backend", category: "E-commerce", description: "Scalable e-commerce backend with Laravel.", results: ["1M+ products", "High availability"], image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop", href: "/portfolio/shopsphere" },
+        { title: "CRM Platform", category: "SaaS", description: "Multi-tenant CRM built on Laravel.", results: ["10K businesses", "99.9% uptime"], image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop", href: "/portfolio/crm-platform" },
+        { title: "Content Platform", category: "Media", description: "Publishing platform with Laravel backend.", results: ["5M monthly views", "Fast content delivery"], image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600&h=400&fit=crop", href: "/portfolio/content-platform" },
+      ]}
+      useCases={["Web applications", "E-commerce backends", "SaaS platforms", "CMS development", "API backends", "Admin panels"]}
+    />
   );
 };
 

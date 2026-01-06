@@ -1,56 +1,40 @@
-import Layout from "@/components/layout/Layout";
-import ServiceDetailPage from "@/components/services/ServiceDetailPage";
-import { Smartphone, Code, Shield, Zap, Users, Layers } from "lucide-react";
+import { Smartphone } from 'lucide-react';
+import { ServiceDetailPage } from '@/components/services/ServiceDetailPage';
 
 const IOSDevelopers = () => {
   return (
-    <Layout>
-      <ServiceDetailPage
-        title="Hire iOS Developers"
-        subtitle="Expert Swift & SwiftUI developers"
-        description="Hire experienced iOS developers who build beautiful, high-performance apps for iPhone and iPad. Swift, SwiftUI, and Apple ecosystem expertise."
-        icon={<Smartphone className="w-12 h-12" />}
-        features={[
-          {
-            icon: <Code className="w-6 h-6" />,
-            title: "Swift Expertise",
-            description: "Modern iOS development with Swift and SwiftUI."
-          },
-          {
-            icon: <Layers className="w-6 h-6" />,
-            title: "SwiftUI & UIKit",
-            description: "Build with latest Apple UI frameworks."
-          },
-          {
-            icon: <Zap className="w-6 h-6" />,
-            title: "Performance",
-            description: "Optimized apps with smooth 60fps animations."
-          },
-          {
-            icon: <Shield className="w-6 h-6" />,
-            title: "Apple Guidelines",
-            description: "Compliant with App Store requirements."
-          },
-          {
-            icon: <Smartphone className="w-6 h-6" />,
-            title: "Ecosystem",
-            description: "Integration with Watch, CarPlay, and more."
-          },
-          {
-            icon: <Users className="w-6 h-6" />,
-            title: "Direct Collaboration",
-            description: "Work directly with your team and processes."
-          }
-        ]}
-        technologies={["Swift", "SwiftUI", "UIKit", "Core Data", "CloudKit", "ARKit", "Core ML", "TestFlight"]}
-        benefits={[
-          "Access premium iOS development talent",
-          "Ensure App Store approval",
-          "Build for Apple's loyal user base",
-          "Flexible engagement models"
-        ]}
-      />
-    </Layout>
+    <ServiceDetailPage
+      icon={Smartphone}
+      color="from-gray-700 to-gray-800"
+      title="Hire iOS Developers"
+      tagline="Expert Swift developers who build premium iOS applications."
+      description="Hire skilled iOS developers who create exceptional apps for iPhone, iPad, Apple Watch, and Apple TV. Our developers are experts in Swift, SwiftUI, and the Apple ecosystem."
+      benefits={[
+        "Swift & SwiftUI expertise",
+        "Apple design guidelines",
+        "App Store optimization",
+        "Core Data mastery",
+        "ARKit & CoreML experience",
+        "Apple Pay integration",
+        "HealthKit development",
+        "Widget development",
+      ]}
+      process={[
+        { number: "01", title: "Project Scoping", description: "Define your iOS app requirements and target devices." },
+        { number: "02", title: "Developer Selection", description: "Choose from our pool of vetted iOS specialists." },
+        { number: "03", title: "Team Integration", description: "Seamless onboarding with your development workflow." },
+        { number: "04", title: "Sprint Development", description: "Agile development with TestFlight releases." },
+        { number: "05", title: "Quality Testing", description: "Device testing across iPhone and iPad models." },
+        { number: "06", title: "App Store Launch", description: "Complete App Store submission and approval support." },
+      ]}
+      technologies={["Swift", "SwiftUI", "UIKit", "Core Data", "CloudKit", "ARKit", "CoreML", "Combine", "XCTest", "App Clips"]}
+      caseStudies={[
+        { title: "FinVault iOS", category: "Fintech", description: "Premium banking app with Face ID authentication.", results: ["4.9 App Store rating", "Featured by Apple"], image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=400&fit=crop", href: "/portfolio/finvault" },
+        { title: "HealthPulse iOS", category: "Healthcare", description: "HealthKit-integrated wellness tracking app.", results: ["Apple Watch support", "1M users"], image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop", href: "/portfolio/healthpulse" },
+        { title: "ShopSphere iOS", category: "E-commerce", description: "Native shopping experience with Apple Pay.", results: ["Top 10 in Shopping", "2M downloads"], image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop", href: "/portfolio/shopsphere" },
+      ]}
+      useCases={["iPhone & iPad apps", "Apple Watch apps", "tvOS applications", "iMessage extensions", "App Clips", "SharePlay features"]}
+    />
   );
 };
 

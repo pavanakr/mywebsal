@@ -1,61 +1,34 @@
-import Layout from "@/components/layout/Layout";
-import SubIndustryDetailPage from "@/components/industries/SubIndustryDetailPage";
-import { UtensilsCrossed, MapPin, Clock, CreditCard, Star, Truck } from "lucide-react";
+import { UtensilsCrossed, MapPin, Clock, CreditCard, Users, BarChart3, Bell } from 'lucide-react';
+import { SubIndustryDetailPage } from '@/components/industries/SubIndustryDetailPage';
 
 const FoodDelivery = () => {
   return (
-    <Layout>
-      <SubIndustryDetailPage
-        title="Food Delivery Platforms"
-        subtitle="On-demand food delivery solutions"
-        description="Build feature-rich food delivery platforms that connect restaurants with hungry customers. From ordering to delivery tracking, we cover it all."
-        icon={<UtensilsCrossed className="w-12 h-12" />}
-        features={[
-          {
-            icon: <UtensilsCrossed className="w-6 h-6" />,
-            title: "Restaurant Management",
-            description: "Menu management, order processing, and inventory tracking."
-          },
-          {
-            icon: <MapPin className="w-6 h-6" />,
-            title: "Real-Time Tracking",
-            description: "Live order tracking with GPS integration."
-          },
-          {
-            icon: <Clock className="w-6 h-6" />,
-            title: "Smart Dispatch",
-            description: "AI-powered delivery assignment and route optimization."
-          },
-          {
-            icon: <CreditCard className="w-6 h-6" />,
-            title: "Multiple Payments",
-            description: "Cards, wallets, cash on delivery, and loyalty points."
-          },
-          {
-            icon: <Star className="w-6 h-6" />,
-            title: "Ratings & Reviews",
-            description: "Customer feedback and restaurant ratings system."
-          },
-          {
-            icon: <Truck className="w-6 h-6" />,
-            title: "Driver App",
-            description: "Dedicated app for delivery partners with earnings tracking."
-          }
-        ]}
-        benefits={[
-          "Launch quickly with proven architecture",
-          "Scale to handle peak demand efficiently",
-          "Optimize delivery routes and reduce costs",
-          "Build customer loyalty with personalized experiences"
-        ]}
-        useCases={[
-          "Multi-restaurant delivery platforms",
-          "Single restaurant ordering apps",
-          "Cloud kitchen management",
-          "Corporate catering solutions"
-        ]}
-      />
-    </Layout>
+    <SubIndustryDetailPage
+      icon={UtensilsCrossed}
+      color="from-red-500 to-red-600"
+      parentIndustry="Solutions"
+      parentHref="/services"
+      name="Food Delivery"
+      tagline="Complete Food Delivery Platforms That Delight Customers"
+      description="Build food delivery apps with real-time tracking, restaurant management, and seamless ordering experience."
+      stats={[{ value: "1M+", label: "Orders" }, { value: "10K+", label: "Restaurants" }, { value: "30min", label: "Avg Delivery" }, { value: "4.8", label: "Rating" }]}
+      features={[
+        { title: "Restaurant Listings", description: "Browse menus and restaurants.", icon: UtensilsCrossed },
+        { title: "Live Tracking", description: "Real-time order tracking.", icon: MapPin },
+        { title: "Fast Delivery", description: "Optimized delivery routes.", icon: Clock },
+        { title: "Easy Payments", description: "Multiple payment options.", icon: CreditCard },
+        { title: "Driver App", description: "Delivery partner management.", icon: Users },
+        { title: "Analytics", description: "Order and revenue insights.", icon: BarChart3 },
+      ]}
+      useCases={[
+        { title: "Restaurant Delivery", description: "Multi-restaurant platform." },
+        { title: "Cloud Kitchens", description: "Virtual restaurant delivery." },
+        { title: "Grocery Delivery", description: "Quick commerce solution." },
+        { title: "Corporate Catering", description: "B2B food ordering." },
+      ]}
+      technologies={["React Native", "Node.js", "PostgreSQL", "Redis", "Google Maps", "Stripe", "Firebase", "Socket.io"]}
+      benefits={["Real-time tracking", "Multi-vendor support", "Route optimization", "Payment integration", "Scalable"]}
+    />
   );
 };
 

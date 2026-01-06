@@ -1,61 +1,34 @@
-import Layout from "@/components/layout/Layout";
-import SubIndustryDetailPage from "@/components/industries/SubIndustryDetailPage";
-import { Wallet, Shield, Smartphone, CreditCard, TrendingUp, Globe } from "lucide-react";
+import { Wallet, CreditCard, Shield, Zap, Users, BarChart3, Globe } from 'lucide-react';
+import { SubIndustryDetailPage } from '@/components/industries/SubIndustryDetailPage';
 
 const EWallet = () => {
   return (
-    <Layout>
-      <SubIndustryDetailPage
-        title="Digital Wallet Solutions"
-        subtitle="Secure, feature-rich e-wallet platforms"
-        description="Build comprehensive digital wallet solutions that enable seamless payments, money transfers, and financial management for your users."
-        icon={<Wallet className="w-12 h-12" />}
-        features={[
-          {
-            icon: <Wallet className="w-6 h-6" />,
-            title: "Multi-Currency Wallets",
-            description: "Support for multiple currencies and cryptocurrencies."
-          },
-          {
-            icon: <Shield className="w-6 h-6" />,
-            title: "Advanced Security",
-            description: "Biometric authentication and encryption for secure transactions."
-          },
-          {
-            icon: <Smartphone className="w-6 h-6" />,
-            title: "Mobile-First Design",
-            description: "Intuitive mobile apps for iOS and Android platforms."
-          },
-          {
-            icon: <CreditCard className="w-6 h-6" />,
-            title: "Payment Integration",
-            description: "Integration with banks, cards, and payment networks."
-          },
-          {
-            icon: <TrendingUp className="w-6 h-6" />,
-            title: "Financial Insights",
-            description: "Spending analytics and budget management features."
-          },
-          {
-            icon: <Globe className="w-6 h-6" />,
-            title: "Cross-Border Transfers",
-            description: "International money transfers with competitive rates."
-          }
-        ]}
-        benefits={[
-          "Enable instant, secure digital payments",
-          "Reduce transaction costs for users and merchants",
-          "Increase customer engagement with loyalty features",
-          "Meet regulatory compliance requirements"
-        ]}
-        useCases={[
-          "Peer-to-peer money transfers",
-          "Bill payments and utilities",
-          "Online and in-store purchases",
-          "Savings and investment features"
-        ]}
-      />
-    </Layout>
+    <SubIndustryDetailPage
+      icon={Wallet}
+      color="from-green-500 to-green-600"
+      parentIndustry="Solutions"
+      parentHref="/services"
+      name="E-Wallet"
+      tagline="Secure Digital Wallet Solutions for Modern Payments"
+      description="Build secure, compliant e-wallet applications with payments, transfers, and financial management features."
+      stats={[{ value: "$10B+", label: "Transactions" }, { value: "5M+", label: "Users" }, { value: "99.99%", label: "Uptime" }, { value: "PCI DSS", label: "Compliant" }]}
+      features={[
+        { title: "Digital Payments", description: "Send and receive money instantly.", icon: CreditCard },
+        { title: "Bank-Grade Security", description: "Encryption and fraud protection.", icon: Shield },
+        { title: "Instant Transfers", description: "Real-time money transfers.", icon: Zap },
+        { title: "Multi-Currency", description: "Support multiple currencies.", icon: Globe },
+        { title: "User Management", description: "KYC and account management.", icon: Users },
+        { title: "Transaction Analytics", description: "Spending insights and reports.", icon: BarChart3 },
+      ]}
+      useCases={[
+        { title: "Mobile Payments", description: "Pay with your phone." },
+        { title: "P2P Transfers", description: "Send money to friends." },
+        { title: "Bill Payments", description: "Pay utilities and bills." },
+        { title: "Merchant Payments", description: "Accept payments in-store." },
+      ]}
+      technologies={["React Native", "Node.js", "PostgreSQL", "Redis", "Stripe", "Plaid", "AWS", "Blockchain"]}
+      benefits={["PCI DSS compliant", "Real-time processing", "Fraud detection", "Scalable architecture", "White-label ready"]}
+    />
   );
 };
 
