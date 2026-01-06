@@ -30,6 +30,13 @@ import GenerativeAI from "./pages/services/GenerativeAI";
 import AIChatbot from "./pages/services/AIChatbot";
 import DeepLearning from "./pages/services/DeepLearning";
 import LLMDevelopment from "./pages/services/LLMDevelopment";
+import IOSDevelopment from "./pages/services/IOSDevelopment";
+import AndroidDevelopment from "./pages/services/AndroidDevelopment";
+import HybridDevelopment from "./pages/services/HybridDevelopment";
+import SoftwareConsulting from "./pages/services/SoftwareConsulting";
+import UIUXDesign from "./pages/services/UIUXDesign";
+import DataAnalytics from "./pages/services/DataAnalytics";
+import EcommerceDevelopment from "./pages/services/EcommerceDevelopment";
 // Industry pages
 import Industries from "./pages/Industries";
 import Healthcare from "./pages/industries/Healthcare";
@@ -69,6 +76,39 @@ import FraudDetection from "./pages/industries/solutions/FraudDetection";
 import VirtualTour from "./pages/industries/solutions/VirtualTour";
 import MarketplaceDevelopment from "./pages/industries/solutions/MarketplaceDevelopment";
 import InventoryManagement from "./pages/industries/solutions/InventoryManagement";
+// Solutions pages
+import EWallet from "./pages/solutions/EWallet";
+import ELearning from "./pages/solutions/ELearning";
+import RealEstateSolutions from "./pages/solutions/RealEstateSolutions";
+import HealthcareSolutions from "./pages/solutions/HealthcareSolutions";
+import FoodDelivery from "./pages/solutions/FoodDelivery";
+import Dating from "./pages/solutions/Dating";
+import Grocery from "./pages/solutions/Grocery";
+import FantasySports from "./pages/solutions/FantasySports";
+import AIChatbotSolutions from "./pages/solutions/AIChatbotSolutions";
+// Technologies pages
+import Blockchain from "./pages/technologies/Blockchain";
+import ArtificialIntelligence from "./pages/technologies/ArtificialIntelligence";
+import FintechSolutions from "./pages/technologies/FintechSolutions";
+import CloudComputing from "./pages/technologies/CloudComputing";
+import IoTDevelopment from "./pages/technologies/IoTDevelopment";
+import MachineLearningTech from "./pages/technologies/MachineLearningTech";
+import BigData from "./pages/technologies/BigData";
+import Salesforce from "./pages/technologies/Salesforce";
+// Hire pages
+import DedicatedDevelopers from "./pages/hire/DedicatedDevelopers";
+import MobileDevelopers from "./pages/hire/MobileDevelopers";
+import AndroidDevelopers from "./pages/hire/AndroidDevelopers";
+import IOSDevelopers from "./pages/hire/IOSDevelopers";
+import LaravelDevelopers from "./pages/hire/LaravelDevelopers";
+import FlutterDevelopers from "./pages/hire/FlutterDevelopers";
+import NodejsDevelopers from "./pages/hire/NodejsDevelopers";
+import JavaDevelopers from "./pages/hire/JavaDevelopers";
+import GameDevelopers from "./pages/hire/GameDevelopers";
+// Legal pages
+import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
+import RefundPolicy from "./pages/legal/RefundPolicy";
+import Terms from "./pages/legal/Terms";
 // Case study pages
 import HealthPulse from "./pages/portfolio/HealthPulse";
 import FinVault from "./pages/portfolio/FinVault";
@@ -124,6 +164,14 @@ const App = () => (
             <Route path="/services/custom-software" element={<CustomSoftware />} />
             <Route path="/services/web-development" element={<WebDevelopment />} />
             <Route path="/services/mobile-apps" element={<MobileApps />} />
+            <Route path="/services/mobile-app-development" element={<MobileApps />} />
+            <Route path="/services/ios-development" element={<IOSDevelopment />} />
+            <Route path="/services/android-development" element={<AndroidDevelopment />} />
+            <Route path="/services/hybrid-development" element={<HybridDevelopment />} />
+            <Route path="/services/software-consulting" element={<SoftwareConsulting />} />
+            <Route path="/services/ui-ux" element={<UIUXDesign />} />
+            <Route path="/services/data-analytics" element={<DataAnalytics />} />
+            <Route path="/services/ecommerce" element={<EcommerceDevelopment />} />
             <Route path="/services/cloud-devops" element={<CloudDevOps />} />
             <Route path="/services/ai-automation" element={<AIAutomation />} />
             <Route path="/services/saas" element={<SaaSDevelopment />} />
@@ -138,6 +186,39 @@ const App = () => (
             <Route path="/services/ai-chatbot" element={<AIChatbot />} />
             <Route path="/services/deep-learning" element={<DeepLearning />} />
             <Route path="/services/llm-development" element={<LLMDevelopment />} />
+            {/* Solutions */}
+            <Route path="/solutions/ewallet" element={<EWallet />} />
+            <Route path="/solutions/elearning" element={<ELearning />} />
+            <Route path="/solutions/real-estate" element={<RealEstateSolutions />} />
+            <Route path="/solutions/healthcare" element={<HealthcareSolutions />} />
+            <Route path="/solutions/food-delivery" element={<FoodDelivery />} />
+            <Route path="/solutions/dating" element={<Dating />} />
+            <Route path="/solutions/grocery" element={<Grocery />} />
+            <Route path="/solutions/fantasy-sports" element={<FantasySports />} />
+            <Route path="/solutions/ai-chatbot" element={<AIChatbotSolutions />} />
+            {/* Technologies */}
+            <Route path="/technologies/blockchain" element={<Blockchain />} />
+            <Route path="/technologies/artificial-intelligence" element={<ArtificialIntelligence />} />
+            <Route path="/technologies/fintech" element={<FintechSolutions />} />
+            <Route path="/technologies/cloud" element={<CloudComputing />} />
+            <Route path="/technologies/iot" element={<IoTDevelopment />} />
+            <Route path="/technologies/machine-learning" element={<MachineLearningTech />} />
+            <Route path="/technologies/big-data" element={<BigData />} />
+            <Route path="/technologies/salesforce" element={<Salesforce />} />
+            {/* Hire */}
+            <Route path="/hire/dedicated-developers" element={<DedicatedDevelopers />} />
+            <Route path="/hire/mobile-developers" element={<MobileDevelopers />} />
+            <Route path="/hire/android-developers" element={<AndroidDevelopers />} />
+            <Route path="/hire/ios-developers" element={<IOSDevelopers />} />
+            <Route path="/hire/laravel-developers" element={<LaravelDevelopers />} />
+            <Route path="/hire/flutter-developers" element={<FlutterDevelopers />} />
+            <Route path="/hire/nodejs-developers" element={<NodejsDevelopers />} />
+            <Route path="/hire/java-developers" element={<JavaDevelopers />} />
+            <Route path="/hire/game-developers" element={<GameDevelopers />} />
+            {/* Legal */}
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/refund-policy" element={<RefundPolicy />} />
+            <Route path="/terms" element={<Terms />} />
             {/* Industries */}
             <Route path="/industries" element={<Industries />} />
             <Route path="/industries/healthcare" element={<Healthcare />} />
