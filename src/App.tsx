@@ -66,6 +66,8 @@ import ElectronicHealthRecords from "./pages/industries/solutions/ElectronicHeal
 import PatientEngagement from "./pages/industries/solutions/PatientEngagement";
 import PaymentProcessing from "./pages/industries/solutions/PaymentProcessing";
 import FraudDetection from "./pages/industries/solutions/FraudDetection";
+import VirtualTour from "./pages/industries/solutions/VirtualTour";
+import MarketplaceDevelopment from "./pages/industries/solutions/MarketplaceDevelopment";
 // Case study pages
 import HealthPulse from "./pages/portfolio/HealthPulse";
 import FinVault from "./pages/portfolio/FinVault";
@@ -163,6 +165,8 @@ const App = () => (
             <Route path="/industries/solutions/patient-engagement" element={<PatientEngagement />} />
             <Route path="/industries/solutions/payment-processing" element={<PaymentProcessing />} />
             <Route path="/industries/solutions/fraud-detection" element={<FraudDetection />} />
+            <Route path="/industries/solutions/virtual-tour" element={<VirtualTour />} />
+            <Route path="/industries/solutions/marketplace-development" element={<MarketplaceDevelopment />} />
             {/* Portfolio */}
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/portfolio/healthpulse" element={<HealthPulse />} />
