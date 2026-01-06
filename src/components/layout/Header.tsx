@@ -464,28 +464,28 @@ export function Header() {
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-indigo-400 to-purple-400 opacity-0 group-hover:opacity-30 blur-lg transition-opacity duration-300" />
               </motion.div>
               <div className="flex flex-col">
-                <span className="text-xl lg:text-2xl font-extrabold text-gray-900 dark:text-foreground leading-tight tracking-tight">
-                  SOFTURECS AI LABS
+                <span className="text-lg lg:text-xl font-extrabold text-gray-900 dark:text-foreground leading-tight tracking-tight whitespace-nowrap">
+                  SOFTURECS AI LABS PVT LTD
                 </span>
-                <span className="text-[11px] lg:text-xs font-semibold text-indigo-600/80 dark:text-accent/80 leading-none tracking-widest uppercase mt-1">
-                  AI • Software • Digital Transformation
+                <span className="text-[10px] lg:text-[11px] font-medium text-indigo-600/80 dark:text-accent/80 leading-none tracking-wide mt-1">
+                  The solution of your thoughts
                 </span>
               </div>
             </Link>
 
             {/* Desktop Navigation - Enhanced spacing and typography */}
-            <nav className="hidden lg:flex items-center gap-2 xl:gap-3">
+            <nav className="hidden lg:flex items-center gap-1 xl:gap-2 flex-nowrap whitespace-nowrap">
             {/* Start AI Journey - Featured Link */}
             <Link
               to="/services/ai-development"
-              className={`px-5 py-3 text-[15px] xl:text-base font-semibold transition-all duration-300 rounded-xl relative group ${
+              className={`px-3 xl:px-4 py-2 text-[13px] xl:text-[14px] font-semibold transition-all duration-300 rounded-lg relative group whitespace-nowrap ${
                 location.pathname === '/services/ai-development'
                   ? 'text-indigo-600 dark:text-accent bg-indigo-50 dark:bg-accent/10'
                   : 'text-gray-800 dark:text-foreground hover:text-indigo-600 dark:hover:text-accent hover:bg-gray-50 dark:hover:bg-secondary/50'
               }`}
             >
               Start AI Journey
-              <span className={`absolute bottom-1 left-5 right-5 h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-accent dark:to-cyan-400 rounded-full transition-transform duration-300 origin-left ${
+              <span className={`absolute bottom-0.5 left-3 right-3 h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-accent dark:to-cyan-400 rounded-full transition-transform duration-300 origin-left ${
                 location.pathname === '/services/ai-development' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
               }`} />
             </Link>
@@ -497,15 +497,15 @@ export function Header() {
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button
-                className={`px-5 py-3 text-[15px] xl:text-base font-medium transition-all duration-300 rounded-xl flex items-center gap-1.5 relative group ${
+                className={`px-3 xl:px-4 py-2 text-[13px] xl:text-[14px] font-medium transition-all duration-300 rounded-lg flex items-center gap-1 relative group whitespace-nowrap ${
                   location.pathname.startsWith('/about')
                     ? 'text-indigo-600 dark:text-accent bg-indigo-50 dark:bg-accent/10'
                     : 'text-gray-700 dark:text-foreground hover:text-indigo-600 dark:hover:text-accent hover:bg-gray-50 dark:hover:bg-secondary/50'
                 }`}
               >
                 About Softurecs
-                <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === 'about' ? 'rotate-180' : 'group-hover:rotate-180'}`} />
-                <span className={`absolute bottom-1 left-5 right-5 h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-accent dark:to-cyan-400 rounded-full transition-transform duration-300 origin-left ${
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${activeDropdown === 'about' ? 'rotate-180' : 'group-hover:rotate-180'}`} />
+                <span className={`absolute bottom-0.5 left-3 right-3 h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-accent dark:to-cyan-400 rounded-full transition-transform duration-300 origin-left ${
                   location.pathname.startsWith('/about') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                 }`} />
                 </button>
@@ -635,15 +635,15 @@ export function Header() {
               onMouseLeave={() => { setActiveDropdown(null); setActiveServiceCategory(null); }}
             >
               <button
-                className={`px-5 py-3 text-[15px] xl:text-base font-medium transition-all duration-300 rounded-xl flex items-center gap-1.5 relative group ${
+                className={`px-3 xl:px-4 py-2 text-[13px] xl:text-[14px] font-medium transition-all duration-300 rounded-lg flex items-center gap-1 relative group whitespace-nowrap ${
                   location.pathname.startsWith('/services')
                     ? 'text-indigo-600 dark:text-accent bg-indigo-50 dark:bg-accent/10'
                     : 'text-gray-700 dark:text-foreground hover:text-indigo-600 dark:hover:text-accent hover:bg-gray-50 dark:hover:bg-secondary/50'
                 }`}
               >
                 Services
-                <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === 'services' ? 'rotate-180' : 'group-hover:rotate-180'}`} />
-                <span className={`absolute bottom-1 left-5 right-5 h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-accent dark:to-cyan-400 rounded-full transition-transform duration-300 origin-left ${
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${activeDropdown === 'services' ? 'rotate-180' : 'group-hover:rotate-180'}`} />
+                <span className={`absolute bottom-0.5 left-3 right-3 h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-accent dark:to-cyan-400 rounded-full transition-transform duration-300 origin-left ${
                   location.pathname.startsWith('/services') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                 }`} />
                 </button>
@@ -760,15 +760,15 @@ export function Header() {
               onMouseLeave={() => { setActiveDropdown(null); setActiveIndustryCategory(null); }}
             >
               <button
-                className={`px-5 py-3 text-[15px] xl:text-base font-medium transition-all duration-300 rounded-xl flex items-center gap-1.5 relative group ${
+                className={`px-3 xl:px-4 py-2 text-[13px] xl:text-[14px] font-medium transition-all duration-300 rounded-lg flex items-center gap-1 relative group whitespace-nowrap ${
                   location.pathname.startsWith('/industries')
                     ? 'text-indigo-600 dark:text-accent bg-indigo-50 dark:bg-accent/10'
                     : 'text-gray-700 dark:text-foreground hover:text-indigo-600 dark:hover:text-accent hover:bg-gray-50 dark:hover:bg-secondary/50'
                 }`}
               >
                 Industries
-                <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === 'industries' ? 'rotate-180' : 'group-hover:rotate-180'}`} />
-                <span className={`absolute bottom-1 left-5 right-5 h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-accent dark:to-cyan-400 rounded-full transition-transform duration-300 origin-left ${
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${activeDropdown === 'industries' ? 'rotate-180' : 'group-hover:rotate-180'}`} />
+                <span className={`absolute bottom-0.5 left-3 right-3 h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-accent dark:to-cyan-400 rounded-full transition-transform duration-300 origin-left ${
                   location.pathname.startsWith('/industries') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                 }`} />
                 </button>
@@ -874,15 +874,15 @@ export function Header() {
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button
-                className={`px-5 py-3 text-[15px] xl:text-base font-medium transition-all duration-300 rounded-xl flex items-center gap-1.5 relative group ${
+                className={`px-3 xl:px-4 py-2 text-[13px] xl:text-[14px] font-medium transition-all duration-300 rounded-lg flex items-center gap-1 relative group whitespace-nowrap ${
                   location.pathname.startsWith('/insights')
                     ? 'text-indigo-600 dark:text-accent bg-indigo-50 dark:bg-accent/10'
                     : 'text-gray-700 dark:text-foreground hover:text-indigo-600 dark:hover:text-accent hover:bg-gray-50 dark:hover:bg-secondary/50'
                 }`}
               >
                 Softurecs Insights
-                <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === 'insights' ? 'rotate-180' : 'group-hover:rotate-180'}`} />
-                <span className={`absolute bottom-1 left-5 right-5 h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-accent dark:to-cyan-400 rounded-full transition-transform duration-300 origin-left ${
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${activeDropdown === 'insights' ? 'rotate-180' : 'group-hover:rotate-180'}`} />
+                <span className={`absolute bottom-0.5 left-3 right-3 h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-accent dark:to-cyan-400 rounded-full transition-transform duration-300 origin-left ${
                   location.pathname.startsWith('/insights') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                 }`} />
                 </button>
