@@ -1,6 +1,6 @@
 import { Layout } from '@/components/layout/Layout';
 import { SEO } from '@/components/SEO';
-import { OrganizationSchema } from '@/components/SchemaMarkup';
+import { OrganizationSchema, LocalBusinessSchema, AggregateRatingSchema, HreflangTags } from '@/components/SchemaMarkup';
 import { HeroSection } from '@/components/home/HeroSection';
 import { TrustedBrands } from '@/components/home/TrustedBrands';
 import { ServicesSection } from '@/components/home/ServicesSection';
@@ -20,6 +20,9 @@ const Index = () => {
         keywords="AI software company, software development India, custom software development, digital transformation, mobile app development"
       />
       <OrganizationSchema />
+      <LocalBusinessSchema city="Hyderabad" region="Telangana" country="India" />
+      <AggregateRatingSchema />
+      <HreflangTags currentPath="/" />
       <HeroSection />
       <TrustedBrands />
       <ServicesSection />

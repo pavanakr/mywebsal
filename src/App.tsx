@@ -143,6 +143,12 @@ import Sitemap from "./pages/Sitemap";
 import CityLandingPage from "./components/seo/CityLandingPage";
 import ServiceIndustryPage from "./components/seo/ServiceIndustryPage";
 import HireDeveloperPage from "./components/seo/HireDeveloperPage";
+// International pages
+import International from "./pages/international/Index";
+import USA from "./pages/international/USA";
+import UK from "./pages/international/UK";
+import UAE from "./pages/international/UAE";
+import Singapore from "./pages/international/Singapore";
 
 const queryClient = new QueryClient();
 
@@ -291,6 +297,12 @@ const App = () => (
             <Route path="/careers" element={<Careers />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/sitemap" element={<Sitemap />} />
+            {/* International pages */}
+            <Route path="/international" element={<International />} />
+            <Route path="/international/usa" element={<USA />} />
+            <Route path="/international/uk" element={<UK />} />
+            <Route path="/international/uae" element={<UAE />} />
+            <Route path="/international/singapore" element={<Singapore />} />
             {/* City-based SEO pages */}
             <Route path="/software-development-company-in-:city" element={<CityLandingPage />} />
             {/* Service + Industry programmatic pages */}
