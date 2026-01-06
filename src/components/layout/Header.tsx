@@ -203,9 +203,9 @@ const industryCategories = [
     bgGradient: 'from-orange-100 to-amber-100 dark:from-orange-900/40 dark:to-amber-900/40',
     iconColor: 'text-orange-600 dark:text-orange-400',
     subIndustries: [
-      { name: 'On-demand logistic app development', href: '/industries/logistics-transportation' },
-      { name: 'Transportation automobile solutions', href: '/industries/logistics-transportation' },
-      { name: 'Shipping management app development', href: '/industries/logistics-transportation' },
+      { name: 'On-demand logistic app development', href: '/industries/solutions/on-demand-logistics' },
+      { name: 'Transportation automation solutions', href: '/industries/solutions/transportation-automation' },
+      { name: 'Shipping management app development', href: '/industries/solutions/shipping-management' },
     ]
   },
   { 
@@ -216,8 +216,8 @@ const industryCategories = [
     bgGradient: 'from-blue-100 to-cyan-100 dark:from-blue-900/40 dark:to-cyan-900/40',
     iconColor: 'text-blue-600 dark:text-blue-400',
     subIndustries: [
-      { name: 'Property listing platforms', href: '/industries/real-estate-construction' },
-      { name: 'Construction management systems', href: '/industries/real-estate-construction' },
+      { name: 'Property listing platforms', href: '/industries/solutions/property-management' },
+      { name: 'Construction management systems', href: '/industries/solutions/construction-management' },
       { name: 'Virtual tour technology', href: '/industries/real-estate-construction' },
     ]
   },
@@ -230,8 +230,8 @@ const industryCategories = [
     iconColor: 'text-pink-600 dark:text-pink-400',
     subIndustries: [
       { name: 'Learning management systems', href: '/industries/education' },
-      { name: 'Virtual classroom platforms', href: '/industries/education' },
-      { name: 'Student information systems', href: '/industries/education' },
+      { name: 'Virtual classroom platforms', href: '/industries/solutions/virtual-learning' },
+      { name: 'Student information systems', href: '/industries/solutions/student-management' },
     ]
   },
   { 
@@ -242,7 +242,7 @@ const industryCategories = [
     bgGradient: 'from-purple-100 to-violet-100 dark:from-purple-900/40 dark:to-violet-900/40',
     iconColor: 'text-purple-600 dark:text-purple-400',
     subIndustries: [
-      { name: 'Custom e-commerce platforms', href: '/industries/retail-ecommerce' },
+      { name: 'Custom e-commerce platforms', href: '/industries/solutions/ecommerce-platform' },
       { name: 'Marketplace development', href: '/industries/retail-ecommerce' },
       { name: 'Inventory management systems', href: '/industries/retail-ecommerce' },
     ]
@@ -255,7 +255,7 @@ const industryCategories = [
     bgGradient: 'from-red-100 to-rose-100 dark:from-red-900/40 dark:to-rose-900/40',
     iconColor: 'text-red-600 dark:text-red-400',
     subIndustries: [
-      { name: 'Telemedicine platforms', href: '/industries/healthcare' },
+      { name: 'Telemedicine platforms', href: '/industries/solutions/telemedicine-platform' },
       { name: 'Electronic health records', href: '/industries/healthcare' },
       { name: 'Patient engagement apps', href: '/industries/healthcare' },
     ]
@@ -268,7 +268,7 @@ const industryCategories = [
     bgGradient: 'from-emerald-100 to-teal-100 dark:from-emerald-900/40 dark:to-teal-900/40',
     iconColor: 'text-emerald-600 dark:text-emerald-400',
     subIndustries: [
-      { name: 'Digital banking platforms', href: '/industries/banking-finance' },
+      { name: 'Digital banking platforms', href: '/industries/solutions/digital-banking' },
       { name: 'Payment processing systems', href: '/industries/banking-finance' },
       { name: 'Fraud detection solutions', href: '/industries/banking-finance' },
     ]
@@ -281,9 +281,9 @@ const industryCategories = [
     bgGradient: 'from-violet-100 to-purple-100 dark:from-violet-900/40 dark:to-purple-900/40',
     iconColor: 'text-violet-600 dark:text-violet-400',
     subIndustries: [
-      { name: 'OTT streaming platforms', href: '/industries/media-entertainment' },
-      { name: 'Content management systems', href: '/industries/media-entertainment' },
-      { name: 'Live streaming solutions', href: '/industries/media-entertainment' },
+      { name: 'OTT streaming platforms', href: '/industries/solutions/streaming-platform' },
+      { name: 'Content management systems', href: '/industries/solutions/content-management' },
+      { name: 'Live streaming solutions', href: '/industries/solutions/live-streaming' },
     ]
   },
   { 
@@ -294,9 +294,9 @@ const industryCategories = [
     bgGradient: 'from-sky-100 to-blue-100 dark:from-sky-900/40 dark:to-blue-900/40',
     iconColor: 'text-sky-600 dark:text-sky-400',
     subIndustries: [
-      { name: 'Booking & reservation systems', href: '/industries/travel-hospitality' },
-      { name: 'Hotel management platforms', href: '/industries/travel-hospitality' },
-      { name: 'Travel experience apps', href: '/industries/travel-hospitality' },
+      { name: 'Booking & reservation systems', href: '/industries/solutions/travel-booking' },
+      { name: 'Hotel management platforms', href: '/industries/solutions/hotel-management' },
+      { name: 'Travel experience apps', href: '/industries/solutions/travel-experience' },
     ]
   },
 ];
@@ -794,7 +794,7 @@ export function Header() {
             </Link>
           </nav>
 
-          {/* CTA Button & Theme Toggle */}
+          {/* CTA Buttons & Theme Toggle */}
           <div className="hidden lg:flex items-center gap-3">
             <button
               onClick={toggleTheme}
@@ -814,8 +814,18 @@ export function Header() {
               </motion.div>
             </button>
             <Link to="/contact">
-              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-6">
+              <Button variant="outline" className={`font-semibold px-5 ${
+                isScrolled 
+                  ? 'border-border text-foreground hover:bg-secondary' 
+                  : 'border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10'
+              }`}>
                 Get in Touch
+              </Button>
+            </Link>
+            <Link to="/services/ai-development">
+              <Button className="bg-gradient-to-r from-accent to-cyan-light hover:from-accent/90 hover:to-cyan-light/90 text-primary font-semibold px-6 shadow-lg shadow-accent/25">
+                <Cpu className="w-4 h-4 mr-2" />
+                Start AI Journey
               </Button>
             </Link>
           </div>
