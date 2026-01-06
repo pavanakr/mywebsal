@@ -315,6 +315,7 @@ const insightsMenuItems = [
     href: '/insights/case-studies', 
     icon: FileText,
     description: 'Real-world success stories showcasing our solutions and client impact.',
+    gradient: 'from-amber-400 via-orange-400 to-red-400',
     bgGradient: 'from-amber-50 to-orange-50 dark:from-amber-950/50 dark:to-orange-950/50'
   },
   { 
@@ -322,6 +323,7 @@ const insightsMenuItems = [
     href: '/insights/blogs', 
     icon: BookOpen,
     description: 'Insights, trends, and tips from our tech and business experts.',
+    gradient: 'from-emerald-400 via-green-400 to-teal-400',
     bgGradient: 'from-emerald-50 to-teal-50 dark:from-emerald-950/50 dark:to-teal-950/50'
   },
   { 
@@ -329,6 +331,7 @@ const insightsMenuItems = [
     href: '/contact', 
     icon: Phone,
     description: "Let's connect today and build your success story together.",
+    gradient: 'from-blue-400 via-cyan-400 to-teal-400',
     bgGradient: 'from-blue-50 to-cyan-50 dark:from-blue-950/50 dark:to-cyan-950/50'
   },
   { 
@@ -336,6 +339,7 @@ const insightsMenuItems = [
     href: '/insights/portfolio', 
     icon: Briefcase,
     description: 'Explore our diverse projects across industries and technologies.',
+    gradient: 'from-purple-400 via-violet-400 to-indigo-400',
     bgGradient: 'from-purple-50 to-violet-50 dark:from-purple-950/50 dark:to-violet-950/50'
   },
   { 
@@ -343,6 +347,7 @@ const insightsMenuItems = [
     href: '/insights/faqs', 
     icon: HelpCircle,
     description: 'Quick answers to common questions about our services and process.',
+    gradient: 'from-pink-400 via-rose-400 to-red-400',
     bgGradient: 'from-pink-50 to-rose-50 dark:from-pink-950/50 dark:to-rose-950/50'
   },
   { 
@@ -350,8 +355,74 @@ const insightsMenuItems = [
     href: '/insights/press-releases', 
     icon: Newspaper,
     description: 'Stay updated with our latest news, updates, and achievements.',
+    gradient: 'from-sky-400 via-blue-400 to-indigo-400',
     bgGradient: 'from-sky-50 to-blue-50 dark:from-sky-950/50 dark:to-blue-950/50'
   },
+];
+
+const insightsFigures = [
+  { icon: FileText, value: '50+', label: 'Case Studies', description: 'Documented success stories across multiple industries.' },
+  { icon: BookOpen, value: '200+', label: 'Blog Articles', description: 'Technical insights and industry thought leadership.' },
+  { icon: Award, value: '15+', label: 'Industry Awards', description: 'Recognized for innovation and excellence globally.' },
+  { icon: Globe, value: '25+', label: 'Countries Served', description: 'Delivering solutions to clients worldwide.' },
+];
+
+const aiJourneyMenuItems = [
+  { 
+    name: 'AI Development', 
+    href: '/services/ai-development', 
+    icon: Cpu,
+    description: 'Build intelligent AI solutions that transform your business operations.',
+    gradient: 'from-violet-400 via-purple-400 to-fuchsia-400',
+    bgGradient: 'from-violet-50 to-purple-50 dark:from-violet-950/50 dark:to-purple-950/50'
+  },
+  { 
+    name: 'Machine Learning', 
+    href: '/services/machine-learning', 
+    icon: Zap,
+    description: 'Custom ML models for predictive analytics and automation.',
+    gradient: 'from-blue-400 via-cyan-400 to-teal-400',
+    bgGradient: 'from-blue-50 to-cyan-50 dark:from-blue-950/50 dark:to-cyan-950/50'
+  },
+  { 
+    name: 'Generative AI', 
+    href: '/services/generative-ai', 
+    icon: Layers,
+    description: 'Leverage GPT, LLMs, and generative models for content and automation.',
+    gradient: 'from-pink-400 via-rose-400 to-red-400',
+    bgGradient: 'from-pink-50 to-rose-50 dark:from-pink-950/50 dark:to-rose-950/50'
+  },
+  { 
+    name: 'AI Chatbots', 
+    href: '/services/ai-chatbot', 
+    icon: MessageSquare,
+    description: 'Intelligent conversational AI for customer engagement.',
+    gradient: 'from-emerald-400 via-green-400 to-lime-400',
+    bgGradient: 'from-emerald-50 to-green-50 dark:from-emerald-950/50 dark:to-green-950/50'
+  },
+  { 
+    name: 'Deep Learning', 
+    href: '/services/deep-learning', 
+    icon: Database,
+    description: 'Neural networks for complex pattern recognition and analysis.',
+    gradient: 'from-amber-400 via-orange-400 to-red-400',
+    bgGradient: 'from-amber-50 to-orange-50 dark:from-amber-950/50 dark:to-orange-950/50'
+  },
+  { 
+    name: 'LLM Development', 
+    href: '/services/llm-development', 
+    icon: Code,
+    description: 'Custom large language model solutions for enterprise needs.',
+    gradient: 'from-sky-400 via-blue-400 to-indigo-400',
+    bgGradient: 'from-sky-50 to-blue-50 dark:from-sky-950/50 dark:to-blue-950/50'
+  },
+];
+
+const aiJourneyFigures = [
+  { icon: Cpu, value: '100+', label: 'AI Projects', description: 'Successfully delivered AI solutions across industries.' },
+  { icon: Zap, value: '50+', label: 'ML Models', description: 'Custom machine learning models in production.' },
+  { icon: Users, value: '30+', label: 'AI Experts', description: 'Dedicated AI/ML specialists on our team.' },
+  { icon: Award, value: '95%', label: 'Success Rate', description: 'High accuracy in AI model deployments.' },
 ];
 
 export function Header() {
@@ -475,20 +546,147 @@ export function Header() {
 
             {/* Desktop Navigation - Enhanced spacing and typography */}
             <nav className="hidden lg:flex items-center justify-center gap-1 xl:gap-2 flex-nowrap whitespace-nowrap ml-12 xl:ml-16">
-            {/* Start AI Journey - Featured Link */}
-            <Link
-              to="/services/ai-development"
-              className={`px-3 xl:px-4 py-2 text-[13px] xl:text-[14px] font-semibold transition-all duration-300 rounded-lg relative group whitespace-nowrap ${
-                location.pathname === '/services/ai-development'
-                  ? 'text-indigo-600 dark:text-accent bg-indigo-50 dark:bg-accent/10'
-                  : 'text-gray-800 dark:text-foreground hover:text-indigo-600 dark:hover:text-accent hover:bg-gray-50 dark:hover:bg-secondary/50'
-              }`}
+            {/* Start AI Journey Mega Menu */}
+            <div
+              className="relative"
+              onMouseEnter={() => setActiveDropdown('ai-journey')}
+              onMouseLeave={() => setActiveDropdown(null)}
             >
-              Start AI Journey
-              <span className={`absolute bottom-0.5 left-3 right-3 h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-accent dark:to-cyan-400 rounded-full transition-transform duration-300 origin-left ${
-                location.pathname === '/services/ai-development' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
-              }`} />
-            </Link>
+              <button
+                className={`px-3 xl:px-4 py-2 text-[13px] xl:text-[14px] font-semibold transition-all duration-300 rounded-lg flex items-center gap-1 relative group whitespace-nowrap ${
+                  location.pathname === '/services/ai-development' || location.pathname.includes('/services/ai') || location.pathname.includes('/services/machine-learning') || location.pathname.includes('/services/generative-ai') || location.pathname.includes('/services/deep-learning') || location.pathname.includes('/services/llm')
+                    ? 'text-indigo-600 dark:text-accent bg-indigo-50 dark:bg-accent/10'
+                    : 'text-gray-800 dark:text-foreground hover:text-indigo-600 dark:hover:text-accent hover:bg-gray-50 dark:hover:bg-secondary/50'
+                }`}
+              >
+                Start AI Journey
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${activeDropdown === 'ai-journey' ? 'rotate-180' : 'group-hover:rotate-180'}`} />
+                <span className={`absolute bottom-0.5 left-3 right-3 h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-accent dark:to-cyan-400 rounded-full transition-transform duration-300 origin-left ${
+                  location.pathname === '/services/ai-development' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                }`} />
+              </button>
+
+              <AnimatePresence>
+                {activeDropdown === 'ai-journey' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
+                    className="fixed pt-4 z-50"
+                    style={{ 
+                      top: 'calc(var(--header-top, 44px) + 92px)',
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      maxWidth: 'calc(100vw - 32px)'
+                    }}
+                  >
+                    <div className="bg-white dark:bg-card rounded-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] border border-gray-100/80 dark:border-border/50 overflow-hidden grid grid-cols-12 w-[1100px] max-w-full">
+                      {/* Left Side - Menu Items (8 columns) */}
+                      <div className="col-span-8 p-8">
+                        <div className="grid grid-cols-2 gap-x-6 gap-y-4">
+                          {aiJourneyMenuItems.map((item, index) => {
+                            const iconColors = [
+                              { from: '#8b5cf6', to: '#d946ef' },
+                              { from: '#3b82f6', to: '#14b8a6' },
+                              { from: '#ec4899', to: '#f43f5e' },
+                              { from: '#10b981', to: '#84cc16' },
+                              { from: '#f59e0b', to: '#ef4444' },
+                              { from: '#0ea5e9', to: '#6366f1' },
+                            ];
+                            const colors = iconColors[index] || iconColors[0];
+                            
+                            return (
+                              <motion.div
+                                key={item.href}
+                                initial={{ opacity: 0, y: 8 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: index * 0.025 }}
+                              >
+                                <Link
+                                  to={item.href}
+                                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 dark:hover:bg-secondary/80 transition-all duration-200 group border border-transparent hover:border-gray-100 dark:hover:border-border/30"
+                                >
+                                  <motion.div 
+                                    className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.bgGradient} flex items-center justify-center shrink-0 shadow-sm group-hover:shadow-md transition-all duration-200`}
+                                    whileHover={{ scale: 1.05 }}
+                                  >
+                                    <svg width="0" height="0" className="absolute">
+                                      <defs>
+                                        <linearGradient id={`ai-journey-icon-${index}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                                          <stop offset="0%" stopColor={colors.from} />
+                                          <stop offset="100%" stopColor={colors.to} />
+                                        </linearGradient>
+                                      </defs>
+                                    </svg>
+                                    <item.icon 
+                                      className="w-5 h-5" 
+                                      style={{ stroke: `url(#ai-journey-icon-${index})` }}
+                                    />
+                                  </motion.div>
+                                  <div className="flex-1 min-w-0">
+                                    <span className="text-sm font-semibold text-gray-900 dark:text-foreground block group-hover:text-indigo-600 dark:group-hover:text-accent transition-colors mb-1">{item.name}</span>
+                                    <span className="text-xs text-gray-500 dark:text-muted-foreground leading-relaxed line-clamp-2">{item.description}</span>
+                                  </div>
+                                </Link>
+                              </motion.div>
+                            );
+                          })}
+                        </div>
+                      </div>
+
+                      {/* Right Side - AI Figures at a Glance (4 columns) */}
+                      <div className="col-span-4 bg-gradient-to-br from-violet-600 via-purple-700 to-indigo-700 p-8 flex flex-col">
+                        <h3 className="text-lg font-bold text-amber-400 mb-6">AI Excellence at a Glance</h3>
+                        <div className="space-y-5 flex-1">
+                          {aiJourneyFigures.map((figure, idx) => {
+                            const figureColors = [
+                              { from: '#fbbf24', to: '#f59e0b' },
+                              { from: '#34d399', to: '#10b981' },
+                              { from: '#60a5fa', to: '#3b82f6' },
+                              { from: '#a78bfa', to: '#8b5cf6' },
+                            ];
+                            const fColors = figureColors[idx] || figureColors[0];
+                            
+                            return (
+                              <motion.div 
+                                key={figure.label} 
+                                className="flex items-start gap-4"
+                                initial={{ opacity: 0, x: 15 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: idx * 0.06 }}
+                              >
+                                <motion.div 
+                                  className="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center shrink-0 backdrop-blur-sm"
+                                  whileHover={{ scale: 1.1 }}
+                                >
+                                  <svg width="0" height="0" className="absolute">
+                                    <defs>
+                                      <linearGradient id={`ai-figure-icon-${idx}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stopColor={fColors.from} />
+                                        <stop offset="100%" stopColor={fColors.to} />
+                                      </linearGradient>
+                                    </defs>
+                                  </svg>
+                                  <figure.icon 
+                                    className="w-5 h-5" 
+                                    style={{ stroke: `url(#ai-figure-icon-${idx})` }}
+                                  />
+                                </motion.div>
+                                <div className="flex-1 min-w-0">
+                                  <span className="text-sm font-bold text-white block">{figure.value} {figure.label}</span>
+                                  <span className="text-xs text-white/70 leading-relaxed">{figure.description}</span>
+                                </div>
+                              </motion.div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
 
             {/* About Softurecs Mega Menu */}
             <div
@@ -976,40 +1174,51 @@ export function Header() {
                           </div>
                         </div>
 
-                        {/* Right Side - Highlight Panel (4 columns) */}
-                        <div className="col-span-4 bg-gradient-to-br from-indigo-600 via-indigo-700 to-purple-700 p-8 relative overflow-hidden flex flex-col">
-                          <div className="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full blur-3xl" />
-                          <div className="absolute bottom-0 left-0 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl" />
-                          
-                          <div className="relative z-10 flex-1 flex flex-col">
-                            <h3 className="text-lg font-bold text-amber-400 mb-4">
-                              Digital Solutions That Fit Every Business
-                            </h3>
-                            
-                            <div className="rounded-xl overflow-hidden mb-4 shadow-lg">
-                              <img 
-                                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=200&fit=crop" 
-                                alt="Softurecs Team" 
-                                className="w-full h-32 object-cover"
-                              />
-                            </div>
-                            
-                            <p className="text-sm text-white/85 mb-4 leading-relaxed">
-                              We work with brands of all sizes—adapting to your needs:
-                            </p>
-                            
-                            <div className="flex flex-wrap gap-2 mt-auto">
-                              {['Startups', 'SMEs', 'Enterprises'].map((item) => (
-                                <motion.span 
-                                  key={item} 
-                                  className="flex items-center gap-2 text-white text-sm bg-white/10 hover:bg-white/15 px-4 py-2 rounded-full transition-colors cursor-pointer"
-                                  whileHover={{ scale: 1.02 }}
+                        {/* Right Side - Insights Figures at a Glance (4 columns) */}
+                        <div className="col-span-4 bg-gradient-to-br from-indigo-600 via-indigo-700 to-purple-700 p-8 flex flex-col">
+                          <h3 className="text-lg font-bold text-amber-400 mb-6">Insights at a Glance</h3>
+                          <div className="space-y-5 flex-1">
+                            {insightsFigures.map((figure, idx) => {
+                              const figureColors = [
+                                { from: '#fbbf24', to: '#f59e0b' },
+                                { from: '#34d399', to: '#10b981' },
+                                { from: '#60a5fa', to: '#3b82f6' },
+                                { from: '#a78bfa', to: '#8b5cf6' },
+                              ];
+                              const fColors = figureColors[idx] || figureColors[0];
+                              
+                              return (
+                                <motion.div 
+                                  key={figure.label} 
+                                  className="flex items-start gap-4"
+                                  initial={{ opacity: 0, x: 15 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{ delay: idx * 0.06 }}
                                 >
-                                  <span className="w-2 h-2 bg-amber-400 rounded-full" />
-                                  {item}
-                                </motion.span>
-                              ))}
-                            </div>
+                                  <motion.div 
+                                    className="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center shrink-0 backdrop-blur-sm"
+                                    whileHover={{ scale: 1.1 }}
+                                  >
+                                    <svg width="0" height="0" className="absolute">
+                                      <defs>
+                                        <linearGradient id={`insights-figure-icon-${idx}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                                          <stop offset="0%" stopColor={fColors.from} />
+                                          <stop offset="100%" stopColor={fColors.to} />
+                                        </linearGradient>
+                                      </defs>
+                                    </svg>
+                                    <figure.icon 
+                                      className="w-5 h-5" 
+                                      style={{ stroke: `url(#insights-figure-icon-${idx})` }}
+                                    />
+                                  </motion.div>
+                                  <div className="flex-1 min-w-0">
+                                    <span className="text-sm font-bold text-white block">{figure.value} {figure.label}</span>
+                                    <span className="text-xs text-white/70 leading-relaxed">{figure.description}</span>
+                                  </div>
+                                </motion.div>
+                              );
+                            })}
                           </div>
                         </div>
                       </div>
@@ -1071,9 +1280,36 @@ export function Header() {
               className="lg:hidden bg-white dark:bg-card border-t border-gray-100 dark:border-border/50 overflow-y-auto max-h-[75vh] shadow-xl"
             >
               <div className="container-custom py-4 space-y-1">
-                <Link to="/services/ai-development" className="block px-4 py-3 text-gray-900 dark:text-foreground font-semibold rounded-lg hover:bg-gray-50 dark:hover:bg-secondary">
-                  Start AI Journey
-                </Link>
+                {/* AI Journey Section */}
+                <div>
+                  <button
+                    onClick={() => toggleMobileSection('ai-journey')}
+                    className="w-full flex items-center justify-between px-4 py-3 text-gray-900 dark:text-foreground font-semibold rounded-lg hover:bg-gray-50 dark:hover:bg-secondary"
+                  >
+                    <span>Start AI Journey</span>
+                    <ChevronDown className={`w-4 h-4 transition-transform ${mobileExpandedSection === 'ai-journey' ? 'rotate-180' : ''}`} />
+                  </button>
+                  <AnimatePresence>
+                    {mobileExpandedSection === 'ai-journey' && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="pl-4"
+                      >
+                        {aiJourneyMenuItems.map((item) => (
+                          <Link 
+                            key={item.href}
+                            to={item.href} 
+                            className="block px-4 py-2.5 text-gray-600 dark:text-muted-foreground hover:text-gray-900 dark:hover:text-foreground rounded-lg hover:bg-gray-50 dark:hover:bg-secondary"
+                          >
+                            {item.name}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
                 
                 {/* About Section */}
                 <div>
