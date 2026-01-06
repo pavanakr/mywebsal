@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
 import { SEO } from '@/components/SEO';
+import { PageHero } from '@/components/layout/PageHero';
 import { ArrowRight, CheckCircle, ExternalLink, AlertTriangle, Lightbulb } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { LucideIcon } from 'lucide-react';
@@ -63,122 +64,23 @@ export function IndustryDetailPage({
         description={description}
         keywords={seoKeywords || defaultKeywords}
       />
-      {/* Hero Section */}
-      <section className="pt-40 pb-24 md:pt-48 md:pb-32 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 relative overflow-hidden min-h-[60vh] flex items-center">
-        {/* Hero Image Background */}
-        {heroImage && (
-          <div className="absolute inset-0">
-            <img 
-              src={heroImage} 
-              alt={`${name} industry`}
-              className="w-full h-full object-cover opacity-20"
-            />
-            <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-indigo-950/85 to-slate-900/90" />
-          </div>
-        )}
-        {/* Enhanced Background Effects */}
-        <div className="absolute inset-0">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-indigo-500/30 via-purple-500/20 to-transparent rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-cyan-500/20 via-blue-500/15 to-transparent rounded-full blur-3xl" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-indigo-600/10 to-transparent rounded-full" />
-          {/* Decorative Grid */}
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
-          {/* Floating Elements */}
-          <motion.div
-            animate={{ y: [-10, 10, -10] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-32 right-20 w-24 h-24 border border-indigo-400/20 rounded-2xl rotate-12"
-          />
-          <motion.div
-            animate={{ y: [10, -10, 10] }}
-            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute bottom-32 left-20 w-16 h-16 border border-cyan-400/20 rounded-full"
-          />
-        </div>
-        
-        <div className="container-custom relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="max-w-5xl"
-          >
-            {/* Icon Badge */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className={`w-24 h-24 rounded-3xl bg-gradient-to-br ${color} flex items-center justify-center mb-8 shadow-2xl shadow-indigo-500/30`}
-            >
-              <Icon className="w-12 h-12 text-white" />
-            </motion.div>
-            
-            {/* Industry Badge */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-6"
-            >
-              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-              <span className="text-sm font-medium text-white/90">{name} Industry</span>
-            </motion.div>
-            
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-              {tagline}
-            </h1>
-            <p className="text-xl text-white/70 mb-10 max-w-3xl leading-relaxed">
-              {description}
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/contact">
-                <Button size="lg" className="bg-gradient-to-r from-indigo-500 to-cyan-500 hover:from-indigo-600 hover:to-cyan-600 text-white font-semibold px-8 h-14 text-lg shadow-xl shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-all">
-                  Discuss Your Project
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </Link>
-              <Link to="/portfolio">
-                <Button size="lg" variant="outline" className="border-white/20 bg-white/5 text-white hover:bg-white/10 font-semibold px-8 h-14 text-lg backdrop-blur-sm">
-                  View {name} Projects
-                </Button>
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      
+      <PageHero
+        title={tagline}
+        description={description}
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'Industries', href: '/industries' },
+          { label: name }
+        ]}
+        icon={Icon}
+        iconColor={color}
+        badge={`${name} Industry`}
+        image={heroImage}
+        imageAlt={`${name} industry illustration`}
+        stats={stats}
+      />
 
-      {/* Stats */}
-      <section className="py-12 bg-card border-b border-border/50 overflow-hidden">
-        <div className="container-custom">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, scale: 0.5, y: 30 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ 
-                  duration: 0.6, 
-                  delay: index * 0.15,
-                  type: "spring",
-                  stiffness: 100
-                }}
-                className="text-center group"
-              >
-                <motion.div 
-                  className="text-3xl md:text-4xl font-bold text-accent mb-1"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  {stat.value}
-                </motion.div>
-                <div className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Challenges */}
       <section className="section-padding bg-background">
