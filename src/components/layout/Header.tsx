@@ -451,7 +451,7 @@ export function Header() {
         <div className="container-custom">
           <div className="flex items-center justify-between h-[72px] md:h-[80px] lg:h-[92px]">
             {/* Logo with enhanced styling */}
-            <Link to="/" className="flex items-center gap-4 group py-2">
+            <Link to="/" className="flex items-center gap-4 group py-2 shrink-0">
               <motion.div 
                 className="relative"
                 whileHover={{ scale: 1.05 }}
@@ -474,7 +474,7 @@ export function Header() {
             </Link>
 
             {/* Desktop Navigation - Enhanced spacing and typography */}
-            <nav className="hidden lg:flex items-center gap-1 xl:gap-2 flex-nowrap whitespace-nowrap">
+            <nav className="hidden lg:flex items-center justify-center gap-1 xl:gap-2 flex-nowrap whitespace-nowrap ml-12 xl:ml-16">
             {/* Start AI Journey - Featured Link */}
             <Link
               to="/services/ai-development"
@@ -517,7 +517,8 @@ export function Header() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 15 }}
                       transition={{ duration: 0.25, ease: "easeOut" }}
-                      className="absolute top-full left-1/2 -translate-x-1/2 pt-5"
+                      className="fixed left-1/2 -translate-x-1/2 pt-5 z-50"
+                      style={{ top: 'calc(var(--header-top, 56px) + 92px)' }}
                     >
                       <div className="bg-white dark:bg-card rounded-2xl shadow-2xl border border-gray-100 dark:border-border/50 overflow-hidden flex" style={{ width: '920px' }}>
                         {/* Left Side - Menu Items (2 columns) */}
@@ -655,7 +656,8 @@ export function Header() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 15 }}
                       transition={{ duration: 0.25, ease: "easeOut" }}
-                      className="absolute top-full left-1/2 -translate-x-1/2 pt-5"
+                      className="fixed left-1/2 -translate-x-1/2 pt-5 z-50"
+                      style={{ top: 'calc(var(--header-top, 56px) + 92px)' }}
                     >
                       <div className="bg-white dark:bg-card rounded-2xl shadow-2xl border border-gray-100 dark:border-border/50 overflow-hidden flex" style={{ width: '980px' }}>
                         {/* Left Panel - Service Categories */}
@@ -780,7 +782,8 @@ export function Header() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 15 }}
                       transition={{ duration: 0.25, ease: "easeOut" }}
-                      className="absolute top-full left-1/2 -translate-x-1/2 pt-5"
+                      className="fixed left-1/2 -translate-x-1/2 pt-5 z-50"
+                      style={{ top: 'calc(var(--header-top, 56px) + 92px)' }}
                     >
                       <div className="bg-white dark:bg-card rounded-2xl shadow-2xl border border-gray-100 dark:border-border/50 overflow-hidden flex" style={{ width: '980px' }}>
                         {/* Left Panel - Industry Categories */}
@@ -894,7 +897,8 @@ export function Header() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 15 }}
                       transition={{ duration: 0.25, ease: "easeOut" }}
-                      className="absolute top-full right-0 pt-5"
+                      className="fixed left-1/2 -translate-x-1/2 pt-5 z-50"
+                      style={{ top: 'calc(var(--header-top, 56px) + 92px)' }}
                     >
                       <div className="bg-white dark:bg-card rounded-2xl shadow-2xl border border-gray-100 dark:border-border/50 overflow-hidden flex" style={{ width: '850px' }}>
                         {/* Left Side - Menu Items */}
