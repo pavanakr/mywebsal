@@ -1,5 +1,6 @@
 import { Landmark, Shield, CreditCard, BarChart, Smartphone, Lock } from 'lucide-react';
 import { IndustryDetailPage } from '@/components/industries/IndustryDetailPage';
+import heroBankingImage from '@/assets/hero-banking.png';
 
 const BankingFinance = () => {
   return (
@@ -9,6 +10,7 @@ const BankingFinance = () => {
       name="Banking & Finance"
       tagline="Secure Fintech Innovation"
       description="We build secure, compliant financial technology solutions that enable digital banking, payment processing, and investment management for financial institutions."
+      heroImage={heroBankingImage}
       stats={[
         { value: "$10B+", label: "Transactions Processed" },
         { value: "50+", label: "Financial Institutions" },

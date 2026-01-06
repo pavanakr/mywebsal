@@ -1,5 +1,6 @@
 import { Truck, MapPin, Package, BarChart, Clock, Cpu } from 'lucide-react';
 import { IndustryDetailPage } from '@/components/industries/IndustryDetailPage';
+import heroLogisticsImage from '@/assets/hero-logistics.png';
 
 const LogisticsTransportation = () => {
   return (
@@ -9,6 +10,7 @@ const LogisticsTransportation = () => {
       name="Logistics & Transportation"
       tagline="Smart Supply Chain & Fleet Solutions"
       description="We build intelligent logistics and transportation solutions that optimize operations, reduce costs, and provide real-time visibility across your entire distribution network."
+      heroImage={heroLogisticsImage}
       stats={[
         { value: "10M+", label: "Shipments Tracked" },
         { value: "30%", label: "Cost Reduction" },

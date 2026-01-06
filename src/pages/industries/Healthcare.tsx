@@ -1,5 +1,6 @@
 import { Heart, Shield, Users, BarChart, Stethoscope, FileText } from 'lucide-react';
 import { IndustryDetailPage } from '@/components/industries/IndustryDetailPage';
+import heroHealthcareImage from '@/assets/hero-healthcare.png';
 
 const Healthcare = () => {
   return (
@@ -9,6 +10,7 @@ const Healthcare = () => {
       name="Healthcare"
       tagline="Digital Solutions for Modern Healthcare"
       description="We build HIPAA-compliant software solutions that improve patient outcomes, streamline clinical workflows, and enable healthcare organizations to deliver better care at lower costs."
+      heroImage={heroHealthcareImage}
       stats={[
         { value: "50+", label: "Healthcare Projects" },
         { value: "2M+", label: "Patients Served" },

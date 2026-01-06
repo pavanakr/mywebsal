@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
+import { SEO } from '@/components/SEO';
 import { ArrowRight, CheckCircle, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { LucideIcon } from 'lucide-react';
@@ -31,6 +32,7 @@ interface ServiceDetailProps {
   technologies: string[];
   caseStudies: CaseStudy[];
   useCases: string[];
+  seoKeywords?: string;
 }
 
 export function ServiceDetailPage({
@@ -44,9 +46,17 @@ export function ServiceDetailPage({
   technologies,
   caseStudies,
   useCases,
+  seoKeywords,
 }: ServiceDetailProps) {
+  const defaultKeywords = `${title.toLowerCase()}, software development, enterprise solutions, custom software, ${technologies.slice(0, 5).join(', ').toLowerCase()}`;
+  
   return (
     <Layout>
+      <SEO
+        title={title}
+        description={tagline}
+        keywords={seoKeywords || defaultKeywords}
+      />
       {/* Hero Section */}
       <section className="pt-40 pb-24 md:pt-48 md:pb-32 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 relative overflow-hidden min-h-[60vh] flex items-center">
         {/* Enhanced Background Effects */}

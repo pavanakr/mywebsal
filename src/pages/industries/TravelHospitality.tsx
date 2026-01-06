@@ -1,5 +1,6 @@
 import { Plane, Hotel, Calendar, Globe, CreditCard, Users } from 'lucide-react';
 import { IndustryDetailPage } from '@/components/industries/IndustryDetailPage';
+import heroTravelImage from '@/assets/hero-travel.png';
 
 const TravelHospitality = () => {
   return (
@@ -9,6 +10,7 @@ const TravelHospitality = () => {
       name="Travel & Hospitality"
       tagline="Creating Seamless Travel Experiences"
       description="We build innovative technology solutions that transform how travelers discover, book, and experience their journeys while helping hospitality businesses optimize operations and maximize revenue."
+      heroImage={heroTravelImage}
       stats={[
         { value: "40M+", label: "Bookings Processed" },
         { value: "35%", label: "Revenue Increase" },

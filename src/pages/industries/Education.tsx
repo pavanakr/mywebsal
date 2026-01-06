@@ -1,5 +1,6 @@
 import { GraduationCap, BookOpen, Video, BarChart, Users, Award } from 'lucide-react';
 import { IndustryDetailPage } from '@/components/industries/IndustryDetailPage';
+import heroEducationImage from '@/assets/hero-education.png';
 
 const Education = () => {
   return (
@@ -9,6 +10,7 @@ const Education = () => {
       name="Education"
       tagline="EdTech Platforms for Learning"
       description="We build engaging educational technology that transforms how students learn, teachers teach, and institutions operate. From K-12 to corporate training, we deliver EdTech solutions that drive outcomes."
+      heroImage={heroEducationImage}
       stats={[
         { value: "1M+", label: "Active Learners" },
         { value: "95%", label: "Completion Rate" },
