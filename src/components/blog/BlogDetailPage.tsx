@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
+import { SEO } from '@/components/SEO';
 import { Calendar, Clock, User, ArrowLeft, Linkedin, Twitter, Facebook, Link2, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
@@ -74,8 +75,21 @@ export function BlogDetailPage({
     }
   };
 
+  const seoKeywords = `${category.toLowerCase()}, ${tags.join(', ').toLowerCase()}, tech blog, software development, enterprise insights`;
+
   return (
     <Layout>
+      <SEO
+        title={title}
+        description={excerpt}
+        keywords={seoKeywords}
+        image={image}
+        type="article"
+        article={{
+          publishedTime: date,
+          author: author.name,
+        }}
+      />
       {/* Hero Section */}
       <section className="pt-32 pb-12 bg-gradient-to-br from-primary via-navy to-navy-light">
         <div className="container-custom">
