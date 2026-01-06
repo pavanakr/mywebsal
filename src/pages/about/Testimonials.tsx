@@ -1,8 +1,11 @@
 import { Layout } from '@/components/layout/Layout';
+import { PageHero } from '@/components/layout/PageHero';
+import { SEO } from '@/components/SEO';
 import { motion } from 'framer-motion';
-import { Star, Quote, ArrowRight } from 'lucide-react';
+import { Star, Quote, ArrowRight, MessageSquareQuote } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import heroTestimonials from '@/assets/hero-testimonials.png';
 
 export default function Testimonials() {
   const testimonials = [
@@ -52,23 +55,31 @@ export default function Testimonials() {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-primary via-primary/95 to-primary/90">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="max-w-3xl"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-              Client Testimonials
-            </h1>
-            <p className="text-xl text-primary-foreground/80">
-              Hear what our satisfied clients say about working with us.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <SEO 
+        title="Client Testimonials"
+        description="Read what our satisfied clients say about Softurecs AI Labs. Discover success stories from 700+ happy clients across healthcare, fintech, e-commerce, and more."
+        keywords="client testimonials, customer reviews, software development reviews, Softurecs reviews, client success stories"
+      />
+      
+      <PageHero
+        title="Client Testimonials"
+        description="Hear what our satisfied clients say about working with us. Real stories from real partners who have experienced transformative digital solutions."
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'About', href: '/about' },
+          { label: 'Testimonials' }
+        ]}
+        icon={MessageSquareQuote}
+        iconColor="from-amber-500 to-orange-600"
+        badge="Client Success"
+        image={heroTestimonials}
+        imageAlt="Client testimonials and reviews"
+        stats={[
+          { value: '700+', label: 'Happy Clients' },
+          { value: '4.9/5', label: 'Average Rating' },
+          { value: '98%', label: 'Satisfaction' }
+        ]}
+      />
 
       {/* Stats */}
       <section className="py-16 bg-card border-b border-border">

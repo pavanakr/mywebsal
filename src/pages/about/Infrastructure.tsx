@@ -1,5 +1,6 @@
 import { Layout } from '@/components/layout/Layout';
 import { PageHero } from '@/components/layout/PageHero';
+import { SEO } from '@/components/SEO';
 import { motion } from 'framer-motion';
 import { Server, Shield, Code, Cloud, Lock, Zap, Monitor, Database, ArrowRight, HardDrive } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -56,6 +57,12 @@ export default function Infrastructure() {
 
   return (
     <Layout>
+      <SEO 
+        title="Our Infrastructure"
+        description="Explore Softurecs AI Labs' enterprise-grade infrastructure - AWS, Azure, GCP cloud setup, ISO 27001 certified, 99.9% uptime, 24/7 monitoring."
+        keywords="cloud infrastructure, AWS, Azure, Google Cloud, ISO 27001, enterprise security, DevOps"
+      />
+      
       <PageHero
         title="Our Infrastructure"
         description="Explore our advanced development environment and robust technology setup, designed for performance, security, and scalability."

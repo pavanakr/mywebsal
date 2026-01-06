@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
 import { PageHero } from '@/components/layout/PageHero';
+import { SEO } from '@/components/SEO';
 import { Mail, Phone, MapPin, Send, Clock, Globe, MessageCircle, Headphones } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -30,6 +31,11 @@ const Contact = () => {
 
   return (
     <Layout>
+      <SEO 
+        title="Contact Us"
+        description="Get in touch with Softurecs AI Labs. Contact us for AI solutions, software development, and digital transformation services. 24-hour response time guaranteed."
+        keywords="contact Softurecs, software development inquiry, AI solutions contact, IT consulting"
+      />
       <PageHero
         title="Let's Build Something Amazing Together"
         description="Have a project in mind? We'd love to hear about it. Get in touch with our team and let's start the conversation about your next big idea."

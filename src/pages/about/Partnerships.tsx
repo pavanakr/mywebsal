@@ -1,8 +1,11 @@
 import { Layout } from '@/components/layout/Layout';
+import { PageHero } from '@/components/layout/PageHero';
+import { SEO } from '@/components/SEO';
 import { motion } from 'framer-motion';
 import { Handshake, Users, Globe, Zap, ArrowRight, Building2, Lightbulb } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import heroPartnerships from '@/assets/hero-partnerships.png';
 
 export default function Partnerships() {
   const partnerTypes = [
@@ -35,23 +38,31 @@ export default function Partnerships() {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-primary via-primary/95 to-primary/90">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="max-w-3xl"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-              Our Partnerships
-            </h1>
-            <p className="text-xl text-primary-foreground/80">
-              Collaborate with us to build impactful and scalable solutions.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <SEO 
+        title="Our Partnerships"
+        description="Discover Softurecs AI Labs' strategic partnerships with AWS, Microsoft, Google Cloud, and leading technology providers. 50+ active partners across 15+ countries."
+        keywords="technology partnerships, AWS partner, Microsoft partner, Google Cloud partner, software development partnerships"
+      />
+      
+      <PageHero
+        title="Our Partnerships"
+        description="Collaborate with us to build impactful and scalable solutions. Our strategic partnerships enable comprehensive technology delivery."
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'About', href: '/about' },
+          { label: 'Partnerships' }
+        ]}
+        icon={Handshake}
+        iconColor="from-teal-500 to-cyan-600"
+        badge="Collaboration"
+        image={heroPartnerships}
+        imageAlt="Strategic partnerships and collaboration"
+        stats={[
+          { value: '50+', label: 'Active Partners' },
+          { value: '15+', label: 'Countries' },
+          { value: '100+', label: 'Joint Projects' }
+        ]}
+      />
 
       {/* Partnership Philosophy */}
       <section className="py-20">
