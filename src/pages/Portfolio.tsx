@@ -3,8 +3,10 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
 import { PageHero } from '@/components/layout/PageHero';
+import { SEO } from '@/components/SEO';
 import { ExternalLink, ArrowRight, FolderOpen } from 'lucide-react';
 import { CTASection } from '@/components/home/CTASection';
+import heroPortfolioImage from '@/assets/hero-portfolio.png';
 
 const categories = ['All', 'Healthcare', 'Fintech', 'E-commerce', 'Logistics', 'Real Estate'];
 
@@ -68,6 +70,11 @@ const Portfolio = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Portfolio & Case Studies"
+        description="Explore our portfolio of innovative digital solutions. 1500+ successful projects across healthcare, fintech, e-commerce, and logistics with measurable results."
+        keywords="case studies, portfolio, software projects, digital transformation, success stories, client projects, enterprise solutions"
+      />
       <PageHero
         title="Transforming Ideas Into Digital Success Stories"
         description="Explore our portfolio of innovative solutions that have helped businesses achieve their digital transformation goals and drive real business results."
@@ -79,7 +86,8 @@ const Portfolio = () => {
         icon={FolderOpen}
         iconColor="from-emerald-500 to-cyan-600"
         badge="Case Studies"
-        variant="centered"
+        image={heroPortfolioImage}
+        imageAlt="Portfolio case studies illustration"
         stats={[
           { value: '1500+', label: 'Projects' },
           { value: '99%', label: 'Success Rate' },

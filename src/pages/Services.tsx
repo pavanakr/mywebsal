@@ -2,8 +2,10 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
 import { PageHero } from '@/components/layout/PageHero';
+import { SEO } from '@/components/SEO';
 import { Code, Globe, Smartphone, Cloud, Cpu, Layers, ArrowRight, RefreshCw, Database, Users, Rocket, Settings } from 'lucide-react';
 import { CTASection } from '@/components/home/CTASection';
+import heroServicesImage from '@/assets/hero-services.png';
 
 const services = [
   {
@@ -75,6 +77,11 @@ const services = [
 const Services = () => {
   return (
     <Layout>
+      <SEO
+        title="Software Development Services"
+        description="Comprehensive technology solutions from AI and mobile apps to cloud services and custom software. Trusted by 700+ clients worldwide for digital transformation."
+        keywords="software development, AI solutions, mobile app development, cloud services, custom software, web development, SaaS development"
+      />
       <PageHero
         title="Comprehensive Technology Solutions"
         description="From custom software to AI-powered platforms, we deliver end-to-end solutions that drive digital transformation and accelerate business growth."
@@ -85,7 +92,8 @@ const Services = () => {
         icon={Settings}
         iconColor="from-indigo-500 to-cyan-500"
         badge="Our Services"
-        variant="centered"
+        image={heroServicesImage}
+        imageAlt="Software development services illustration"
         stats={[
           { value: '1500+', label: 'Projects Delivered' },
           { value: '700+', label: 'Happy Clients' },

@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
 import { PageHero } from '@/components/layout/PageHero';
+import { SEO } from '@/components/SEO';
 import { MapPin, Clock, DollarSign, ArrowRight, Users, Heart, Zap, Globe, Coffee, BookOpen, Briefcase } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import heroCareersImage from '@/assets/hero-careers.png';
 
 const perks = [
   { icon: DollarSign, title: 'Competitive Salary', description: 'Industry-leading compensation packages' },
@@ -61,6 +63,11 @@ const jobs = [
 const Careers = () => {
   return (
     <Layout>
+      <SEO
+        title="Careers & Job Opportunities"
+        description="Join our team of 200+ innovators across 20+ countries. Explore exciting career opportunities in software development, AI, design, and more."
+        keywords="tech careers, software jobs, remote work, developer jobs, AI engineer, product designer, devops engineer, tech opportunities"
+      />
       <PageHero
         title="Build the Future of Technology With Us"
         description="Join a team of passionate innovators working on challenging problems for world-class clients. We're always looking for exceptional talent to shape the future."
@@ -72,8 +79,8 @@ const Careers = () => {
         icon={Briefcase}
         iconColor="from-indigo-500 to-purple-600"
         badge="We're Hiring"
-        image="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop"
-        imageAlt="Team collaboration at Softurecs"
+        image={heroCareersImage}
+        imageAlt="Team collaboration and career growth at Softurecs"
         stats={[
           { value: '200+', label: 'Team Members' },
           { value: '20+', label: 'Countries' },

@@ -3,12 +3,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
 import { PageHero } from '@/components/layout/PageHero';
+import { SEO } from '@/components/SEO';
 import { 
   Truck, Building2, GraduationCap, ShoppingCart, Heart, Landmark, 
   Film, Plane, ArrowRight, CheckCircle, Search, Filter, Grid3X3, List, Layers
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import heroIndustriesImage from '@/assets/hero-industries.png';
 
 const industries = [
   {
@@ -152,6 +154,11 @@ const Industries = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Industry Solutions"
+        description="Tailored digital transformation solutions for healthcare, finance, retail, education, logistics, and more. Deep domain expertise across 8+ industries."
+        keywords="industry solutions, healthcare technology, fintech solutions, retail ecommerce, education technology, logistics software, enterprise solutions"
+      />
       <PageHero
         title="Tailored Solutions for Every Industry"
         description="We bring deep domain expertise to deliver industry-specific digital transformation solutions that address unique challenges and drive measurable results across verticals."
@@ -162,7 +169,8 @@ const Industries = () => {
         icon={Layers}
         iconColor="from-indigo-500 to-purple-600"
         badge="Industries We Serve"
-        variant="centered"
+        image={heroIndustriesImage}
+        imageAlt="Industry solutions illustration"
         stats={[
           { value: '8+', label: 'Industries' },
           { value: '700+', label: 'Clients' },
