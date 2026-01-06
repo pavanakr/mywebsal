@@ -90,6 +90,32 @@ const sitemapData = {
     { name: 'Banking & Finance', href: '/industries/banking-finance' },
     { name: 'Media & Entertainment', href: '/industries/media-entertainment' },
   ],
+  industrySolutions: [
+    { name: 'Digital Banking', href: '/industries/solutions/digital-banking' },
+    { name: 'Fraud Detection', href: '/industries/solutions/fraud-detection' },
+    { name: 'Payment Processing', href: '/industries/solutions/payment-processing' },
+    { name: 'Telemedicine Platform', href: '/industries/solutions/telemedicine-platform' },
+    { name: 'Electronic Health Records', href: '/industries/solutions/electronic-health-records' },
+    { name: 'Patient Engagement', href: '/industries/solutions/patient-engagement' },
+    { name: 'LMS Platform', href: '/industries/solutions/lms-platform' },
+    { name: 'Student Management', href: '/industries/solutions/student-management' },
+    { name: 'Virtual Learning', href: '/industries/solutions/virtual-learning' },
+    { name: 'E-commerce Platform', href: '/industries/solutions/ecommerce-platform' },
+    { name: 'Inventory Management', href: '/industries/solutions/inventory-management' },
+    { name: 'Marketplace Development', href: '/industries/solutions/marketplace-development' },
+    { name: 'On-Demand Logistics', href: '/industries/solutions/on-demand-logistics' },
+    { name: 'Shipping Management', href: '/industries/solutions/shipping-management' },
+    { name: 'Transportation Automation', href: '/industries/solutions/transportation-automation' },
+    { name: 'Property Management', href: '/industries/solutions/property-management' },
+    { name: 'Virtual Tour', href: '/industries/solutions/virtual-tour' },
+    { name: 'Construction Management', href: '/industries/solutions/construction-management' },
+    { name: 'Travel Booking', href: '/industries/solutions/travel-booking' },
+    { name: 'Hotel Management', href: '/industries/solutions/hotel-management' },
+    { name: 'Travel Experience', href: '/industries/solutions/travel-experience' },
+    { name: 'Streaming Platform', href: '/industries/solutions/streaming-platform' },
+    { name: 'Content Management', href: '/industries/solutions/content-management' },
+    { name: 'Live Streaming', href: '/industries/solutions/live-streaming' },
+  ],
   hire: [
     { name: 'Dedicated Developers', href: '/hire/dedicated-developers' },
     { name: 'Mobile Developers', href: '/hire/mobile-developers' },
@@ -205,6 +231,9 @@ const Sitemap = () => {
 
             {/* Industries */}
             <SitemapSection title="Industries" items={sitemapData.industries} columns={3} />
+
+            {/* Industry Solutions */}
+            <SitemapSection title="Industry Solutions" items={sitemapData.industrySolutions} columns={3} />
 
             {/* Two Column Layout */}
             <div className="grid lg:grid-cols-2 gap-8">
