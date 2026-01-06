@@ -96,6 +96,7 @@ import InsightsPortfolio from "./pages/insights/InsightsPortfolio";
 import InsightsBlogs from "./pages/insights/Blogs";
 import InsightsFAQs from "./pages/insights/FAQs";
 import InsightsPressReleases from "./pages/insights/PressReleases";
+import CaseStudyDetail from "./pages/insights/CaseStudyDetail";
 
 const queryClient = new QueryClient();
 
@@ -193,6 +194,7 @@ const App = () => (
             {/* Insights */}
             <Route path="/insights" element={<Insights />} />
             <Route path="/insights/case-studies" element={<InsightsCaseStudies />} />
+            <Route path="/insights/case-studies/:slug" element={<CaseStudyDetail />} />
             <Route path="/insights/portfolio" element={<InsightsPortfolio />} />
             <Route path="/insights/blogs" element={<InsightsBlogs />} />
             <Route path="/insights/faqs" element={<InsightsFAQs />} />

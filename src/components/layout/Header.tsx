@@ -1044,12 +1044,19 @@ export function Header() {
                 </Link>
               ))}
 
-              <Link to="/portfolio" className="block px-4 py-2 text-foreground font-medium rounded-lg hover:bg-secondary">
-                Portfolio
-              </Link>
-              <Link to="/blog" className="block px-4 py-2 text-foreground font-medium rounded-lg hover:bg-secondary">
-                Blog
-              </Link>
+              <div className="px-4 py-2">
+                <span className="text-sm font-semibold text-muted-foreground">Softurecs Insights</span>
+              </div>
+              {insightsMenuItems.map((item) => (
+                <Link 
+                  key={item.href}
+                  to={item.href} 
+                  className="block px-8 py-2 text-foreground font-medium rounded-lg hover:bg-secondary"
+                >
+                  {item.name}
+                </Link>
+              ))}
+
               <Link to="/contact" className="block px-4 py-2 text-foreground font-medium rounded-lg hover:bg-secondary">
                 Contact
               </Link>
