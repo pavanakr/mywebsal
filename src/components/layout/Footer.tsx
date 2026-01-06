@@ -7,12 +7,12 @@ const services = [
   { name: 'Mobile App Development', href: '/services/mobile-apps' },
   { name: 'iOS App Development', href: '/services/ios-development' },
   { name: 'Android App Development', href: '/services/android-development' },
-  { name: 'Hybrid App Development', href: '/services/mobile-apps' },
-  { name: 'Software Consulting Services', href: '/services/custom-software' },
+  { name: 'Hybrid App Development', href: '/services/hybrid-development' },
+  { name: 'Software Consulting Services', href: '/services/software-consulting' },
   { name: 'Web Development Services', href: '/services/web-development' },
-  { name: 'UI/UX Development', href: '/services/web-development' },
-  { name: 'Data Analytics Services', href: '/services/big-data-analytics' },
-  { name: 'Ecommerce App Development', href: '/industries/ecommerce' },
+  { name: 'UI/UX Development', href: '/services/ui-ux' },
+  { name: 'Data Analytics Services', href: '/services/data-analytics' },
+  { name: 'Ecommerce App Development', href: '/services/ecommerce' },
 ];
 
 const solutions = [
@@ -30,13 +30,13 @@ const solutions = [
 const technologies = [
   { name: 'Blockchain App Development', href: '/technologies/blockchain' },
   { name: 'Artificial Intelligence Solutions', href: '/services/ai-development' },
-  { name: 'Fintech App Development', href: '/industries/fintech' },
+  { name: 'Fintech App Development', href: '/technologies/fintech' },
   { name: 'Cryptocurrency Wallet', href: '/technologies/blockchain' },
   { name: 'IoT App Development', href: '/technologies/iot' },
   { name: 'Salesforce Solutions', href: '/technologies/salesforce' },
-  { name: 'Cloud Computing', href: '/services/cloud-devops' },
-  { name: 'Machine Learning Solutions', href: '/services/machine-learning' },
-  { name: 'Big Data Solutions', href: '/services/big-data-analytics' },
+  { name: 'Cloud Computing', href: '/technologies/cloud' },
+  { name: 'Machine Learning Solutions', href: '/technologies/machine-learning' },
+  { name: 'Big Data Solutions', href: '/services/big-data' },
 ];
 
 const hireDevelopers = [
