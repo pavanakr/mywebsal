@@ -6,7 +6,7 @@ import { PageHero } from '@/components/layout/PageHero';
 import { ArrowRight, CheckCircle, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { LucideIcon } from 'lucide-react';
-
+import { ServiceSidebar } from './ServiceSidebar';
 interface ProcessStep {
   number: string;
   title: string;
@@ -61,6 +61,9 @@ export function ServiceDetailPage({
         keywords={seoKeywords || defaultKeywords}
       />
       
+      {/* Sticky Sidebar Navigation */}
+      <ServiceSidebar />
+      
       <PageHero
         title={title}
         description={tagline}
@@ -77,7 +80,7 @@ export function ServiceDetailPage({
       />
 
       {/* Overview & Benefits */}
-      <section className="section-padding bg-background">
+      <section id="overview" className="section-padding bg-background scroll-mt-24">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -134,7 +137,7 @@ export function ServiceDetailPage({
       </section>
 
       {/* Process */}
-      <section className="section-padding bg-secondary/30">
+      <section id="process" className="section-padding bg-secondary/30 scroll-mt-24">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -176,7 +179,7 @@ export function ServiceDetailPage({
       </section>
 
       {/* Technologies */}
-      <section className="section-padding bg-background">
+      <section id="technologies" className="section-padding bg-background scroll-mt-24">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -217,7 +220,7 @@ export function ServiceDetailPage({
       </section>
 
       {/* Case Studies */}
-      <section className="section-padding bg-secondary/30">
+      <section id="case-studies" className="section-padding bg-secondary/30 scroll-mt-24">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -293,7 +296,7 @@ export function ServiceDetailPage({
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-to-r from-accent to-cyan-light relative overflow-hidden">
+      <section id="cta" className="py-20 bg-gradient-to-r from-accent to-cyan-light relative overflow-hidden scroll-mt-24">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-40 h-40 border border-primary rounded-full" />
           <div className="absolute bottom-0 right-0 w-60 h-60 border border-primary rounded-full" />
