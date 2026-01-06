@@ -513,17 +513,17 @@ export function Header() {
                 <AnimatePresence>
                   {activeDropdown === 'about' && (
                     <motion.div
-                      initial={{ opacity: 0, y: 15 }}
+                      initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 15 }}
-                      transition={{ duration: 0.25, ease: "easeOut" }}
-                      className="fixed left-1/2 -translate-x-1/2 pt-5 z-50"
-                      style={{ top: 'calc(var(--header-top, 56px) + 92px)' }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
+                      className="fixed left-1/2 -translate-x-1/2 pt-4 z-50"
+                      style={{ top: 'calc(var(--header-top, 44px) + 92px)' }}
                     >
-                      <div className="bg-white dark:bg-card rounded-2xl shadow-2xl border border-gray-100 dark:border-border/50 overflow-hidden flex" style={{ width: '920px' }}>
-                        {/* Left Side - Menu Items (2 columns) */}
-                        <div className="flex-1 p-6">
-                          <div className="grid grid-cols-2 gap-x-6 gap-y-1">
+                      <div className="bg-white dark:bg-card rounded-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] border border-gray-100/80 dark:border-border/50 overflow-hidden grid grid-cols-12" style={{ width: '1100px' }}>
+                        {/* Left Side - Menu Items (8 columns) */}
+                        <div className="col-span-8 p-8">
+                          <div className="grid grid-cols-2 gap-x-6 gap-y-4">
                             {aboutMenuItems.map((item, index) => {
                               const iconColors = [
                                 { from: '#3b82f6', to: '#14b8a6' },
@@ -540,16 +540,16 @@ export function Header() {
                               return (
                                 <motion.div
                                   key={item.href}
-                                  initial={{ opacity: 0, y: 10 }}
+                                  initial={{ opacity: 0, y: 8 }}
                                   animate={{ opacity: 1, y: 0 }}
-                                  transition={{ delay: index * 0.03 }}
+                                  transition={{ delay: index * 0.025 }}
                                 >
                                   <Link
                                     to={item.href}
-                                    className="flex items-start gap-3 px-3 py-3 rounded-xl hover:bg-gray-50 dark:hover:bg-secondary/80 transition-all duration-200 group"
+                                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 dark:hover:bg-secondary/80 transition-all duration-200 group border border-transparent hover:border-gray-100 dark:hover:border-border/30"
                                   >
                                     <motion.div 
-                                      className={`w-11 h-11 rounded-xl bg-gradient-to-br ${item.bgGradient} flex items-center justify-center shrink-0 shadow-sm group-hover:shadow-md transition-all duration-200`}
+                                      className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.bgGradient} flex items-center justify-center shrink-0 shadow-sm group-hover:shadow-md transition-all duration-200`}
                                       whileHover={{ scale: 1.05 }}
                                     >
                                       <svg width="0" height="0" className="absolute">
@@ -565,9 +565,9 @@ export function Header() {
                                         style={{ stroke: `url(#menu-icon-${index})` }}
                                       />
                                     </motion.div>
-                                    <div className="pt-0.5">
-                                      <span className="text-sm font-semibold text-gray-900 dark:text-foreground block group-hover:text-indigo-600 dark:group-hover:text-accent transition-colors">{item.name}</span>
-                                      <span className="text-xs text-gray-500 dark:text-muted-foreground line-clamp-2 leading-relaxed">{item.description}</span>
+                                    <div className="flex-1 min-w-0">
+                                      <span className="text-sm font-semibold text-gray-900 dark:text-foreground block group-hover:text-indigo-600 dark:group-hover:text-accent transition-colors mb-1">{item.name}</span>
+                                      <span className="text-xs text-gray-500 dark:text-muted-foreground leading-relaxed line-clamp-2">{item.description}</span>
                                     </div>
                                   </Link>
                                 </motion.div>
@@ -576,10 +576,10 @@ export function Header() {
                           </div>
                         </div>
 
-                        {/* Right Side - Figures at a Glance */}
-                        <div className="w-[320px] bg-gradient-to-br from-indigo-600 via-indigo-700 to-blue-700 p-6">
-                          <h3 className="text-lg font-bold text-amber-400 mb-5">Figures at a Glance</h3>
-                          <div className="space-y-4">
+                        {/* Right Side - Figures at a Glance (4 columns) */}
+                        <div className="col-span-4 bg-gradient-to-br from-indigo-600 via-indigo-700 to-purple-700 p-8 flex flex-col">
+                          <h3 className="text-lg font-bold text-amber-400 mb-6">Figures at a Glance</h3>
+                          <div className="space-y-5 flex-1">
                             {figuresAtGlance.map((figure, idx) => {
                               const figureColors = [
                                 { from: '#fbbf24', to: '#f59e0b' },
@@ -592,13 +592,13 @@ export function Header() {
                               return (
                                 <motion.div 
                                   key={figure.label} 
-                                  className="flex items-start gap-3"
-                                  initial={{ opacity: 0, x: 20 }}
+                                  className="flex items-start gap-4"
+                                  initial={{ opacity: 0, x: 15 }}
                                   animate={{ opacity: 1, x: 0 }}
-                                  transition={{ delay: idx * 0.08 }}
+                                  transition={{ delay: idx * 0.06 }}
                                 >
                                   <motion.div 
-                                    className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 backdrop-blur-sm"
+                                    className="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center shrink-0 backdrop-blur-sm"
                                     whileHover={{ scale: 1.1 }}
                                   >
                                     <svg width="0" height="0" className="absolute">
@@ -614,7 +614,7 @@ export function Header() {
                                       style={{ stroke: `url(#figure-icon-${idx})` }}
                                     />
                                   </motion.div>
-                                  <div>
+                                  <div className="flex-1 min-w-0">
                                     <span className="text-sm font-bold text-white block">{figure.value} {figure.label}</span>
                                     <span className="text-xs text-white/70 leading-relaxed">{figure.description}</span>
                                   </div>
@@ -652,17 +652,17 @@ export function Header() {
                 <AnimatePresence>
                   {activeDropdown === 'services' && (
                     <motion.div
-                      initial={{ opacity: 0, y: 15 }}
+                      initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 15 }}
-                      transition={{ duration: 0.25, ease: "easeOut" }}
-                      className="fixed left-1/2 -translate-x-1/2 pt-5 z-50"
-                      style={{ top: 'calc(var(--header-top, 56px) + 92px)' }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
+                      className="fixed left-1/2 -translate-x-1/2 pt-4 z-50"
+                      style={{ top: 'calc(var(--header-top, 44px) + 92px)' }}
                     >
-                      <div className="bg-white dark:bg-card rounded-2xl shadow-2xl border border-gray-100 dark:border-border/50 overflow-hidden flex" style={{ width: '980px' }}>
-                        {/* Left Panel - Service Categories */}
-                        <div className="flex-1 p-5">
-                          <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+                      <div className="bg-white dark:bg-card rounded-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] border border-gray-100/80 dark:border-border/50 overflow-hidden grid grid-cols-12" style={{ width: '1100px' }}>
+                        {/* Left Panel - Service Categories (8 columns) */}
+                        <div className="col-span-8 p-8">
+                          <div className="grid grid-cols-2 gap-x-6 gap-y-4">
                             {serviceCategories.map((category, index) => {
                               const iconConfigs = [
                                 { bg: 'bg-gradient-to-br from-violet-100 to-purple-100 dark:from-violet-900/40 dark:to-purple-900/40', iconColor: 'text-violet-600 dark:text-violet-400' },
@@ -687,20 +687,20 @@ export function Header() {
                                 >
                                   <Link
                                     to={category.href}
-                                    className={`flex items-start gap-3 px-3 py-3 rounded-xl transition-all duration-200 group border-2 ${
+                                    className={`flex items-start gap-4 p-4 rounded-xl transition-all duration-200 group border ${
                                       isActive 
-                                        ? 'bg-gray-50 dark:bg-secondary/80 border-indigo-100 dark:border-accent/20' 
-                                        : 'border-transparent hover:bg-gray-50 dark:hover:bg-secondary/50'
+                                        ? 'bg-gray-50 dark:bg-secondary/80 border-indigo-200/60 dark:border-accent/20 shadow-sm' 
+                                        : 'border-transparent hover:bg-gray-50 dark:hover:bg-secondary/50 hover:border-gray-100 dark:hover:border-border/30'
                                     }`}
                                   >
                                     <motion.div 
-                                      className={`w-11 h-11 rounded-xl ${config.bg} flex items-center justify-center shrink-0 shadow-sm`}
+                                      className={`w-12 h-12 rounded-xl ${config.bg} flex items-center justify-center shrink-0 shadow-sm`}
                                       whileHover={{ scale: 1.05 }}
                                     >
                                       <category.icon className={`w-5 h-5 ${config.iconColor}`} />
                                     </motion.div>
-                                    <div className="pt-0.5 flex-1">
-                                      <span className={`text-sm font-semibold block transition-colors ${
+                                    <div className="flex-1 min-w-0">
+                                      <span className={`text-sm font-semibold block transition-colors mb-1 ${
                                         isActive ? 'text-indigo-600 dark:text-accent' : 'text-gray-900 dark:text-foreground group-hover:text-indigo-600 dark:group-hover:text-accent'
                                       }`}>{category.name}</span>
                                       <span className="text-xs text-gray-500 dark:text-muted-foreground line-clamp-2 leading-relaxed">{category.description}</span>
@@ -712,23 +712,24 @@ export function Header() {
                           </div>
                         </div>
 
-                        {/* Right Panel - Sub-services */}
-                        <div className="w-[280px] bg-gradient-to-br from-indigo-600 via-indigo-700 to-blue-700 p-5 relative overflow-hidden">
-                          <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-3xl" />
+                        {/* Right Panel - Sub-services (4 columns) */}
+                        <div className="col-span-4 bg-gradient-to-br from-indigo-600 via-indigo-700 to-purple-700 p-8 relative overflow-hidden flex flex-col">
+                          <div className="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full blur-3xl" />
+                          <div className="absolute bottom-0 left-0 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl" />
                           
                           <AnimatePresence mode="wait">
                             <motion.div
                               key={activeServiceCategory || 'default'}
-                              initial={{ opacity: 0, x: 15 }}
+                              initial={{ opacity: 0, x: 10 }}
                               animate={{ opacity: 1, x: 0 }}
-                              exit={{ opacity: 0, x: -15 }}
+                              exit={{ opacity: 0, x: -10 }}
                               transition={{ duration: 0.15 }}
-                              className="relative z-10"
+                              className="relative z-10 flex-1"
                             >
-                              <h3 className="text-base font-bold text-amber-400 mb-4">
+                              <h3 className="text-lg font-bold text-amber-400 mb-5">
                                 {activeServiceCategory || 'Artificial Intelligence'}
                               </h3>
-                              <div className="space-y-0.5">
+                              <div className="space-y-1">
                                 {(serviceCategories.find(cat => cat.name === (activeServiceCategory || 'Artificial Intelligence'))?.subServices || serviceCategories[0].subServices).map((sub, idx) => (
                                   <motion.div
                                     key={sub.href + idx}
@@ -738,9 +739,9 @@ export function Header() {
                                   >
                                     <Link
                                       to={sub.href}
-                                      className="flex items-center gap-1.5 text-white/90 hover:text-amber-400 transition-all duration-200 group py-2 px-2 -mx-2 rounded-lg hover:bg-white/5"
+                                      className="flex items-center gap-2 text-white/90 hover:text-amber-400 transition-all duration-200 group py-2.5 px-3 -mx-3 rounded-lg hover:bg-white/10"
                                     >
-                                      <ChevronRight className="w-4 h-4 text-amber-400 group-hover:translate-x-0.5 transition-transform" />
+                                      <ChevronRight className="w-4 h-4 text-amber-400 group-hover:translate-x-1 transition-transform duration-200" />
                                       <span className="text-sm font-medium">{sub.name}</span>
                                     </Link>
                                   </motion.div>
@@ -778,17 +779,17 @@ export function Header() {
                 <AnimatePresence>
                   {activeDropdown === 'industries' && (
                     <motion.div
-                      initial={{ opacity: 0, y: 15 }}
+                      initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 15 }}
-                      transition={{ duration: 0.25, ease: "easeOut" }}
-                      className="fixed left-1/2 -translate-x-1/2 pt-5 z-50"
-                      style={{ top: 'calc(var(--header-top, 56px) + 92px)' }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
+                      className="fixed left-1/2 -translate-x-1/2 pt-4 z-50"
+                      style={{ top: 'calc(var(--header-top, 44px) + 92px)' }}
                     >
-                      <div className="bg-white dark:bg-card rounded-2xl shadow-2xl border border-gray-100 dark:border-border/50 overflow-hidden flex" style={{ width: '980px' }}>
-                        {/* Left Panel - Industry Categories */}
-                        <div className="flex-1 p-5">
-                          <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+                      <div className="bg-white dark:bg-card rounded-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] border border-gray-100/80 dark:border-border/50 overflow-hidden grid grid-cols-12" style={{ width: '1100px' }}>
+                        {/* Left Panel - Industry Categories (8 columns) */}
+                        <div className="col-span-8 p-8">
+                          <div className="grid grid-cols-2 gap-x-6 gap-y-4">
                             {industryCategories.map((category, index) => {
                               const isActive = activeIndustryCategory === category.name || (!activeIndustryCategory && index === 0);
                               
@@ -802,20 +803,20 @@ export function Header() {
                                 >
                                   <Link
                                     to={category.href}
-                                    className={`flex items-start gap-3 px-3 py-3 rounded-xl transition-all duration-200 group border-2 ${
+                                    className={`flex items-start gap-4 p-4 rounded-xl transition-all duration-200 group border ${
                                       isActive 
-                                        ? 'bg-gray-50 dark:bg-secondary/80 border-indigo-100 dark:border-accent/20' 
-                                        : 'border-transparent hover:bg-gray-50 dark:hover:bg-secondary/50'
+                                        ? 'bg-gray-50 dark:bg-secondary/80 border-indigo-200/60 dark:border-accent/20 shadow-sm' 
+                                        : 'border-transparent hover:bg-gray-50 dark:hover:bg-secondary/50 hover:border-gray-100 dark:hover:border-border/30'
                                     }`}
                                   >
                                     <motion.div 
-                                      className={`w-11 h-11 rounded-xl bg-gradient-to-br ${category.bgGradient} flex items-center justify-center shrink-0 shadow-sm`}
+                                      className={`w-12 h-12 rounded-xl bg-gradient-to-br ${category.bgGradient} flex items-center justify-center shrink-0 shadow-sm`}
                                       whileHover={{ scale: 1.05 }}
                                     >
                                       <category.icon className={`w-5 h-5 ${category.iconColor}`} />
                                     </motion.div>
-                                    <div className="pt-0.5 flex-1">
-                                      <span className={`text-sm font-semibold block transition-colors ${
+                                    <div className="flex-1 min-w-0">
+                                      <span className={`text-sm font-semibold block transition-colors mb-1 ${
                                         isActive ? 'text-indigo-600 dark:text-accent' : 'text-gray-900 dark:text-foreground group-hover:text-indigo-600 dark:group-hover:text-accent'
                                       }`}>{category.name}</span>
                                       <span className="text-xs text-gray-500 dark:text-muted-foreground line-clamp-2 leading-relaxed">{category.description}</span>
@@ -827,23 +828,24 @@ export function Header() {
                           </div>
                         </div>
 
-                        {/* Right Panel - Sub-industries */}
-                        <div className="w-[280px] bg-gradient-to-br from-indigo-600 via-indigo-700 to-blue-700 p-5 relative overflow-hidden">
-                          <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-3xl" />
+                        {/* Right Panel - Sub-industries (4 columns) */}
+                        <div className="col-span-4 bg-gradient-to-br from-indigo-600 via-indigo-700 to-purple-700 p-8 relative overflow-hidden flex flex-col">
+                          <div className="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full blur-3xl" />
+                          <div className="absolute bottom-0 left-0 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl" />
                           
                           <AnimatePresence mode="wait">
                             <motion.div
                               key={activeIndustryCategory || 'default'}
-                              initial={{ opacity: 0, x: 15 }}
+                              initial={{ opacity: 0, x: 10 }}
                               animate={{ opacity: 1, x: 0 }}
-                              exit={{ opacity: 0, x: -15 }}
+                              exit={{ opacity: 0, x: -10 }}
                               transition={{ duration: 0.15 }}
-                              className="relative z-10"
+                              className="relative z-10 flex-1"
                             >
-                              <h3 className="text-base font-bold text-amber-400 mb-4">
+                              <h3 className="text-lg font-bold text-amber-400 mb-5">
                                 {activeIndustryCategory || 'Logistics & Transportation'}
                               </h3>
-                              <div className="space-y-0.5">
+                              <div className="space-y-1">
                                 {(industryCategories.find(cat => cat.name === (activeIndustryCategory || 'Logistics & Transportation'))?.subIndustries || industryCategories[0].subIndustries).map((sub, idx) => (
                                   <motion.div
                                     key={sub.href + idx}
@@ -853,9 +855,9 @@ export function Header() {
                                   >
                                     <Link
                                       to={sub.href}
-                                      className="flex items-center gap-1.5 text-white/90 hover:text-amber-400 transition-all duration-200 group py-2 px-2 -mx-2 rounded-lg hover:bg-white/5"
+                                      className="flex items-center gap-2 text-white/90 hover:text-amber-400 transition-all duration-200 group py-2.5 px-3 -mx-3 rounded-lg hover:bg-white/10"
                                     >
-                                      <ChevronRight className="w-4 h-4 text-amber-400 group-hover:translate-x-0.5 transition-transform" />
+                                      <ChevronRight className="w-4 h-4 text-amber-400 group-hover:translate-x-1 transition-transform duration-200" />
                                       <span className="text-sm font-medium">{sub.name}</span>
                                     </Link>
                                   </motion.div>
@@ -893,17 +895,17 @@ export function Header() {
                 <AnimatePresence>
                   {activeDropdown === 'insights' && (
                     <motion.div
-                      initial={{ opacity: 0, y: 15 }}
+                      initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 15 }}
-                      transition={{ duration: 0.25, ease: "easeOut" }}
-                      className="fixed left-1/2 -translate-x-1/2 pt-5 z-50"
-                      style={{ top: 'calc(var(--header-top, 56px) + 92px)' }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
+                      className="fixed left-1/2 -translate-x-1/2 pt-4 z-50"
+                      style={{ top: 'calc(var(--header-top, 44px) + 92px)' }}
                     >
-                      <div className="bg-white dark:bg-card rounded-2xl shadow-2xl border border-gray-100 dark:border-border/50 overflow-hidden flex" style={{ width: '850px' }}>
-                        {/* Left Side - Menu Items */}
-                        <div className="flex-1 p-6">
-                          <div className="grid grid-cols-2 gap-x-6 gap-y-1">
+                      <div className="bg-white dark:bg-card rounded-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] border border-gray-100/80 dark:border-border/50 overflow-hidden grid grid-cols-12" style={{ width: '1100px' }}>
+                        {/* Left Side - Menu Items (8 columns) */}
+                        <div className="col-span-8 p-8">
+                          <div className="grid grid-cols-2 gap-x-6 gap-y-4">
                             {insightsMenuItems.map((item, index) => {
                               const iconColors = [
                                 { from: '#f59e0b', to: '#ea580c' },
@@ -918,16 +920,16 @@ export function Header() {
                               return (
                                 <motion.div
                                   key={item.href}
-                                  initial={{ opacity: 0, y: 10 }}
+                                  initial={{ opacity: 0, y: 8 }}
                                   animate={{ opacity: 1, y: 0 }}
-                                  transition={{ delay: index * 0.03 }}
+                                  transition={{ delay: index * 0.025 }}
                                 >
                                   <Link
                                     to={item.href}
-                                    className="flex items-start gap-3 px-3 py-3 rounded-xl hover:bg-gray-50 dark:hover:bg-secondary/80 transition-all duration-200 group"
+                                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 dark:hover:bg-secondary/80 transition-all duration-200 group border border-transparent hover:border-gray-100 dark:hover:border-border/30"
                                   >
                                     <motion.div 
-                                      className={`w-11 h-11 rounded-xl bg-gradient-to-br ${item.bgGradient} flex items-center justify-center shrink-0 shadow-sm group-hover:shadow-md transition-all duration-200`}
+                                      className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.bgGradient} flex items-center justify-center shrink-0 shadow-sm group-hover:shadow-md transition-all duration-200`}
                                       whileHover={{ scale: 1.05 }}
                                     >
                                       <svg width="0" height="0" className="absolute">
@@ -943,9 +945,9 @@ export function Header() {
                                         style={{ stroke: `url(#insights-icon-${index})` }}
                                       />
                                     </motion.div>
-                                    <div className="pt-0.5">
-                                      <span className="text-sm font-semibold text-gray-900 dark:text-foreground block group-hover:text-indigo-600 dark:group-hover:text-accent transition-colors">{item.name}</span>
-                                      <span className="text-xs text-gray-500 dark:text-muted-foreground line-clamp-2 leading-relaxed">{item.description}</span>
+                                    <div className="flex-1 min-w-0">
+                                      <span className="text-sm font-semibold text-gray-900 dark:text-foreground block group-hover:text-indigo-600 dark:group-hover:text-accent transition-colors mb-1">{item.name}</span>
+                                      <span className="text-xs text-gray-500 dark:text-muted-foreground leading-relaxed line-clamp-2">{item.description}</span>
                                     </div>
                                   </Link>
                                 </motion.div>
@@ -954,33 +956,38 @@ export function Header() {
                           </div>
                         </div>
 
-                        {/* Right Side - Highlight Panel */}
-                        <div className="w-[300px] bg-gradient-to-br from-indigo-600 via-indigo-700 to-blue-700 p-5 relative overflow-hidden">
-                          <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-3xl" />
+                        {/* Right Side - Highlight Panel (4 columns) */}
+                        <div className="col-span-4 bg-gradient-to-br from-indigo-600 via-indigo-700 to-purple-700 p-8 relative overflow-hidden flex flex-col">
+                          <div className="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full blur-3xl" />
+                          <div className="absolute bottom-0 left-0 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl" />
                           
-                          <div className="relative z-10">
-                            <h3 className="text-base font-bold text-amber-400 mb-3">
+                          <div className="relative z-10 flex-1 flex flex-col">
+                            <h3 className="text-lg font-bold text-amber-400 mb-4">
                               Digital Solutions That Fit Every Business
                             </h3>
                             
-                            <div className="rounded-xl overflow-hidden mb-3 shadow-lg">
+                            <div className="rounded-xl overflow-hidden mb-4 shadow-lg">
                               <img 
                                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=200&fit=crop" 
                                 alt="Softurecs Team" 
-                                className="w-full h-28 object-cover"
+                                className="w-full h-32 object-cover"
                               />
                             </div>
                             
-                            <p className="text-sm text-white/80 mb-3">
+                            <p className="text-sm text-white/85 mb-4 leading-relaxed">
                               We work with brands of all sizes—adapting to your needs:
                             </p>
                             
-                            <div className="flex flex-wrap gap-2">
+                            <div className="flex flex-wrap gap-2 mt-auto">
                               {['Startups', 'SMEs', 'Enterprises'].map((item) => (
-                                <span key={item} className="flex items-center gap-1.5 text-white text-sm bg-white/10 px-3 py-1 rounded-full">
-                                  <span className="w-1.5 h-1.5 bg-amber-400 rounded-full" />
+                                <motion.span 
+                                  key={item} 
+                                  className="flex items-center gap-2 text-white text-sm bg-white/10 hover:bg-white/15 px-4 py-2 rounded-full transition-colors cursor-pointer"
+                                  whileHover={{ scale: 1.02 }}
+                                >
+                                  <span className="w-2 h-2 bg-amber-400 rounded-full" />
                                   {item}
-                                </span>
+                                </motion.span>
                               ))}
                             </div>
                           </div>
