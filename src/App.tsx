@@ -89,6 +89,13 @@ import CareersAtSofturecs from "./pages/about/CareersAtSofturecs";
 import Partnerships from "./pages/about/Partnerships";
 import Testimonials from "./pages/about/Testimonials";
 import Alliances from "./pages/about/Alliances";
+// Insights pages
+import Insights from "./pages/insights/Index";
+import InsightsCaseStudies from "./pages/insights/CaseStudies";
+import InsightsPortfolio from "./pages/insights/InsightsPortfolio";
+import InsightsBlogs from "./pages/insights/Blogs";
+import InsightsFAQs from "./pages/insights/FAQs";
+import InsightsPressReleases from "./pages/insights/PressReleases";
 
 const queryClient = new QueryClient();
 
@@ -183,6 +190,13 @@ const App = () => (
             <Route path="/blog/cloud-migration-2025" element={<CloudMigration />} />
             <Route path="/blog/saas-security" element={<SaasSecurity />} />
             <Route path="/blog/devops-culture" element={<DevOpsCulture />} />
+            {/* Insights */}
+            <Route path="/insights" element={<Insights />} />
+            <Route path="/insights/case-studies" element={<InsightsCaseStudies />} />
+            <Route path="/insights/portfolio" element={<InsightsPortfolio />} />
+            <Route path="/insights/blogs" element={<InsightsBlogs />} />
+            <Route path="/insights/faqs" element={<InsightsFAQs />} />
+            <Route path="/insights/press-releases" element={<InsightsPressReleases />} />
             {/* Other */}
             <Route path="/careers" element={<Careers />} />
             <Route path="/contact" element={<Contact />} />
