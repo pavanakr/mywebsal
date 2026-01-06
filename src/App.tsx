@@ -44,6 +44,23 @@ import RealEstateConstruction from "./pages/industries/RealEstateConstruction";
 import RetailEcommerce from "./pages/industries/RetailEcommerce";
 import BankingFinance from "./pages/industries/BankingFinance";
 import MediaEntertainment from "./pages/industries/MediaEntertainment";
+// Sub-industry solution pages
+import OnDemandLogistics from "./pages/industries/solutions/OnDemandLogistics";
+import TransportationAutomation from "./pages/industries/solutions/TransportationAutomation";
+import ShippingManagement from "./pages/industries/solutions/ShippingManagement";
+import TelemedicinePlatform from "./pages/industries/solutions/TelemedicinePlatform";
+import DigitalBanking from "./pages/industries/solutions/DigitalBanking";
+import EcommercePlatform from "./pages/industries/solutions/EcommercePlatform";
+import VirtualLearning from "./pages/industries/solutions/VirtualLearning";
+import StudentManagement from "./pages/industries/solutions/StudentManagement";
+import StreamingPlatform from "./pages/industries/solutions/StreamingPlatform";
+import ContentManagement from "./pages/industries/solutions/ContentManagement";
+import LiveStreaming from "./pages/industries/solutions/LiveStreaming";
+import PropertyManagement from "./pages/industries/solutions/PropertyManagement";
+import ConstructionManagement from "./pages/industries/solutions/ConstructionManagement";
+import TravelBooking from "./pages/industries/solutions/TravelBooking";
+import HotelManagement from "./pages/industries/solutions/HotelManagement";
+import TravelExperience from "./pages/industries/solutions/TravelExperience";
 // Case study pages
 import HealthPulse from "./pages/portfolio/HealthPulse";
 import FinVault from "./pages/portfolio/FinVault";
@@ -119,6 +136,23 @@ const App = () => (
             <Route path="/industries/retail-ecommerce" element={<RetailEcommerce />} />
             <Route path="/industries/banking-finance" element={<BankingFinance />} />
             <Route path="/industries/media-entertainment" element={<MediaEntertainment />} />
+            {/* Sub-industry solutions */}
+            <Route path="/industries/solutions/on-demand-logistics" element={<OnDemandLogistics />} />
+            <Route path="/industries/solutions/transportation-automation" element={<TransportationAutomation />} />
+            <Route path="/industries/solutions/shipping-management" element={<ShippingManagement />} />
+            <Route path="/industries/solutions/telemedicine-platform" element={<TelemedicinePlatform />} />
+            <Route path="/industries/solutions/digital-banking" element={<DigitalBanking />} />
+            <Route path="/industries/solutions/ecommerce-platform" element={<EcommercePlatform />} />
+            <Route path="/industries/solutions/virtual-learning" element={<VirtualLearning />} />
+            <Route path="/industries/solutions/student-management" element={<StudentManagement />} />
+            <Route path="/industries/solutions/streaming-platform" element={<StreamingPlatform />} />
+            <Route path="/industries/solutions/content-management" element={<ContentManagement />} />
+            <Route path="/industries/solutions/live-streaming" element={<LiveStreaming />} />
+            <Route path="/industries/solutions/property-management" element={<PropertyManagement />} />
+            <Route path="/industries/solutions/construction-management" element={<ConstructionManagement />} />
+            <Route path="/industries/solutions/travel-booking" element={<TravelBooking />} />
+            <Route path="/industries/solutions/hotel-management" element={<HotelManagement />} />
+            <Route path="/industries/solutions/travel-experience" element={<TravelExperience />} />
             {/* Portfolio */}
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/portfolio/healthpulse" element={<HealthPulse />} />
