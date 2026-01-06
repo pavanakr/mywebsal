@@ -2,9 +2,10 @@ import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
+import { PageHero } from '@/components/layout/PageHero';
 import { 
   Truck, Building2, GraduationCap, ShoppingCart, Heart, Landmark, 
-  Film, Plane, ArrowRight, CheckCircle, Search, Filter, Grid3X3, List
+  Film, Plane, ArrowRight, CheckCircle, Search, Filter, Grid3X3, List, Layers
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -151,32 +152,23 @@ const Industries = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-primary via-navy to-navy-light relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-20 right-20 w-72 h-72 bg-accent/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-10 left-10 w-96 h-96 bg-cyan-light/10 rounded-full blur-3xl" />
-        </div>
-        <div className="container-custom relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto text-center"
-          >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-medium mb-4">
-              Industries We Serve
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
-              Tailored Solutions for Every Industry
-            </h1>
-            <p className="text-xl text-primary-foreground/70 mb-8 max-w-3xl mx-auto">
-              We bring deep domain expertise to deliver industry-specific digital transformation 
-              solutions that address unique challenges and drive measurable results.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        title="Tailored Solutions for Every Industry"
+        description="We bring deep domain expertise to deliver industry-specific digital transformation solutions that address unique challenges and drive measurable results across verticals."
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'Industries' }
+        ]}
+        icon={Layers}
+        iconColor="from-indigo-500 to-purple-600"
+        badge="Industries We Serve"
+        variant="centered"
+        stats={[
+          { value: '8+', label: 'Industries' },
+          { value: '700+', label: 'Clients' },
+          { value: '1500+', label: 'Projects' }
+        ]}
+      />
 
       {/* Filter & Search Section */}
       <section className="py-8 bg-card border-b border-border/50 sticky top-20 z-30">

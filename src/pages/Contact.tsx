@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
-import { Mail, Phone, MapPin, Send, Clock, Globe, MessageCircle } from 'lucide-react';
+import { PageHero } from '@/components/layout/PageHero';
+import { Mail, Phone, MapPin, Send, Clock, Globe, MessageCircle, Headphones } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -29,27 +30,23 @@ const Contact = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-primary via-navy to-navy-light">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-medium mb-6">
-              Contact Us
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
-              Let's Build Something Amazing Together
-            </h1>
-            <p className="text-xl text-primary-foreground/70">
-              Have a project in mind? We'd love to hear about it. Get in touch and let's start the conversation.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        title="Let's Build Something Amazing Together"
+        description="Have a project in mind? We'd love to hear about it. Get in touch with our team and let's start the conversation about your next big idea."
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'Contact Us' }
+        ]}
+        icon={Headphones}
+        iconColor="from-cyan-500 to-blue-600"
+        badge="Get In Touch"
+        variant="centered"
+        stats={[
+          { value: '24hrs', label: 'Response Time' },
+          { value: '700+', label: 'Projects Completed' },
+          { value: '98%', label: 'Client Retention' }
+        ]}
+      />
 
       {/* Contact Form & Info */}
       <section className="section-padding bg-background">

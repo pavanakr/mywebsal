@@ -1,6 +1,7 @@
 import { Layout } from '@/components/layout/Layout';
+import { PageHero } from '@/components/layout/PageHero';
 import { motion } from 'framer-motion';
-import { Server, Shield, Code, Cloud, Lock, Zap, Monitor, Database, ArrowRight } from 'lucide-react';
+import { Server, Shield, Code, Cloud, Lock, Zap, Monitor, Database, ArrowRight, HardDrive } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -55,23 +56,24 @@ export default function Infrastructure() {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-primary via-primary/95 to-primary/90">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="max-w-3xl"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-              Our Infrastructure
-            </h1>
-            <p className="text-xl text-primary-foreground/80">
-              Explore our advanced development environment and robust technology setup.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        title="Our Infrastructure"
+        description="Explore our advanced development environment and robust technology setup, designed for performance, security, and scalability."
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'About', href: '/about' },
+          { label: 'Infrastructure' }
+        ]}
+        icon={HardDrive}
+        iconColor="from-cyan-500 to-blue-600"
+        badge="Technology Setup"
+        variant="centered"
+        stats={[
+          { value: '99.9%', label: 'Uptime' },
+          { value: 'ISO 27001', label: 'Certified' },
+          { value: '24/7', label: 'Monitoring' }
+        ]}
+      />
 
       {/* Infrastructure Grid */}
       <section className="py-20">

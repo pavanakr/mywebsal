@@ -1,6 +1,7 @@
 import { Layout } from '@/components/layout/Layout';
+import { PageHero } from '@/components/layout/PageHero';
 import { motion } from 'framer-motion';
-import { Linkedin, Twitter, ArrowRight, Quote } from 'lucide-react';
+import { Linkedin, Twitter, ArrowRight, Quote, UsersRound } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -34,23 +35,24 @@ export default function Leadership() {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-primary via-primary/95 to-primary/90">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="max-w-3xl"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-              Our Leadership
-            </h1>
-            <p className="text-xl text-primary-foreground/80">
-              Meet the visionary minds driving Softurecs' growth and innovation.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        title="Our Leadership Team"
+        description="Meet the visionary minds driving Softurecs' growth, innovation, and commitment to delivering exceptional technology solutions."
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'About', href: '/about' },
+          { label: 'Leadership' }
+        ]}
+        icon={UsersRound}
+        iconColor="from-purple-500 to-indigo-600"
+        badge="Executive Team"
+        image="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop"
+        imageAlt="Leadership team collaboration"
+        stats={[
+          { value: '50+', label: 'Years Combined Experience' },
+          { value: '4', label: 'Core Leaders' }
+        ]}
+      />
 
       {/* Founder Spotlight */}
       <section className="py-20">

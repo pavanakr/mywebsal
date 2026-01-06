@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
-import { Calendar, Clock, ArrowRight, User } from 'lucide-react';
+import { PageHero } from '@/components/layout/PageHero';
+import { Calendar, Clock, ArrowRight, User, BookOpen } from 'lucide-react';
 import { NewsletterSignup } from '@/components/blog/NewsletterSignup';
 
 const featuredPost = {
@@ -82,27 +83,24 @@ const posts = [
 const Blog = () => {
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-primary via-navy to-navy-light">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-medium mb-6">
-              Our Blog
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
-              Insights & Ideas from Our Team
-            </h1>
-            <p className="text-xl text-primary-foreground/70">
-              Stay updated with the latest trends, best practices, and insights in software development and technology.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        title="Insights & Ideas from Our Team"
+        description="Stay updated with the latest trends, best practices, and expert insights in software development, AI, cloud computing, and digital transformation."
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'Insights', href: '/insights' },
+          { label: 'Blog' }
+        ]}
+        icon={BookOpen}
+        iconColor="from-purple-500 to-pink-600"
+        badge="Knowledge Hub"
+        variant="centered"
+        stats={[
+          { value: '100+', label: 'Articles' },
+          { value: '50K+', label: 'Monthly Readers' },
+          { value: '15', label: 'Expert Authors' }
+        ]}
+      />
 
       {/* Featured Post */}
       <section className="section-padding bg-background">

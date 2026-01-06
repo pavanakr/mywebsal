@@ -1,29 +1,32 @@
 import { Layout } from '@/components/layout/Layout';
+import { PageHero } from '@/components/layout/PageHero';
 import { motion } from 'framer-motion';
-import { Target, Eye, Heart, Shield, Users, Lightbulb, ArrowRight } from 'lucide-react';
+import { Target, Eye, Heart, Shield, Users, Lightbulb, ArrowRight, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
 export default function CompanyProfile() {
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-primary via-primary/95 to-primary/90">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="max-w-3xl"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-              About Softurecs AI Labs
-            </h1>
-            <p className="text-xl text-primary-foreground/80">
-              Discover our journey, expertise, and commitment to digital excellence.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        title="About Softurecs AI Labs"
+        description="Discover our journey, expertise, and unwavering commitment to digital excellence. We transform ideas into reality through innovative technology solutions."
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'About', href: '/about' },
+          { label: 'Company Profile' }
+        ]}
+        icon={Building2}
+        iconColor="from-indigo-500 to-purple-600"
+        badge="Our Story"
+        image="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop"
+        imageAlt="Softurecs AI Labs Office"
+        stats={[
+          { value: '15+', label: 'Years Experience' },
+          { value: '250+', label: 'Expert Team' },
+          { value: '1500+', label: 'Projects Delivered' }
+        ]}
+      />
 
       {/* Company Introduction */}
       <section className="py-20">

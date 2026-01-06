@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
-import { ExternalLink, ArrowRight } from 'lucide-react';
+import { PageHero } from '@/components/layout/PageHero';
+import { ExternalLink, ArrowRight, FolderOpen } from 'lucide-react';
 import { CTASection } from '@/components/home/CTASection';
 
 const categories = ['All', 'Healthcare', 'Fintech', 'E-commerce', 'Logistics', 'Real Estate'];
@@ -67,27 +68,24 @@ const Portfolio = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-primary via-navy to-navy-light">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-medium mb-6">
-              Our Portfolio
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
-              Transforming Ideas Into Digital Success Stories
-            </h1>
-            <p className="text-xl text-primary-foreground/70">
-              Explore our portfolio of innovative solutions that have helped businesses achieve their digital transformation goals.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        title="Transforming Ideas Into Digital Success Stories"
+        description="Explore our portfolio of innovative solutions that have helped businesses achieve their digital transformation goals and drive real business results."
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'Insights', href: '/insights' },
+          { label: 'Portfolio' }
+        ]}
+        icon={FolderOpen}
+        iconColor="from-emerald-500 to-cyan-600"
+        badge="Case Studies"
+        variant="centered"
+        stats={[
+          { value: '1500+', label: 'Projects' },
+          { value: '99%', label: 'Success Rate' },
+          { value: '$2B+', label: 'Client Revenue' }
+        ]}
+      />
 
       {/* Filters */}
       <section className="py-8 bg-card border-b border-border/50 sticky top-20 z-40">
