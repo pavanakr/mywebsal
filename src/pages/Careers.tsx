@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
-import { MapPin, Clock, DollarSign, ArrowRight, Users, Heart, Zap, Globe, Coffee, BookOpen } from 'lucide-react';
+import { PageHero } from '@/components/layout/PageHero';
+import { MapPin, Clock, DollarSign, ArrowRight, Users, Heart, Zap, Globe, Coffee, BookOpen, Briefcase } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const perks = [
@@ -60,37 +61,25 @@ const jobs = [
 const Careers = () => {
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-primary via-navy to-navy-light">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-medium mb-6">
-              Join Our Team
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
-              Build the Future of Technology With Us
-            </h1>
-            <p className="text-xl text-primary-foreground/70 mb-8">
-              Join a team of passionate innovators working on challenging problems for world-class clients. We're always looking for exceptional talent.
-            </p>
-            <div className="flex items-center justify-center gap-6 text-primary-foreground/80">
-              <div className="flex items-center gap-2">
-                <Users className="w-5 h-5 text-accent" />
-                <span>200+ team members</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Globe className="w-5 h-5 text-accent" />
-                <span>20+ countries</span>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        title="Build the Future of Technology With Us"
+        description="Join a team of passionate innovators working on challenging problems for world-class clients. We're always looking for exceptional talent to shape the future."
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'About', href: '/about' },
+          { label: 'Careers' }
+        ]}
+        icon={Briefcase}
+        iconColor="from-indigo-500 to-purple-600"
+        badge="We're Hiring"
+        image="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop"
+        imageAlt="Team collaboration at Softurecs"
+        stats={[
+          { value: '200+', label: 'Team Members' },
+          { value: '20+', label: 'Countries' },
+          { value: '50+', label: 'Open Roles' }
+        ]}
+      />
 
       {/* Culture Section */}
       <section className="section-padding bg-background">

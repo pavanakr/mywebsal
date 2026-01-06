@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
-import { Code, Globe, Smartphone, Cloud, Cpu, Layers, ArrowRight, RefreshCw, Database, Users, Rocket } from 'lucide-react';
+import { PageHero } from '@/components/layout/PageHero';
+import { Code, Globe, Smartphone, Cloud, Cpu, Layers, ArrowRight, RefreshCw, Database, Users, Rocket, Settings } from 'lucide-react';
 import { CTASection } from '@/components/home/CTASection';
 
 const services = [
@@ -74,27 +75,23 @@ const services = [
 const Services = () => {
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-primary via-navy to-navy-light">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-medium mb-6">
-              Our Services
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
-              Comprehensive Technology Solutions
-            </h1>
-            <p className="text-xl text-primary-foreground/70">
-              From custom software to AI-powered platforms, we deliver end-to-end solutions that drive digital transformation and business growth.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        title="Comprehensive Technology Solutions"
+        description="From custom software to AI-powered platforms, we deliver end-to-end solutions that drive digital transformation and accelerate business growth."
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'Services' }
+        ]}
+        icon={Settings}
+        iconColor="from-indigo-500 to-cyan-500"
+        badge="Our Services"
+        variant="centered"
+        stats={[
+          { value: '1500+', label: 'Projects Delivered' },
+          { value: '700+', label: 'Happy Clients' },
+          { value: '99%', label: 'Client Satisfaction' }
+        ]}
+      />
 
       {/* Services List */}
       <section className="section-padding bg-background">
