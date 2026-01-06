@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
 import { Calendar, Clock, ArrowRight, User } from 'lucide-react';
+import { NewsletterSignup } from '@/components/blog/NewsletterSignup';
 
 const featuredPost = {
   title: 'The Future of AI in Enterprise Software Development',
@@ -207,6 +208,13 @@ const Blog = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Newsletter */}
+      <section className="pb-24 bg-background">
+        <div className="container-custom">
+          <NewsletterSignup />
         </div>
       </section>
     </Layout>

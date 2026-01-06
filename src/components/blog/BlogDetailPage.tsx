@@ -4,6 +4,7 @@ import { Layout } from '@/components/layout/Layout';
 import { Calendar, Clock, User, ArrowLeft, Linkedin, Twitter, Facebook, Link2, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
+import { NewsletterSignup } from '@/components/blog/NewsletterSignup';
 
 interface Author {
   name: string;
@@ -299,6 +300,13 @@ export function BlogDetailPage({
               </Button>
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Newsletter */}
+      <section className="section-padding bg-background">
+        <div className="container-custom">
+          <NewsletterSignup />
         </div>
       </section>
     </Layout>

@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronDown, Code, Smartphone, Cloud, Cpu, Globe, Layers } from 'lucide-react';
+import { Menu, X, ChevronDown, Code, Smartphone, Cloud, Cpu, Globe, Layers, Sun, Moon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useTheme } from '@/hooks/use-theme';
 
 const services = [
   { name: 'Custom Software Development', href: '/services/custom-software', icon: Code },
@@ -27,6 +28,7 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const location = useLocation();
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -196,8 +198,25 @@ export function Header() {
             </Link>
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden lg:flex items-center gap-4">
+          {/* CTA Button & Theme Toggle */}
+          <div className="hidden lg:flex items-center gap-3">
+            <button
+              onClick={toggleTheme}
+              className={`p-2.5 rounded-lg transition-colors ${
+                isScrolled 
+                  ? 'text-foreground hover:bg-secondary' 
+                  : 'text-primary-foreground hover:bg-primary-foreground/10'
+              }`}
+              aria-label="Toggle theme"
+            >
+              <motion.div
+                initial={false}
+                animate={{ rotate: theme === 'dark' ? 180 : 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              </motion.div>
+            </button>
             <Link to="/contact">
               <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-6">
                 Get in Touch
@@ -246,6 +265,13 @@ export function Header() {
               <Link to="/careers" className="block px-4 py-2 text-foreground font-medium rounded-lg hover:bg-secondary">
                 Careers
               </Link>
+              <button
+                onClick={toggleTheme}
+                className="flex items-center gap-3 w-full px-4 py-2 text-foreground font-medium rounded-lg hover:bg-secondary"
+              >
+                {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+              </button>
               <Link to="/contact">
                 <Button className="w-full mt-4 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold">
                   Get in Touch
