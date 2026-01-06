@@ -1,9 +1,11 @@
 import { Cloud } from 'lucide-react';
 import { ServiceDetailPage } from '@/components/services/ServiceDetailPage';
+import heroCloudDevOps from '@/assets/hero-cloud-devops.png';
 
 const CloudDevOps = () => {
   return (
     <ServiceDetailPage
+      heroImage={heroCloudDevOps}
       icon={Cloud}
       color="from-orange-500 to-orange-600"
       title="Cloud & DevOps"
