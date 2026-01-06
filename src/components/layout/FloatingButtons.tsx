@@ -1,9 +1,8 @@
 import { motion } from 'framer-motion';
-import { Phone, MessageCircle } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 export function FloatingButtons() {
-  const phoneNumber = '+917396080902';
   const whatsappNumber = '917396080902';
   const [isVisible, setIsVisible] = useState(false);
   
@@ -27,34 +26,18 @@ export function FloatingButtons() {
       }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
     >
-      {/* WhatsApp Button */}
+      {/* Talk to Us Button */}
       <motion.a
         href={`https://wa.me/${whatsappNumber}?text=Hi, I'm interested in your services.`}
         target="_blank"
         rel="noopener noreferrer"
-        whileHover={{ scale: 1.1, rotate: 5 }}
+        whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
-        className="w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow relative group"
-        aria-label="Chat on WhatsApp"
+        className="flex items-center gap-2 bg-white text-gray-800 px-4 py-3 rounded-full shadow-lg hover:shadow-xl transition-shadow border border-gray-100"
+        aria-label="Talk to us"
       >
-        <MessageCircle className="w-7 h-7 text-white" />
-        <span className="absolute right-full mr-3 px-3 py-1.5 bg-foreground text-background text-sm font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-          Chat on WhatsApp
-        </span>
-      </motion.a>
-
-      {/* Call Button */}
-      <motion.a
-        href={`tel:${phoneNumber}`}
-        whileHover={{ scale: 1.1, rotate: -5 }}
-        whileTap={{ scale: 0.95 }}
-        className="w-14 h-14 bg-accent rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow relative group"
-        aria-label="Call us"
-      >
-        <Phone className="w-7 h-7 text-accent-foreground" />
-        <span className="absolute right-full mr-3 px-3 py-1.5 bg-foreground text-background text-sm font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-          Call Now
-        </span>
+        <MessageCircle className="w-5 h-5 text-blue-600" />
+        <span className="text-sm font-medium">Talk to us</span>
       </motion.a>
     </motion.div>
   );
