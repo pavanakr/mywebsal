@@ -11,12 +11,25 @@ import Blog from "./pages/Blog";
 import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+// Service pages
 import CustomSoftware from "./pages/services/CustomSoftware";
 import WebDevelopment from "./pages/services/WebDevelopment";
 import MobileApps from "./pages/services/MobileApps";
 import CloudDevOps from "./pages/services/CloudDevOps";
 import AIAutomation from "./pages/services/AIAutomation";
 import SaaSDevelopment from "./pages/services/SaaSDevelopment";
+// Industry pages
+import Healthcare from "./pages/industries/Healthcare";
+import Fintech from "./pages/industries/Fintech";
+import Ecommerce from "./pages/industries/Ecommerce";
+import Logistics from "./pages/industries/Logistics";
+import RealEstate from "./pages/industries/RealEstate";
+import Education from "./pages/industries/Education";
+// Case study pages
+import HealthPulse from "./pages/portfolio/HealthPulse";
+import FinVault from "./pages/portfolio/FinVault";
+import LogiTrack from "./pages/portfolio/LogiTrack";
+import ShopSphere from "./pages/portfolio/ShopSphere";
 
 const queryClient = new QueryClient();
 
@@ -36,8 +49,17 @@ const App = () => (
           <Route path="/services/cloud-devops" element={<CloudDevOps />} />
           <Route path="/services/ai-automation" element={<AIAutomation />} />
           <Route path="/services/saas" element={<SaaSDevelopment />} />
-          <Route path="/industries/*" element={<Services />} />
+          <Route path="/industries/healthcare" element={<Healthcare />} />
+          <Route path="/industries/fintech" element={<Fintech />} />
+          <Route path="/industries/ecommerce" element={<Ecommerce />} />
+          <Route path="/industries/logistics" element={<Logistics />} />
+          <Route path="/industries/real-estate" element={<RealEstate />} />
+          <Route path="/industries/education" element={<Education />} />
           <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/portfolio/healthpulse" element={<HealthPulse />} />
+          <Route path="/portfolio/finvault" element={<FinVault />} />
+          <Route path="/portfolio/logitrack" element={<LogiTrack />} />
+          <Route path="/portfolio/shopsphere" element={<ShopSphere />} />
           <Route path="/portfolio/*" element={<Portfolio />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/*" element={<Blog />} />
