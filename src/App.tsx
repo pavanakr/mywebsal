@@ -31,6 +31,7 @@ import AIChatbot from "./pages/services/AIChatbot";
 import DeepLearning from "./pages/services/DeepLearning";
 import LLMDevelopment from "./pages/services/LLMDevelopment";
 // Industry pages
+import Industries from "./pages/Industries";
 import Healthcare from "./pages/industries/Healthcare";
 import Fintech from "./pages/industries/Fintech";
 import Ecommerce from "./pages/industries/Ecommerce";
@@ -38,6 +39,11 @@ import Logistics from "./pages/industries/Logistics";
 import RealEstate from "./pages/industries/RealEstate";
 import Education from "./pages/industries/Education";
 import TravelHospitality from "./pages/industries/TravelHospitality";
+import LogisticsTransportation from "./pages/industries/LogisticsTransportation";
+import RealEstateConstruction from "./pages/industries/RealEstateConstruction";
+import RetailEcommerce from "./pages/industries/RetailEcommerce";
+import BankingFinance from "./pages/industries/BankingFinance";
+import MediaEntertainment from "./pages/industries/MediaEntertainment";
 // Case study pages
 import HealthPulse from "./pages/portfolio/HealthPulse";
 import FinVault from "./pages/portfolio/FinVault";
@@ -100,6 +106,7 @@ const App = () => (
             <Route path="/services/deep-learning" element={<DeepLearning />} />
             <Route path="/services/llm-development" element={<LLMDevelopment />} />
             {/* Industries */}
+            <Route path="/industries" element={<Industries />} />
             <Route path="/industries/healthcare" element={<Healthcare />} />
             <Route path="/industries/fintech" element={<Fintech />} />
             <Route path="/industries/ecommerce" element={<Ecommerce />} />
@@ -107,6 +114,11 @@ const App = () => (
             <Route path="/industries/real-estate" element={<RealEstate />} />
             <Route path="/industries/education" element={<Education />} />
             <Route path="/industries/travel-hospitality" element={<TravelHospitality />} />
+            <Route path="/industries/logistics-transportation" element={<LogisticsTransportation />} />
+            <Route path="/industries/real-estate-construction" element={<RealEstateConstruction />} />
+            <Route path="/industries/retail-ecommerce" element={<RetailEcommerce />} />
+            <Route path="/industries/banking-finance" element={<BankingFinance />} />
+            <Route path="/industries/media-entertainment" element={<MediaEntertainment />} />
             {/* Portfolio */}
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/portfolio/healthpulse" element={<HealthPulse />} />
