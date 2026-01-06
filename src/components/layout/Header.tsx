@@ -1,4 +1,4 @@
-// Services & Industries Mega Menu - Updated 2026
+// Premium Enterprise Navigation - Matching Octal Reference
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -6,7 +6,8 @@ import {
   Menu, X, ChevronDown, ChevronRight, Code, Smartphone, Cloud, Cpu, Globe, Layers, Sun, Moon, RefreshCw,
   Building2, Server, Users, Handshake, Award, MessageSquare, Network, Briefcase,
   FolderCheck, UserCheck, Heart, Zap, Database, UserPlus, Rocket, Truck, GraduationCap,
-  ShoppingCart, Landmark, Film, Plane, FileText, BookOpen, HelpCircle, Newspaper, Phone
+  ShoppingCart, Landmark, Film, Plane, FileText, BookOpen, HelpCircle, Newspaper, Phone, ArrowRight,
+  MessageCircle
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTheme } from '@/hooks/use-theme';
@@ -359,6 +360,7 @@ export function Header() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [activeServiceCategory, setActiveServiceCategory] = useState<string | null>(null);
   const [activeIndustryCategory, setActiveIndustryCategory] = useState<string | null>(null);
+  const [mobileExpandedSection, setMobileExpandedSection] = useState<string | null>(null);
   const location = useLocation();
   const { theme, toggleTheme } = useTheme();
 
@@ -373,710 +375,770 @@ export function Header() {
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setActiveDropdown(null);
+    setMobileExpandedSection(null);
   }, [location]);
+
+  const toggleMobileSection = (section: string) => {
+    setMobileExpandedSection(mobileExpandedSection === section ? null : section);
+  };
 
   return (
     <>
-      {/* Announcement Bar */}
-      <div className="bg-gradient-to-r from-primary via-navy to-primary text-primary-foreground fixed top-0 left-0 right-0 z-[60]">
+      {/* Premium Announcement Bar */}
+      <motion.div
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 text-white fixed top-0 left-0 right-0 z-[60]"
+      >
         <div className="container-custom">
-          <div className="flex items-center justify-between py-2">
-            <div className="flex items-center gap-2 text-sm">
-              <span className="hidden sm:inline text-primary-foreground/90">
+          <div className="flex items-center justify-between py-2.5">
+            <div className="flex items-center gap-2">
+              <span className="hidden sm:inline text-sm font-medium text-white/95">
                 Share Your Project Idea & Receive App Development Quote Instantly!
               </span>
-              <span className="sm:hidden text-primary-foreground/90 text-xs">
+              <span className="sm:hidden text-xs font-medium text-white/95">
                 Get Your Free Quote!
               </span>
             </div>
-            <Link to="/contact">
-              <Button 
-                size="sm" 
-                className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-xs px-4 py-1 h-auto rounded-full"
-              >
-                Book a Free Consultation
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      <header
-        className={`fixed top-10 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? 'bg-card/95 backdrop-blur-xl shadow-soft border-b border-border/50'
-            : 'bg-transparent'
-        }`}
-      >
-      <div className="container-custom">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-cyan-light flex items-center justify-center">
-              <span className="text-primary font-bold text-xl">S</span>
-            </div>
-            <div className="flex flex-col">
-              <span className={`text-lg font-bold leading-tight ${isScrolled ? 'text-foreground' : 'text-primary-foreground'}`}>
-                SOFTURECS
-              </span>
-              <span className={`text-[10px] font-medium leading-none ${isScrolled ? 'text-muted-foreground' : 'text-primary-foreground/70'}`}>
-                AI LABS
-              </span>
-            </div>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1">
-            <Link
-              to="/"
-              className={`px-4 py-2 text-sm font-medium transition-colors rounded-lg hover:bg-accent/10 ${
-                isScrolled ? 'text-foreground' : 'text-primary-foreground'
-              }`}
-            >
-              Home
-            </Link>
-
-            {/* About Softurecs Mega Menu */}
-            <div
-              className="relative"
-              onMouseEnter={() => setActiveDropdown('about')}
-              onMouseLeave={() => setActiveDropdown(null)}
-            >
-              <button
-                className={`px-4 py-2 text-sm font-medium transition-colors rounded-lg hover:bg-accent/10 flex items-center gap-1 ${
-                  isScrolled ? 'text-foreground' : 'text-primary-foreground'
-                }`}
-              >
-                About Softurecs
-                <ChevronDown className="w-4 h-4" />
-              </button>
-
-              <AnimatePresence>
-                {activeDropdown === 'about' && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute top-full left-1/2 -translate-x-1/2 pt-2"
-                  >
-                    <div className="bg-card rounded-xl shadow-elevated border border-border/50 overflow-hidden flex" style={{ width: '900px' }}>
-                      {/* Left Side - Menu Items (2 columns) */}
-                      <div className="flex-1 p-6">
-                        <div className="grid grid-cols-2 gap-x-8 gap-y-2">
-                          {aboutMenuItems.map((item, index) => {
-                            const iconColors = [
-                              { from: '#3b82f6', to: '#14b8a6' },  // blue to teal
-                              { from: '#8b5cf6', to: '#d946ef' },  // violet to fuchsia
-                              { from: '#10b981', to: '#84cc16' },  // emerald to lime
-                              { from: '#f97316', to: '#eab308' },  // orange to yellow
-                              { from: '#0ea5e9', to: '#6366f1' },  // sky to indigo
-                              { from: '#f59e0b', to: '#ef4444' },  // amber to red
-                              { from: '#ec4899', to: '#f43f5e' },  // pink to rose
-                              { from: '#14b8a6', to: '#0ea5e9' },  // teal to sky
-                            ];
-                            const colors = iconColors[index] || iconColors[0];
-                            
-                            return (
-                              <motion.div
-                                key={item.href}
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: index * 0.04 }}
-                              >
-                                <Link
-                                  to={item.href}
-                                  className="flex items-start gap-3 px-3 py-3 rounded-xl hover:bg-secondary/80 transition-all duration-300 group"
-                                >
-                                  <motion.div 
-                                    className={`w-11 h-11 rounded-xl bg-gradient-to-br ${item.bgGradient} flex items-center justify-center shrink-0 shadow-sm group-hover:shadow-lg transition-all duration-300 relative overflow-hidden`}
-                                    whileHover={{ scale: 1.08, rotate: 3 }}
-                                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                                  >
-                                    <svg width="0" height="0" className="absolute">
-                                      <defs>
-                                        <linearGradient id={`menu-icon-${index}`} x1="0%" y1="0%" x2="100%" y2="100%">
-                                          <stop offset="0%" stopColor={colors.from} />
-                                          <stop offset="100%" stopColor={colors.to} />
-                                        </linearGradient>
-                                      </defs>
-                                    </svg>
-                                    <item.icon 
-                                      className="w-5 h-5" 
-                                      style={{ stroke: `url(#menu-icon-${index})` }}
-                                    />
-                                  </motion.div>
-                                  <div className="pt-0.5">
-                                    <span className="text-sm font-semibold text-foreground block group-hover:text-accent transition-colors duration-200">{item.name}</span>
-                                    <span className="text-xs text-muted-foreground line-clamp-2 leading-relaxed">{item.description}</span>
-                                  </div>
-                                </Link>
-                              </motion.div>
-                            );
-                          })}
-                        </div>
-                      </div>
-
-                      {/* Right Side - Figures at a Glance */}
-                      <div className="w-[320px] bg-gradient-to-br from-primary via-primary to-primary/95 p-6">
-                        <h3 className="text-lg font-bold text-amber-400 mb-6">Figures at a Glance</h3>
-                        <div className="space-y-5">
-                          {figuresAtGlance.map((figure, idx) => {
-                            const figureColors = [
-                              { from: '#fbbf24', to: '#f59e0b' },  // yellow to amber
-                              { from: '#34d399', to: '#10b981' },  // green
-                              { from: '#60a5fa', to: '#3b82f6' },  // blue
-                              { from: '#a78bfa', to: '#8b5cf6' },  // purple
-                            ];
-                            const fColors = figureColors[idx] || figureColors[0];
-                            
-                            return (
-                              <motion.div 
-                                key={figure.label} 
-                                className="flex items-start gap-3"
-                                initial={{ opacity: 0, x: 20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: idx * 0.1 }}
-                              >
-                                <motion.div 
-                                  className="w-11 h-11 rounded-xl bg-primary-foreground/10 flex items-center justify-center shrink-0 backdrop-blur-sm"
-                                  whileHover={{ scale: 1.1, rotate: -5 }}
-                                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                                >
-                                  <svg width="0" height="0" className="absolute">
-                                    <defs>
-                                      <linearGradient id={`figure-icon-${idx}`} x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" stopColor={fColors.from} />
-                                        <stop offset="100%" stopColor={fColors.to} />
-                                      </linearGradient>
-                                    </defs>
-                                  </svg>
-                                  <figure.icon 
-                                    className="w-5 h-5" 
-                                    style={{ stroke: `url(#figure-icon-${idx})` }}
-                                  />
-                                </motion.div>
-                                <div>
-                                  <span className="text-base font-bold text-primary-foreground block">{figure.value} {figure.label}</span>
-                                  <span className="text-xs text-primary-foreground/70 leading-relaxed">{figure.description}</span>
-                                </div>
-                              </motion.div>
-                            );
-                          })}
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
-            {/* Services Mega Menu */}
-            <div
-              className="relative"
-              onMouseEnter={() => setActiveDropdown('services')}
-              onMouseLeave={() => { setActiveDropdown(null); setActiveServiceCategory(null); }}
-            >
-              <button
-                className={`px-4 py-2 text-sm font-medium transition-colors rounded-lg hover:bg-accent/10 flex items-center gap-1 ${
-                  isScrolled ? 'text-foreground' : 'text-primary-foreground'
-                }`}
-              >
-                Services
-                <ChevronDown className="w-4 h-4" />
-              </button>
-
-              <AnimatePresence>
-                {activeDropdown === 'services' && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10, scale: 0.98 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 10, scale: 0.98 }}
-                    transition={{ duration: 0.25, ease: "easeOut" }}
-                    className="absolute top-full left-1/2 -translate-x-1/2 pt-3"
-                  >
-                    <div className="bg-card rounded-2xl shadow-elevated border border-border/50 overflow-hidden flex" style={{ width: '980px' }}>
-                      {/* Left Panel - Service Categories (2 columns) */}
-                      <div className="flex-1 p-5">
-                        <div className="grid grid-cols-2 gap-x-4 gap-y-1">
-                          {serviceCategories.map((category, index) => {
-                            const iconConfigs = [
-                              { bg: 'bg-gradient-to-br from-violet-100 to-purple-100 dark:from-violet-900/40 dark:to-purple-900/40', iconColor: 'text-violet-600 dark:text-violet-400' },
-                              { bg: 'bg-gradient-to-br from-pink-100 to-rose-100 dark:from-pink-900/40 dark:to-rose-900/40', iconColor: 'text-pink-600 dark:text-pink-400' },
-                              { bg: 'bg-gradient-to-br from-blue-100 to-cyan-100 dark:from-blue-900/40 dark:to-cyan-900/40', iconColor: 'text-blue-600 dark:text-blue-400' },
-                              { bg: 'bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-900/40 dark:to-teal-900/40', iconColor: 'text-emerald-600 dark:text-emerald-400' },
-                              { bg: 'bg-gradient-to-br from-sky-100 to-blue-100 dark:from-sky-900/40 dark:to-blue-900/40', iconColor: 'text-sky-600 dark:text-sky-400' },
-                              { bg: 'bg-gradient-to-br from-indigo-100 to-violet-100 dark:from-indigo-900/40 dark:to-violet-900/40', iconColor: 'text-indigo-600 dark:text-indigo-400' },
-                              { bg: 'bg-gradient-to-br from-amber-100 to-orange-100 dark:from-amber-900/40 dark:to-orange-900/40', iconColor: 'text-amber-600 dark:text-amber-400' },
-                              { bg: 'bg-gradient-to-br from-red-100 to-pink-100 dark:from-red-900/40 dark:to-pink-900/40', iconColor: 'text-red-600 dark:text-red-400' },
-                            ];
-                            const config = iconConfigs[index] || iconConfigs[0];
-                            const isActive = activeServiceCategory === category.name || (!activeServiceCategory && index === 0);
-                            
-                            return (
-                              <motion.div
-                                key={category.href}
-                                initial={{ opacity: 0, y: 8 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: index * 0.025, duration: 0.2 }}
-                                onMouseEnter={() => setActiveServiceCategory(category.name)}
-                              >
-                                <Link
-                                  to={category.href}
-                                  className={`flex items-start gap-3.5 px-3.5 py-3.5 rounded-xl transition-all duration-200 group border-2 ${
-                                    isActive 
-                                      ? 'bg-secondary/80 border-accent/20 shadow-sm' 
-                                      : 'border-transparent hover:bg-secondary/50 hover:border-border/30'
-                                  }`}
-                                >
-                                  <motion.div 
-                                    className={`w-12 h-12 rounded-xl ${config.bg} flex items-center justify-center shrink-0 shadow-sm transition-all duration-300`}
-                                    whileHover={{ scale: 1.05, rotate: 2 }}
-                                    transition={{ type: "spring", stiffness: 400, damping: 20 }}
-                                  >
-                                    <category.icon className={`w-6 h-6 ${config.iconColor}`} />
-                                  </motion.div>
-                                  <div className="pt-0.5 flex-1 min-w-0">
-                                    <span className={`text-sm font-semibold block transition-colors duration-200 ${
-                                      isActive ? 'text-accent' : 'text-foreground group-hover:text-accent'
-                                    }`}>{category.name}</span>
-                                    <span className="text-xs text-muted-foreground line-clamp-2 leading-relaxed mt-0.5">{category.description}</span>
-                                  </div>
-                                </Link>
-                              </motion.div>
-                            );
-                          })}
-                        </div>
-                      </div>
-
-                      {/* Right Panel - Sub-services */}
-                      <div className="w-[300px] bg-gradient-to-br from-primary via-navy to-navy-light p-6 relative overflow-hidden">
-                        {/* Decorative elements */}
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full blur-3xl" />
-                        <div className="absolute bottom-0 left-0 w-24 h-24 bg-cyan-light/10 rounded-full blur-2xl" />
-                        
-                        <AnimatePresence mode="wait">
-                          <motion.div
-                            key={activeServiceCategory || 'default'}
-                            initial={{ opacity: 0, x: 15 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -15 }}
-                            transition={{ duration: 0.2, ease: "easeOut" }}
-                            className="relative z-10"
-                          >
-                            <h3 className="text-lg font-bold text-amber-400 mb-5">
-                              {activeServiceCategory || 'Artificial Intelligence'}
-                            </h3>
-                            <div className="space-y-1">
-                              {(serviceCategories.find(cat => cat.name === (activeServiceCategory || 'Artificial Intelligence'))?.subServices || serviceCategories[0].subServices).map((sub, idx) => (
-                                <motion.div
-                                  key={sub.href + idx}
-                                  initial={{ opacity: 0, x: 8 }}
-                                  animate={{ opacity: 1, x: 0 }}
-                                  transition={{ delay: idx * 0.04, duration: 0.15 }}
-                                >
-                                  <Link
-                                    to={sub.href}
-                                    className="flex items-center gap-1.5 text-primary-foreground/90 hover:text-amber-400 transition-all duration-200 group py-2 px-2 -mx-2 rounded-lg hover:bg-white/5"
-                                  >
-                                    <span className="flex items-center text-amber-400">
-                                      <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" />
-                                      <ChevronRight className="w-4 h-4 -ml-2.5 group-hover:translate-x-0.5 transition-transform duration-200 delay-75" />
-                                    </span>
-                                    <span className="text-sm font-medium">{sub.name}</span>
-                                  </Link>
-                                </motion.div>
-                              ))}
-                            </div>
-                          </motion.div>
-                        </AnimatePresence>
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
-            {/* Industries Mega Menu */}
-            <div
-              className="relative"
-              onMouseEnter={() => setActiveDropdown('industries')}
-              onMouseLeave={() => { setActiveDropdown(null); setActiveIndustryCategory(null); }}
-            >
-              <button
-                className={`px-4 py-2 text-sm font-medium transition-colors rounded-lg hover:bg-accent/10 flex items-center gap-1 ${
-                  isScrolled ? 'text-foreground' : 'text-primary-foreground'
-                }`}
-              >
-                Industries
-                <ChevronDown className="w-4 h-4" />
-              </button>
-
-              <AnimatePresence>
-                {activeDropdown === 'industries' && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10, scale: 0.98 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 10, scale: 0.98 }}
-                    transition={{ duration: 0.25, ease: "easeOut" }}
-                    className="absolute top-full left-1/2 -translate-x-1/2 pt-3"
-                  >
-                    <div className="bg-card rounded-2xl shadow-elevated border border-border/50 overflow-hidden flex" style={{ width: '980px' }}>
-                      {/* Left Panel - Industry Categories (2 columns) */}
-                      <div className="flex-1 p-5">
-                        <div className="grid grid-cols-2 gap-x-4 gap-y-1">
-                          {industryCategories.map((category, index) => {
-                            const isActive = activeIndustryCategory === category.name || (!activeIndustryCategory && index === 0);
-                            
-                            return (
-                              <motion.div
-                                key={category.href}
-                                initial={{ opacity: 0, y: 8 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: index * 0.025, duration: 0.2 }}
-                                onMouseEnter={() => setActiveIndustryCategory(category.name)}
-                              >
-                                <Link
-                                  to={category.href}
-                                  className={`flex items-start gap-3.5 px-3.5 py-3.5 rounded-xl transition-all duration-200 group border-2 ${
-                                    isActive 
-                                      ? 'bg-secondary/80 border-accent/20 shadow-sm' 
-                                      : 'border-transparent hover:bg-secondary/50 hover:border-border/30'
-                                  }`}
-                                >
-                                  <motion.div 
-                                    className={`w-12 h-12 rounded-xl bg-gradient-to-br ${category.bgGradient} flex items-center justify-center shrink-0 shadow-sm transition-all duration-300`}
-                                    whileHover={{ scale: 1.05, rotate: 2 }}
-                                    transition={{ type: "spring", stiffness: 400, damping: 20 }}
-                                  >
-                                    <category.icon className={`w-6 h-6 ${category.iconColor}`} />
-                                  </motion.div>
-                                  <div className="pt-0.5 flex-1 min-w-0">
-                                    <span className={`text-sm font-semibold block transition-colors duration-200 ${
-                                      isActive ? 'text-accent' : 'text-foreground group-hover:text-accent'
-                                    }`}>{category.name}</span>
-                                    <span className="text-xs text-muted-foreground line-clamp-2 leading-relaxed mt-0.5">{category.description}</span>
-                                  </div>
-                                </Link>
-                              </motion.div>
-                            );
-                          })}
-                        </div>
-                      </div>
-
-                      {/* Right Panel - Sub-industries */}
-                      <div className="w-[300px] bg-gradient-to-br from-primary via-navy to-navy-light p-6 relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full blur-3xl" />
-                        <div className="absolute bottom-0 left-0 w-24 h-24 bg-cyan-light/10 rounded-full blur-2xl" />
-                        
-                        <AnimatePresence mode="wait">
-                          <motion.div
-                            key={activeIndustryCategory || 'default'}
-                            initial={{ opacity: 0, x: 15 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -15 }}
-                            transition={{ duration: 0.2, ease: "easeOut" }}
-                            className="relative z-10"
-                          >
-                            <h3 className="text-lg font-bold text-amber-400 mb-5">
-                              {activeIndustryCategory || 'Logistics & Transportation'}
-                            </h3>
-                            <div className="space-y-1">
-                              {(industryCategories.find(cat => cat.name === (activeIndustryCategory || 'Logistics & Transportation'))?.subIndustries || industryCategories[0].subIndustries).map((sub, idx) => (
-                                <motion.div
-                                  key={sub.href + idx}
-                                  initial={{ opacity: 0, x: 8 }}
-                                  animate={{ opacity: 1, x: 0 }}
-                                  transition={{ delay: idx * 0.04, duration: 0.15 }}
-                                >
-                                  <Link
-                                    to={sub.href}
-                                    className="flex items-center gap-1.5 text-primary-foreground/90 hover:text-amber-400 transition-all duration-200 group py-2 px-2 -mx-2 rounded-lg hover:bg-white/5"
-                                  >
-                                    <span className="flex items-center text-amber-400">
-                                      <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" />
-                                      <ChevronRight className="w-4 h-4 -ml-2.5 group-hover:translate-x-0.5 transition-transform duration-200 delay-75" />
-                                    </span>
-                                    <span className="text-sm font-medium">{sub.name}</span>
-                                  </Link>
-                                </motion.div>
-                              ))}
-                            </div>
-                          </motion.div>
-                        </AnimatePresence>
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
-            {/* Softurecs Insights Mega Menu */}
-            <div
-              className="relative"
-              onMouseEnter={() => setActiveDropdown('insights')}
-              onMouseLeave={() => setActiveDropdown(null)}
-            >
-              <button
-                className={`px-4 py-2 text-sm font-medium transition-colors rounded-lg hover:bg-accent/10 flex items-center gap-1 ${
-                  isScrolled ? 'text-foreground' : 'text-primary-foreground'
-                }`}
-              >
-                Softurecs Insights
-                <ChevronDown className="w-4 h-4" />
-              </button>
-
-              <AnimatePresence>
-                {activeDropdown === 'insights' && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute top-full right-0 pt-2"
-                  >
-                    <div className="bg-card rounded-xl shadow-elevated border border-border/50 overflow-hidden flex" style={{ width: '850px' }}>
-                      {/* Left Side - Menu Items (2 columns) */}
-                      <div className="flex-1 p-6">
-                        <div className="grid grid-cols-2 gap-x-6 gap-y-2">
-                          {insightsMenuItems.map((item, index) => {
-                            const iconColors = [
-                              { from: '#f59e0b', to: '#ea580c' },  // amber to orange
-                              { from: '#10b981', to: '#14b8a6' },  // emerald to teal
-                              { from: '#3b82f6', to: '#06b6d4' },  // blue to cyan
-                              { from: '#8b5cf6', to: '#a855f7' },  // violet to purple
-                              { from: '#ec4899', to: '#f43f5e' },  // pink to rose
-                              { from: '#0ea5e9', to: '#3b82f6' },  // sky to blue
-                            ];
-                            const colors = iconColors[index] || iconColors[0];
-                            
-                            return (
-                              <motion.div
-                                key={item.href}
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: index * 0.04 }}
-                              >
-                                <Link
-                                  to={item.href}
-                                  className="flex items-start gap-3 px-3 py-3 rounded-xl hover:bg-secondary/80 transition-all duration-300 group"
-                                >
-                                  <motion.div 
-                                    className={`w-11 h-11 rounded-xl bg-gradient-to-br ${item.bgGradient} flex items-center justify-center shrink-0 shadow-sm group-hover:shadow-lg transition-all duration-300 relative overflow-hidden`}
-                                    whileHover={{ scale: 1.08, rotate: 3 }}
-                                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                                  >
-                                    <svg width="0" height="0" className="absolute">
-                                      <defs>
-                                        <linearGradient id={`insights-icon-${index}`} x1="0%" y1="0%" x2="100%" y2="100%">
-                                          <stop offset="0%" stopColor={colors.from} />
-                                          <stop offset="100%" stopColor={colors.to} />
-                                        </linearGradient>
-                                      </defs>
-                                    </svg>
-                                    <item.icon 
-                                      className="w-5 h-5" 
-                                      style={{ stroke: `url(#insights-icon-${index})` }}
-                                    />
-                                  </motion.div>
-                                  <div className="pt-0.5">
-                                    <span className="text-sm font-semibold text-foreground block group-hover:text-accent transition-colors duration-200">{item.name}</span>
-                                    <span className="text-xs text-muted-foreground line-clamp-2 leading-relaxed">{item.description}</span>
-                                  </div>
-                                </Link>
-                              </motion.div>
-                            );
-                          })}
-                        </div>
-                      </div>
-
-                      {/* Right Side - Highlight Panel */}
-                      <div className="w-[320px] bg-gradient-to-br from-primary via-navy to-navy-light p-6 relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full blur-3xl" />
-                        <div className="absolute bottom-0 left-0 w-24 h-24 bg-cyan-light/10 rounded-full blur-2xl" />
-                        
-                        <div className="relative z-10">
-                          <h3 className="text-lg font-bold text-amber-400 mb-4">
-                            Digital Solutions That Fit Every Business
-                          </h3>
-                          
-                          <div className="rounded-xl overflow-hidden mb-4 shadow-lg">
-                            <img 
-                              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=200&fit=crop" 
-                              alt="Softurecs Team" 
-                              className="w-full h-32 object-cover"
-                            />
-                          </div>
-                          
-                          <p className="text-sm text-primary-foreground/80 mb-4">
-                            We work with brands of all sizes—adapting to your needs, goals, and growth:
-                          </p>
-                          
-                          <div className="flex flex-wrap gap-3">
-                            <span className="flex items-center gap-1.5 text-primary-foreground text-sm">
-                              <span className="w-1.5 h-1.5 bg-amber-400 rounded-full" />
-                              Startups
-                            </span>
-                            <span className="flex items-center gap-1.5 text-primary-foreground text-sm">
-                              <span className="w-1.5 h-1.5 bg-amber-400 rounded-full" />
-                              SMEs
-                            </span>
-                            <span className="flex items-center gap-1.5 text-primary-foreground text-sm">
-                              <span className="w-1.5 h-1.5 bg-amber-400 rounded-full" />
-                              Enterprises
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
-            <Link
-              to="/contact"
-              className={`px-4 py-2 text-sm font-medium transition-colors rounded-lg hover:bg-accent/10 ${
-                isScrolled ? 'text-foreground' : 'text-primary-foreground'
-              }`}
-            >
-              Contact
-            </Link>
-          </nav>
-
-          {/* CTA Buttons & Theme Toggle */}
-          <div className="hidden lg:flex items-center gap-3">
-            <button
-              onClick={toggleTheme}
-              className={`p-2.5 rounded-lg transition-colors ${
-                isScrolled 
-                  ? 'text-foreground hover:bg-secondary' 
-                  : 'text-primary-foreground hover:bg-primary-foreground/10'
-              }`}
-              aria-label="Toggle theme"
-            >
-              <motion.div
-                initial={false}
-                animate={{ rotate: theme === 'dark' ? 180 : 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-              </motion.div>
-            </button>
-            <Link to="/contact">
-              <Button variant="outline" className={`font-semibold px-5 ${
-                isScrolled 
-                  ? 'border-border text-foreground hover:bg-secondary' 
-                  : 'border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10'
-              }`}>
-                Get in Touch
-              </Button>
-            </Link>
-            <Link to="/services/ai-development">
-              <Button className="bg-gradient-to-r from-accent to-cyan-light hover:from-accent/90 hover:to-cyan-light/90 text-primary font-semibold px-6 shadow-lg shadow-accent/25">
-                <Cpu className="w-4 h-4 mr-2" />
-                Start AI Journey
-              </Button>
-            </Link>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`lg:hidden p-2 rounded-lg ${isScrolled ? 'text-foreground' : 'text-primary-foreground'}`}
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-card border-t border-border/50 overflow-y-auto max-h-[80vh]"
-          >
-            <div className="container-custom py-4 space-y-2">
-              <Link to="/" className="block px-4 py-2 text-foreground font-medium rounded-lg hover:bg-secondary">
-                Home
+            
+            <div className="flex items-center gap-3">
+              <Link to="/contact">
+                <Button 
+                  size="sm" 
+                  className="bg-white hover:bg-white/90 text-indigo-700 font-semibold text-xs px-5 py-1.5 h-auto rounded-full shadow-lg shadow-black/10 transition-all hover:scale-105"
+                >
+                  Book a Free Consultation
+                </Button>
               </Link>
               
-              {/* About Section */}
-              <div className="px-4 py-2">
-                <span className="text-sm font-semibold text-muted-foreground">About Softurecs</span>
-              </div>
-              {aboutMenuItems.map((item) => (
-                <Link 
-                  key={item.href}
-                  to={item.href} 
-                  className="block px-8 py-2 text-foreground font-medium rounded-lg hover:bg-secondary"
+              <div className="hidden md:flex items-center gap-1 border-l border-white/30 pl-4">
+                <a 
+                  href="https://wa.me/917396080902" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-full hover:bg-white/10 transition-colors"
+                  aria-label="WhatsApp"
                 >
-                  {item.name}
-                </Link>
-              ))}
-
-              <div className="px-4 py-2">
-                <span className="text-sm font-semibold text-muted-foreground">Services</span>
-              </div>
-              {serviceCategories.map((category) => (
-                <Link 
-                  key={category.href}
-                  to={category.href} 
-                  className="block px-8 py-2 text-foreground font-medium rounded-lg hover:bg-secondary"
+                  <MessageCircle className="w-5 h-5 text-white" />
+                </a>
+                <span className="text-white/40">|</span>
+                <a 
+                  href="tel:+917396080902" 
+                  className="p-2 rounded-full hover:bg-white/10 transition-colors"
+                  aria-label="Call us"
                 >
-                  {category.name}
-                </Link>
-              ))}
-
-              <div className="px-4 py-2">
-                <span className="text-sm font-semibold text-muted-foreground">Industries</span>
+                  <Phone className="w-5 h-5 text-white" />
+                </a>
               </div>
-              {industryCategories.map((industry) => (
-                <Link 
-                  key={industry.href}
-                  to={industry.href} 
-                  className="block px-8 py-2 text-foreground font-medium rounded-lg hover:bg-secondary"
-                >
-                  {industry.name}
-                </Link>
-              ))}
+            </div>
+          </div>
+        </div>
+      </motion.div>
 
-              <div className="px-4 py-2">
-                <span className="text-sm font-semibold text-muted-foreground">Softurecs Insights</span>
+      {/* Main Navigation Header */}
+      <header
+        className={`fixed top-[44px] left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled
+            ? 'bg-white dark:bg-card shadow-lg border-b border-gray-100 dark:border-border/50'
+            : 'bg-white dark:bg-card shadow-sm'
+        }`}
+      >
+        <div className="container-custom">
+          <div className="flex items-center justify-between h-[70px]">
+            {/* Logo */}
+            <Link to="/" className="flex items-center gap-3 group">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-600 to-blue-600 flex items-center justify-center shadow-lg shadow-indigo-500/25 group-hover:shadow-indigo-500/40 transition-all duration-300">
+                <span className="text-white font-bold text-xl">S</span>
               </div>
-              {insightsMenuItems.map((item) => (
-                <Link 
-                  key={item.href}
-                  to={item.href} 
-                  className="block px-8 py-2 text-foreground font-medium rounded-lg hover:bg-secondary"
-                >
-                  {item.name}
-                </Link>
-              ))}
+              <div className="flex flex-col">
+                <span className="text-lg font-bold text-gray-900 dark:text-foreground leading-tight tracking-tight">
+                  SOFTURECS AI LABS
+                </span>
+                <span className="text-[11px] font-medium text-gray-500 dark:text-muted-foreground leading-none tracking-wide">
+                  AI • Software • Digital Transformation
+                </span>
+              </div>
+            </Link>
 
-              <Link to="/contact" className="block px-4 py-2 text-foreground font-medium rounded-lg hover:bg-secondary">
-                Contact
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center gap-0.5">
+              {/* Start AI Journey - Featured Link */}
+              <Link
+                to="/services/ai-development"
+                className="px-4 py-2 text-sm font-semibold text-gray-800 dark:text-foreground transition-all rounded-lg hover:text-indigo-600 dark:hover:text-accent relative group"
+              >
+                Start AI Journey
+                <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-indigo-600 dark:bg-accent scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
               </Link>
+
+              {/* About Softurecs Mega Menu */}
+              <div
+                className="relative"
+                onMouseEnter={() => setActiveDropdown('about')}
+                onMouseLeave={() => setActiveDropdown(null)}
+              >
+                <button
+                  className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-foreground transition-all rounded-lg hover:text-indigo-600 dark:hover:text-accent flex items-center gap-1 relative group"
+                >
+                  About Softurecs
+                  <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
+                  <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-indigo-600 dark:bg-accent scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                </button>
+
+                <AnimatePresence>
+                  {activeDropdown === 'about' && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-1/2 -translate-x-1/2 pt-3"
+                    >
+                      <div className="bg-white dark:bg-card rounded-2xl shadow-2xl border border-gray-100 dark:border-border/50 overflow-hidden flex" style={{ width: '920px' }}>
+                        {/* Left Side - Menu Items (2 columns) */}
+                        <div className="flex-1 p-6">
+                          <div className="grid grid-cols-2 gap-x-6 gap-y-1">
+                            {aboutMenuItems.map((item, index) => {
+                              const iconColors = [
+                                { from: '#3b82f6', to: '#14b8a6' },
+                                { from: '#8b5cf6', to: '#d946ef' },
+                                { from: '#10b981', to: '#84cc16' },
+                                { from: '#f97316', to: '#eab308' },
+                                { from: '#0ea5e9', to: '#6366f1' },
+                                { from: '#f59e0b', to: '#ef4444' },
+                                { from: '#ec4899', to: '#f43f5e' },
+                                { from: '#14b8a6', to: '#0ea5e9' },
+                              ];
+                              const colors = iconColors[index] || iconColors[0];
+                              
+                              return (
+                                <motion.div
+                                  key={item.href}
+                                  initial={{ opacity: 0, y: 10 }}
+                                  animate={{ opacity: 1, y: 0 }}
+                                  transition={{ delay: index * 0.03 }}
+                                >
+                                  <Link
+                                    to={item.href}
+                                    className="flex items-start gap-3 px-3 py-3 rounded-xl hover:bg-gray-50 dark:hover:bg-secondary/80 transition-all duration-200 group"
+                                  >
+                                    <motion.div 
+                                      className={`w-11 h-11 rounded-xl bg-gradient-to-br ${item.bgGradient} flex items-center justify-center shrink-0 shadow-sm group-hover:shadow-md transition-all duration-200`}
+                                      whileHover={{ scale: 1.05 }}
+                                    >
+                                      <svg width="0" height="0" className="absolute">
+                                        <defs>
+                                          <linearGradient id={`menu-icon-${index}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stopColor={colors.from} />
+                                            <stop offset="100%" stopColor={colors.to} />
+                                          </linearGradient>
+                                        </defs>
+                                      </svg>
+                                      <item.icon 
+                                        className="w-5 h-5" 
+                                        style={{ stroke: `url(#menu-icon-${index})` }}
+                                      />
+                                    </motion.div>
+                                    <div className="pt-0.5">
+                                      <span className="text-sm font-semibold text-gray-900 dark:text-foreground block group-hover:text-indigo-600 dark:group-hover:text-accent transition-colors">{item.name}</span>
+                                      <span className="text-xs text-gray-500 dark:text-muted-foreground line-clamp-2 leading-relaxed">{item.description}</span>
+                                    </div>
+                                  </Link>
+                                </motion.div>
+                              );
+                            })}
+                          </div>
+                        </div>
+
+                        {/* Right Side - Figures at a Glance */}
+                        <div className="w-[320px] bg-gradient-to-br from-indigo-600 via-indigo-700 to-blue-700 p-6">
+                          <h3 className="text-lg font-bold text-amber-400 mb-5">Figures at a Glance</h3>
+                          <div className="space-y-4">
+                            {figuresAtGlance.map((figure, idx) => {
+                              const figureColors = [
+                                { from: '#fbbf24', to: '#f59e0b' },
+                                { from: '#34d399', to: '#10b981' },
+                                { from: '#60a5fa', to: '#3b82f6' },
+                                { from: '#a78bfa', to: '#8b5cf6' },
+                              ];
+                              const fColors = figureColors[idx] || figureColors[0];
+                              
+                              return (
+                                <motion.div 
+                                  key={figure.label} 
+                                  className="flex items-start gap-3"
+                                  initial={{ opacity: 0, x: 20 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{ delay: idx * 0.08 }}
+                                >
+                                  <motion.div 
+                                    className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 backdrop-blur-sm"
+                                    whileHover={{ scale: 1.1 }}
+                                  >
+                                    <svg width="0" height="0" className="absolute">
+                                      <defs>
+                                        <linearGradient id={`figure-icon-${idx}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                                          <stop offset="0%" stopColor={fColors.from} />
+                                          <stop offset="100%" stopColor={fColors.to} />
+                                        </linearGradient>
+                                      </defs>
+                                    </svg>
+                                    <figure.icon 
+                                      className="w-5 h-5" 
+                                      style={{ stroke: `url(#figure-icon-${idx})` }}
+                                    />
+                                  </motion.div>
+                                  <div>
+                                    <span className="text-sm font-bold text-white block">{figure.value} {figure.label}</span>
+                                    <span className="text-xs text-white/70 leading-relaxed">{figure.description}</span>
+                                  </div>
+                                </motion.div>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {/* Services Mega Menu */}
+              <div
+                className="relative"
+                onMouseEnter={() => setActiveDropdown('services')}
+                onMouseLeave={() => { setActiveDropdown(null); setActiveServiceCategory(null); }}
+              >
+                <button
+                  className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-foreground transition-all rounded-lg hover:text-indigo-600 dark:hover:text-accent flex items-center gap-1 relative group"
+                >
+                  Services
+                  <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
+                  <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-indigo-600 dark:bg-accent scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                </button>
+
+                <AnimatePresence>
+                  {activeDropdown === 'services' && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-1/2 -translate-x-1/2 pt-3"
+                    >
+                      <div className="bg-white dark:bg-card rounded-2xl shadow-2xl border border-gray-100 dark:border-border/50 overflow-hidden flex" style={{ width: '980px' }}>
+                        {/* Left Panel - Service Categories */}
+                        <div className="flex-1 p-5">
+                          <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+                            {serviceCategories.map((category, index) => {
+                              const iconConfigs = [
+                                { bg: 'bg-gradient-to-br from-violet-100 to-purple-100 dark:from-violet-900/40 dark:to-purple-900/40', iconColor: 'text-violet-600 dark:text-violet-400' },
+                                { bg: 'bg-gradient-to-br from-pink-100 to-rose-100 dark:from-pink-900/40 dark:to-rose-900/40', iconColor: 'text-pink-600 dark:text-pink-400' },
+                                { bg: 'bg-gradient-to-br from-blue-100 to-cyan-100 dark:from-blue-900/40 dark:to-cyan-900/40', iconColor: 'text-blue-600 dark:text-blue-400' },
+                                { bg: 'bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-900/40 dark:to-teal-900/40', iconColor: 'text-emerald-600 dark:text-emerald-400' },
+                                { bg: 'bg-gradient-to-br from-sky-100 to-blue-100 dark:from-sky-900/40 dark:to-blue-900/40', iconColor: 'text-sky-600 dark:text-sky-400' },
+                                { bg: 'bg-gradient-to-br from-indigo-100 to-violet-100 dark:from-indigo-900/40 dark:to-violet-900/40', iconColor: 'text-indigo-600 dark:text-indigo-400' },
+                                { bg: 'bg-gradient-to-br from-amber-100 to-orange-100 dark:from-amber-900/40 dark:to-orange-900/40', iconColor: 'text-amber-600 dark:text-amber-400' },
+                                { bg: 'bg-gradient-to-br from-red-100 to-pink-100 dark:from-red-900/40 dark:to-pink-900/40', iconColor: 'text-red-600 dark:text-red-400' },
+                              ];
+                              const config = iconConfigs[index] || iconConfigs[0];
+                              const isActive = activeServiceCategory === category.name || (!activeServiceCategory && index === 0);
+                              
+                              return (
+                                <motion.div
+                                  key={category.href}
+                                  initial={{ opacity: 0, y: 8 }}
+                                  animate={{ opacity: 1, y: 0 }}
+                                  transition={{ delay: index * 0.02 }}
+                                  onMouseEnter={() => setActiveServiceCategory(category.name)}
+                                >
+                                  <Link
+                                    to={category.href}
+                                    className={`flex items-start gap-3 px-3 py-3 rounded-xl transition-all duration-200 group border-2 ${
+                                      isActive 
+                                        ? 'bg-gray-50 dark:bg-secondary/80 border-indigo-100 dark:border-accent/20' 
+                                        : 'border-transparent hover:bg-gray-50 dark:hover:bg-secondary/50'
+                                    }`}
+                                  >
+                                    <motion.div 
+                                      className={`w-11 h-11 rounded-xl ${config.bg} flex items-center justify-center shrink-0 shadow-sm`}
+                                      whileHover={{ scale: 1.05 }}
+                                    >
+                                      <category.icon className={`w-5 h-5 ${config.iconColor}`} />
+                                    </motion.div>
+                                    <div className="pt-0.5 flex-1">
+                                      <span className={`text-sm font-semibold block transition-colors ${
+                                        isActive ? 'text-indigo-600 dark:text-accent' : 'text-gray-900 dark:text-foreground group-hover:text-indigo-600 dark:group-hover:text-accent'
+                                      }`}>{category.name}</span>
+                                      <span className="text-xs text-gray-500 dark:text-muted-foreground line-clamp-2 leading-relaxed">{category.description}</span>
+                                    </div>
+                                  </Link>
+                                </motion.div>
+                              );
+                            })}
+                          </div>
+                        </div>
+
+                        {/* Right Panel - Sub-services */}
+                        <div className="w-[280px] bg-gradient-to-br from-indigo-600 via-indigo-700 to-blue-700 p-5 relative overflow-hidden">
+                          <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-3xl" />
+                          
+                          <AnimatePresence mode="wait">
+                            <motion.div
+                              key={activeServiceCategory || 'default'}
+                              initial={{ opacity: 0, x: 15 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              exit={{ opacity: 0, x: -15 }}
+                              transition={{ duration: 0.15 }}
+                              className="relative z-10"
+                            >
+                              <h3 className="text-base font-bold text-amber-400 mb-4">
+                                {activeServiceCategory || 'Artificial Intelligence'}
+                              </h3>
+                              <div className="space-y-0.5">
+                                {(serviceCategories.find(cat => cat.name === (activeServiceCategory || 'Artificial Intelligence'))?.subServices || serviceCategories[0].subServices).map((sub, idx) => (
+                                  <motion.div
+                                    key={sub.href + idx}
+                                    initial={{ opacity: 0, x: 8 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: idx * 0.03 }}
+                                  >
+                                    <Link
+                                      to={sub.href}
+                                      className="flex items-center gap-1.5 text-white/90 hover:text-amber-400 transition-all duration-200 group py-2 px-2 -mx-2 rounded-lg hover:bg-white/5"
+                                    >
+                                      <ChevronRight className="w-4 h-4 text-amber-400 group-hover:translate-x-0.5 transition-transform" />
+                                      <span className="text-sm font-medium">{sub.name}</span>
+                                    </Link>
+                                  </motion.div>
+                                ))}
+                              </div>
+                            </motion.div>
+                          </AnimatePresence>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {/* Industries Mega Menu */}
+              <div
+                className="relative"
+                onMouseEnter={() => setActiveDropdown('industries')}
+                onMouseLeave={() => { setActiveDropdown(null); setActiveIndustryCategory(null); }}
+              >
+                <button
+                  className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-foreground transition-all rounded-lg hover:text-indigo-600 dark:hover:text-accent flex items-center gap-1 relative group"
+                >
+                  Industries
+                  <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
+                  <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-indigo-600 dark:bg-accent scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                </button>
+
+                <AnimatePresence>
+                  {activeDropdown === 'industries' && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-1/2 -translate-x-1/2 pt-3"
+                    >
+                      <div className="bg-white dark:bg-card rounded-2xl shadow-2xl border border-gray-100 dark:border-border/50 overflow-hidden flex" style={{ width: '980px' }}>
+                        {/* Left Panel - Industry Categories */}
+                        <div className="flex-1 p-5">
+                          <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+                            {industryCategories.map((category, index) => {
+                              const isActive = activeIndustryCategory === category.name || (!activeIndustryCategory && index === 0);
+                              
+                              return (
+                                <motion.div
+                                  key={category.href}
+                                  initial={{ opacity: 0, y: 8 }}
+                                  animate={{ opacity: 1, y: 0 }}
+                                  transition={{ delay: index * 0.02 }}
+                                  onMouseEnter={() => setActiveIndustryCategory(category.name)}
+                                >
+                                  <Link
+                                    to={category.href}
+                                    className={`flex items-start gap-3 px-3 py-3 rounded-xl transition-all duration-200 group border-2 ${
+                                      isActive 
+                                        ? 'bg-gray-50 dark:bg-secondary/80 border-indigo-100 dark:border-accent/20' 
+                                        : 'border-transparent hover:bg-gray-50 dark:hover:bg-secondary/50'
+                                    }`}
+                                  >
+                                    <motion.div 
+                                      className={`w-11 h-11 rounded-xl bg-gradient-to-br ${category.bgGradient} flex items-center justify-center shrink-0 shadow-sm`}
+                                      whileHover={{ scale: 1.05 }}
+                                    >
+                                      <category.icon className={`w-5 h-5 ${category.iconColor}`} />
+                                    </motion.div>
+                                    <div className="pt-0.5 flex-1">
+                                      <span className={`text-sm font-semibold block transition-colors ${
+                                        isActive ? 'text-indigo-600 dark:text-accent' : 'text-gray-900 dark:text-foreground group-hover:text-indigo-600 dark:group-hover:text-accent'
+                                      }`}>{category.name}</span>
+                                      <span className="text-xs text-gray-500 dark:text-muted-foreground line-clamp-2 leading-relaxed">{category.description}</span>
+                                    </div>
+                                  </Link>
+                                </motion.div>
+                              );
+                            })}
+                          </div>
+                        </div>
+
+                        {/* Right Panel - Sub-industries */}
+                        <div className="w-[280px] bg-gradient-to-br from-indigo-600 via-indigo-700 to-blue-700 p-5 relative overflow-hidden">
+                          <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-3xl" />
+                          
+                          <AnimatePresence mode="wait">
+                            <motion.div
+                              key={activeIndustryCategory || 'default'}
+                              initial={{ opacity: 0, x: 15 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              exit={{ opacity: 0, x: -15 }}
+                              transition={{ duration: 0.15 }}
+                              className="relative z-10"
+                            >
+                              <h3 className="text-base font-bold text-amber-400 mb-4">
+                                {activeIndustryCategory || 'Logistics & Transportation'}
+                              </h3>
+                              <div className="space-y-0.5">
+                                {(industryCategories.find(cat => cat.name === (activeIndustryCategory || 'Logistics & Transportation'))?.subIndustries || industryCategories[0].subIndustries).map((sub, idx) => (
+                                  <motion.div
+                                    key={sub.href + idx}
+                                    initial={{ opacity: 0, x: 8 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: idx * 0.03 }}
+                                  >
+                                    <Link
+                                      to={sub.href}
+                                      className="flex items-center gap-1.5 text-white/90 hover:text-amber-400 transition-all duration-200 group py-2 px-2 -mx-2 rounded-lg hover:bg-white/5"
+                                    >
+                                      <ChevronRight className="w-4 h-4 text-amber-400 group-hover:translate-x-0.5 transition-transform" />
+                                      <span className="text-sm font-medium">{sub.name}</span>
+                                    </Link>
+                                  </motion.div>
+                                ))}
+                              </div>
+                            </motion.div>
+                          </AnimatePresence>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {/* Softurecs Insights Mega Menu */}
+              <div
+                className="relative"
+                onMouseEnter={() => setActiveDropdown('insights')}
+                onMouseLeave={() => setActiveDropdown(null)}
+              >
+                <button
+                  className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-foreground transition-all rounded-lg hover:text-indigo-600 dark:hover:text-accent flex items-center gap-1 relative group"
+                >
+                  Softurecs Insights
+                  <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
+                  <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-indigo-600 dark:bg-accent scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                </button>
+
+                <AnimatePresence>
+                  {activeDropdown === 'insights' && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full right-0 pt-3"
+                    >
+                      <div className="bg-white dark:bg-card rounded-2xl shadow-2xl border border-gray-100 dark:border-border/50 overflow-hidden flex" style={{ width: '850px' }}>
+                        {/* Left Side - Menu Items */}
+                        <div className="flex-1 p-6">
+                          <div className="grid grid-cols-2 gap-x-6 gap-y-1">
+                            {insightsMenuItems.map((item, index) => {
+                              const iconColors = [
+                                { from: '#f59e0b', to: '#ea580c' },
+                                { from: '#10b981', to: '#14b8a6' },
+                                { from: '#3b82f6', to: '#06b6d4' },
+                                { from: '#8b5cf6', to: '#a855f7' },
+                                { from: '#ec4899', to: '#f43f5e' },
+                                { from: '#0ea5e9', to: '#3b82f6' },
+                              ];
+                              const colors = iconColors[index] || iconColors[0];
+                              
+                              return (
+                                <motion.div
+                                  key={item.href}
+                                  initial={{ opacity: 0, y: 10 }}
+                                  animate={{ opacity: 1, y: 0 }}
+                                  transition={{ delay: index * 0.03 }}
+                                >
+                                  <Link
+                                    to={item.href}
+                                    className="flex items-start gap-3 px-3 py-3 rounded-xl hover:bg-gray-50 dark:hover:bg-secondary/80 transition-all duration-200 group"
+                                  >
+                                    <motion.div 
+                                      className={`w-11 h-11 rounded-xl bg-gradient-to-br ${item.bgGradient} flex items-center justify-center shrink-0 shadow-sm group-hover:shadow-md transition-all duration-200`}
+                                      whileHover={{ scale: 1.05 }}
+                                    >
+                                      <svg width="0" height="0" className="absolute">
+                                        <defs>
+                                          <linearGradient id={`insights-icon-${index}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stopColor={colors.from} />
+                                            <stop offset="100%" stopColor={colors.to} />
+                                          </linearGradient>
+                                        </defs>
+                                      </svg>
+                                      <item.icon 
+                                        className="w-5 h-5" 
+                                        style={{ stroke: `url(#insights-icon-${index})` }}
+                                      />
+                                    </motion.div>
+                                    <div className="pt-0.5">
+                                      <span className="text-sm font-semibold text-gray-900 dark:text-foreground block group-hover:text-indigo-600 dark:group-hover:text-accent transition-colors">{item.name}</span>
+                                      <span className="text-xs text-gray-500 dark:text-muted-foreground line-clamp-2 leading-relaxed">{item.description}</span>
+                                    </div>
+                                  </Link>
+                                </motion.div>
+                              );
+                            })}
+                          </div>
+                        </div>
+
+                        {/* Right Side - Highlight Panel */}
+                        <div className="w-[300px] bg-gradient-to-br from-indigo-600 via-indigo-700 to-blue-700 p-5 relative overflow-hidden">
+                          <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-3xl" />
+                          
+                          <div className="relative z-10">
+                            <h3 className="text-base font-bold text-amber-400 mb-3">
+                              Digital Solutions That Fit Every Business
+                            </h3>
+                            
+                            <div className="rounded-xl overflow-hidden mb-3 shadow-lg">
+                              <img 
+                                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=200&fit=crop" 
+                                alt="Softurecs Team" 
+                                className="w-full h-28 object-cover"
+                              />
+                            </div>
+                            
+                            <p className="text-sm text-white/80 mb-3">
+                              We work with brands of all sizes—adapting to your needs:
+                            </p>
+                            
+                            <div className="flex flex-wrap gap-2">
+                              {['Startups', 'SMEs', 'Enterprises'].map((item) => (
+                                <span key={item} className="flex items-center gap-1.5 text-white text-sm bg-white/10 px-3 py-1 rounded-full">
+                                  <span className="w-1.5 h-1.5 bg-amber-400 rounded-full" />
+                                  {item}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </nav>
+
+            {/* CTA Buttons */}
+            <div className="hidden lg:flex items-center gap-3">
               <button
                 onClick={toggleTheme}
-                className="flex items-center gap-3 w-full px-4 py-2 text-foreground font-medium rounded-lg hover:bg-secondary"
+                className="p-2.5 rounded-lg text-gray-600 dark:text-foreground hover:bg-gray-100 dark:hover:bg-secondary transition-colors"
+                aria-label="Toggle theme"
               >
-                {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-                {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+                <motion.div
+                  initial={false}
+                  animate={{ rotate: theme === 'dark' ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                </motion.div>
               </button>
+              
               <Link to="/contact">
-                <Button className="w-full mt-4 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold">
+                <Button 
+                  className="bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white font-semibold px-6 py-2.5 h-auto rounded-full shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-all group"
+                >
                   Get in Touch
+                  <motion.span
+                    className="ml-2 inline-flex"
+                    whileHover={{ x: 3 }}
+                  >
+                    <ArrowRight className="w-4 h-4" />
+                  </motion.span>
                 </Button>
               </Link>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </header>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="lg:hidden p-2 rounded-lg text-gray-700 dark:text-foreground hover:bg-gray-100 dark:hover:bg-secondary"
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="lg:hidden bg-white dark:bg-card border-t border-gray-100 dark:border-border/50 overflow-y-auto max-h-[80vh]"
+            >
+              <div className="container-custom py-4 space-y-1">
+                <Link to="/services/ai-development" className="block px-4 py-3 text-gray-900 dark:text-foreground font-semibold rounded-lg hover:bg-gray-50 dark:hover:bg-secondary">
+                  Start AI Journey
+                </Link>
+                
+                {/* About Section */}
+                <div>
+                  <button
+                    onClick={() => toggleMobileSection('about')}
+                    className="w-full flex items-center justify-between px-4 py-3 text-gray-900 dark:text-foreground font-medium rounded-lg hover:bg-gray-50 dark:hover:bg-secondary"
+                  >
+                    <span>About Softurecs</span>
+                    <ChevronDown className={`w-4 h-4 transition-transform ${mobileExpandedSection === 'about' ? 'rotate-180' : ''}`} />
+                  </button>
+                  <AnimatePresence>
+                    {mobileExpandedSection === 'about' && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="pl-4"
+                      >
+                        {aboutMenuItems.map((item) => (
+                          <Link 
+                            key={item.href}
+                            to={item.href} 
+                            className="block px-4 py-2.5 text-gray-600 dark:text-muted-foreground hover:text-gray-900 dark:hover:text-foreground rounded-lg hover:bg-gray-50 dark:hover:bg-secondary"
+                          >
+                            {item.name}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                {/* Services Section */}
+                <div>
+                  <button
+                    onClick={() => toggleMobileSection('services')}
+                    className="w-full flex items-center justify-between px-4 py-3 text-gray-900 dark:text-foreground font-medium rounded-lg hover:bg-gray-50 dark:hover:bg-secondary"
+                  >
+                    <span>Services</span>
+                    <ChevronDown className={`w-4 h-4 transition-transform ${mobileExpandedSection === 'services' ? 'rotate-180' : ''}`} />
+                  </button>
+                  <AnimatePresence>
+                    {mobileExpandedSection === 'services' && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="pl-4"
+                      >
+                        {serviceCategories.map((category) => (
+                          <Link 
+                            key={category.href}
+                            to={category.href} 
+                            className="block px-4 py-2.5 text-gray-600 dark:text-muted-foreground hover:text-gray-900 dark:hover:text-foreground rounded-lg hover:bg-gray-50 dark:hover:bg-secondary"
+                          >
+                            {category.name}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                {/* Industries Section */}
+                <div>
+                  <button
+                    onClick={() => toggleMobileSection('industries')}
+                    className="w-full flex items-center justify-between px-4 py-3 text-gray-900 dark:text-foreground font-medium rounded-lg hover:bg-gray-50 dark:hover:bg-secondary"
+                  >
+                    <span>Industries</span>
+                    <ChevronDown className={`w-4 h-4 transition-transform ${mobileExpandedSection === 'industries' ? 'rotate-180' : ''}`} />
+                  </button>
+                  <AnimatePresence>
+                    {mobileExpandedSection === 'industries' && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="pl-4"
+                      >
+                        {industryCategories.map((category) => (
+                          <Link 
+                            key={category.href}
+                            to={category.href} 
+                            className="block px-4 py-2.5 text-gray-600 dark:text-muted-foreground hover:text-gray-900 dark:hover:text-foreground rounded-lg hover:bg-gray-50 dark:hover:bg-secondary"
+                          >
+                            {category.name}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                {/* Insights Section */}
+                <div>
+                  <button
+                    onClick={() => toggleMobileSection('insights')}
+                    className="w-full flex items-center justify-between px-4 py-3 text-gray-900 dark:text-foreground font-medium rounded-lg hover:bg-gray-50 dark:hover:bg-secondary"
+                  >
+                    <span>Softurecs Insights</span>
+                    <ChevronDown className={`w-4 h-4 transition-transform ${mobileExpandedSection === 'insights' ? 'rotate-180' : ''}`} />
+                  </button>
+                  <AnimatePresence>
+                    {mobileExpandedSection === 'insights' && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="pl-4"
+                      >
+                        {insightsMenuItems.map((item) => (
+                          <Link 
+                            key={item.href}
+                            to={item.href} 
+                            className="block px-4 py-2.5 text-gray-600 dark:text-muted-foreground hover:text-gray-900 dark:hover:text-foreground rounded-lg hover:bg-gray-50 dark:hover:bg-secondary"
+                          >
+                            {item.name}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                {/* CTA */}
+                <div className="pt-4 px-4">
+                  <Link to="/contact">
+                    <Button className="w-full bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white font-semibold rounded-full">
+                      Get in Touch
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </header>
     </>
   );
 }
