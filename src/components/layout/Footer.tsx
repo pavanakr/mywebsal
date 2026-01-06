@@ -107,8 +107,42 @@ export function Footer() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut" as const,
+      },
+    },
+  };
+
+  const linkVariants = {
+    hidden: { opacity: 0, x: -10 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.4,
+      },
+    },
+  };
+
   return (
-    <footer className="relative">
+    <footer className="relative overflow-hidden">
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-r from-blue-100 via-cyan-50 to-violet-100" />
       
@@ -116,58 +150,134 @@ export function Footer() {
         {/* Main Footer Content */}
         <div className="container-custom py-16">
           {/* Desktop Layout - 4 Columns */}
-          <div className="hidden lg:grid lg:grid-cols-4 gap-8">
-            {footerColumns.map((column) => (
-              <div key={column.title}>
-                <h4 className="text-xl font-bold text-blue-600 mb-6">{column.title}</h4>
-                <ul className="space-y-3">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={containerVariants}
+            className="hidden lg:grid lg:grid-cols-4 gap-8"
+          >
+            {footerColumns.map((column, columnIndex) => (
+              <motion.div key={column.title} variants={itemVariants}>
+                <motion.h4 
+                  className="text-xl font-bold text-blue-600 mb-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: columnIndex * 0.1 }}
+                >
+                  {column.title}
+                </motion.h4>
+                <motion.ul 
+                  className="space-y-3"
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={{
+                    visible: {
+                      transition: {
+                        staggerChildren: 0.05,
+                        delayChildren: columnIndex * 0.1 + 0.2,
+                      },
+                    },
+                  }}
+                >
                   {column.items.map((item) => (
-                    <li key={item.href} className="flex items-start gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-2 flex-shrink-0" />
+                    <motion.li 
+                      key={item.href} 
+                      className="flex items-start gap-2"
+                      variants={linkVariants}
+                    >
+                      <motion.span 
+                        className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-2 flex-shrink-0"
+                        whileHover={{ scale: 1.5 }}
+                      />
                       <Link
                         to={item.href}
-                        className="text-gray-700 hover:text-blue-600 transition-colors text-sm leading-relaxed"
+                        className="text-gray-700 hover:text-blue-600 transition-colors text-sm leading-relaxed hover:translate-x-1 inline-block transition-transform duration-200"
                       >
                         {item.name}
                       </Link>
-                    </li>
+                    </motion.li>
                   ))}
-                </ul>
-              </div>
+                </motion.ul>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           {/* Mobile/Tablet Layout - Accordion */}
-          <div className="lg:hidden">
+          <motion.div 
+            className="lg:hidden"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             {footerColumns.map((column) => (
               <MobileAccordion key={column.title} title={column.title} items={column.items} />
             ))}
-          </div>
+          </motion.div>
         </div>
 
         {/* Global Coverage Section */}
-        <div className="border-t border-gray-200/50">
+        <motion.div 
+          className="border-t border-gray-200/50"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
           <div className="container-custom py-8 text-center">
-            <h3 className="text-sm md:text-base font-bold text-gray-800 uppercase tracking-wide mb-3">
+            <motion.h3 
+              className="text-sm md:text-base font-bold text-gray-800 uppercase tracking-wide mb-3"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
               Serving in 70+ Countries for Web, Software and Mobile App Development
-            </h3>
-            <p className="text-gray-600 text-sm md:text-base max-w-4xl mx-auto leading-relaxed">
+            </motion.h3>
+            <motion.p 
+              className="text-gray-600 text-sm md:text-base max-w-4xl mx-auto leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
               United States (USA), United Kingdom (UK), Singapore, Kenya, South Africa, Germany, Canada, Australia, Netherlands, Norway, United Arab Emirates (UAE), Finland, Sweden, Switzerland, India, Japan, South Korea, Brazil, Mexico, France, Italy, Spain, and many more.
-            </p>
+            </motion.p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-200/50">
+        <motion.div 
+          className="border-t border-gray-200/50"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           <div className="container-custom py-6">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               {/* Copyright */}
-              <p className="text-gray-600 text-sm text-center md:text-left">
+              <motion.p 
+                className="text-gray-600 text-sm text-center md:text-left"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
                 © {new Date().getFullYear()} <span className="font-medium text-gray-800">SOFTURECS AI LABS PRIVATE LIMITED</span>. All rights reserved.
-              </p>
+              </motion.p>
 
               {/* Policy Links */}
-              <div className="flex items-center gap-2 text-sm flex-wrap justify-center md:justify-end">
+              <motion.div 
+                className="flex items-center gap-2 text-sm flex-wrap justify-center md:justify-end"
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
                 <Link to="/sitemap" className="text-gray-600 hover:text-blue-600 transition-colors">
                   Sitemap
                 </Link>
@@ -183,10 +293,10 @@ export function Footer() {
                 <Link to="/terms" className="text-gray-600 hover:text-blue-600 transition-colors">
                   Terms & Conditions
                 </Link>
-              </div>
+              </motion.div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Floating Buttons */}
