@@ -244,7 +244,7 @@ const industryCategories = [
     subIndustries: [
       { name: 'Custom e-commerce platforms', href: '/industries/solutions/ecommerce-platform' },
       { name: 'Marketplace development', href: '/industries/solutions/marketplace-development' },
-      { name: 'Inventory management systems', href: '/industries/retail-ecommerce' },
+      { name: 'Inventory management systems', href: '/industries/solutions/inventory-management' },
     ]
   },
   { 
