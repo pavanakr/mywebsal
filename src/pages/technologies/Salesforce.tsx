@@ -1,56 +1,40 @@
-import Layout from "@/components/layout/Layout";
-import ServiceDetailPage from "@/components/services/ServiceDetailPage";
-import { Cloud, Users, BarChart, Cog, Zap, Shield } from "lucide-react";
+import { Cloud } from 'lucide-react';
+import { ServiceDetailPage } from '@/components/services/ServiceDetailPage';
 
 const Salesforce = () => {
   return (
-    <Layout>
-      <ServiceDetailPage
-        title="Salesforce Solutions"
-        subtitle="Maximize your Salesforce investment"
-        description="Expert Salesforce development, customization, and integration services. Transform your CRM into a powerful engine for sales, service, and marketing."
-        icon={<Cloud className="w-12 h-12" />}
-        features={[
-          {
-            icon: <Cog className="w-6 h-6" />,
-            title: "Custom Development",
-            description: "Custom apps and components on the Salesforce platform."
-          },
-          {
-            icon: <Users className="w-6 h-6" />,
-            title: "Sales Cloud",
-            description: "Optimize sales processes and pipeline management."
-          },
-          {
-            icon: <Shield className="w-6 h-6" />,
-            title: "Service Cloud",
-            description: "Deliver exceptional customer service experiences."
-          },
-          {
-            icon: <BarChart className="w-6 h-6" />,
-            title: "Analytics",
-            description: "Powerful reporting and Einstein Analytics."
-          },
-          {
-            icon: <Zap className="w-6 h-6" />,
-            title: "Integration",
-            description: "Connect Salesforce with your business systems."
-          },
-          {
-            icon: <Cloud className="w-6 h-6" />,
-            title: "AppExchange",
-            description: "Build and publish apps on AppExchange marketplace."
-          }
-        ]}
-        technologies={["Apex", "Lightning", "Visualforce", "SOQL", "REST API", "MuleSoft", "Heroku", "Tableau"]}
-        benefits={[
-          "Increase sales productivity and close rates",
-          "Improve customer satisfaction scores",
-          "Automate workflows and reduce manual work",
-          "Get 360° view of customers"
-        ]}
-      />
-    </Layout>
+    <ServiceDetailPage
+      icon={Cloud}
+      color="from-blue-400 to-blue-500"
+      title="Salesforce Development"
+      tagline="Custom Salesforce solutions to maximize your CRM investment."
+      description="We help you get the most out of Salesforce with custom development, integrations, and consulting. From implementation to optimization, we're your Salesforce partner."
+      benefits={[
+        "Custom development",
+        "Salesforce integrations",
+        "Lightning components",
+        "AppExchange apps",
+        "Data migration",
+        "Process automation",
+        "Analytics & reporting",
+        "Training & support",
+      ]}
+      process={[
+        { number: "01", title: "Discovery", description: "Understand your business processes and Salesforce needs." },
+        { number: "02", title: "Solution Design", description: "Design custom Salesforce solution architecture." },
+        { number: "03", title: "Development", description: "Build custom components and integrations." },
+        { number: "04", title: "Testing", description: "Comprehensive testing in sandbox environments." },
+        { number: "05", title: "Deployment", description: "Deploy to production with change management." },
+        { number: "06", title: "Training", description: "User training and ongoing support." },
+      ]}
+      technologies={["Apex", "Lightning Web Components", "Visualforce", "Salesforce Flow", "MuleSoft", "Heroku", "SOQL", "REST APIs", "Platform Events", "Einstein AI"]}
+      caseStudies={[
+        { title: "Sales Cloud Optimization", category: "Technology", description: "Custom Sales Cloud implementation.", results: ["50% faster sales cycle", "30% more leads"], image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop", href: "/portfolio/sales-cloud" },
+        { title: "Service Cloud Portal", category: "Retail", description: "Customer service portal integration.", results: ["40% case reduction", "90% satisfaction"], image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop", href: "/portfolio/service-cloud" },
+        { title: "CPQ Implementation", category: "Manufacturing", description: "Configure, Price, Quote automation.", results: ["80% faster quotes", "Zero errors"], image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop", href: "/portfolio/cpq" },
+      ]}
+      useCases={["Sales Cloud customization", "Service Cloud implementation", "Marketing Cloud setup", "Commerce Cloud development", "Pardot automation", "Custom AppExchange apps"]}
+    />
   );
 };
 

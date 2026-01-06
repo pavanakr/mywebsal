@@ -1,61 +1,34 @@
-import Layout from "@/components/layout/Layout";
-import SubIndustryDetailPage from "@/components/industries/SubIndustryDetailPage";
-import { ShoppingBasket, MapPin, Clock, RefreshCw, CreditCard, Truck } from "lucide-react";
+import { ShoppingBasket, Clock, MapPin, CreditCard, Package, BarChart3, Bell } from 'lucide-react';
+import { SubIndustryDetailPage } from '@/components/industries/SubIndustryDetailPage';
 
 const Grocery = () => {
   return (
-    <Layout>
-      <SubIndustryDetailPage
-        title="Grocery Delivery Systems"
-        subtitle="On-demand grocery and essentials delivery"
-        description="Build comprehensive grocery delivery platforms that connect supermarkets with customers. Enable quick commerce with real-time inventory and fast delivery."
-        icon={<ShoppingBasket className="w-12 h-12" />}
-        features={[
-          {
-            icon: <ShoppingBasket className="w-6 h-6" />,
-            title: "Product Catalog",
-            description: "Organized categories with search and filters."
-          },
-          {
-            icon: <MapPin className="w-6 h-6" />,
-            title: "Multi-Store Support",
-            description: "Connect multiple stores with location-based listings."
-          },
-          {
-            icon: <Clock className="w-6 h-6" />,
-            title: "Quick Commerce",
-            description: "Express delivery within 10-30 minutes."
-          },
-          {
-            icon: <RefreshCw className="w-6 h-6" />,
-            title: "Subscription Orders",
-            description: "Recurring orders for regular groceries."
-          },
-          {
-            icon: <CreditCard className="w-6 h-6" />,
-            title: "Flexible Payments",
-            description: "Multiple payment options including BNPL."
-          },
-          {
-            icon: <Truck className="w-6 h-6" />,
-            title: "Delivery Management",
-            description: "Route optimization and delivery slot booking."
-          }
-        ]}
-        benefits={[
-          "Enable instant grocery delivery",
-          "Reduce operational costs with automation",
-          "Build customer loyalty with subscriptions",
-          "Scale across multiple locations"
-        ]}
-        useCases={[
-          "Supermarket delivery apps",
-          "Dark store operations",
-          "Hyperlocal delivery",
-          "B2B grocery supply"
-        ]}
-      />
-    </Layout>
+    <SubIndustryDetailPage
+      icon={ShoppingBasket}
+      color="from-green-500 to-green-600"
+      parentIndustry="Solutions"
+      parentHref="/services"
+      name="Grocery Delivery"
+      tagline="Modern Grocery Delivery Apps for Quick Commerce"
+      description="Build grocery delivery platforms with inventory management, quick delivery, and seamless shopping experience."
+      stats={[{ value: "500K+", label: "Orders/Month" }, { value: "10min", label: "Quick Delivery" }, { value: "50K+", label: "Products" }, { value: "4.7", label: "Rating" }]}
+      features={[
+        { title: "Product Catalog", description: "Browse groceries by category.", icon: ShoppingBasket },
+        { title: "Quick Delivery", description: "10-minute delivery option.", icon: Clock },
+        { title: "Live Tracking", description: "Track your order in real-time.", icon: MapPin },
+        { title: "Easy Checkout", description: "Multiple payment methods.", icon: CreditCard },
+        { title: "Inventory Management", description: "Real-time stock updates.", icon: Package },
+        { title: "Analytics", description: "Sales and inventory insights.", icon: BarChart3 },
+      ]}
+      useCases={[
+        { title: "Quick Commerce", description: "10-minute grocery delivery." },
+        { title: "Supermarket Online", description: "Traditional grocery shopping." },
+        { title: "Specialty Stores", description: "Organic, gourmet products." },
+        { title: "B2B Grocery", description: "Restaurant and business supply." },
+      ]}
+      technologies={["React Native", "Node.js", "PostgreSQL", "Redis", "Elasticsearch", "Stripe", "Google Maps", "Firebase"]}
+      benefits={["Fast delivery", "Inventory sync", "Route optimization", "Customer loyalty", "Scalable"]}
+    />
   );
 };
 

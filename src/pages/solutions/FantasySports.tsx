@@ -1,61 +1,34 @@
-import Layout from "@/components/layout/Layout";
-import SubIndustryDetailPage from "@/components/industries/SubIndustryDetailPage";
-import { Trophy, Users, BarChart, Wallet, Shield, Zap } from "lucide-react";
+import { Trophy, Users, BarChart3, Zap, Shield, Wallet, Calendar } from 'lucide-react';
+import { SubIndustryDetailPage } from '@/components/industries/SubIndustryDetailPage';
 
 const FantasySports = () => {
   return (
-    <Layout>
-      <SubIndustryDetailPage
-        title="Fantasy Sports Platforms"
-        subtitle="Engaging fantasy gaming experiences"
-        description="Build exciting fantasy sports platforms with real-time scoring, multiple sports support, and secure payment systems for contests and prizes."
-        icon={<Trophy className="w-12 h-12" />}
-        features={[
-          {
-            icon: <Trophy className="w-6 h-6" />,
-            title: "Contest Management",
-            description: "Create and manage various contest types and leagues."
-          },
-          {
-            icon: <Users className="w-6 h-6" />,
-            title: "Team Building",
-            description: "Intuitive team selection with player stats and analysis."
-          },
-          {
-            icon: <BarChart className="w-6 h-6" />,
-            title: "Live Scoring",
-            description: "Real-time score updates and leaderboards."
-          },
-          {
-            icon: <Wallet className="w-6 h-6" />,
-            title: "Wallet System",
-            description: "Secure deposits, withdrawals, and prize distribution."
-          },
-          {
-            icon: <Shield className="w-6 h-6" />,
-            title: "Fair Play",
-            description: "Anti-fraud measures and fair play verification."
-          },
-          {
-            icon: <Zap className="w-6 h-6" />,
-            title: "Multi-Sport",
-            description: "Support for cricket, football, basketball, and more."
-          }
-        ]}
-        benefits={[
-          "Engage sports fans with interactive gaming",
-          "Generate revenue through entry fees",
-          "Build community with social features",
-          "Ensure compliance with gaming regulations"
-        ]}
-        useCases={[
-          "Daily fantasy sports",
-          "Season-long leagues",
-          "Free-to-play contests",
-          "Prediction gaming"
-        ]}
-      />
-    </Layout>
+    <SubIndustryDetailPage
+      icon={Trophy}
+      color="from-orange-500 to-orange-600"
+      parentIndustry="Solutions"
+      parentHref="/services"
+      name="Fantasy Sports"
+      tagline="Engaging Fantasy Sports Platforms for Sports Enthusiasts"
+      description="Build exciting fantasy sports platforms with real-time scoring, contests, and social features."
+      stats={[{ value: "10M+", label: "Users" }, { value: "$50M+", label: "Prize Pool" }, { value: "100K+", label: "Daily Contests" }, { value: "4.7", label: "Rating" }]}
+      features={[
+        { title: "Live Scoring", description: "Real-time points and leaderboards.", icon: Zap },
+        { title: "Team Building", description: "Draft and manage fantasy teams.", icon: Users },
+        { title: "Contests", description: "Daily and season-long competitions.", icon: Trophy },
+        { title: "Analytics", description: "Player stats and predictions.", icon: BarChart3 },
+        { title: "Secure Payments", description: "Deposits and withdrawals.", icon: Wallet },
+        { title: "Match Scheduling", description: "Fixture and contest calendar.", icon: Calendar },
+      ]}
+      useCases={[
+        { title: "Daily Fantasy", description: "Quick daily contests." },
+        { title: "Season Long", description: "Full season leagues." },
+        { title: "Cricket Fantasy", description: "IPL and cricket leagues." },
+        { title: "Football Fantasy", description: "NFL and soccer fantasy." },
+      ]}
+      technologies={["React Native", "Node.js", "Redis", "PostgreSQL", "Socket.io", "AWS", "Stripe", "Sports APIs"]}
+      benefits={["Real-time updates", "Scalable for millions", "Payment ready", "Multi-sport support", "Engaging UX"]}
+    />
   );
 };
 

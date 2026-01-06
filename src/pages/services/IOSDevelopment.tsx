@@ -1,56 +1,40 @@
-import Layout from "@/components/layout/Layout";
-import ServiceDetailPage from "@/components/services/ServiceDetailPage";
-import { Smartphone, Code, Shield, Zap, Users, Layers } from "lucide-react";
+import { Smartphone } from 'lucide-react';
+import { ServiceDetailPage } from '@/components/services/ServiceDetailPage';
 
 const IOSDevelopment = () => {
   return (
-    <Layout>
-      <ServiceDetailPage
-        title="iOS App Development"
-        subtitle="Build stunning, high-performance iOS applications"
-        description="Create native iOS applications that deliver exceptional user experiences on iPhone and iPad. Our expert developers leverage Swift and SwiftUI to build apps that stand out on the App Store."
-        icon={<Smartphone className="w-12 h-12" />}
-        features={[
-          {
-            icon: <Smartphone className="w-6 h-6" />,
-            title: "Native iOS Development",
-            description: "Pure Swift and SwiftUI development for optimal performance and seamless iOS integration."
-          },
-          {
-            icon: <Code className="w-6 h-6" />,
-            title: "App Store Optimization",
-            description: "Strategic ASO to maximize visibility and downloads on the Apple App Store."
-          },
-          {
-            icon: <Shield className="w-6 h-6" />,
-            title: "Security & Privacy",
-            description: "Implementation of Apple's security best practices and privacy guidelines."
-          },
-          {
-            icon: <Zap className="w-6 h-6" />,
-            title: "Performance Optimization",
-            description: "Optimized code for smooth animations, fast load times, and efficient battery usage."
-          },
-          {
-            icon: <Users className="w-6 h-6" />,
-            title: "Human Interface Guidelines",
-            description: "Designs that follow Apple's HIG for intuitive, familiar user experiences."
-          },
-          {
-            icon: <Layers className="w-6 h-6" />,
-            title: "Apple Ecosystem Integration",
-            description: "Seamless integration with Apple Watch, CarPlay, and other Apple services."
-          }
-        ]}
-        technologies={["Swift", "SwiftUI", "Xcode", "Core Data", "CloudKit", "ARKit", "Core ML", "TestFlight"]}
-        benefits={[
-          "Premium user experience with native iOS performance",
-          "Access to Apple's vast ecosystem and loyal customer base",
-          "Higher app store visibility and revenue potential",
-          "Enterprise-grade security and data protection"
-        ]}
-      />
-    </Layout>
+    <ServiceDetailPage
+      icon={Smartphone}
+      color="from-gray-700 to-gray-800"
+      title="iOS App Development"
+      tagline="Premium native iOS applications that deliver exceptional user experiences."
+      description="We build stunning iOS apps using Swift and SwiftUI, leveraging the full power of Apple's ecosystem. From iPhones to Apple Watch, we create seamless experiences across all Apple devices."
+      benefits={[
+        "Native Swift development",
+        "SwiftUI expertise",
+        "Apple design guidelines",
+        "App Store optimization",
+        "HealthKit integration",
+        "ARKit experiences",
+        "CoreML & AI features",
+        "Apple Pay support",
+      ]}
+      process={[
+        { number: "01", title: "Discovery", description: "Define app requirements and target audience." },
+        { number: "02", title: "UI/UX Design", description: "Design interfaces following Apple HIG." },
+        { number: "03", title: "Development", description: "Native Swift development with best practices." },
+        { number: "04", title: "Testing", description: "Device testing on multiple iOS versions." },
+        { number: "05", title: "App Store Submission", description: "Complete submission and approval process." },
+        { number: "06", title: "Post-Launch Support", description: "Updates, maintenance, and feature additions." },
+      ]}
+      technologies={["Swift", "SwiftUI", "UIKit", "Core Data", "CloudKit", "ARKit", "CoreML", "HealthKit", "Combine", "App Clips"]}
+      caseStudies={[
+        { title: "FinVault iOS", category: "Fintech", description: "Premium banking app with biometric security.", results: ["4.9 rating", "Featured by Apple"], image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=400&fit=crop", href: "/portfolio/finvault" },
+        { title: "HealthPulse", category: "Healthcare", description: "HealthKit-integrated wellness tracking.", results: ["1M downloads", "HIPAA compliant"], image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop", href: "/portfolio/healthpulse" },
+        { title: "ShopSphere", category: "E-commerce", description: "Native shopping with Apple Pay.", results: ["Top 10 Shopping", "2M downloads"], image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop", href: "/portfolio/shopsphere" },
+      ]}
+      useCases={["iPhone & iPad apps", "Apple Watch apps", "tvOS apps", "iMessage extensions", "Widgets", "CarPlay apps"]}
+    />
   );
 };
 

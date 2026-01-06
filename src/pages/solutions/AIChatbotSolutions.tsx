@@ -1,61 +1,34 @@
-import Layout from "@/components/layout/Layout";
-import SubIndustryDetailPage from "@/components/industries/SubIndustryDetailPage";
-import { Bot, MessageCircle, Brain, Zap, Globe, BarChart } from "lucide-react";
+import { Bot, MessageSquare, Zap, Shield, BarChart3, Clock, Users } from 'lucide-react';
+import { SubIndustryDetailPage } from '@/components/industries/SubIndustryDetailPage';
 
 const AIChatbotSolutions = () => {
   return (
-    <Layout>
-      <SubIndustryDetailPage
-        title="AI Chatbot Solutions"
-        subtitle="Intelligent conversational AI for business"
-        description="Build powerful AI chatbots that automate customer support, lead generation, and engagement. Leverage NLP and LLMs for natural conversations."
-        icon={<Bot className="w-12 h-12" />}
-        features={[
-          {
-            icon: <Brain className="w-6 h-6" />,
-            title: "LLM Integration",
-            description: "Powered by GPT-4, Claude, and custom models."
-          },
-          {
-            icon: <MessageCircle className="w-6 h-6" />,
-            title: "Multi-Channel",
-            description: "Deploy on web, mobile, WhatsApp, and social media."
-          },
-          {
-            icon: <Zap className="w-6 h-6" />,
-            title: "Instant Responses",
-            description: "24/7 automated responses with human handoff."
-          },
-          {
-            icon: <Globe className="w-6 h-6" />,
-            title: "Multilingual",
-            description: "Support for 100+ languages with translation."
-          },
-          {
-            icon: <BarChart className="w-6 h-6" />,
-            title: "Analytics",
-            description: "Conversation insights and performance metrics."
-          },
-          {
-            icon: <Bot className="w-6 h-6" />,
-            title: "Custom Training",
-            description: "Train on your knowledge base and documents."
-          }
-        ]}
-        benefits={[
-          "Reduce support costs by up to 70%",
-          "Provide instant 24/7 customer service",
-          "Scale customer interactions effortlessly",
-          "Capture and qualify leads automatically"
-        ]}
-        useCases={[
-          "Customer support automation",
-          "E-commerce shopping assistants",
-          "Lead qualification bots",
-          "Internal knowledge assistants"
-        ]}
-      />
-    </Layout>
+    <SubIndustryDetailPage
+      icon={Bot}
+      color="from-purple-500 to-purple-600"
+      parentIndustry="Solutions"
+      parentHref="/services"
+      name="AI Chatbot"
+      tagline="Intelligent AI Chatbots That Transform Customer Engagement"
+      description="Build conversational AI solutions that provide 24/7 customer support, automate workflows, and enhance user experiences."
+      stats={[{ value: "24/7", label: "Availability" }, { value: "80%", label: "Query Resolution" }, { value: "60%", label: "Cost Reduction" }, { value: "5s", label: "Response Time" }]}
+      features={[
+        { title: "Natural Language Processing", description: "Understand and respond to user queries naturally.", icon: MessageSquare },
+        { title: "Multi-Channel Support", description: "Deploy across web, mobile, and messaging platforms.", icon: Users },
+        { title: "Quick Integration", description: "Easy integration with existing systems and APIs.", icon: Zap },
+        { title: "Secure Conversations", description: "Enterprise-grade security for sensitive data.", icon: Shield },
+        { title: "Analytics Dashboard", description: "Track performance and conversation insights.", icon: BarChart3 },
+        { title: "Always Available", description: "Round-the-clock automated customer support.", icon: Clock },
+      ]}
+      useCases={[
+        { title: "Customer Support", description: "Automate FAQs and support tickets." },
+        { title: "Lead Generation", description: "Qualify leads through conversations." },
+        { title: "E-commerce Assistant", description: "Help customers find products." },
+        { title: "Appointment Booking", description: "Schedule meetings automatically." },
+      ]}
+      technologies={["OpenAI", "Dialogflow", "Rasa", "LangChain", "Python", "Node.js", "React", "WebSocket"]}
+      benefits={["Reduce support costs", "Improve response times", "Scale customer service", "Gather customer insights", "Increase satisfaction"]}
+    />
   );
 };
 

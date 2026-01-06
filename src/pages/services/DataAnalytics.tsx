@@ -1,56 +1,40 @@
-import Layout from "@/components/layout/Layout";
-import ServiceDetailPage from "@/components/services/ServiceDetailPage";
-import { BarChart3, TrendingUp, Database, Brain, PieChart, LineChart } from "lucide-react";
+import { BarChart3 } from 'lucide-react';
+import { ServiceDetailPage } from '@/components/services/ServiceDetailPage';
 
 const DataAnalytics = () => {
   return (
-    <Layout>
-      <ServiceDetailPage
-        title="Data Analytics Services"
-        subtitle="Transform data into actionable business insights"
-        description="Unlock the power of your data with advanced analytics solutions. We help you collect, analyze, and visualize data to make smarter business decisions and drive growth."
-        icon={<BarChart3 className="w-12 h-12" />}
-        features={[
-          {
-            icon: <Database className="w-6 h-6" />,
-            title: "Data Engineering",
-            description: "Build robust data pipelines and warehouses for reliable analytics."
-          },
-          {
-            icon: <TrendingUp className="w-6 h-6" />,
-            title: "Predictive Analytics",
-            description: "Forecast trends and behaviors with machine learning models."
-          },
-          {
-            icon: <PieChart className="w-6 h-6" />,
-            title: "Business Intelligence",
-            description: "Custom dashboards and reports for real-time insights."
-          },
-          {
-            icon: <Brain className="w-6 h-6" />,
-            title: "AI-Powered Insights",
-            description: "Leverage AI to uncover hidden patterns and opportunities."
-          },
-          {
-            icon: <LineChart className="w-6 h-6" />,
-            title: "Real-Time Analytics",
-            description: "Stream processing for instant insights and alerts."
-          },
-          {
-            icon: <BarChart3 className="w-6 h-6" />,
-            title: "Data Visualization",
-            description: "Interactive visualizations that tell compelling data stories."
-          }
-        ]}
-        technologies={["Python", "Apache Spark", "Tableau", "Power BI", "Snowflake", "BigQuery", "Apache Kafka", "TensorFlow"]}
-        benefits={[
-          "Make data-driven decisions with confidence",
-          "Identify growth opportunities and optimize operations",
-          "Reduce costs through predictive maintenance",
-          "Gain competitive advantage with real-time insights"
-        ]}
-      />
-    </Layout>
+    <ServiceDetailPage
+      icon={BarChart3}
+      color="from-blue-500 to-blue-600"
+      title="Data Analytics"
+      tagline="Turn your data into actionable insights that drive business decisions."
+      description="We help you harness the power of your data through advanced analytics, visualization, and machine learning. Make data-driven decisions with confidence."
+      benefits={[
+        "Data visualization",
+        "Business intelligence",
+        "Predictive analytics",
+        "Real-time dashboards",
+        "Custom reporting",
+        "Data warehousing",
+        "ETL pipelines",
+        "ML-powered insights",
+      ]}
+      process={[
+        { number: "01", title: "Data Assessment", description: "Evaluate data sources and quality." },
+        { number: "02", title: "Architecture Design", description: "Design data pipeline and warehouse." },
+        { number: "03", title: "Data Integration", description: "Build ETL processes and integrations." },
+        { number: "04", title: "Analytics Development", description: "Create dashboards and reports." },
+        { number: "05", title: "ML Models", description: "Develop predictive models if needed." },
+        { number: "06", title: "Deployment", description: "Deploy and train your team." },
+      ]}
+      technologies={["Python", "SQL", "Tableau", "Power BI", "Apache Spark", "Snowflake", "dbt", "Airflow", "TensorFlow", "Databricks"]}
+      caseStudies={[
+        { title: "Retail Analytics", category: "Retail", description: "Customer behavior analytics platform.", results: ["25% revenue increase", "Real-time insights"], image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop", href: "/portfolio/retail-analytics" },
+        { title: "Financial Reporting", category: "Finance", description: "Automated financial dashboards.", results: ["80% time savings", "Zero errors"], image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=400&fit=crop", href: "/portfolio/financial-reporting" },
+        { title: "Supply Chain Analytics", category: "Logistics", description: "Predictive supply chain optimization.", results: ["30% cost reduction", "95% accuracy"], image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop", href: "/portfolio/supply-chain" },
+      ]}
+      useCases={["Business intelligence", "Customer analytics", "Financial reporting", "Supply chain optimization", "Predictive maintenance", "Fraud detection"]}
+    />
   );
 };
 
