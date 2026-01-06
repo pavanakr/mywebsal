@@ -109,6 +109,7 @@ import GameDevelopers from "./pages/hire/GameDevelopers";
 // Legal pages
 import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
 import RefundPolicy from "./pages/legal/RefundPolicy";
+import ShippingPolicy from "./pages/legal/ShippingPolicy";
 import Terms from "./pages/legal/Terms";
 // Case study pages
 import HealthPulse from "./pages/portfolio/HealthPulse";
@@ -231,6 +232,7 @@ const App = () => (
             {/* Legal */}
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/refund-policy" element={<RefundPolicy />} />
+            <Route path="/shipping-policy" element={<ShippingPolicy />} />
             <Route path="/terms" element={<Terms />} />
             {/* Industries */}
             <Route path="/industries" element={<Industries />} />
