@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
 import { SEO } from '@/components/SEO';
-import { ArrowRight, Filter, Search, Building2, Heart, ShoppingCart, Truck, GraduationCap, Film } from 'lucide-react';
+import { PageHero } from '@/components/layout/PageHero';
+import { ArrowRight, Filter, Search, Building2, Heart, ShoppingCart, Truck, GraduationCap, Film, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
@@ -104,33 +105,19 @@ const CaseStudies = () => {
         description="Real success stories from healthcare, fintech, e-commerce & logistics. See how Softurecs AI Labs delivers measurable results for global clients."
         keywords="software case studies, client success stories, healthcare software, fintech solutions, e-commerce platform"
       />
-      {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-primary via-navy to-primary overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent" />
-        
-        <div className="container-custom relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <nav className="flex items-center justify-center gap-2 text-white/60 text-sm mb-6">
-              <Link to="/" className="hover:text-white transition-colors">Home</Link>
-              <span>/</span>
-              <Link to="/insights" className="hover:text-white transition-colors">Insights</Link>
-              <span>/</span>
-              <span className="text-accent">Case Studies</span>
-            </nav>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Case Studies Showcasing Our Software Development Success
-            </h1>
-            <p className="text-xl text-white/80 max-w-2xl mx-auto">
-              Real Business Challenges & Solutions. Measurable Results & Impact. Client Success Stories.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        title="Case Studies Showcasing Our Software Development Success"
+        description="Real Business Challenges & Solutions. Measurable Results & Impact. Client Success Stories."
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'Softurecs Insights', href: '/insights' },
+          { label: 'Case Studies' }
+        ]}
+        icon={FileText}
+        iconColor="from-amber-500 to-orange-500"
+        badge="Case Studies"
+        variant="centered"
+      />
 
       {/* Filters */}
       <section className="py-8 bg-card border-b border-border sticky top-[120px] z-30">

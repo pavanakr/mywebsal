@@ -2,7 +2,9 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
-import { ArrowRight, Search, Grid3X3, List, ExternalLink } from 'lucide-react';
+import { SEO } from '@/components/SEO';
+import { PageHero } from '@/components/layout/PageHero';
+import { ArrowRight, Search, Grid3X3, List, ExternalLink, Briefcase } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
@@ -105,33 +107,24 @@ const InsightsPortfolio = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-primary via-navy to-primary overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent" />
-        
-        <div className="container-custom relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <nav className="flex items-center justify-center gap-2 text-white/60 text-sm mb-6">
-              <Link to="/" className="hover:text-white transition-colors">Home</Link>
-              <span>/</span>
-              <Link to="/insights" className="hover:text-white transition-colors">Insights</Link>
-              <span>/</span>
-              <span className="text-accent">Portfolio</span>
-            </nav>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Our Portfolio
-            </h1>
-            <p className="text-xl text-white/80 max-w-2xl mx-auto">
-              Explore our diverse projects across industries and technologies.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <SEO
+        title="Our Portfolio | Softurecs AI Labs"
+        description="Explore our diverse portfolio of web apps, mobile apps, e-commerce, healthcare, fintech, and AI/ML projects."
+        keywords="software portfolio, web applications, mobile apps, e-commerce, healthcare software, fintech solutions"
+      />
+      <PageHero
+        title="Our Portfolio"
+        description="Explore our diverse projects across industries and technologies."
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'Softurecs Insights', href: '/insights' },
+          { label: 'Portfolio' }
+        ]}
+        icon={Briefcase}
+        iconColor="from-purple-500 to-violet-500"
+        badge="Our Portfolio"
+        variant="centered"
+      />
 
       {/* Filters */}
       <section className="py-8 bg-card border-b border-border sticky top-[120px] z-30">

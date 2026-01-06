@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
+import { SEO } from '@/components/SEO';
+import { PageHero } from '@/components/layout/PageHero';
 import { ChevronDown, Search, ArrowRight, HelpCircle, Code, Cloud, Shield, Users, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -104,33 +106,24 @@ const FAQs = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-primary via-navy to-primary overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent" />
-        
-        <div className="container-custom relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <nav className="flex items-center justify-center gap-2 text-white/60 text-sm mb-6">
-              <Link to="/" className="hover:text-white transition-colors">Home</Link>
-              <span>/</span>
-              <Link to="/insights" className="hover:text-white transition-colors">Insights</Link>
-              <span>/</span>
-              <span className="text-accent">FAQs</span>
-            </nav>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Frequently Asked Questions
-            </h1>
-            <p className="text-xl text-white/80 max-w-2xl mx-auto">
-              Quick answers to common questions about our services and process.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <SEO
+        title="Frequently Asked Questions | Softurecs AI Labs"
+        description="Get answers to common questions about our software development services, process, engagement models, and technology stack."
+        keywords="FAQ, software development questions, technology services FAQ, engagement models"
+      />
+      <PageHero
+        title="Frequently Asked Questions"
+        description="Quick answers to common questions about our services and process."
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'Softurecs Insights', href: '/insights' },
+          { label: 'FAQs' }
+        ]}
+        icon={HelpCircle}
+        iconColor="from-orange-500 to-amber-500"
+        badge="FAQs"
+        variant="centered"
+      />
 
       {/* Search & Categories */}
       <section className="py-8 bg-card border-b border-border">
