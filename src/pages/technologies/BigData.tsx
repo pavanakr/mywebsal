@@ -1,56 +1,31 @@
-import Layout from "@/components/layout/Layout";
-import ServiceDetailPage from "@/components/services/ServiceDetailPage";
-import { Database, BarChart, Zap, Search, Shield, TrendingUp } from "lucide-react";
+import { Database } from 'lucide-react';
+import { ServiceDetailPage } from '@/components/services/ServiceDetailPage';
 
 const BigData = () => {
   return (
-    <Layout>
-      <ServiceDetailPage
-        title="Big Data Analytics"
-        subtitle="Turn massive data into actionable insights"
-        description="Build big data platforms that collect, process, and analyze large volumes of data in real-time. Make smarter decisions with data at scale."
-        icon={<Database className="w-12 h-12" />}
-        features={[
-          {
-            icon: <Database className="w-6 h-6" />,
-            title: "Data Lakes",
-            description: "Centralized repositories for structured and unstructured data."
-          },
-          {
-            icon: <Zap className="w-6 h-6" />,
-            title: "Stream Processing",
-            description: "Real-time data processing with Apache Kafka and Spark."
-          },
-          {
-            icon: <BarChart className="w-6 h-6" />,
-            title: "Data Warehouses",
-            description: "Optimized storage for analytics and reporting."
-          },
-          {
-            icon: <Search className="w-6 h-6" />,
-            title: "Data Discovery",
-            description: "Self-service analytics and data exploration tools."
-          },
-          {
-            icon: <Shield className="w-6 h-6" />,
-            title: "Data Governance",
-            description: "Data quality, security, and compliance management."
-          },
-          {
-            icon: <TrendingUp className="w-6 h-6" />,
-            title: "Business Intelligence",
-            description: "Dashboards and reports for data-driven decisions."
-          }
-        ]}
-        technologies={["Apache Spark", "Hadoop", "Kafka", "Snowflake", "Databricks", "Apache Flink", "Elasticsearch", "Tableau"]}
-        benefits={[
-          "Process petabytes of data efficiently",
-          "Get real-time insights from streaming data",
-          "Reduce storage and processing costs",
-          "Enable self-service analytics for teams"
-        ]}
-      />
-    </Layout>
+    <ServiceDetailPage
+      icon={Database}
+      color="from-blue-500 to-blue-600"
+      title="Big Data Analytics"
+      tagline="Turn massive data into actionable insights."
+      description="Build big data platforms that collect, process, and analyze large volumes of data in real-time. Make smarter decisions with data at scale."
+      benefits={["Data lake architecture", "Real-time processing", "Data warehousing", "ETL pipelines", "Data governance", "Scalable infrastructure", "Cost optimization", "Data quality"]}
+      process={[
+        { number: "01", title: "Data Assessment", description: "Evaluate data sources and volumes." },
+        { number: "02", title: "Architecture Design", description: "Design scalable data architecture." },
+        { number: "03", title: "Pipeline Development", description: "Build data ingestion pipelines." },
+        { number: "04", title: "Processing Setup", description: "Configure batch and stream processing." },
+        { number: "05", title: "Analytics Layer", description: "Build analytics and reporting." },
+        { number: "06", title: "Optimization", description: "Optimize performance and costs." },
+      ]}
+      technologies={["Apache Spark", "Hadoop", "Kafka", "Snowflake", "Databricks", "BigQuery", "Redshift", "Airflow", "dbt", "Flink"]}
+      caseStudies={[
+        { title: "Data Lake Platform", category: "Retail", description: "Unified data platform for retail analytics.", results: ["10TB daily", "Real-time insights"], image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop", href: "/portfolio/data-lake" },
+        { title: "IoT Analytics", category: "Manufacturing", description: "Real-time IoT data processing.", results: ["1M events/sec", "Predictive alerts"], image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop", href: "/portfolio/iot-analytics" },
+        { title: "Customer 360", category: "Finance", description: "Unified customer data platform.", results: ["50+ sources", "Real-time sync"], image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=400&fit=crop", href: "/portfolio/customer-360" },
+      ]}
+      useCases={["Data lakes", "Real-time analytics", "Data warehousing", "IoT data processing", "Log analytics", "Customer analytics"]}
+    />
   );
 };
 
