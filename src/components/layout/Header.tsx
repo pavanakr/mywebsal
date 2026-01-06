@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronDown, Code, Smartphone, Cloud, Cpu, Globe, Layers, Sun, Moon } from 'lucide-react';
+import { Menu, X, ChevronDown, Code, Smartphone, Cloud, Cpu, Globe, Layers, Sun, Moon, RefreshCw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTheme } from '@/hooks/use-theme';
 
@@ -12,6 +12,7 @@ const services = [
   { name: 'Cloud & DevOps', href: '/services/cloud-devops', icon: Cloud },
   { name: 'AI & Automation', href: '/services/ai-automation', icon: Cpu },
   { name: 'SaaS Development', href: '/services/saas', icon: Layers },
+  { name: 'Application Modernization', href: '/services/application-modernization', icon: RefreshCw },
 ];
 
 const industries = [
@@ -21,6 +22,7 @@ const industries = [
   { name: 'Real Estate', href: '/industries/real-estate' },
   { name: 'Logistics', href: '/industries/logistics' },
   { name: 'Education', href: '/industries/education' },
+  { name: 'Travel & Hospitality', href: '/industries/travel-hospitality' },
 ];
 
 export function Header() {
