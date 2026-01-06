@@ -139,6 +139,10 @@ import InsightsFAQs from "./pages/insights/FAQs";
 import InsightsPressReleases from "./pages/insights/PressReleases";
 import CaseStudyDetail from "./pages/insights/CaseStudyDetail";
 import Sitemap from "./pages/Sitemap";
+// Programmatic SEO pages
+import CityLandingPage from "./components/seo/CityLandingPage";
+import ServiceIndustryPage from "./components/seo/ServiceIndustryPage";
+import HireDeveloperPage from "./components/seo/HireDeveloperPage";
 
 const queryClient = new QueryClient();
 
@@ -287,6 +291,12 @@ const App = () => (
             <Route path="/careers" element={<Careers />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/sitemap" element={<Sitemap />} />
+            {/* City-based SEO pages */}
+            <Route path="/software-development-company-in-:city" element={<CityLandingPage />} />
+            {/* Service + Industry programmatic pages */}
+            <Route path="/:service-for-:industry" element={<ServiceIndustryPage />} />
+            {/* Hire developer programmatic pages */}
+            <Route path="/hire-:technology-developers" element={<HireDeveloperPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
