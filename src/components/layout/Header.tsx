@@ -1,11 +1,12 @@
-// Services Mega Menu - Updated 2026
+// Services & Industries Mega Menu - Updated 2026
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, X, ChevronDown, ChevronRight, Code, Smartphone, Cloud, Cpu, Globe, Layers, Sun, Moon, RefreshCw,
   Building2, Server, Users, Handshake, Award, MessageSquare, Network, Briefcase,
-  FolderCheck, UserCheck, Heart, Zap, Database, UserPlus, Rocket
+  FolderCheck, UserCheck, Heart, Zap, Database, UserPlus, Rocket, Truck, GraduationCap,
+  ShoppingCart, Landmark, Film, Plane
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTheme } from '@/hooks/use-theme';
@@ -49,7 +50,7 @@ const aboutMenuItems = [
     icon: Users,
     description: "Meet the visionary minds driving Softurecs' growth and innovation.",
     gradient: 'from-sky-400 via-blue-400 to-indigo-400',
-    bgGradient: 'from-sky-50 to-blue-50 dark:from-sky-950/50 dark:to-indigo-950/50'
+    bgGradient: 'from-sky-50 to-blue-50 dark:from-sky-950/50 dark:to-blue-950/50'
   },
   { 
     name: 'Awards & Recognition', 
@@ -193,14 +194,111 @@ const serviceCategories = [
   },
 ];
 
-const industries = [
-  { name: 'Healthcare', href: '/industries/healthcare' },
-  { name: 'Fintech', href: '/industries/fintech' },
-  { name: 'E-commerce', href: '/industries/ecommerce' },
-  { name: 'Real Estate', href: '/industries/real-estate' },
-  { name: 'Logistics', href: '/industries/logistics' },
-  { name: 'Education', href: '/industries/education' },
-  { name: 'Travel & Hospitality', href: '/industries/travel-hospitality' },
+const industryCategories = [
+  { 
+    name: 'Logistics & Transportation', 
+    href: '/industries/logistics-transportation', 
+    icon: Truck,
+    description: 'Optimize fleet, delivery, and supply chain with smart tech solutions.',
+    bgGradient: 'from-orange-100 to-amber-100 dark:from-orange-900/40 dark:to-amber-900/40',
+    iconColor: 'text-orange-600 dark:text-orange-400',
+    subIndustries: [
+      { name: 'On-demand logistic app development', href: '/industries/logistics-transportation' },
+      { name: 'Transportation automobile solutions', href: '/industries/logistics-transportation' },
+      { name: 'Shipping management app development', href: '/industries/logistics-transportation' },
+    ]
+  },
+  { 
+    name: 'Real Estate & Construction', 
+    href: '/industries/real-estate-construction', 
+    icon: Building2,
+    description: 'Digitizing property management, sales, and project tracking with precision.',
+    bgGradient: 'from-blue-100 to-cyan-100 dark:from-blue-900/40 dark:to-cyan-900/40',
+    iconColor: 'text-blue-600 dark:text-blue-400',
+    subIndustries: [
+      { name: 'Property listing platforms', href: '/industries/real-estate-construction' },
+      { name: 'Construction management systems', href: '/industries/real-estate-construction' },
+      { name: 'Virtual tour technology', href: '/industries/real-estate-construction' },
+    ]
+  },
+  { 
+    name: 'Education', 
+    href: '/industries/education', 
+    icon: GraduationCap,
+    description: 'Interactive platforms for e-learning, administration, and student engagement.',
+    bgGradient: 'from-pink-100 to-rose-100 dark:from-pink-900/40 dark:to-rose-900/40',
+    iconColor: 'text-pink-600 dark:text-pink-400',
+    subIndustries: [
+      { name: 'Learning management systems', href: '/industries/education' },
+      { name: 'Virtual classroom platforms', href: '/industries/education' },
+      { name: 'Student information systems', href: '/industries/education' },
+    ]
+  },
+  { 
+    name: 'Retail & E-commerce', 
+    href: '/industries/retail-ecommerce', 
+    icon: ShoppingCart,
+    description: 'Custom ecommerce and retail solutions to boost online sales efficiently.',
+    bgGradient: 'from-purple-100 to-violet-100 dark:from-purple-900/40 dark:to-violet-900/40',
+    iconColor: 'text-purple-600 dark:text-purple-400',
+    subIndustries: [
+      { name: 'Custom e-commerce platforms', href: '/industries/retail-ecommerce' },
+      { name: 'Marketplace development', href: '/industries/retail-ecommerce' },
+      { name: 'Inventory management systems', href: '/industries/retail-ecommerce' },
+    ]
+  },
+  { 
+    name: 'Healthcare', 
+    href: '/industries/healthcare', 
+    icon: Heart,
+    description: 'Secure, compliant solutions to streamline healthcare workflows and engagement.',
+    bgGradient: 'from-red-100 to-rose-100 dark:from-red-900/40 dark:to-rose-900/40',
+    iconColor: 'text-red-600 dark:text-red-400',
+    subIndustries: [
+      { name: 'Telemedicine platforms', href: '/industries/healthcare' },
+      { name: 'Electronic health records', href: '/industries/healthcare' },
+      { name: 'Patient engagement apps', href: '/industries/healthcare' },
+    ]
+  },
+  { 
+    name: 'Banking & Finance', 
+    href: '/industries/banking-finance', 
+    icon: Landmark,
+    description: 'Powerful fintech solutions for secure transactions and smart decision-making.',
+    bgGradient: 'from-emerald-100 to-teal-100 dark:from-emerald-900/40 dark:to-teal-900/40',
+    iconColor: 'text-emerald-600 dark:text-emerald-400',
+    subIndustries: [
+      { name: 'Digital banking platforms', href: '/industries/banking-finance' },
+      { name: 'Payment processing systems', href: '/industries/banking-finance' },
+      { name: 'Fraud detection solutions', href: '/industries/banking-finance' },
+    ]
+  },
+  { 
+    name: 'Media & Entertainment', 
+    href: '/industries/media-entertainment', 
+    icon: Film,
+    description: 'Engaging, scalable platforms for content streaming, sharing, and monetization.',
+    bgGradient: 'from-violet-100 to-purple-100 dark:from-violet-900/40 dark:to-purple-900/40',
+    iconColor: 'text-violet-600 dark:text-violet-400',
+    subIndustries: [
+      { name: 'OTT streaming platforms', href: '/industries/media-entertainment' },
+      { name: 'Content management systems', href: '/industries/media-entertainment' },
+      { name: 'Live streaming solutions', href: '/industries/media-entertainment' },
+    ]
+  },
+  { 
+    name: 'Travel & Hospitality', 
+    href: '/industries/travel-hospitality', 
+    icon: Plane,
+    description: 'Enhance bookings, guest experience, and operations with digital platforms.',
+    bgGradient: 'from-sky-100 to-blue-100 dark:from-sky-900/40 dark:to-blue-900/40',
+    iconColor: 'text-sky-600 dark:text-sky-400',
+    subIndustries: [
+      { name: 'Booking & reservation systems', href: '/industries/travel-hospitality' },
+      { name: 'Hotel management platforms', href: '/industries/travel-hospitality' },
+      { name: 'Travel experience apps', href: '/industries/travel-hospitality' },
+    ]
+  },
 ];
 
 const figuresAtGlance = [
@@ -215,6 +313,7 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [activeServiceCategory, setActiveServiceCategory] = useState<string | null>(null);
+  const [activeIndustryCategory, setActiveIndustryCategory] = useState<string | null>(null);
   const location = useLocation();
   const { theme, toggleTheme } = useTheme();
 
@@ -528,11 +627,11 @@ export function Header() {
               </AnimatePresence>
             </div>
 
-            {/* Industries Dropdown */}
+            {/* Industries Mega Menu */}
             <div
               className="relative"
               onMouseEnter={() => setActiveDropdown('industries')}
-              onMouseLeave={() => setActiveDropdown(null)}
+              onMouseLeave={() => { setActiveDropdown(null); setActiveIndustryCategory(null); }}
             >
               <button
                 className={`px-4 py-2 text-sm font-medium transition-colors rounded-lg hover:bg-accent/10 flex items-center gap-1 ${
@@ -546,23 +645,95 @@ export function Header() {
               <AnimatePresence>
                 {activeDropdown === 'industries' && (
                   <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 pt-2"
+                    initial={{ opacity: 0, y: 10, scale: 0.98 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.98 }}
+                    transition={{ duration: 0.25, ease: "easeOut" }}
+                    className="absolute top-full left-1/2 -translate-x-1/2 pt-3"
                   >
-                    <div className="bg-card rounded-xl shadow-elevated border border-border/50 p-3 min-w-[200px]">
-                      <div className="grid gap-1">
-                        {industries.map((industry) => (
-                          <Link
-                            key={industry.href}
-                            to={industry.href}
-                            className="px-3 py-2 text-sm font-medium text-foreground rounded-lg hover:bg-secondary transition-colors"
+                    <div className="bg-card rounded-2xl shadow-elevated border border-border/50 overflow-hidden flex" style={{ width: '980px' }}>
+                      {/* Left Panel - Industry Categories (2 columns) */}
+                      <div className="flex-1 p-5">
+                        <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+                          {industryCategories.map((category, index) => {
+                            const isActive = activeIndustryCategory === category.name || (!activeIndustryCategory && index === 0);
+                            
+                            return (
+                              <motion.div
+                                key={category.href}
+                                initial={{ opacity: 0, y: 8 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: index * 0.025, duration: 0.2 }}
+                                onMouseEnter={() => setActiveIndustryCategory(category.name)}
+                              >
+                                <Link
+                                  to={category.href}
+                                  className={`flex items-start gap-3.5 px-3.5 py-3.5 rounded-xl transition-all duration-200 group border-2 ${
+                                    isActive 
+                                      ? 'bg-secondary/80 border-accent/20 shadow-sm' 
+                                      : 'border-transparent hover:bg-secondary/50 hover:border-border/30'
+                                  }`}
+                                >
+                                  <motion.div 
+                                    className={`w-12 h-12 rounded-xl bg-gradient-to-br ${category.bgGradient} flex items-center justify-center shrink-0 shadow-sm transition-all duration-300`}
+                                    whileHover={{ scale: 1.05, rotate: 2 }}
+                                    transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                                  >
+                                    <category.icon className={`w-6 h-6 ${category.iconColor}`} />
+                                  </motion.div>
+                                  <div className="pt-0.5 flex-1 min-w-0">
+                                    <span className={`text-sm font-semibold block transition-colors duration-200 ${
+                                      isActive ? 'text-accent' : 'text-foreground group-hover:text-accent'
+                                    }`}>{category.name}</span>
+                                    <span className="text-xs text-muted-foreground line-clamp-2 leading-relaxed mt-0.5">{category.description}</span>
+                                  </div>
+                                </Link>
+                              </motion.div>
+                            );
+                          })}
+                        </div>
+                      </div>
+
+                      {/* Right Panel - Sub-industries */}
+                      <div className="w-[300px] bg-gradient-to-br from-primary via-navy to-navy-light p-6 relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full blur-3xl" />
+                        <div className="absolute bottom-0 left-0 w-24 h-24 bg-cyan-light/10 rounded-full blur-2xl" />
+                        
+                        <AnimatePresence mode="wait">
+                          <motion.div
+                            key={activeIndustryCategory || 'default'}
+                            initial={{ opacity: 0, x: 15 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -15 }}
+                            transition={{ duration: 0.2, ease: "easeOut" }}
+                            className="relative z-10"
                           >
-                            {industry.name}
-                          </Link>
-                        ))}
+                            <h3 className="text-lg font-bold text-amber-400 mb-5">
+                              {activeIndustryCategory || 'Logistics & Transportation'}
+                            </h3>
+                            <div className="space-y-1">
+                              {(industryCategories.find(cat => cat.name === (activeIndustryCategory || 'Logistics & Transportation'))?.subIndustries || industryCategories[0].subIndustries).map((sub, idx) => (
+                                <motion.div
+                                  key={sub.href + idx}
+                                  initial={{ opacity: 0, x: 8 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{ delay: idx * 0.04, duration: 0.15 }}
+                                >
+                                  <Link
+                                    to={sub.href}
+                                    className="flex items-center gap-1.5 text-primary-foreground/90 hover:text-amber-400 transition-all duration-200 group py-2 px-2 -mx-2 rounded-lg hover:bg-white/5"
+                                  >
+                                    <span className="flex items-center text-amber-400">
+                                      <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" />
+                                      <ChevronRight className="w-4 h-4 -ml-2.5 group-hover:translate-x-0.5 transition-transform duration-200 delay-75" />
+                                    </span>
+                                    <span className="text-sm font-medium">{sub.name}</span>
+                                  </Link>
+                                </motion.div>
+                              ))}
+                            </div>
+                          </motion.div>
+                        </AnimatePresence>
                       </div>
                     </div>
                   </motion.div>
@@ -678,7 +849,7 @@ export function Header() {
               <div className="px-4 py-2">
                 <span className="text-sm font-semibold text-muted-foreground">Industries</span>
               </div>
-              {industries.map((industry) => (
+              {industryCategories.map((industry) => (
                 <Link 
                   key={industry.href}
                   to={industry.href} 
