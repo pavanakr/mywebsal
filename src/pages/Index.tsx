@@ -1,4 +1,6 @@
 import { Layout } from '@/components/layout/Layout';
+import { SEO } from '@/components/SEO';
+import { OrganizationSchema } from '@/components/SchemaMarkup';
 import { HeroSection } from '@/components/home/HeroSection';
 import { TrustedBrands } from '@/components/home/TrustedBrands';
 import { ServicesSection } from '@/components/home/ServicesSection';
@@ -12,6 +14,12 @@ import { CTASection } from '@/components/home/CTASection';
 const Index = () => {
   return (
     <Layout>
+      <SEO
+        title="AI-Driven Software Solutions"
+        description="Softurecs AI Labs - Enterprise AI & software development company in Hyderabad. Custom apps, cloud solutions & digital transformation for global businesses."
+        keywords="AI software company, software development India, custom software development, digital transformation, mobile app development"
+      />
+      <OrganizationSchema />
       <HeroSection />
       <TrustedBrands />
       <ServicesSection />

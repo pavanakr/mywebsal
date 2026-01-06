@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
+import { SEO } from '@/components/SEO';
 import { ArrowRight, Search, Calendar, Clock, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -99,6 +100,11 @@ const Blogs = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Technology Blogs | Softurecs AI Labs"
+        description="Expert insights on AI, software development & digital transformation. Latest tech trends, guides & best practices from Softurecs AI Labs."
+        keywords="technology blog, AI trends, software development tips, digital transformation insights, tech articles"
+      />
       {/* Hero Section */}
       <section className="relative py-24 bg-gradient-to-br from-primary via-navy to-primary overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent" />

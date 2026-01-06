@@ -32,9 +32,9 @@ const Contact = () => {
   return (
     <Layout>
       <SEO 
-        title="Contact Us"
-        description="Get in touch with Softurecs AI Labs. Contact us for AI solutions, software development, and digital transformation services. 24-hour response time guaranteed."
-        keywords="contact Softurecs, software development inquiry, AI solutions contact, IT consulting"
+        title="Contact Softurecs AI Labs"
+        description="Contact Softurecs AI Labs for AI solutions & software development. Free consultation, 24-hour response. Call +91 7396080902 or email info@softurecs.com."
+        keywords="contact Softurecs, software development inquiry, AI solutions contact, IT consulting Hyderabad"
       />
       <PageHero
         title="Contact Softurecs AI Labs – Let's Build Your Digital Solution"

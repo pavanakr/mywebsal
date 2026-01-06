@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
+import { SEO } from '@/components/SEO';
 import { FileText, Briefcase, BookOpen, HelpCircle, Newspaper, ArrowRight, TrendingUp, Users, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -51,6 +52,11 @@ const stats = [
 const Insights = () => {
   return (
     <Layout>
+      <SEO
+        title="Softurecs Insights"
+        description="Technology trends, case studies & expert insights from Softurecs AI Labs. Explore our knowledge base on AI, software development & digital transformation."
+        keywords="technology insights, software trends, AI articles, case studies, tech expertise"
+      />
       {/* Hero Section */}
       <section className="relative py-24 bg-gradient-to-br from-primary via-navy to-primary overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent" />

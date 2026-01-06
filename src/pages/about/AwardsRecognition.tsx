@@ -59,9 +59,9 @@ export default function AwardsRecognition() {
   return (
     <Layout>
       <SEO 
-        title="Awards & Recognition"
-        description="Explore Softurecs AI Labs' industry awards, certifications, and global recognitions. 25+ awards for excellence in AI, cloud services, and digital transformation."
-        keywords="software awards, IT company recognition, AI solutions awards, Clutch top company, ISO certified software company"
+        title="Awards & Recognition | Softurecs AI Labs"
+        description="25+ industry awards for AI excellence and digital innovation. Clutch Top 10 ranked, ISO 27001 certified software development company."
+        keywords="software awards, Clutch top company, ISO certified, AI solutions awards, IT company recognition"
       />
       
       <PageHero
