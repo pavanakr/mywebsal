@@ -1,35 +1,11 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
-import { Mail, Phone, MapPin, Send, Clock, Globe } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Clock, Globe, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-
-const offices = [
-  {
-    city: 'San Francisco',
-    country: 'United States',
-    address: '100 Innovation Drive, Suite 500\nSan Francisco, CA 94107',
-    phone: '+1 (415) 555-0123',
-    email: 'sf@vertexlabs.io',
-  },
-  {
-    city: 'London',
-    country: 'United Kingdom',
-    address: '25 Tech Hub, Canary Wharf\nLondon E14 5AB',
-    phone: '+44 20 7946 0958',
-    email: 'london@vertexlabs.io',
-  },
-  {
-    city: 'Singapore',
-    country: 'Singapore',
-    address: '8 Marina Boulevard, Level 35\nSingapore 018981',
-    phone: '+65 6123 4567',
-    email: 'singapore@vertexlabs.io',
-  },
-];
 
 const Contact = () => {
   const { toast } = useToast();
@@ -124,7 +100,7 @@ const Contact = () => {
                       <label className="block text-sm font-medium text-foreground mb-2">Phone Number</label>
                       <Input
                         type="tel"
-                        placeholder="+1 (555) 000-0000"
+                        placeholder="+91 9876543210"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       />
@@ -144,6 +120,7 @@ const Contact = () => {
                       <option value="cloud-devops">Cloud & DevOps</option>
                       <option value="ai-automation">AI & Automation</option>
                       <option value="saas">SaaS Development</option>
+                      <option value="application-modernization">Application Modernization</option>
                     </select>
                   </div>
                   <div>
@@ -176,22 +153,36 @@ const Contact = () => {
               <div className="bg-card p-6 rounded-2xl border border-border/50">
                 <h3 className="text-lg font-semibold text-foreground mb-4">Quick Contact</h3>
                 <div className="space-y-4">
-                  <a href="mailto:hello@vertexlabs.io" className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors">
+                  <a href="mailto:info@softurecs.com" className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors">
                     <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
                       <Mail className="w-5 h-5 text-accent" />
                     </div>
                     <div>
                       <div className="text-sm text-muted-foreground">Email</div>
-                      <div className="font-medium text-foreground">hello@vertexlabs.io</div>
+                      <div className="font-medium text-foreground">info@softurecs.com</div>
                     </div>
                   </a>
-                  <a href="tel:+14155550123" className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors">
+                  <a href="tel:+917396080902" className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors">
                     <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
                       <Phone className="w-5 h-5 text-accent" />
                     </div>
                     <div>
                       <div className="text-sm text-muted-foreground">Phone</div>
-                      <div className="font-medium text-foreground">+1 (415) 555-0123</div>
+                      <div className="font-medium text-foreground">+91 7396080902</div>
+                    </div>
+                  </a>
+                  <a 
+                    href="https://wa.me/917396080902?text=Hi, I'm interested in your services." 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors"
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-[#25D366]/10 flex items-center justify-center">
+                      <MessageCircle className="w-5 h-5 text-[#25D366]" />
+                    </div>
+                    <div>
+                      <div className="text-sm text-muted-foreground">WhatsApp</div>
+                      <div className="font-medium text-foreground">Chat with us</div>
                     </div>
                   </a>
                   <div className="flex items-center gap-3">
@@ -200,7 +191,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <div className="text-sm text-muted-foreground">Business Hours</div>
-                      <div className="font-medium text-foreground">Mon - Fri: 9AM - 6PM</div>
+                      <div className="font-medium text-foreground">Mon - Sat: 9AM - 7PM IST</div>
                     </div>
                   </div>
                 </div>
@@ -210,10 +201,10 @@ const Contact = () => {
               <div className="bg-gradient-to-br from-accent/20 to-cyan-light/10 p-6 rounded-2xl border border-accent/20">
                 <div className="flex items-center gap-3 mb-3">
                   <Globe className="w-6 h-6 text-accent" />
-                  <h3 className="text-lg font-semibold text-foreground">24/7 Global Support</h3>
+                  <h3 className="text-lg font-semibold text-foreground">Quick Response</h3>
                 </div>
                 <p className="text-muted-foreground text-sm">
-                  With offices across 3 continents, we provide round-the-clock support for all your needs. Expect a response within 24 hours.
+                  We respond to all inquiries within 24 hours. For urgent matters, call us directly or reach out via WhatsApp for instant support.
                 </p>
               </div>
             </motion.div>
@@ -221,7 +212,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Offices */}
+      {/* Office Location */}
       <section className="section-padding bg-secondary/30">
         <div className="container-custom">
           <motion.div
@@ -231,52 +222,66 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Global Offices</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Office</h2>
             <p className="text-lg text-muted-foreground">
-              Visit us at any of our locations around the world
+              Visit us at our headquarters in Hyderabad
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {offices.map((office, index) => (
-              <motion.div
-                key={office.city}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-card p-6 rounded-2xl border border-border/50 hover:border-accent/30 hover:shadow-soft transition-all"
-              >
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-                    <MapPin className="w-6 h-6 text-accent" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-foreground">{office.city}</h3>
-                    <p className="text-sm text-muted-foreground">{office.country}</p>
-                  </div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="max-w-2xl mx-auto"
+          >
+            <div className="bg-card p-8 rounded-2xl border border-border/50 hover:border-accent/30 hover:shadow-soft transition-all">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center">
+                  <MapPin className="w-7 h-7 text-accent" />
                 </div>
-                <div className="space-y-3 text-sm">
-                  <p className="text-muted-foreground whitespace-pre-line">{office.address}</p>
-                  <a href={`tel:${office.phone}`} className="block text-foreground hover:text-accent transition-colors">
-                    {office.phone}
+                <div>
+                  <h3 className="text-2xl font-semibold text-foreground">Hyderabad, India</h3>
+                  <p className="text-accent font-medium">Corporate Headquarters</p>
+                </div>
+              </div>
+              <div className="space-y-4 text-muted-foreground">
+                <p className="text-lg">
+                  SOFTURECS AI LABS PRIVATE LIMITED<br />
+                  5th Floor, Trinity Corporate Building, 501-A<br />
+                  eSeva Lane, KPHB Phase 3, Kukatpally<br />
+                  Hyderabad, Telangana – 500072
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                  <a href="tel:+917396080902" className="flex items-center gap-2 text-foreground hover:text-accent transition-colors">
+                    <Phone className="w-5 h-5" />
+                    +91 7396080902
                   </a>
-                  <a href={`mailto:${office.email}`} className="block text-accent hover:underline">
-                    {office.email}
+                  <a href="mailto:info@softurecs.com" className="flex items-center gap-2 text-accent hover:underline">
+                    <Mail className="w-5 h-5" />
+                    info@softurecs.com
                   </a>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Map Placeholder */}
-      <section className="h-96 bg-secondary/50 flex items-center justify-center">
-        <div className="text-center">
-          <MapPin className="w-12 h-12 text-muted-foreground/50 mx-auto mb-4" />
-          <p className="text-muted-foreground">Interactive map coming soon</p>
-        </div>
+      <section className="h-96 bg-secondary/50 relative overflow-hidden">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.6231789067!2d78.39!3d17.49!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDI5JzI0LjAiTiA3OMKwMjMnMjQuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="SOFTURECS AI LABS Office Location"
+          className="grayscale hover:grayscale-0 transition-all duration-500"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent pointer-events-none" />
       </section>
     </Layout>
   );

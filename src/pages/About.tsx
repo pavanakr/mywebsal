@@ -1,20 +1,20 @@
 import { motion } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
-import { Target, Eye, Award, Users, Building, Globe, CheckCircle } from 'lucide-react';
+import { Target, Eye, Award, Users, Building, Globe, CheckCircle, User } from 'lucide-react';
 import { CTASection } from '@/components/home/CTASection';
 
 const stats = [
-  { value: '15+', label: 'Years of Excellence' },
-  { value: '500+', label: 'Projects Delivered' },
-  { value: '200+', label: 'Expert Engineers' },
-  { value: '50+', label: 'Countries Served' },
+  { value: '5+', label: 'Years of Excellence' },
+  { value: '200+', label: 'Projects Delivered' },
+  { value: '50+', label: 'Expert Engineers' },
+  { value: '15+', label: 'Countries Served' },
 ];
 
 const values = [
   {
     icon: Target,
     title: 'Innovation First',
-    description: 'We constantly explore emerging technologies to deliver cutting-edge solutions that give our clients a competitive edge.',
+    description: 'We constantly explore emerging technologies to deliver cutting-edge AI-driven solutions that give our clients a competitive edge.',
   },
   {
     icon: Users,
@@ -29,35 +29,36 @@ const values = [
   {
     icon: Globe,
     title: 'Global Perspective',
-    description: 'With teams across continents, we bring diverse expertise and round-the-clock development capabilities.',
+    description: 'With clients across 15+ countries, we bring diverse expertise and round-the-clock development capabilities.',
   },
 ];
 
 const team = [
   {
-    name: 'David Mitchell',
-    role: 'CEO & Founder',
+    name: 'Pavan Kumar Naramala',
+    role: 'Founder & CEO',
     image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop',
+    isFounder: true,
   },
   {
-    name: 'Jennifer Park',
-    role: 'CTO',
+    name: 'Priya Sharma',
+    role: 'Chief Technology Officer',
     image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop',
   },
   {
-    name: 'Robert Chen',
+    name: 'Rahul Krishnan',
     role: 'VP of Engineering',
     image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop',
   },
   {
-    name: 'Amanda Foster',
-    role: 'Head of Design',
+    name: 'Ananya Reddy',
+    role: 'Head of AI & ML',
     image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop',
   },
 ];
 
 const whyUs = [
-  'ISO 27001 & SOC 2 Certified',
+  'ISO 27001 & SOC 2 Compliant',
   'Agile & DevOps Excellence',
   'Dedicated Project Managers',
   '24/7 Support & Maintenance',
@@ -78,13 +79,13 @@ const About = () => {
             className="text-center max-w-4xl mx-auto"
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-medium mb-6">
-              About Vertex Labs
+              About SOFTURECS AI LABS
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
-              Engineering Tomorrow's Digital Solutions Today
+              Engineering Tomorrow's AI-Powered Solutions Today
             </h1>
             <p className="text-xl text-primary-foreground/70">
-              Since 2009, we've been at the forefront of software innovation, helping businesses worldwide transform their ideas into powerful digital realities.
+              SOFTURECS AI LABS PRIVATE LIMITED is at the forefront of AI-driven software innovation, helping businesses worldwide transform their ideas into powerful digital realities.
             </p>
           </motion.div>
         </div>
@@ -125,13 +126,13 @@ const About = () => {
                 A Legacy of Innovation & Excellence
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Vertex Labs was founded with a simple yet powerful vision: to bridge the gap between business challenges and technological solutions. What started as a small team of passionate engineers has grown into a global technology powerhouse.
+                SOFTURECS AI LABS PRIVATE LIMITED was founded with a simple yet powerful vision: to bridge the gap between business challenges and AI-driven technological solutions. What started as a passionate team in Hyderabad has grown into a trusted technology partner for enterprises worldwide.
               </p>
               <p className="text-lg text-muted-foreground mb-6">
                 Today, we partner with Fortune 500 companies and ambitious startups alike, delivering solutions that drive real business outcomes. Our expertise spans across industries, from healthcare and fintech to e-commerce and logistics.
               </p>
               <p className="text-lg text-muted-foreground">
-                With offices in San Francisco, London, and Singapore, we bring a global perspective to every project while maintaining the agility and personalized attention of a boutique firm.
+                Headquartered in Hyderabad's tech hub, we bring cutting-edge AI and automation capabilities combined with the agility and personalized attention that sets us apart.
               </p>
             </motion.div>
 
@@ -144,7 +145,7 @@ const About = () => {
             >
               <img
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop"
-                alt="Vertex Labs Team"
+                alt="SOFTURECS AI LABS Team"
                 className="rounded-2xl shadow-elevated"
               />
               <div className="absolute -bottom-6 -left-6 bg-card p-6 rounded-xl shadow-soft border border-border/50">
@@ -153,8 +154,8 @@ const About = () => {
                     <Building className="w-6 h-6 text-accent" />
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-foreground">3</div>
-                    <div className="text-sm text-muted-foreground">Global Offices</div>
+                    <div className="text-2xl font-bold text-foreground">Hyderabad</div>
+                    <div className="text-sm text-muted-foreground">Tech Hub HQ</div>
                   </div>
                 </div>
               </div>
@@ -163,8 +164,57 @@ const About = () => {
         </div>
       </section>
 
-      {/* Vision & Mission */}
+      {/* Founder Section */}
       <section className="section-padding bg-secondary/30">
+        <div className="container-custom">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="order-2 lg:order-1"
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <User className="w-5 h-5 text-accent" />
+                <span className="text-accent font-medium">Meet Our Founder</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Pavan Kumar Naramala
+              </h2>
+              <p className="text-lg text-accent font-medium mb-4">Founder & CEO</p>
+              <p className="text-muted-foreground mb-6">
+                With a vision to revolutionize how businesses leverage AI and technology, Pavan Kumar Naramala founded SOFTURECS AI LABS to bridge the gap between cutting-edge innovation and practical business solutions.
+              </p>
+              <p className="text-muted-foreground">
+                Under his leadership, the company has grown to serve clients across 15+ countries, delivering transformative AI-powered solutions that drive measurable business outcomes. His commitment to excellence and innovation continues to shape the company's mission of empowering businesses through intelligent technology.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="order-1 lg:order-2"
+            >
+              <div className="relative">
+                <img
+                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&h=500&fit=crop"
+                  alt="Pavan Kumar Naramala - Founder & CEO"
+                  className="rounded-2xl shadow-elevated w-full max-w-md mx-auto"
+                />
+                <div className="absolute -bottom-4 -right-4 bg-accent text-accent-foreground px-6 py-3 rounded-xl font-semibold shadow-lg">
+                  Founder & CEO
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Vision & Mission */}
+      <section className="section-padding bg-background">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 gap-8">
             <motion.div
@@ -179,7 +229,7 @@ const About = () => {
               </div>
               <h3 className="text-2xl font-bold text-foreground mb-4">Our Vision</h3>
               <p className="text-muted-foreground">
-                To be the world's most trusted technology partner, enabling businesses of all sizes to harness the power of digital innovation and achieve unprecedented growth.
+                To be the world's most trusted AI technology partner, enabling businesses of all sizes to harness the power of artificial intelligence and digital innovation for unprecedented growth.
               </p>
             </motion.div>
 
@@ -195,7 +245,7 @@ const About = () => {
               </div>
               <h3 className="text-2xl font-bold text-foreground mb-4">Our Mission</h3>
               <p className="text-muted-foreground">
-                To deliver exceptional software solutions that solve real business problems, drive operational efficiency, and create meaningful value for our clients and their customers.
+                To deliver exceptional AI-powered software solutions that solve real business problems, drive operational efficiency, and create meaningful value for our clients and their customers.
               </p>
             </motion.div>
           </div>
@@ -203,7 +253,7 @@ const About = () => {
       </section>
 
       {/* Core Values */}
-      <section className="section-padding bg-background">
+      <section className="section-padding bg-secondary/30">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -242,7 +292,7 @@ const About = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="section-padding bg-secondary/30">
+      <section className="section-padding bg-background">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -255,10 +305,10 @@ const About = () => {
                 Why Choose Us
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                What Sets Vertex Labs Apart
+                What Sets SOFTURECS AI LABS Apart
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                We combine technical excellence with business acumen to deliver solutions that don't just work—they drive measurable results.
+                We combine technical excellence with business acumen to deliver AI-powered solutions that don't just work—they drive measurable results.
               </p>
               <div className="grid sm:grid-cols-2 gap-4">
                 {whyUs.map((item, index) => (
@@ -294,7 +344,7 @@ const About = () => {
       </section>
 
       {/* Leadership Team */}
-      <section className="section-padding bg-background">
+      <section className="section-padding bg-secondary/30">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -328,6 +378,11 @@ const About = () => {
                     className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  {member.isFounder && (
+                    <div className="absolute top-3 right-3 bg-accent text-accent-foreground text-xs font-semibold px-3 py-1 rounded-full">
+                      Founder
+                    </div>
+                  )}
                 </div>
                 <h3 className="text-lg font-semibold text-foreground">{member.name}</h3>
                 <p className="text-sm text-muted-foreground">{member.role}</p>

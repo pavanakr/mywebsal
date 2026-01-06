@@ -58,11 +58,16 @@ export function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-cyan-light flex items-center justify-center">
-              <span className="text-primary font-bold text-xl">V</span>
+              <span className="text-primary font-bold text-xl">S</span>
             </div>
-            <span className={`text-xl font-bold ${isScrolled ? 'text-foreground' : 'text-primary-foreground'}`}>
-              Vertex Labs
-            </span>
+            <div className="flex flex-col">
+              <span className={`text-lg font-bold leading-tight ${isScrolled ? 'text-foreground' : 'text-primary-foreground'}`}>
+                SOFTURECS
+              </span>
+              <span className={`text-[10px] font-medium leading-none ${isScrolled ? 'text-muted-foreground' : 'text-primary-foreground/70'}`}>
+                AI LABS
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -221,7 +226,7 @@ export function Header() {
             </button>
             <Link to="/contact">
               <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-6">
-                Get in Touch
+                Get Free Consultation
               </Button>
             </Link>
           </div>
@@ -276,7 +281,7 @@ export function Header() {
               </button>
               <Link to="/contact">
                 <Button className="w-full mt-4 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold">
-                  Get in Touch
+                  Get Free Consultation
                 </Button>
               </Link>
             </div>
