@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Menu, X, ChevronDown, Code, Smartphone, Cloud, Cpu, Globe, Layers, Sun, Moon, RefreshCw,
+  Menu, X, ChevronDown, ChevronRight, Code, Smartphone, Cloud, Cpu, Globe, Layers, Sun, Moon, RefreshCw,
   Building2, Server, Users, Handshake, Award, MessageSquare, Network, Briefcase,
-  FolderCheck, UserCheck, Heart, Zap
+  FolderCheck, UserCheck, Heart, Zap, Database, UserPlus, Rocket
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTheme } from '@/hooks/use-theme';
@@ -76,14 +76,120 @@ const aboutMenuItems = [
   },
 ];
 
-const services = [
-  { name: 'Custom Software Development', href: '/services/custom-software', icon: Code },
-  { name: 'Web Development', href: '/services/web-development', icon: Globe },
-  { name: 'Mobile App Development', href: '/services/mobile-apps', icon: Smartphone },
-  { name: 'Cloud & DevOps', href: '/services/cloud-devops', icon: Cloud },
-  { name: 'AI & Automation', href: '/services/ai-automation', icon: Cpu },
-  { name: 'SaaS Development', href: '/services/saas', icon: Layers },
-  { name: 'Application Modernization', href: '/services/application-modernization', icon: RefreshCw },
+const serviceCategories = [
+  { 
+    name: 'Artificial Intelligence', 
+    href: '/services/ai-automation', 
+    icon: Cpu,
+    description: 'Build intelligent systems that automate, predict, and optimize performance.',
+    gradient: 'from-violet-400 to-purple-500',
+    bgGradient: 'from-violet-50 to-purple-50 dark:from-violet-950/50 dark:to-purple-950/50',
+    subServices: [
+      { name: 'AI Development Company', href: '/services/ai-development' },
+      { name: 'AIOps Solutions', href: '/services/aiops' },
+      { name: 'Machine Learning & Deep Learning', href: '/services/machine-learning' },
+      { name: 'Generative AI Development', href: '/services/generative-ai' },
+      { name: 'AI Chatbot Development', href: '/services/ai-chatbot' },
+      { name: 'Deep Learning', href: '/services/deep-learning' },
+      { name: 'LLM Development', href: '/services/llm-development' },
+    ]
+  },
+  { 
+    name: 'Mobile App Development', 
+    href: '/services/mobile-apps', 
+    icon: Smartphone,
+    description: 'Custom mobile apps that engage users and drive business growth.',
+    gradient: 'from-pink-400 to-rose-500',
+    bgGradient: 'from-pink-50 to-rose-50 dark:from-pink-950/50 dark:to-rose-950/50',
+    subServices: [
+      { name: 'iOS App Development', href: '/services/mobile-apps' },
+      { name: 'Android App Development', href: '/services/mobile-apps' },
+      { name: 'Cross-Platform Apps', href: '/services/mobile-apps' },
+      { name: 'React Native Development', href: '/services/mobile-apps' },
+      { name: 'Flutter Development', href: '/services/mobile-apps' },
+    ]
+  },
+  { 
+    name: 'Big Data Services', 
+    href: '/services/big-data', 
+    icon: Database,
+    description: 'Unlock insights and value from large-scale, complex data systems.',
+    gradient: 'from-blue-400 to-cyan-500',
+    bgGradient: 'from-blue-50 to-cyan-50 dark:from-blue-950/50 dark:to-cyan-950/50',
+    subServices: [
+      { name: 'Data Analytics', href: '/services/big-data' },
+      { name: 'Data Warehousing', href: '/services/big-data' },
+      { name: 'Business Intelligence', href: '/services/big-data' },
+      { name: 'Data Engineering', href: '/services/big-data' },
+    ]
+  },
+  { 
+    name: 'Staff Augmentation', 
+    href: '/services/staff-augmentation', 
+    icon: UserPlus,
+    description: 'Extend your team with skilled developers for faster delivery.',
+    gradient: 'from-emerald-400 to-teal-500',
+    bgGradient: 'from-emerald-50 to-teal-50 dark:from-emerald-950/50 dark:to-teal-950/50',
+    subServices: [
+      { name: 'Dedicated Development Teams', href: '/services/staff-augmentation' },
+      { name: 'Remote Developers', href: '/services/staff-augmentation' },
+      { name: 'IT Consulting', href: '/services/staff-augmentation' },
+    ]
+  },
+  { 
+    name: 'Cloud Technologies', 
+    href: '/services/cloud-devops', 
+    icon: Cloud,
+    description: 'Transforming businesses with powerful, flexible, and secure cloud services.',
+    gradient: 'from-sky-400 to-blue-500',
+    bgGradient: 'from-sky-50 to-blue-50 dark:from-sky-950/50 dark:to-blue-950/50',
+    subServices: [
+      { name: 'Cloud Migration', href: '/services/cloud-devops' },
+      { name: 'AWS Services', href: '/services/cloud-devops' },
+      { name: 'Azure Solutions', href: '/services/cloud-devops' },
+      { name: 'DevOps Services', href: '/services/cloud-devops' },
+    ]
+  },
+  { 
+    name: 'Software Development', 
+    href: '/services/custom-software', 
+    icon: Code,
+    description: 'Modern software are fast, secure, and scalable.',
+    gradient: 'from-indigo-400 to-violet-500',
+    bgGradient: 'from-indigo-50 to-violet-50 dark:from-indigo-950/50 dark:to-violet-950/50',
+    subServices: [
+      { name: 'Custom Software', href: '/services/custom-software' },
+      { name: 'Web Development', href: '/services/web-development' },
+      { name: 'SaaS Development', href: '/services/saas' },
+      { name: 'API Development', href: '/services/custom-software' },
+    ]
+  },
+  { 
+    name: 'App Modernization', 
+    href: '/services/application-modernization', 
+    icon: RefreshCw,
+    description: 'Upgrade legacy apps with modern features, design, and performance.',
+    gradient: 'from-amber-400 to-orange-500',
+    bgGradient: 'from-amber-50 to-orange-50 dark:from-amber-950/50 dark:to-orange-950/50',
+    subServices: [
+      { name: 'Legacy Modernization', href: '/services/application-modernization' },
+      { name: 'Cloud Migration', href: '/services/application-modernization' },
+      { name: 'Re-architecture', href: '/services/application-modernization' },
+    ]
+  },
+  { 
+    name: 'On-Demand Solution', 
+    href: '/services/on-demand', 
+    icon: Rocket,
+    description: 'Launch on-demand platforms for services, delivery, or booking needs.',
+    gradient: 'from-red-400 to-pink-500',
+    bgGradient: 'from-red-50 to-pink-50 dark:from-red-950/50 dark:to-pink-950/50',
+    subServices: [
+      { name: 'Delivery Apps', href: '/services/on-demand' },
+      { name: 'Booking Platforms', href: '/services/on-demand' },
+      { name: 'Service Marketplaces', href: '/services/on-demand' },
+    ]
+  },
 ];
 
 const industries = [
