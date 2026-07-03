@@ -28,13 +28,14 @@ export function AnnouncementBar() {
             </span>
           </div>
           
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <Link to="/contact">
-              <Button 
-                size="sm" 
-                className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-xs px-4 py-1.5 h-auto rounded-full"
+              <Button
+                size="sm"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-[11px] sm:text-xs px-3 sm:px-4 py-1 sm:py-1.5 h-auto rounded-full whitespace-nowrap"
               >
-                Book a Free Consultation
+                <span className="sm:hidden">Free Quote</span>
+                <span className="hidden sm:inline">Book a Free Consultation</span>
               </Button>
             </Link>
             
