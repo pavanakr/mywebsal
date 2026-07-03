@@ -36,7 +36,7 @@ export function PageHero({
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 overflow-hidden">
       {/* Enhanced Background Effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-indigo-500/20 via-purple-500/10 to-transparent rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-accent/25 via-primary/10 to-transparent rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-cyan-500/15 via-blue-500/10 to-transparent rounded-full blur-3xl" />
         {/* Decorative Grid */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />

@@ -26,7 +26,7 @@ const aboutMenuItems = [
     href: '/about/infrastructure', 
     icon: Server,
     description: 'Explore our advanced development environment and robust technology setup.',
-    gradient: 'from-violet-400 via-purple-400 to-fuchsia-400',
+    gradient: 'from-accent via-primary to-accent',
     bgGradient: 'from-violet-50 to-purple-50 dark:from-violet-950/50 dark:to-purple-950/50'
   },
   { 
@@ -66,7 +66,7 @@ const aboutMenuItems = [
     href: '/about/testimonials', 
     icon: MessageSquare,
     description: 'Hear what our satisfied clients say about working with us.',
-    gradient: 'from-pink-400 via-rose-400 to-red-400',
+    gradient: 'from-accent to-primary',
     bgGradient: 'from-pink-50 to-rose-50 dark:from-pink-950/50 dark:to-rose-950/50'
   },
   { 
@@ -339,7 +339,7 @@ const insightsMenuItems = [
     href: '/insights/portfolio', 
     icon: Briefcase,
     description: 'Explore our diverse projects across industries and technologies.',
-    gradient: 'from-purple-400 via-violet-400 to-indigo-400',
+    gradient: 'from-accent via-primary to-accent',
     bgGradient: 'from-purple-50 to-violet-50 dark:from-purple-950/50 dark:to-violet-950/50'
   },
   { 
@@ -347,7 +347,7 @@ const insightsMenuItems = [
     href: '/insights/faqs', 
     icon: HelpCircle,
     description: 'Quick answers to common questions about our services and process.',
-    gradient: 'from-pink-400 via-rose-400 to-red-400',
+    gradient: 'from-accent to-primary',
     bgGradient: 'from-pink-50 to-rose-50 dark:from-pink-950/50 dark:to-rose-950/50'
   },
   { 
@@ -373,7 +373,7 @@ const aiJourneyMenuItems = [
     href: '/services/ai-development', 
     icon: Cpu,
     description: 'Build intelligent AI solutions that transform your business operations.',
-    gradient: 'from-violet-400 via-purple-400 to-fuchsia-400',
+    gradient: 'from-accent via-primary to-accent',
     bgGradient: 'from-violet-50 to-purple-50 dark:from-violet-950/50 dark:to-purple-950/50'
   },
   { 
@@ -389,7 +389,7 @@ const aiJourneyMenuItems = [
     href: '/services/generative-ai', 
     icon: Layers,
     description: 'Leverage GPT, LLMs, and generative models for content and automation.',
-    gradient: 'from-pink-400 via-rose-400 to-red-400',
+    gradient: 'from-accent to-primary',
     bgGradient: 'from-pink-50 to-rose-50 dark:from-pink-950/50 dark:to-rose-950/50'
   },
   { 
@@ -466,7 +466,7 @@ export function Header() {
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 text-white fixed top-0 left-0 right-0 z-[60] shadow-lg"
+        className="bg-gradient-to-r from-primary via-navy to-accent text-white fixed top-0 left-0 right-0 z-[60] shadow-lg"
       >
         <div className="container-custom">
           <div className="flex items-center justify-between h-14 md:h-12">
@@ -534,11 +534,11 @@ export function Header() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
-                <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-gradient-to-br from-indigo-600 via-purple-600 to-blue-600 flex items-center justify-center shadow-2xl shadow-indigo-500/40 transition-all duration-300">
+                <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-gradient-to-br from-primary via-navy to-accent flex items-center justify-center shadow-2xl shadow-primary/40 transition-all duration-300">
                   <span className="text-white font-extrabold text-2xl lg:text-3xl">S</span>
                 </div>
                 {/* Subtle glow effect */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-indigo-400 to-purple-400 opacity-0 group-hover:opacity-30 blur-lg transition-opacity duration-300" />
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent to-primary opacity-0 group-hover:opacity-30 blur-lg transition-opacity duration-300" />
               </motion.div>
               <div className="flex flex-col">
                 <span className="text-lg lg:text-xl font-extrabold text-gray-900 dark:text-foreground leading-tight tracking-tight whitespace-nowrap">
@@ -644,7 +644,7 @@ export function Header() {
                       </div>
 
                       {/* Right Side - AI Figures at a Glance (4 columns) */}
-                      <div className="col-span-4 bg-gradient-to-br from-violet-600 via-purple-700 to-indigo-700 p-8 flex flex-col">
+                      <div className="col-span-4 bg-gradient-to-br from-primary via-navy to-accent p-8 flex flex-col">
                         <h3 className="text-lg font-bold text-amber-300 font-display mb-6">AI Excellence at a Glance</h3>
                         <div className="space-y-5 flex-1">
                           {aiJourneyFigures.map((figure, idx) => {
@@ -1266,7 +1266,7 @@ export function Header() {
                   whileTap={{ scale: 0.98 }}
                 >
                   <Button 
-                    className="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 hover:from-indigo-700 hover:via-purple-700 hover:to-blue-700 text-white font-bold text-[15px] px-8 py-3.5 h-auto rounded-full shadow-xl shadow-indigo-500/30 hover:shadow-indigo-500/50 transition-all duration-300 group"
+                    className="bg-gradient-to-r from-primary via-navy to-accent hover:from-primary/90 hover:via-navy/90 hover:to-accent/90 text-white font-bold text-[15px] px-8 py-3.5 h-auto rounded-full shadow-xl shadow-primary/30 hover:shadow-primary/50 transition-all duration-300 group"
                   >
                     Get in Touch
                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
