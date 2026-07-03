@@ -3,92 +3,66 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Play, Sparkles, ShieldCheck, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-const stats = [
-  { value: '200+', label: 'Projects Delivered' },
-  { value: '15+', label: 'Countries Served' },
-  { value: '99%', label: 'Client Satisfaction' },
-];
-
 const highlights = [
   { icon: Sparkles, label: 'AI-First Engineering' },
   { icon: ShieldCheck, label: 'Enterprise-Grade Security' },
   { icon: Zap, label: 'Ship in Weeks, Not Quarters' },
 ];
 
+const proofStats = [
+  { value: '200+', label: 'Projects Delivered' },
+  { value: '15+', label: 'Countries Served' },
+  { value: '99%', label: 'Client Satisfaction' },
+];
+
 export function HeroSection() {
   return (
-    <section className="relative flex items-center bg-gradient-to-br from-primary via-navy to-navy-light overflow-hidden pt-28 pb-16 md:pt-32 md:pb-20 lg:min-h-[92vh] lg:pt-36 lg:pb-24">
-      {/* Background Elements */}
+    <section className="relative flex items-center bg-primary overflow-hidden pt-28 pb-20 md:pt-32 md:pb-24 lg:min-h-[92vh] lg:pt-36">
+      {/* Ambient background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-accent/20 rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-10 right-10 w-96 h-96 bg-cyan-light/10 rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-primary-foreground/5 rounded-full" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-primary-foreground/5 rounded-full" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-primary-foreground/5 rounded-full" />
-        {/* Subtle grid */}
+        <div className="absolute -top-[10%] -right-[10%] w-[600px] h-[600px] rounded-full bg-navy-light/30 blur-[120px]" />
+        <div className="absolute -bottom-[5%] -left-[5%] w-[420px] h-[420px] rounded-full bg-accent/15 blur-[100px]" />
         <div
-          className="absolute inset-0 opacity-[0.04]"
+          className="absolute inset-0 opacity-[0.05]"
           style={{
             backgroundImage:
-              'linear-gradient(hsl(var(--accent)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--accent)) 1px, transparent 1px)',
-            backgroundSize: '60px 60px',
+              'radial-gradient(hsl(var(--primary-foreground)) 1px, transparent 1px)',
+            backgroundSize: '40px 40px',
           }}
         />
       </div>
 
       <div className="container-custom relative z-10">
-        <div className="grid lg:grid-cols-[1.15fr,1fr] gap-10 lg:gap-14 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           {/* Content */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-center lg:text-left"
+            className="lg:col-span-7 flex flex-col gap-7 text-center lg:text-left"
           >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.15 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 border border-accent/30 mb-5 backdrop-blur-sm"
-            >
+            <div className="inline-flex mx-auto lg:mx-0 items-center gap-3 bg-navy-light/30 border border-accent/30 px-4 py-2 rounded-full w-fit backdrop-blur-sm">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full rounded-full bg-accent opacity-75 animate-ping" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
               </span>
-              <span className="text-xs md:text-sm text-primary-foreground/85 font-medium tracking-wide">
-                Trusted by Leading Enterprises
+              <span className="text-[11px] md:text-xs font-semibold uppercase tracking-[0.18em] text-primary-foreground/85">
+                Leading the AI Revolution
               </span>
-            </motion.div>
+            </div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.25 }}
-              className="font-display text-4xl md:text-5xl lg:text-[3.75rem] xl:text-6xl font-bold text-primary-foreground leading-[1.05] mb-5 tracking-tight"
-            >
-              AI-Driven Software{' '}
-              <span className="bg-gradient-to-r from-accent via-cyan-light to-accent bg-[length:200%_auto] bg-clip-text text-transparent animate-gradient">
-                Built for Modern Enterprises
-              </span>
-            </motion.h1>
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-[5.25rem] font-extrabold text-primary-foreground leading-[1.05] tracking-tight">
+              Architecting the{' '}
+              <span className="text-accent">Intelligence</span> of Tomorrow
+            </h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.35 }}
-              className="text-base md:text-lg text-primary-foreground/70 mb-6 max-w-xl mx-auto lg:mx-0 leading-relaxed"
-            >
-              SOFTURECS AI LABS engineers intelligent automation, custom software,
-              and next-generation digital platforms — from strategy to launch.
-            </motion.p>
+            <p className="text-lg md:text-xl text-primary-foreground/70 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
+              SOFTURECS AI Labs engineers high-performance custom software and
+              enterprise-grade AI ecosystems that turn complex data into
+              decisive competitive advantage.
+            </p>
 
-            {/* Highlights */}
-            <motion.ul
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-wrap gap-x-5 gap-y-2 mb-7 justify-center lg:justify-start"
-            >
+            <ul className="flex flex-wrap gap-x-5 gap-y-2 justify-center lg:justify-start">
               {highlights.map(({ icon: Icon, label }) => (
                 <li
                   key={label}
@@ -98,155 +72,129 @@ export function HeroSection() {
                   {label}
                 </li>
               ))}
-            </motion.ul>
+            </ul>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.45 }}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start"
-            >
+            <div className="flex flex-col sm:flex-row gap-4 pt-2 justify-center lg:justify-start">
               <Link to="/contact">
                 <Button
                   size="lg"
-                  className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 shadow-glow group"
+                  className="w-full sm:w-auto bg-primary-foreground text-primary hover:bg-accent hover:text-primary-foreground font-bold px-8 shadow-2xl shadow-primary/50 group"
                 >
-                  Talk to Experts
+                  Start Transformation
                   <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              <Link to="/services">
+              <Link to="/portfolio">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="w-full sm:w-auto border-primary-foreground/30 bg-primary-foreground/5 text-primary-foreground hover:bg-primary-foreground/15 hover:text-primary-foreground font-semibold px-8 backdrop-blur-sm"
+                  className="w-full sm:w-auto border-accent/40 bg-transparent text-primary-foreground hover:bg-navy-light/40 hover:text-primary-foreground font-semibold px-8"
                 >
                   <Play className="mr-1 w-4 h-4" />
-                  Explore Services
+                  View Enterprise Portfolio
                 </Button>
               </Link>
-            </motion.div>
+            </div>
 
-            {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.55 }}
-              className="grid grid-cols-3 gap-6 md:gap-8 mt-8 pt-8 border-t border-primary-foreground/10"
-            >
-              {stats.map((s) => (
-                <div key={s.label}>
-                  <div className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-accent mb-1">
-                    {s.value}
+            <div className="flex items-center gap-6 md:gap-8 mt-6 border-t border-navy-light pt-8 justify-center lg:justify-start">
+              {proofStats.map((s, i) => (
+                <div key={s.label} className="flex items-center gap-6 md:gap-8">
+                  <div className="flex flex-col">
+                    <span className="font-display text-2xl md:text-3xl font-bold text-primary-foreground">
+                      {s.value}
+                    </span>
+                    <span className="text-[10px] md:text-xs text-accent uppercase tracking-wider font-bold mt-1">
+                      {s.label}
+                    </span>
                   </div>
-                  <div className="text-xs md:text-sm text-primary-foreground/60">
-                    {s.label}
-                  </div>
+                  {i < proofStats.length - 1 && (
+                    <div className="w-px h-10 bg-navy-light" />
+                  )}
                 </div>
               ))}
-            </motion.div>
+            </div>
           </motion.div>
 
-          {/* Hero Visual */}
+          {/* Visual */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="hidden lg:block relative"
+            className="hidden lg:flex lg:col-span-5 relative justify-center"
           >
-            <div className="relative w-full aspect-square max-w-[520px] mx-auto">
-              {/* Center Glow */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent/30 rounded-full blur-3xl" />
+            <div className="relative w-full aspect-square max-w-md">
+              {/* Glass tilted backdrop */}
+              <div className="absolute inset-0 bg-gradient-to-br from-navy-light/40 to-transparent backdrop-blur-3xl rounded-3xl border border-primary-foreground/10 rotate-3 z-0" />
 
-              {/* Rotating ring */}
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
-                className="absolute inset-8 rounded-full border border-dashed border-accent/25"
-              />
-
-              {/* Floating Cards */}
-              <motion.div
-                animate={{ y: [0, -18, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute top-6 left-4 glass-card rounded-2xl p-4 shadow-glow"
-              >
-                <div className="w-11 h-11 rounded-xl bg-accent/20 flex items-center justify-center mb-2">
-                  <Sparkles className="w-5 h-5 text-accent" />
-                </div>
-                <div className="text-sm font-semibold text-foreground">AI Powered</div>
-                <div className="text-xs text-muted-foreground">Smart Automation</div>
-              </motion.div>
-
-              <motion.div
-                animate={{ y: [0, 18, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-                className="absolute bottom-16 left-10 glass-card rounded-2xl p-4 shadow-glow"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600" />
-                  <div>
-                    <div className="text-sm font-semibold text-foreground">99.9%</div>
-                    <div className="text-xs text-muted-foreground">Uptime</div>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div
-                animate={{ y: [0, -14, 0] }}
-                transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-                className="absolute top-1/3 right-2 glass-card rounded-2xl p-4 shadow-glow w-44"
-              >
-                <div className="w-full h-14 bg-gradient-to-r from-accent/25 to-cyan-light/25 rounded-lg mb-3" />
-                <div className="flex gap-2">
-                  <div className="h-2 w-12 bg-accent rounded-full" />
-                  <div className="h-2 w-8 bg-muted rounded-full" />
-                </div>
-              </motion.div>
-
-              <motion.div
-                animate={{ y: [0, 22, 0] }}
-                transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut', delay: 0.7 }}
-                className="absolute bottom-6 right-6 glass-card rounded-2xl p-4 shadow-glow"
-              >
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-                  <span className="text-xs font-medium text-foreground">Live Dashboard</span>
-                </div>
-                <div className="grid grid-cols-4 gap-1">
-                  {[18, 30, 12, 26, 20, 34, 16, 28].map((h, i) => (
+              <div className="absolute inset-0 flex items-center justify-center z-10">
+                <div className="relative w-4/5 h-4/5">
+                  {/* Neural mesh panel */}
+                  <div className="absolute inset-0 rounded-2xl border border-accent/30 overflow-hidden bg-primary/80">
                     <div
-                      key={i}
-                      className="w-4 bg-accent/30 rounded"
-                      style={{ height: `${h}px` }}
+                      className="absolute inset-0 opacity-20"
+                      style={{
+                        background:
+                          'linear-gradient(90deg, hsl(var(--accent)) 1px, transparent 1px), linear-gradient(hsl(var(--accent)) 1px, transparent 1px)',
+                        backgroundSize: '20px 20px',
+                      }}
                     />
-                  ))}
+
+                    {/* Glowing orb */}
+                    <motion.div
+                      animate={{ opacity: [0.35, 0.6, 0.35] }}
+                      transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-accent rounded-full blur-[60px]"
+                    />
+
+                    <div className="absolute top-6 left-6 right-6 flex flex-col gap-3">
+                      <div className="h-3 w-1/2 bg-navy-light rounded" />
+                      <div className="h-2 w-full bg-navy-light/50 rounded" />
+                      <div className="h-2 w-3/4 bg-navy-light/50 rounded" />
+                    </div>
+
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <div className="p-4 rounded-xl bg-primary border border-accent/50 shadow-2xl">
+                        <div className="flex items-center gap-3">
+                          <div className="w-8 h-8 rounded bg-accent/20 flex items-center justify-center">
+                            <div className="w-3 h-3 bg-primary-foreground rotate-45" />
+                          </div>
+                          <div className="flex flex-col gap-1">
+                            <div className="h-2 w-16 bg-primary-foreground/40 rounded" />
+                            <div className="h-2 w-24 bg-primary-foreground/20 rounded" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Floating accent — top right */}
+                  <motion.div
+                    animate={{ y: [0, -10, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                    className="absolute -top-4 -right-4 p-4 rounded-xl bg-primary-foreground text-primary shadow-2xl z-20"
+                  >
+                    <Sparkles className="h-6 w-6" />
+                  </motion.div>
+
+                  {/* Floating accent — bottom left */}
+                  <motion.div
+                    animate={{ y: [0, 10, 0] }}
+                    transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}
+                    className="absolute -bottom-8 -left-8 p-4 rounded-xl bg-navy-light border border-accent text-primary-foreground shadow-2xl z-20"
+                  >
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                      <span className="text-[10px] uppercase font-bold tracking-tight">
+                        Model: Stable_v4.0
+                      </span>
+                    </div>
+                  </motion.div>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </motion.div>
         </div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="hidden md:block absolute bottom-6 left-1/2 -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-6 h-10 rounded-full border-2 border-primary-foreground/30 flex items-start justify-center p-2"
-        >
-          <motion.div
-            animate={{ opacity: [1, 0, 1], y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-1.5 h-1.5 rounded-full bg-accent"
-          />
-        </motion.div>
-      </motion.div>
     </section>
   );
 }
