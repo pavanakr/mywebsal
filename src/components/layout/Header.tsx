@@ -555,13 +555,13 @@ export function Header() {
               <button
                 className={`px-3 xl:px-4 py-2 text-[13px] xl:text-[14px] font-semibold transition-all duration-300 rounded-lg flex items-center gap-1 relative group whitespace-nowrap ${
                   location.pathname === '/services/ai-development' || location.pathname.includes('/services/ai') || location.pathname.includes('/services/machine-learning') || location.pathname.includes('/services/generative-ai') || location.pathname.includes('/services/deep-learning') || location.pathname.includes('/services/llm')
-                    ? 'text-indigo-600 dark:text-accent bg-indigo-50 dark:bg-accent/10'
+                    ? 'text-emerald-700 dark:text-accent bg-indigo-50 dark:bg-accent/10'
                     : 'text-gray-800 dark:text-foreground hover:text-indigo-600 dark:hover:text-accent hover:bg-gray-50 dark:hover:bg-secondary/50'
                 }`}
               >
                 Start AI Journey
                 <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${activeDropdown === 'ai-journey' ? 'rotate-180' : 'group-hover:rotate-180'}`} />
-                <span className={`absolute bottom-0.5 left-3 right-3 h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-accent dark:to-cyan-400 rounded-full transition-transform duration-300 origin-left ${
+                <span className={`absolute bottom-0.5 left-3 right-3 h-0.5 bg-gradient-to-r from-emerald-700 to-amber-500 dark:from-accent dark:to-amber-300 rounded-full transition-transform duration-300 origin-left ${
                   location.pathname === '/services/ai-development' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                 }`} />
               </button>
@@ -625,7 +625,7 @@ export function Header() {
                                     />
                                   </motion.div>
                                   <div className="flex-1 min-w-0">
-                                    <span className="text-sm font-semibold text-gray-900 dark:text-foreground block group-hover:text-indigo-600 dark:group-hover:text-accent transition-colors mb-1">{item.name}</span>
+                                    <span className="text-sm font-semibold text-gray-900 dark:text-foreground block group-hover:text-emerald-700 dark:group-hover:text-accent transition-colors mb-1">{item.name}</span>
                                     <span className="text-xs text-gray-500 dark:text-muted-foreground leading-relaxed line-clamp-2">{item.description}</span>
                                   </div>
                                 </Link>
@@ -637,7 +637,7 @@ export function Header() {
 
                       {/* Right Side - AI Figures at a Glance (4 columns) */}
                       <div className="col-span-4 bg-gradient-to-br from-violet-600 via-purple-700 to-indigo-700 p-8 flex flex-col">
-                        <h3 className="text-lg font-bold text-amber-400 mb-6">AI Excellence at a Glance</h3>
+                        <h3 className="text-lg font-bold text-amber-300 font-display mb-6">AI Excellence at a Glance</h3>
                         <div className="space-y-5 flex-1">
                           {aiJourneyFigures.map((figure, idx) => {
                             const figureColors = [
@@ -697,13 +697,13 @@ export function Header() {
               <button
                 className={`px-3 xl:px-4 py-2 text-[13px] xl:text-[14px] font-medium transition-all duration-300 rounded-lg flex items-center gap-1 relative group whitespace-nowrap ${
                   location.pathname.startsWith('/about')
-                    ? 'text-indigo-600 dark:text-accent bg-indigo-50 dark:bg-accent/10'
+                    ? 'text-emerald-700 dark:text-accent bg-indigo-50 dark:bg-accent/10'
                     : 'text-gray-700 dark:text-foreground hover:text-indigo-600 dark:hover:text-accent hover:bg-gray-50 dark:hover:bg-secondary/50'
                 }`}
               >
                 About Softurecs
                 <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${activeDropdown === 'about' ? 'rotate-180' : 'group-hover:rotate-180'}`} />
-                <span className={`absolute bottom-0.5 left-3 right-3 h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-accent dark:to-cyan-400 rounded-full transition-transform duration-300 origin-left ${
+                <span className={`absolute bottom-0.5 left-3 right-3 h-0.5 bg-gradient-to-r from-emerald-700 to-amber-500 dark:from-accent dark:to-amber-300 rounded-full transition-transform duration-300 origin-left ${
                   location.pathname.startsWith('/about') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                 }`} />
                 </button>
@@ -769,7 +769,7 @@ export function Header() {
                                       />
                                     </motion.div>
                                     <div className="flex-1 min-w-0">
-                                      <span className="text-sm font-semibold text-gray-900 dark:text-foreground block group-hover:text-indigo-600 dark:group-hover:text-accent transition-colors mb-1">{item.name}</span>
+                                      <span className="text-sm font-semibold text-gray-900 dark:text-foreground block group-hover:text-emerald-700 dark:group-hover:text-accent transition-colors mb-1">{item.name}</span>
                                       <span className="text-xs text-gray-500 dark:text-muted-foreground leading-relaxed line-clamp-2">{item.description}</span>
                                     </div>
                                   </Link>
@@ -780,8 +780,8 @@ export function Header() {
                         </div>
 
                         {/* Right Side - Figures at a Glance (4 columns) */}
-                        <div className="col-span-4 bg-gradient-to-br from-indigo-600 via-indigo-700 to-purple-700 p-8 flex flex-col">
-                          <h3 className="text-lg font-bold text-amber-400 mb-6">Figures at a Glance</h3>
+                        <div className="col-span-4 bg-gradient-to-br from-emerald-800 via-emerald-900 to-emerald-950 p-8 flex flex-col">
+                          <h3 className="text-lg font-bold text-amber-300 font-display mb-6">Figures at a Glance</h3>
                           <div className="space-y-5 flex-1">
                             {figuresAtGlance.map((figure, idx) => {
                               const figureColors = [
@@ -841,13 +841,13 @@ export function Header() {
               <button
                 className={`px-3 xl:px-4 py-2 text-[13px] xl:text-[14px] font-medium transition-all duration-300 rounded-lg flex items-center gap-1 relative group whitespace-nowrap ${
                   location.pathname.startsWith('/services')
-                    ? 'text-indigo-600 dark:text-accent bg-indigo-50 dark:bg-accent/10'
+                    ? 'text-emerald-700 dark:text-accent bg-indigo-50 dark:bg-accent/10'
                     : 'text-gray-700 dark:text-foreground hover:text-indigo-600 dark:hover:text-accent hover:bg-gray-50 dark:hover:bg-secondary/50'
                 }`}
               >
                 Services
                 <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${activeDropdown === 'services' ? 'rotate-180' : 'group-hover:rotate-180'}`} />
-                <span className={`absolute bottom-0.5 left-3 right-3 h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-accent dark:to-cyan-400 rounded-full transition-transform duration-300 origin-left ${
+                <span className={`absolute bottom-0.5 left-3 right-3 h-0.5 bg-gradient-to-r from-emerald-700 to-amber-500 dark:from-accent dark:to-amber-300 rounded-full transition-transform duration-300 origin-left ${
                   location.pathname.startsWith('/services') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                 }`} />
                 </button>
@@ -897,7 +897,7 @@ export function Header() {
                                     to={category.href}
                                     className={`flex items-start gap-4 p-4 rounded-xl transition-all duration-200 group border ${
                                       isActive 
-                                        ? 'bg-gray-50 dark:bg-secondary/80 border-indigo-200/60 dark:border-accent/20 shadow-sm' 
+                                        ? 'bg-gray-50 dark:bg-secondary/80 border-emerald-200/60 dark:border-accent/25 shadow-sm' 
                                         : 'border-transparent hover:bg-gray-50 dark:hover:bg-secondary/50 hover:border-gray-100 dark:hover:border-border/30'
                                     }`}
                                   >
@@ -909,7 +909,7 @@ export function Header() {
                                     </motion.div>
                                     <div className="flex-1 min-w-0">
                                       <span className={`text-sm font-semibold block transition-colors mb-1 ${
-                                        isActive ? 'text-indigo-600 dark:text-accent' : 'text-gray-900 dark:text-foreground group-hover:text-indigo-600 dark:group-hover:text-accent'
+                                        isActive ? 'text-emerald-700 dark:text-accent' : 'text-gray-900 dark:text-foreground group-hover:text-emerald-700 dark:group-hover:text-accent'
                                       }`}>{category.name}</span>
                                       <span className="text-xs text-gray-500 dark:text-muted-foreground line-clamp-2 leading-relaxed">{category.description}</span>
                                     </div>
@@ -921,9 +921,9 @@ export function Header() {
                         </div>
 
                         {/* Right Panel - Sub-services (4 columns) */}
-                        <div className="col-span-4 bg-gradient-to-br from-indigo-600 via-indigo-700 to-purple-700 p-8 relative overflow-hidden flex flex-col">
+                        <div className="col-span-4 bg-gradient-to-br from-emerald-800 via-emerald-900 to-emerald-950 p-8 relative overflow-hidden flex flex-col">
                           <div className="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full blur-3xl" />
-                          <div className="absolute bottom-0 left-0 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl" />
+                          <div className="absolute bottom-0 left-0 w-32 h-32 bg-amber-400/10 rounded-full blur-2xl" />
                           
                           <AnimatePresence mode="wait">
                             <motion.div
@@ -934,7 +934,7 @@ export function Header() {
                               transition={{ duration: 0.15 }}
                               className="relative z-10 flex-1"
                             >
-                              <h3 className="text-lg font-bold text-amber-400 mb-5">
+                              <h3 className="text-lg font-bold text-amber-300 font-display mb-5">
                                 {activeServiceCategory || 'Artificial Intelligence'}
                               </h3>
                               <div className="space-y-1">
@@ -947,9 +947,9 @@ export function Header() {
                                   >
                                     <Link
                                       to={sub.href}
-                                      className="flex items-center gap-2 text-white/90 hover:text-amber-400 transition-all duration-200 group py-2.5 px-3 -mx-3 rounded-lg hover:bg-white/10"
+                                      className="flex items-center gap-2 text-white/90 hover:text-amber-300 transition-all duration-200 group py-2.5 px-3 -mx-3 rounded-lg hover:bg-white/10"
                                     >
-                                      <ChevronRight className="w-4 h-4 text-amber-400 group-hover:translate-x-1 transition-transform duration-200" />
+                                      <ChevronRight className="w-4 h-4 text-amber-300 group-hover:translate-x-1 transition-transform duration-200" />
                                       <span className="text-sm font-medium">{sub.name}</span>
                                     </Link>
                                   </motion.div>
@@ -973,13 +973,13 @@ export function Header() {
               <button
                 className={`px-3 xl:px-4 py-2 text-[13px] xl:text-[14px] font-medium transition-all duration-300 rounded-lg flex items-center gap-1 relative group whitespace-nowrap ${
                   location.pathname.startsWith('/industries')
-                    ? 'text-indigo-600 dark:text-accent bg-indigo-50 dark:bg-accent/10'
+                    ? 'text-emerald-700 dark:text-accent bg-indigo-50 dark:bg-accent/10'
                     : 'text-gray-700 dark:text-foreground hover:text-indigo-600 dark:hover:text-accent hover:bg-gray-50 dark:hover:bg-secondary/50'
                 }`}
               >
                 Industries
                 <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${activeDropdown === 'industries' ? 'rotate-180' : 'group-hover:rotate-180'}`} />
-                <span className={`absolute bottom-0.5 left-3 right-3 h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-accent dark:to-cyan-400 rounded-full transition-transform duration-300 origin-left ${
+                <span className={`absolute bottom-0.5 left-3 right-3 h-0.5 bg-gradient-to-r from-emerald-700 to-amber-500 dark:from-accent dark:to-amber-300 rounded-full transition-transform duration-300 origin-left ${
                   location.pathname.startsWith('/industries') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                 }`} />
                 </button>
@@ -1018,7 +1018,7 @@ export function Header() {
                                     to={category.href}
                                     className={`flex items-start gap-4 p-4 rounded-xl transition-all duration-200 group border ${
                                       isActive 
-                                        ? 'bg-gray-50 dark:bg-secondary/80 border-indigo-200/60 dark:border-accent/20 shadow-sm' 
+                                        ? 'bg-gray-50 dark:bg-secondary/80 border-emerald-200/60 dark:border-accent/25 shadow-sm' 
                                         : 'border-transparent hover:bg-gray-50 dark:hover:bg-secondary/50 hover:border-gray-100 dark:hover:border-border/30'
                                     }`}
                                   >
@@ -1030,7 +1030,7 @@ export function Header() {
                                     </motion.div>
                                     <div className="flex-1 min-w-0">
                                       <span className={`text-sm font-semibold block transition-colors mb-1 ${
-                                        isActive ? 'text-indigo-600 dark:text-accent' : 'text-gray-900 dark:text-foreground group-hover:text-indigo-600 dark:group-hover:text-accent'
+                                        isActive ? 'text-emerald-700 dark:text-accent' : 'text-gray-900 dark:text-foreground group-hover:text-emerald-700 dark:group-hover:text-accent'
                                       }`}>{category.name}</span>
                                       <span className="text-xs text-gray-500 dark:text-muted-foreground line-clamp-2 leading-relaxed">{category.description}</span>
                                     </div>
@@ -1042,9 +1042,9 @@ export function Header() {
                         </div>
 
                         {/* Right Panel - Sub-industries (4 columns) */}
-                        <div className="col-span-4 bg-gradient-to-br from-indigo-600 via-indigo-700 to-purple-700 p-8 relative overflow-hidden flex flex-col">
+                        <div className="col-span-4 bg-gradient-to-br from-emerald-800 via-emerald-900 to-emerald-950 p-8 relative overflow-hidden flex flex-col">
                           <div className="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full blur-3xl" />
-                          <div className="absolute bottom-0 left-0 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl" />
+                          <div className="absolute bottom-0 left-0 w-32 h-32 bg-amber-400/10 rounded-full blur-2xl" />
                           
                           <AnimatePresence mode="wait">
                             <motion.div
@@ -1055,7 +1055,7 @@ export function Header() {
                               transition={{ duration: 0.15 }}
                               className="relative z-10 flex-1"
                             >
-                              <h3 className="text-lg font-bold text-amber-400 mb-5">
+                              <h3 className="text-lg font-bold text-amber-300 font-display mb-5">
                                 {activeIndustryCategory || 'Logistics & Transportation'}
                               </h3>
                               <div className="space-y-1">
@@ -1068,9 +1068,9 @@ export function Header() {
                                   >
                                     <Link
                                       to={sub.href}
-                                      className="flex items-center gap-2 text-white/90 hover:text-amber-400 transition-all duration-200 group py-2.5 px-3 -mx-3 rounded-lg hover:bg-white/10"
+                                      className="flex items-center gap-2 text-white/90 hover:text-amber-300 transition-all duration-200 group py-2.5 px-3 -mx-3 rounded-lg hover:bg-white/10"
                                     >
-                                      <ChevronRight className="w-4 h-4 text-amber-400 group-hover:translate-x-1 transition-transform duration-200" />
+                                      <ChevronRight className="w-4 h-4 text-amber-300 group-hover:translate-x-1 transition-transform duration-200" />
                                       <span className="text-sm font-medium">{sub.name}</span>
                                     </Link>
                                   </motion.div>
@@ -1094,13 +1094,13 @@ export function Header() {
               <button
                 className={`px-3 xl:px-4 py-2 text-[13px] xl:text-[14px] font-medium transition-all duration-300 rounded-lg flex items-center gap-1 relative group whitespace-nowrap ${
                   location.pathname.startsWith('/insights')
-                    ? 'text-indigo-600 dark:text-accent bg-indigo-50 dark:bg-accent/10'
+                    ? 'text-emerald-700 dark:text-accent bg-indigo-50 dark:bg-accent/10'
                     : 'text-gray-700 dark:text-foreground hover:text-indigo-600 dark:hover:text-accent hover:bg-gray-50 dark:hover:bg-secondary/50'
                 }`}
               >
                 Softurecs Insights
                 <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${activeDropdown === 'insights' ? 'rotate-180' : 'group-hover:rotate-180'}`} />
-                <span className={`absolute bottom-0.5 left-3 right-3 h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-accent dark:to-cyan-400 rounded-full transition-transform duration-300 origin-left ${
+                <span className={`absolute bottom-0.5 left-3 right-3 h-0.5 bg-gradient-to-r from-emerald-700 to-amber-500 dark:from-accent dark:to-amber-300 rounded-full transition-transform duration-300 origin-left ${
                   location.pathname.startsWith('/insights') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                 }`} />
                 </button>
@@ -1164,7 +1164,7 @@ export function Header() {
                                       />
                                     </motion.div>
                                     <div className="flex-1 min-w-0">
-                                      <span className="text-sm font-semibold text-gray-900 dark:text-foreground block group-hover:text-indigo-600 dark:group-hover:text-accent transition-colors mb-1">{item.name}</span>
+                                      <span className="text-sm font-semibold text-gray-900 dark:text-foreground block group-hover:text-emerald-700 dark:group-hover:text-accent transition-colors mb-1">{item.name}</span>
                                       <span className="text-xs text-gray-500 dark:text-muted-foreground leading-relaxed line-clamp-2">{item.description}</span>
                                     </div>
                                   </Link>
@@ -1175,8 +1175,8 @@ export function Header() {
                         </div>
 
                         {/* Right Side - Insights Figures at a Glance (4 columns) */}
-                        <div className="col-span-4 bg-gradient-to-br from-indigo-600 via-indigo-700 to-purple-700 p-8 flex flex-col">
-                          <h3 className="text-lg font-bold text-amber-400 mb-6">Insights at a Glance</h3>
+                        <div className="col-span-4 bg-gradient-to-br from-emerald-800 via-emerald-900 to-emerald-950 p-8 flex flex-col">
+                          <h3 className="text-lg font-bold text-amber-300 font-display mb-6">Insights at a Glance</h3>
                           <div className="space-y-5 flex-1">
                             {insightsFigures.map((figure, idx) => {
                               const figureColors = [
