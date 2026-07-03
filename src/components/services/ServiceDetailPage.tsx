@@ -123,6 +123,25 @@ export function ServiceDetailPage({
               transition={{ duration: 0.6 }}
               className="bg-card p-8 rounded-2xl border border-border/50 shadow-soft"
             >
+              {/* Illustration placeholder */}
+              <div
+                role="img"
+                aria-label={`${title} illustration`}
+                className="relative mb-6 h-40 rounded-xl overflow-hidden bg-gradient-to-br from-accent/15 via-emerald-400/10 to-amber-300/10 border border-border/40 flex items-center justify-center"
+              >
+                <svg viewBox="0 0 200 100" className="w-40 h-24 opacity-80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="svg-grad" x1="0" x2="1" y1="0" y2="1">
+                      <stop offset="0%" stopColor="hsl(var(--accent))" />
+                      <stop offset="100%" stopColor="hsl(var(--primary))" />
+                    </linearGradient>
+                  </defs>
+                  <circle cx="40" cy="50" r="22" fill="url(#svg-grad)" opacity="0.85" />
+                  <rect x="80" y="28" width="90" height="14" rx="7" fill="url(#svg-grad)" opacity="0.7" />
+                  <rect x="80" y="52" width="70" height="10" rx="5" fill="url(#svg-grad)" opacity="0.5" />
+                  <rect x="80" y="70" width="50" height="8" rx="4" fill="url(#svg-grad)" opacity="0.4" />
+                </svg>
+              </div>
               <h3 className="text-xl font-semibold text-foreground mb-6">Common Use Cases</h3>
               <div className="space-y-4">
                 {useCases.map((useCase, index) => (
