@@ -553,6 +553,8 @@ export function Header() {
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button
+                aria-haspopup="true"
+                aria-expanded={activeDropdown === 'ai-journey'}
                 className={`px-3 xl:px-4 py-2 text-[13px] xl:text-[14px] font-semibold transition-all duration-300 rounded-lg flex items-center gap-1 relative group whitespace-nowrap ${
                   location.pathname === '/services/ai-development' || location.pathname.includes('/services/ai') || location.pathname.includes('/services/machine-learning') || location.pathname.includes('/services/generative-ai') || location.pathname.includes('/services/deep-learning') || location.pathname.includes('/services/llm')
                     ? 'text-emerald-700 dark:text-accent bg-indigo-50 dark:bg-accent/10'
@@ -695,6 +697,8 @@ export function Header() {
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button
+                aria-haspopup="true"
+                aria-expanded={activeDropdown === 'about'}
                 className={`px-3 xl:px-4 py-2 text-[13px] xl:text-[14px] font-medium transition-all duration-300 rounded-lg flex items-center gap-1 relative group whitespace-nowrap ${
                   location.pathname.startsWith('/about')
                     ? 'text-emerald-700 dark:text-accent bg-indigo-50 dark:bg-accent/10'
@@ -1092,6 +1096,8 @@ export function Header() {
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button
+                aria-haspopup="true"
+                aria-expanded={activeDropdown === 'insights'}
                 className={`px-3 xl:px-4 py-2 text-[13px] xl:text-[14px] font-medium transition-all duration-300 rounded-lg flex items-center gap-1 relative group whitespace-nowrap ${
                   location.pathname.startsWith('/insights')
                     ? 'text-emerald-700 dark:text-accent bg-indigo-50 dark:bg-accent/10'
