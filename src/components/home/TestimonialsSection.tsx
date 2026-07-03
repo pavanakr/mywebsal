@@ -30,8 +30,15 @@ export function TestimonialsSection() {
   const prev = () => setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
   return (
-    <section className="section-padding bg-gradient-to-br from-primary via-navy to-navy-light overflow-hidden">
-      <div className="container-custom">
+    <section className="section-padding bg-gradient-to-br from-primary via-navy to-navy-light overflow-hidden relative">
+      {/* Architectural background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[linear-gradient(hsl(var(--primary-foreground)/0.04)_1px,transparent_1px),linear-gradient(90deg,hsl(var(--primary-foreground)/0.04)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
+        <div className="absolute top-10 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 left-10 w-80 h-80 bg-cyan-light/10 rounded-full blur-3xl" />
+      </div>
+
+      <div className="container-custom relative">
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
           <motion.div
@@ -41,11 +48,11 @@ export function TestimonialsSection() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-medium mb-4">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent text-xs font-semibold tracking-wider uppercase mb-4">
               Testimonials
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground">
-              What Our Clients Say
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-primary-foreground tracking-tight">
+              Trusted by leaders who ship
             </h2>
           </motion.div>
 
