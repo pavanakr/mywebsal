@@ -177,6 +177,26 @@ export function ServiceDetailPage({
             </p>
           </motion.div>
 
+          {/* Process illustration strip */}
+          <div
+            role="img"
+            aria-label="Delivery timeline illustration"
+            className="mx-auto mb-8 max-w-3xl h-20 rounded-xl bg-gradient-to-r from-accent/10 via-emerald-400/10 to-amber-300/10 border border-border/40 flex items-center justify-center"
+          >
+            <svg viewBox="0 0 320 40" className="w-72 h-10 opacity-80" aria-hidden="true">
+              <defs>
+                <linearGradient id="proc-line" x1="0" x2="1" y1="0" y2="0">
+                  <stop offset="0%" stopColor="hsl(var(--accent))" />
+                  <stop offset="100%" stopColor="hsl(var(--primary))" />
+                </linearGradient>
+              </defs>
+              <line x1="10" y1="20" x2="310" y2="20" stroke="url(#proc-line)" strokeWidth="2" strokeDasharray="4 6" />
+              {[10, 80, 150, 220, 290].map((x, i) => (
+                <circle key={i} cx={x} cy="20" r="8" fill="url(#proc-line)" opacity={0.55 + i * 0.1} />
+              ))}
+            </svg>
+          </div>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {process.map((step, index) => (
               <motion.div
