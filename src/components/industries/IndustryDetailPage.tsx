@@ -84,14 +84,14 @@ export function IndustryDetailPage({
 
 
       {/* Challenges */}
-      <section className="section-padding bg-background">
+      <section className="py-8 md:py-10 lg:py-12 bg-background">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
             transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto mb-12"
+            className="text-center max-w-3xl mx-auto mb-8"
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-destructive/10 text-destructive text-sm font-medium mb-4">
               Industry Challenges
@@ -156,14 +156,14 @@ export function IndustryDetailPage({
       </section>
 
       {/* Solutions */}
-      <section className="section-padding bg-secondary/30">
+      <section className="py-8 md:py-10 lg:py-12 bg-secondary/30">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
             transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto mb-12"
+            className="text-center max-w-3xl mx-auto mb-8"
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
               Our Solutions
@@ -209,9 +209,9 @@ export function IndustryDetailPage({
       </section>
 
       {/* Capabilities */}
-      <section className="section-padding bg-background">
+      <section className="py-8 md:py-10 lg:py-12 bg-background">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -277,14 +277,14 @@ export function IndustryDetailPage({
       </section>
 
       {/* Case Studies */}
-      <section className="section-padding bg-secondary/30">
+      <section className="py-8 md:py-10 lg:py-12 bg-secondary/30">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
             transition={{ duration: 0.6 }}
-            className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12"
+            className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8"
           >
             <div>
               <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
@@ -353,7 +353,7 @@ export function IndustryDetailPage({
       <PageEnhancements title={name} kind="industry" highlights={capabilities} />
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-to-r from-accent to-cyan-light relative overflow-hidden">
+      <section className="py-12 md:py-14 bg-gradient-to-r from-accent to-cyan-light relative overflow-hidden">
         <div className="container-custom relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
