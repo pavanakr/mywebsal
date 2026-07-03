@@ -224,3 +224,26 @@
     transition: none !important;
   }
 }
+
+/* Performance: GPU-friendly animation surfaces */
+@layer utilities {
+  .gpu {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+  .will-transform { will-change: transform; }
+  .will-opacity { will-change: opacity; }
+  .will-transform-opacity { will-change: transform, opacity; }
+  /* Skip offscreen paint/layout for heavy sections */
+  .cv-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 800px;
+  }
+}
+
+/* Promote all framer-motion elements that animate to their own layer */
+[data-framer-motion], .animate-float, .animate-pulse-slow, .animate-gradient {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
