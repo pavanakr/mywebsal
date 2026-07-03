@@ -843,6 +843,8 @@ export function Header() {
               onMouseLeave={() => { setActiveDropdown(null); setActiveServiceCategory(null); }}
             >
               <button
+                aria-haspopup="true"
+                aria-expanded={activeDropdown === 'services'}
                 className={`px-3 xl:px-4 py-2 text-[13px] xl:text-[14px] font-medium transition-all duration-300 rounded-lg flex items-center gap-1 relative group whitespace-nowrap ${
                   location.pathname.startsWith('/services')
                     ? 'text-emerald-700 dark:text-accent bg-indigo-50 dark:bg-accent/10'
