@@ -56,7 +56,7 @@ export function IndustriesSection() {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
             transition={{ duration: 0.6 }}
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
@@ -81,7 +81,7 @@ export function IndustriesSection() {
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
             transition={{ duration: 0.6 }}
             className="grid grid-cols-2 sm:grid-cols-3 gap-4"
           >
@@ -90,7 +90,7 @@ export function IndustriesSection() {
                 key={industry.href}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
               >
                 <Link

@@ -97,7 +97,7 @@ export function PageEnhancements({ title, kind = 'service', highlights }: PageEn
                 key={s.label}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
                 className="rounded-2xl border border-primary-foreground/10 bg-primary-foreground/5 backdrop-blur-sm p-5 md:p-6 text-center"
               >
@@ -120,7 +120,7 @@ export function PageEnhancements({ title, kind = 'service', highlights }: PageEn
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto mb-10 md:mb-12"
           >
@@ -142,7 +142,7 @@ export function PageEnhancements({ title, kind = 'service', highlights }: PageEn
                 key={d.title}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
                 transition={{ duration: 0.45, delay: i * 0.06 }}
                 whileHover={{ y: -4 }}
                 className="group relative rounded-2xl border border-border/60 bg-card p-6 hover:border-accent/40 hover:shadow-elevated transition-all"
@@ -163,7 +163,7 @@ export function PageEnhancements({ title, kind = 'service', highlights }: PageEn
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
               transition={{ duration: 0.5 }}
               className="mt-10 md:mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-3"
             >
@@ -187,7 +187,7 @@ export function PageEnhancements({ title, kind = 'service', highlights }: PageEn
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
             transition={{ duration: 0.6 }}
             className="text-center mb-10"
           >
@@ -220,7 +220,7 @@ function FAQList({ items }: { items: { q: string; a: string }[] }) {
             key={item.q}
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
             transition={{ duration: 0.35, delay: i * 0.05 }}
             className="rounded-2xl bg-card border border-border/60 overflow-hidden"
           >

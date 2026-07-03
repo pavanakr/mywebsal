@@ -79,7 +79,7 @@ export function SubIndustryDetailPage({
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto mb-12"
           >
@@ -97,7 +97,7 @@ export function SubIndustryDetailPage({
                 key={feature.title}
                 initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50, y: 30 }}
                 whileInView={{ opacity: 1, x: 0, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={{ once: true, amount: 0.2, margin: "0px 0px -50px 0px" }}
                 transition={{ 
                   duration: 0.6, 
                   delay: index * 0.1,
@@ -132,7 +132,7 @@ export function SubIndustryDetailPage({
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto mb-12"
           >
@@ -150,7 +150,7 @@ export function SubIndustryDetailPage({
                 key={useCase.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-card p-6 rounded-2xl border border-border/50"
               >
@@ -173,7 +173,7 @@ export function SubIndustryDetailPage({
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
               transition={{ duration: 0.6 }}
             >
               <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
@@ -198,7 +198,7 @@ export function SubIndustryDetailPage({
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
               transition={{ duration: 0.6 }}
             >
               <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
@@ -213,7 +213,7 @@ export function SubIndustryDetailPage({
                     key={benefit}
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
                     transition={{ duration: 0.4, delay: index * 0.05 }}
                     className="flex items-center gap-3"
                   >
@@ -233,7 +233,7 @@ export function SubIndustryDetailPage({
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >

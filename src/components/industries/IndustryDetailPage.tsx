@@ -89,7 +89,7 @@ export function IndustryDetailPage({
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto mb-12"
           >
@@ -130,7 +130,7 @@ export function IndustryDetailPage({
                 key={challenge.title}
                 initial={{ opacity: 0, rotateX: 45, y: 50 }}
                 whileInView={{ opacity: 1, rotateX: 0, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={{ once: true, amount: 0.2, margin: "0px 0px -50px 0px" }}
                 transition={{ 
                   duration: 0.6, 
                   delay: index * 0.1,
@@ -161,7 +161,7 @@ export function IndustryDetailPage({
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto mb-12"
           >
@@ -179,7 +179,7 @@ export function IndustryDetailPage({
                 key={solution.title}
                 initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50, y: 30 }}
                 whileInView={{ opacity: 1, x: 0, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={{ once: true, amount: 0.2, margin: "0px 0px -50px 0px" }}
                 transition={{ 
                   duration: 0.6, 
                   delay: index * 0.1,
@@ -215,7 +215,7 @@ export function IndustryDetailPage({
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
               transition={{ duration: 0.6 }}
             >
               <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
@@ -233,7 +233,7 @@ export function IndustryDetailPage({
                     key={capability}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
                     transition={{ duration: 0.4, delay: index * 0.05 }}
                     className="flex items-center gap-3"
                   >
@@ -247,7 +247,7 @@ export function IndustryDetailPage({
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
               transition={{ duration: 0.6 }}
               className="bg-gradient-to-br from-accent/20 to-cyan-light/10 p-8 rounded-2xl border border-accent/20"
             >
@@ -282,7 +282,7 @@ export function IndustryDetailPage({
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
             transition={{ duration: 0.6 }}
             className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12"
           >
@@ -309,7 +309,7 @@ export function IndustryDetailPage({
                 key={study.href}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <Link
@@ -358,7 +358,7 @@ export function IndustryDetailPage({
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
