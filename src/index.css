@@ -183,3 +183,44 @@
     background-position: 0% 50%;
   }
 }
+
+/* Enhanced hover + scroll utilities */
+@layer utilities {
+  .hover-lift {
+    @apply transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg;
+  }
+  .hover-glow {
+    @apply transition-shadow duration-300 hover:shadow-[0_0_30px_-8px_hsl(var(--accent)/0.6)];
+  }
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+  .reveal-on-scroll.in-view {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Respect prefers-reduced-motion sitewide */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-float,
+  .animate-pulse-slow,
+  .animate-gradient {
+    animation: none !important;
+  }
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
