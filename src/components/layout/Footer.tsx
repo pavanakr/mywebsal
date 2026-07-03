@@ -163,7 +163,7 @@ export function Footer() {
                   className="text-xl font-bold text-blue-600 mb-6"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
                   transition={{ duration: 0.5, delay: columnIndex * 0.1 }}
                 >
                   {column.title}
@@ -172,7 +172,7 @@ export function Footer() {
                   className="space-y-3"
                   initial="hidden"
                   whileInView="visible"
-                  viewport={{ once: true }}
+                  viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
                   variants={{
                     visible: {
                       transition: {
@@ -210,7 +210,7 @@ export function Footer() {
             className="lg:hidden"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
             transition={{ duration: 0.6 }}
           >
             {footerColumns.map((column) => (
@@ -224,7 +224,7 @@ export function Footer() {
           className="border-t border-gray-200/50"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
           transition={{ duration: 0.8 }}
         >
           <div className="container-custom py-8 text-center">
@@ -232,7 +232,7 @@ export function Footer() {
               className="text-sm md:text-base font-bold text-gray-800 uppercase tracking-wide mb-3"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
               transition={{ duration: 0.5 }}
             >
               Serving in 70+ Countries for Web, Software and Mobile App Development
@@ -241,7 +241,7 @@ export function Footer() {
               className="text-gray-600 text-sm md:text-base max-w-4xl mx-auto leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               United States (USA), United Kingdom (UK), Singapore, Kenya, South Africa, Germany, Canada, Australia, Netherlands, Norway, United Arab Emirates (UAE), Finland, Sweden, Switzerland, India, Japan, South Korea, Brazil, Mexico, France, Italy, Spain, and many more.
@@ -254,7 +254,7 @@ export function Footer() {
           className="border-t border-gray-200/50"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <div className="container-custom py-6">
@@ -264,7 +264,7 @@ export function Footer() {
                 className="text-gray-600 text-sm text-center md:text-left"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
                 transition={{ duration: 0.5 }}
               >
                 © {new Date().getFullYear()} <span className="font-medium text-gray-800">SOFTURECS AI LABS PRIVATE LIMITED</span>. All rights reserved.
@@ -275,7 +275,7 @@ export function Footer() {
                 className="flex items-center gap-2 text-sm flex-wrap justify-center md:justify-end"
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
                 transition={{ duration: 0.5 }}
               >
                 <Link to="/sitemap" className="text-gray-600 hover:text-blue-600 transition-colors">

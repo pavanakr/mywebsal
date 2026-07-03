@@ -43,7 +43,7 @@ export function CTASection() {
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
             transition={{ duration: 0.6 }}
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6"
           >
@@ -52,7 +52,7 @@ export function CTASection() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-lg text-primary/80 mb-8"
           >
@@ -61,7 +61,7 @@ export function CTASection() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >

@@ -68,7 +68,7 @@ export function ServicesSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
@@ -88,7 +88,7 @@ export function ServicesSection() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {services.map((service) => (
@@ -119,7 +119,7 @@ export function ServicesSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-center mt-12"
         >

@@ -34,7 +34,7 @@ export function PortfolioPreview() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
           transition={{ duration: 0.6 }}
           className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12"
         >
@@ -62,7 +62,7 @@ export function PortfolioPreview() {
               key={project.href}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Link

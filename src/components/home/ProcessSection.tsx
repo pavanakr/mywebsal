@@ -48,7 +48,7 @@ export function ProcessSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
@@ -74,7 +74,7 @@ export function ProcessSection() {
                 key={step.number}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="relative group"
               >

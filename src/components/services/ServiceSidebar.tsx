@@ -23,30 +23,28 @@ export function ServiceSidebar() {
   const [showBackToTop, setShowBackToTop] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
+    let ticking = false;
+    const compute = () => {
       const scrollY = window.scrollY;
       setIsVisible(scrollY > 400);
       setShowBackToTop(scrollY > 800);
 
       // Determine active section based on scroll position
-      const sections = sidebarItems.map(item => ({
-        id: item.id,
-        element: document.getElementById(item.id),
-      }));
-
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i];
-        if (section.element) {
-          const rect = section.element.getBoundingClientRect();
-          if (rect.top <= 200) {
-            setActiveSection(section.id);
-            break;
-          }
+      for (let i = sidebarItems.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sidebarItems[i].id);
+        if (el && el.getBoundingClientRect().top <= 200) {
+          setActiveSection(sidebarItems[i].id);
+          break;
         }
       }
+      ticking = false;
     };
-
-    window.addEventListener('scroll', handleScroll);
+    const handleScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(compute);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 

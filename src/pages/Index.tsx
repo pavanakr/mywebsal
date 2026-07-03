@@ -25,12 +25,12 @@ const Index = () => {
       <HreflangTags currentPath="/" />
       <HeroSection />
       <TrustedBrands />
-      <ServicesSection />
-      <IndustriesSection />
-      <ProcessSection />
-      <PortfolioPreview />
-      <TestimonialsSection />
-      <TechStackSection />
+      <div className="cv-auto"><ServicesSection /></div>
+      <div className="cv-auto"><IndustriesSection /></div>
+      <div className="cv-auto"><ProcessSection /></div>
+      <div className="cv-auto"><PortfolioPreview /></div>
+      <div className="cv-auto"><TestimonialsSection /></div>
+      <div className="cv-auto"><TechStackSection /></div>
       <CTASection />
     </Layout>
   );

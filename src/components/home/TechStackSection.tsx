@@ -58,7 +58,7 @@ export function TechStackSection() {
           <motion.span
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
             className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4"
           >
             Technology Stack
@@ -66,7 +66,7 @@ export function TechStackSection() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6"
           >
@@ -75,7 +75,7 @@ export function TechStackSection() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg text-muted-foreground"
           >

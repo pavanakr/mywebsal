@@ -87,7 +87,7 @@ export function ServiceDetailPage({
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
               transition={{ duration: 0.6 }}
             >
               <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
@@ -105,7 +105,7 @@ export function ServiceDetailPage({
                     key={benefit}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
                     transition={{ duration: 0.4, delay: index * 0.05 }}
                     className="flex items-start gap-3"
                   >
@@ -119,7 +119,7 @@ export function ServiceDetailPage({
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
               transition={{ duration: 0.6 }}
               className="bg-card p-8 rounded-2xl border border-border/50 shadow-soft"
             >
@@ -162,7 +162,7 @@ export function ServiceDetailPage({
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
@@ -183,7 +183,7 @@ export function ServiceDetailPage({
                 key={step.number}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="relative bg-card p-6 rounded-2xl border border-border/50 hover:border-accent/30 hover:shadow-soft transition-all"
               >
@@ -204,7 +204,7 @@ export function ServiceDetailPage({
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto mb-12"
           >
@@ -219,7 +219,7 @@ export function ServiceDetailPage({
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
             transition={{ duration: 0.6 }}
             className="flex flex-wrap justify-center gap-3"
           >
@@ -228,7 +228,7 @@ export function ServiceDetailPage({
                 key={tech}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
                 transition={{ duration: 0.3, delay: index * 0.03 }}
                 className="px-5 py-3 bg-card rounded-xl border border-border/50 hover:border-accent/50 hover:shadow-soft transition-all cursor-pointer"
               >
@@ -245,7 +245,7 @@ export function ServiceDetailPage({
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
             transition={{ duration: 0.6 }}
             className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12"
           >
@@ -272,7 +272,7 @@ export function ServiceDetailPage({
                 key={study.href}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <Link
@@ -328,7 +328,7 @@ export function ServiceDetailPage({
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
