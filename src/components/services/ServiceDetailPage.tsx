@@ -81,9 +81,9 @@ export function ServiceDetailPage({
       />
 
       {/* Overview & Benefits */}
-      <section id="overview" className="section-padding bg-background scroll-mt-24">
+      <section id="overview" className="py-8 md:py-10 lg:py-12 bg-background scroll-mt-24">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -157,14 +157,14 @@ export function ServiceDetailPage({
       </section>
 
       {/* Process */}
-      <section id="process" className="section-padding bg-secondary/30 scroll-mt-24">
+      <section id="process" className="py-8 md:py-10 lg:py-12 bg-secondary/30 scroll-mt-24">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
             transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto mb-16"
+            className="text-center max-w-3xl mx-auto mb-8"
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
               Our Process
@@ -199,14 +199,14 @@ export function ServiceDetailPage({
       </section>
 
       {/* Technologies */}
-      <section id="technologies" className="section-padding bg-background scroll-mt-24">
+      <section id="technologies" className="py-8 md:py-10 lg:py-12 bg-background scroll-mt-24">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
             transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto mb-12"
+            className="text-center max-w-3xl mx-auto mb-8"
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
               Technology Stack
@@ -240,14 +240,14 @@ export function ServiceDetailPage({
       </section>
 
       {/* Case Studies */}
-      <section id="case-studies" className="section-padding bg-secondary/30 scroll-mt-24">
+      <section id="case-studies" className="py-8 md:py-10 lg:py-12 bg-secondary/30 scroll-mt-24">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
             transition={{ duration: 0.6 }}
-            className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12"
+            className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8"
           >
             <div>
               <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
@@ -319,7 +319,7 @@ export function ServiceDetailPage({
       <PageEnhancements title={title} kind="service" highlights={useCases} />
 
       {/* CTA */}
-      <section id="cta" className="py-20 bg-gradient-to-r from-accent to-cyan-light relative overflow-hidden scroll-mt-24">
+      <section id="cta" className="py-12 md:py-14 bg-gradient-to-r from-accent to-cyan-light relative overflow-hidden scroll-mt-24">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-40 h-40 border border-primary rounded-full" />
           <div className="absolute bottom-0 right-0 w-60 h-60 border border-primary rounded-full" />
