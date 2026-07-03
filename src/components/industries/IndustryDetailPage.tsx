@@ -6,6 +6,7 @@ import { PageHero } from '@/components/layout/PageHero';
 import { ArrowRight, CheckCircle, ExternalLink, AlertTriangle, Lightbulb } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { LucideIcon } from 'lucide-react';
+import { PageEnhancements } from '@/components/layout/PageEnhancements';
 
 interface Challenge {
   title: string;
@@ -324,6 +325,9 @@ export function IndustryDetailPage({
           </div>
         </div>
       </section>
+
+      {/* Enhanced content: impact stats, differentiators, FAQ */}
+      <PageEnhancements title={name} kind="industry" highlights={capabilities} />
 
       {/* CTA */}
       <section className="py-20 bg-gradient-to-r from-accent to-cyan-light relative overflow-hidden">
