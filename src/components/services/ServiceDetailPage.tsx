@@ -81,9 +81,9 @@ export function ServiceDetailPage({
       />
 
       {/* Overview & Benefits */}
-      <section id="overview" className="section-padding bg-background scroll-mt-24">
+      <section id="overview" className="py-8 md:py-10 lg:py-12 bg-background scroll-mt-24">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -157,14 +157,14 @@ export function ServiceDetailPage({
       </section>
 
       {/* Process */}
-      <section id="process" className="section-padding bg-secondary/30 scroll-mt-24">
+      <section id="process" className="py-8 md:py-10 lg:py-12 bg-secondary/30 scroll-mt-24">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
             transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto mb-16"
+            className="text-center max-w-3xl mx-auto mb-8"
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
               Our Process
@@ -176,6 +176,26 @@ export function ServiceDetailPage({
               A proven methodology that ensures quality, transparency, and timely delivery.
             </p>
           </motion.div>
+
+          {/* Process illustration strip */}
+          <div
+            role="img"
+            aria-label="Delivery timeline illustration"
+            className="mx-auto mb-8 max-w-3xl h-20 rounded-xl bg-gradient-to-r from-accent/10 via-emerald-400/10 to-amber-300/10 border border-border/40 flex items-center justify-center"
+          >
+            <svg viewBox="0 0 320 40" className="w-72 h-10 opacity-80" aria-hidden="true">
+              <defs>
+                <linearGradient id="proc-line" x1="0" x2="1" y1="0" y2="0">
+                  <stop offset="0%" stopColor="hsl(var(--accent))" />
+                  <stop offset="100%" stopColor="hsl(var(--primary))" />
+                </linearGradient>
+              </defs>
+              <line x1="10" y1="20" x2="310" y2="20" stroke="url(#proc-line)" strokeWidth="2" strokeDasharray="4 6" />
+              {[10, 80, 150, 220, 290].map((x, i) => (
+                <circle key={i} cx={x} cy="20" r="8" fill="url(#proc-line)" opacity={0.55 + i * 0.1} />
+              ))}
+            </svg>
+          </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {process.map((step, index) => (
@@ -199,14 +219,14 @@ export function ServiceDetailPage({
       </section>
 
       {/* Technologies */}
-      <section id="technologies" className="section-padding bg-background scroll-mt-24">
+      <section id="technologies" className="py-8 md:py-10 lg:py-12 bg-background scroll-mt-24">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
             transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto mb-12"
+            className="text-center max-w-3xl mx-auto mb-8"
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
               Technology Stack
@@ -239,15 +259,97 @@ export function ServiceDetailPage({
         </div>
       </section>
 
-      {/* Case Studies */}
-      <section id="case-studies" className="section-padding bg-secondary/30 scroll-mt-24">
+      {/* Deliverables / What You Get */}
+      <section id="deliverables" className="py-8 md:py-10 lg:py-12 bg-background scroll-mt-24">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
             transition={{ duration: 0.6 }}
-            className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12"
+            className="text-center max-w-3xl mx-auto mb-8"
+          >
+            <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
+              What You Get
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Deliverables & Outcomes
+            </h2>
+            <p className="text-muted-foreground">
+              Every {title.toLowerCase()} engagement ships with clear artifacts, measurable KPIs, and long-term support.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              { t: 'Solution Blueprint', d: 'Architecture diagrams, tech-stack decisions, and delivery roadmap.' },
+              { t: 'Production-Ready Build', d: 'Fully tested, documented codebase deployed to your cloud of choice.' },
+              { t: 'Handover & Training', d: 'Runbooks, walkthroughs, and enablement sessions for your team.' },
+              { t: 'Ongoing Support', d: 'SLA-backed monitoring, iteration cycles, and dedicated success manager.' },
+            ].map((item, i) => (
+              <motion.div
+                key={item.t}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className="bg-card p-6 rounded-2xl border border-border/50 hover:border-accent/40 hover:shadow-soft transition-all"
+              >
+                <div
+                  role="img"
+                  aria-label={`${item.t} illustration`}
+                  className="h-24 mb-4 rounded-lg bg-gradient-to-br from-accent/15 via-emerald-400/10 to-amber-300/10 border border-border/40 flex items-center justify-center"
+                >
+                  <svg viewBox="0 0 60 40" className="w-16 h-10 opacity-80" aria-hidden="true">
+                    <defs>
+                      <linearGradient id={`deliv-${i}`} x1="0" x2="1" y1="0" y2="1">
+                        <stop offset="0%" stopColor="hsl(var(--accent))" />
+                        <stop offset="100%" stopColor="hsl(var(--primary))" />
+                      </linearGradient>
+                    </defs>
+                    <rect x="4" y={10 + i * 2} width={12 + i * 2} height={24 - i * 2} rx="3" fill={`url(#deliv-${i})`} opacity="0.9" />
+                    <rect x="22" y={6 + i} width="14" height={30 - i} rx="3" fill={`url(#deliv-${i})`} opacity="0.75" />
+                    <rect x="42" y={14 - i} width="12" height={22 + i} rx="3" fill={`url(#deliv-${i})`} opacity="0.85" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold text-foreground mb-2">{item.t}</h3>
+                <p className="text-sm text-muted-foreground">{item.d}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Engagement models strip */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
+            transition={{ duration: 0.6 }}
+            className="mt-10 grid md:grid-cols-3 gap-4"
+          >
+            {[
+              { t: 'Fixed Scope', d: 'Defined deliverables and milestones — best for well-scoped builds.' },
+              { t: 'Dedicated Team', d: 'Full-time squad embedded with your product & engineering teams.' },
+              { t: 'Time & Material', d: 'Flexible sprints with transparent weekly reporting and burn-down.' },
+            ].map((m) => (
+              <div key={m.t} className="p-5 rounded-xl border border-border/50 bg-secondary/40">
+                <div className="text-sm font-semibold text-accent mb-1">Engagement</div>
+                <div className="text-lg font-bold text-foreground mb-1">{m.t}</div>
+                <p className="text-sm text-muted-foreground">{m.d}</p>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Case Studies */}
+      <section id="case-studies" className="py-8 md:py-10 lg:py-12 bg-secondary/30 scroll-mt-24">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8"
           >
             <div>
               <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
@@ -319,7 +421,7 @@ export function ServiceDetailPage({
       <PageEnhancements title={title} kind="service" highlights={useCases} />
 
       {/* CTA */}
-      <section id="cta" className="py-20 bg-gradient-to-r from-accent to-cyan-light relative overflow-hidden scroll-mt-24">
+      <section id="cta" className="py-12 md:py-14 bg-gradient-to-r from-accent to-cyan-light relative overflow-hidden scroll-mt-24">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-40 h-40 border border-primary rounded-full" />
           <div className="absolute bottom-0 right-0 w-60 h-60 border border-primary rounded-full" />
