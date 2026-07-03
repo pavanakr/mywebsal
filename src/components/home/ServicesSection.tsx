@@ -95,21 +95,22 @@ export function ServicesSection() {
             <motion.div key={service.href} variants={itemVariants}>
               <Link
                 to={service.href}
-                className="group block h-full p-6 bg-card rounded-2xl border border-border/50 shadow-soft hover:shadow-elevated transition-all duration-300 hover:-translate-y-1"
+                className="group relative block h-full p-8 bg-card rounded-2xl border border-border/60 hover:border-accent/50 shadow-soft hover:shadow-elevated transition-all duration-500 hover:-translate-y-1 overflow-hidden"
               >
-                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform`}>
-                  <service.icon className="w-7 h-7 text-white" />
+                <div className="w-12 h-12 rounded-lg bg-accent/10 text-accent flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-primary-foreground transition-colors duration-500">
+                  <service.icon className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-accent transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground mb-4 line-clamp-3">
+                <p className="text-muted-foreground mb-6 line-clamp-3 text-sm leading-relaxed">
                   {service.description}
                 </p>
-                <div className="flex items-center text-accent font-medium text-sm">
+                <div className="flex items-center text-accent font-semibold text-sm">
                   Learn More
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
+                <div className="absolute bottom-0 left-0 h-1 w-0 group-hover:w-full bg-accent transition-all duration-500" />
               </Link>
             </motion.div>
           ))}
