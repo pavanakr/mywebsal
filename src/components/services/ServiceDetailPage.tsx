@@ -7,6 +7,7 @@ import { ArrowRight, CheckCircle, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { LucideIcon } from 'lucide-react';
 import { ServiceSidebar } from './ServiceSidebar';
+import { PageEnhancements } from '@/components/layout/PageEnhancements';
 interface ProcessStep {
   number: string;
   title: string;
@@ -294,6 +295,9 @@ export function ServiceDetailPage({
           </div>
         </div>
       </section>
+
+      {/* Enhanced content: impact stats, differentiators, FAQ */}
+      <PageEnhancements title={title} kind="service" highlights={useCases} />
 
       {/* CTA */}
       <section id="cta" className="py-20 bg-gradient-to-r from-accent to-cyan-light relative overflow-hidden scroll-mt-24">
