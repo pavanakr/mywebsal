@@ -101,6 +101,29 @@ export function IndustryDetailPage({
             </h2>
           </motion.div>
 
+          {/* Illustration placeholder */}
+          <div
+            role="img"
+            aria-label={`${name} industry visual`}
+            className="mx-auto mb-12 max-w-4xl h-48 rounded-2xl overflow-hidden bg-gradient-to-br from-accent/15 via-emerald-400/10 to-amber-300/10 border border-border/40 flex items-center justify-center"
+          >
+            <svg viewBox="0 0 400 120" className="w-64 h-32 opacity-80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="ind-grad" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0%" stopColor="hsl(var(--accent))" />
+                  <stop offset="100%" stopColor="hsl(var(--primary))" />
+                </linearGradient>
+              </defs>
+              <rect x="20" y="70" width="40" height="40" rx="6" fill="url(#ind-grad)" opacity="0.9"/>
+              <rect x="80" y="45" width="40" height="65" rx="6" fill="url(#ind-grad)" opacity="0.75"/>
+              <rect x="140" y="25" width="40" height="85" rx="6" fill="url(#ind-grad)" opacity="0.9"/>
+              <rect x="200" y="55" width="40" height="55" rx="6" fill="url(#ind-grad)" opacity="0.7"/>
+              <rect x="260" y="35" width="40" height="75" rx="6" fill="url(#ind-grad)" opacity="0.85"/>
+              <rect x="320" y="60" width="40" height="50" rx="6" fill="url(#ind-grad)" opacity="0.7"/>
+              <path d="M40 40 L100 25 L160 15 L220 30 L280 20 L340 35" stroke="url(#ind-grad)" strokeWidth="2" fill="none"/>
+            </svg>
+          </div>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {challenges.map((challenge, index) => (
               <motion.div
