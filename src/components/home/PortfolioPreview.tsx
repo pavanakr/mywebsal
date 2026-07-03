@@ -62,34 +62,40 @@ export function PortfolioPreview() {
               key={project.href}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
+              viewport={{ once: true, amount: 0.2, margin: '0px 0px -80px 0px' }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -6 }}
             >
               <Link
                 to={project.href}
-                className="group block bg-card rounded-2xl overflow-hidden border border-border/50 hover:border-accent/30 hover:shadow-elevated transition-all duration-300"
+                className="group block bg-card rounded-2xl overflow-hidden border border-border/60 hover:border-accent/40 hover:shadow-elevated transition-all duration-300"
               >
                 <div className="relative overflow-hidden aspect-[4/3]">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center pb-6">
                     <span className="flex items-center gap-2 text-primary-foreground font-medium">
                       View Case Study
                       <ExternalLink className="w-4 h-4" />
                     </span>
                   </div>
+                  <div className="absolute top-4 left-4 font-display text-xs font-semibold tracking-[0.3em] uppercase text-primary-foreground/70 bg-primary/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-primary-foreground/10">
+                    0{index + 1}
+                  </div>
                 </div>
                 <div className="p-6">
-                  <span className="inline-block px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-medium mb-3">
+                  <span className="inline-block px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold tracking-wider uppercase mb-3">
                     {project.category}
                   </span>
-                  <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">
+                  <h3 className="font-display text-xl font-semibold text-foreground mb-2 tracking-tight group-hover:text-accent transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm line-clamp-2">{project.description}</p>
+                  <p className="text-muted-foreground text-sm line-clamp-2 leading-relaxed">{project.description}</p>
+                  <div className="mt-4 h-px w-8 bg-accent/40 group-hover:w-full transition-all duration-500" />
                 </div>
               </Link>
             </motion.div>
