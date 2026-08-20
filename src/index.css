@@ -259,3 +259,17 @@
   transform: translateZ(0);
   backface-visibility: hidden;
 }
+
+/* Hide specific badge/branding element */
+#lovable-badge, 
+.lovable-badge,
+[class*="lovable-badge"],
+#lovable-branding,
+.lovable-branding,
+[id^="lovable-"],
+[class^="lovable-"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
