@@ -94,7 +94,7 @@ const Contact = () => {
                     <div>
                       <label className="block text-sm font-medium text-foreground mb-2">Company</label>
                       <Input
-                        placeholder="Your Company"
+                        placeholder="'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            use CSS to completely hide the Lovable badge (the 'Made with Lovable' element), without breaking the layout"
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                       />
@@ -103,7 +103,7 @@ const Contact = () => {
                       <label className="block text-sm font-medium text-foreground mb-2">Phone Number</label>
                       <Input
                         type="tel"
-                        placeholder="+91 9876543210"
+                        placeholder="'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            use CSS to completely hide the Lovable badge (the 'Made with Lovable' element), without breaking the layout"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       />
@@ -131,7 +131,7 @@ const Contact = () => {
                     <Textarea
                       required
                       rows={5}
-                      placeholder="Describe your project, goals, and any specific requirements..."
+                      placeholder="'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            use CSS to completely hide the Lovable badge (the 'Made with Lovable' element), without breaking the layout"
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     />
