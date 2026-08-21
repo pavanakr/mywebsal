@@ -30,7 +30,7 @@ const Contact = () => {
     setFormData({ name: '', email: '', company: '', phone: '', service: '', message: '' });
   };
 
-  const commandPlaceholder = "'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n\ntittle is overlapping to header so make it in single line with some small size at slider";
+  const commandPlaceholder = "'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n\nslider should be i want 100%  as per attachment with same design and colours and ui and below sliders put those cards as per refference attachment";
 
   return (
     <Layout>

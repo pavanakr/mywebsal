@@ -62,7 +62,7 @@ const itemVariants = {
 
 export function ServicesSection() {
   return (
-    <section className="section-padding bg-background">
+    <section className="section-padding bg-background hidden">
       <div className="container-custom">
         {/* Section Header */}
         <motion.div
