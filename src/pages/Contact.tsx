@@ -76,64 +76,10 @@ const Contact = () => {
                       <label className="block text-sm font-medium text-foreground mb-2">Full Name *</label>
                       <Input
                         required
-                        placeholder="'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            Continue from the previous SEO work.\n\nNow improve internal authority linking.\n\nTASK:\n\nReview the important pages and add natural contextual links between related pages.\n\nPrioritize:\n\nReal Estate CRM\n→ WhatsApp CRM\n→ Meta API CRM\n→ AI Chatbot\n\nMeta API CRM\n→ WhatsApp CRM\n→ All-in-One CRM\n\nAI Chatbot\n→ AI Automation\n→ CRM\n\nHyderabad Software Company\n→ Software Development\n→ CRM Development\n→ AI Development\n\nUse natural descriptive anchor text.\n\nDo not add excessive links.\n\nDo not redesign the website.\n\nDo not create new pages unless absolutely necessary.\n\nCheck for orphan pages and add appropriate internal links.\n\nTest all modified pages."
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-foreground mb-2">Email Address *</label>
-                      <Input
-                        type="email"
-                        required
-                        placeholder="'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            Continue from the previous SEO work.\n\nNow improve internal authority linking.\n\nTASK:\n\nReview the important pages and add natural contextual links between related pages.\n\nPrioritize:\n\nReal Estate CRM\n→ WhatsApp CRM\n→ Meta API CRM\n→ AI Chatbot\n\nMeta API CRM\n→ WhatsApp CRM\n→ All-in-One CRM\n\nAI Chatbot\n→ AI Automation\n→ CRM\n\nHyderabad Software Company\n→ Software Development\n→ CRM Development\n→ AI Development\n\nUse natural descriptive anchor text.\n\nDo not add excessive links.\n\nDo not redesign the website.\n\nDo not create new pages unless absolutely necessary.\n\nCheck for orphan pages and add appropriate internal links.\n\nTest all modified pages."
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      />
-                    </div>
-                  </div>
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-medium text-foreground mb-2">Company</label>
-                      <Input
-                        placeholder="'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            Continue from the previous SEO work.\n\nNow improve internal authority linking.\n\nTASK:\n\nReview the important pages and add natural contextual links between related pages.\n\nPrioritize:\n\nReal Estate CRM\n→ WhatsApp CRM\n→ Meta API CRM\n→ AI Chatbot\n\nMeta API CRM\n→ WhatsApp CRM\n→ All-in-One CRM\n\nAI Chatbot\n→ AI Automation\n→ CRM\n\nHyderabad Software Company\n→ Software Development\n→ CRM Development\n→ AI Development\n\nUse natural descriptive anchor text.\n\nDo not add excessive links.\n\nDo not redesign the website.\n\nDo not create new pages unless absolutely necessary.\n\nCheck for orphan pages and add appropriate internal links.\n\nTest all modified pages."
-                        value={formData.company}
-                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-foreground mb-2">Phone Number</label>
-                      <Input
-                        type="tel"
-                        placeholder="'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            Continue from the previous SEO work.\n\nNow improve internal authority linking.\n\nTASK:\n\nReview the important pages and add natural contextual links between related pages.\n\nPrioritize:\n\nReal Estate CRM\n→ WhatsApp CRM\n→ Meta API CRM\n→ AI Chatbot\n\nMeta API CRM\n→ WhatsApp CRM\n→ All-in-One CRM\n\nAI Chatbot\n→ AI Automation\n→ CRM\n\nHyderabad Software Company\n→ Software Development\n→ CRM Development\n→ AI Development\n\nUse natural descriptive anchor text.\n\nDo not add excessive links.\n\nDo not redesign the website.\n\nDo not create new pages unless absolutely necessary.\n\nCheck for orphan pages and add appropriate internal links.\n\nTest all modified pages."
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">Service Interested In</label>
-                    <select
-                      className="w-full px-4 py-2 rounded-lg border border-input bg-background text-foreground"
-                      value={formData.service}
-                      onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                    >
-                      <option value="">Select a service</option>
-                      <option value="custom-software">Custom Software Development</option>
-                      <option value="web-development">Web Development</option>
-                      <option value="mobile-apps">Mobile App Development</option>
-                      <option value="cloud-devops">Cloud & DevOps</option>
-                      <option value="ai-automation">AI & Automation</option>
-                      <option value="saas">SaaS Development</option>
-                      <option value="application-modernization">Application Modernization</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">Tell Us About Your Project *</label>
-                    <Textarea
-                      required
-                      rows={5}
-                      placeholder="'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            Continue from the previous SEO work.\n\nNow improve internal authority linking.\n\nTASK:\n\nReview the important pages and add natural contextual links between related pages.\n\nPrioritize:\n\nReal Estate CRM\n→ WhatsApp CRM\n→ Meta API CRM\n→ AI Chatbot\n\nMeta API CRM\n→ WhatsApp CRM\n→ All-in-One CRM\n\nAI Chatbot\n→ AI Automation\n→ CRM\n\nHyderabad Software Company\n→ Software Development\n→ CRM Development\n→ AI Development\n\nUse natural descriptive anchor text.\n\nDo not add excessive links.\n\nDo not redesign the website.\n\nDo not create new pages unless absolutely necessary.\n\nCheck for orphan pages and add appropriate internal links.\n\nTest all modified pages."
+                        placeholder="'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            Improve ONLY the homepage hero/header section.\n\nDo not redesign the rest of the website.\n\nReplace the current hero section with a premium, modern, full-width responsive image slider for SOFTURECS AI LABS PRIVATE LIMITED.\n\nThe slider should visually represent our main products and services.\n\nCreate 5 slides:\n\nSLIDE 1 — REAL ESTATE CRM\nTitle:\nReal Estate CRM for Smarter Sales\n\nSubtitle:\nManage leads, properties, agents, follow-ups and customer conversations from one powerful CRM platform.\n\nCTA:\nExplore Real Estate CRM\n\nVisual:\nPremium modern real-estate technology scene showing property listings, CRM dashboard, lead pipeline and sales analytics.\n\nSLIDE 2 — ALL-IN-ONE CRM\nTitle:\nOne CRM. Your Entire Business.\n\nSubtitle:\nBring sales, leads, customer communication, automation and business operations together in one platform.\n\nCTA:\nExplore CRM Solutions\n\nVisual:\nModern SaaS CRM dashboard with analytics, sales pipeline, customer profiles and automation.\n\nSLIDE 3 — META API & WHATSAPP CRM\nTitle:\nTurn WhatsApp Conversations Into Sales\n\nSubtitle:\nConnect WhatsApp and Meta APIs with your CRM to manage conversations, leads and automation efficiently.\n\nCTA:\nExplore WhatsApp CRM\n\nVisual:\nPremium WhatsApp business automation concept combined with CRM dashboard, messaging, customer conversations and analytics.\n\nSLIDE 4 — AI CHATBOTS & AUTOMATION\nTitle:\nAI That Works For Your Business\n\nSubtitle:\nAutomate customer support, lead qualification, conversations and repetitive business processes with AI.\n\nCTA:\nExplore AI Solutions\n\nVisual:\nFuturistic but professional AI chatbot interface connected to CRM, automation workflows and business analytics.\n\nSLIDE 5 — CUSTOM SOFTWARE & SAAS\nTitle:\nBuild Powerful Digital Products\n\nSubtitle:\nCustom software, SaaS platforms, web applications and mobile solutions built around your business requirements.\n\nCTA:\nStart Your Project\n\nVisual:\nPremium software development workspace showing web application, mobile app, cloud infrastructure and SaaS interface."
+...
+                        placeholder="'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            Improve ONLY the homepage hero/header section.\n\nDo not redesign the rest of the website.\n\nReplace the current hero section with a premium, modern, full-width responsive image slider for SOFTURECS AI LABS PRIVATE LIMITED.\n\nThe slider should visually represent our main products and services.\n\nCreate 5 slides:\n\nSLIDE 1 — REAL ESTATE CRM\nTitle:\nReal Estate CRM for Smarter Sales\n\nSubtitle:\nManage leads, properties, agents, follow-ups and customer conversations from one powerful CRM platform.\n\nCTA:\nExplore Real Estate CRM\n\nVisual:\nPremium modern real-estate technology scene showing property listings, CRM dashboard, lead pipeline and sales analytics.\n\nSLIDE 2 — ALL-IN-ONE CRM\nTitle:\nOne CRM. Your Entire Business.\n\nSubtitle:\nBring sales, leads, customer communication, automation and business operations together in one platform.\n\nCTA:\nExplore CRM Solutions\n\nVisual:\nModern SaaS CRM dashboard with analytics, sales pipeline, customer profiles and automation.\n\nSLIDE 3 — META API & WHATSAPP CRM\nTitle:\nTurn WhatsApp Conversations Into Sales\n\nSubtitle:\nConnect WhatsApp and Meta APIs with your CRM to manage conversations, leads and automation efficiently.\n\nCTA:\nExplore WhatsApp CRM\n\nVisual:\nPremium WhatsApp business automation concept combined with CRM dashboard, messaging, customer conversations and analytics.\n\nSLIDE 4 — AI CHATBOTS & AUTOMATION\nTitle:\nAI That Works For Your Business\n\nSubtitle:\nAutomate customer support, lead qualification, conversations and repetitive business processes with AI.\n\nCTA:\nExplore AI Solutions\n\nVisual:\nFuturistic but professional AI chatbot interface connected to CRM, automation workflows and business analytics.\n\nSLIDE 5 — CUSTOM SOFTWARE & SAAS\nTitle:\nBuild Powerful Digital Products\n\nSubtitle:\nCustom software, SaaS platforms, web applications and mobile solutions built around your business requirements.\n\nCTA:\nStart Your Project\n\nVisual:\nPremium software development workspace showing web application, mobile app, cloud infrastructure and SaaS interface."
+
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     />

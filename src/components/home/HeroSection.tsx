@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+export { HeroSlider as HeroSection } from './hero/HeroSlider';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Play, Sparkles, ShieldCheck, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
