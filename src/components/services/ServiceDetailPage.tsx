@@ -99,9 +99,7 @@ export function ServiceDetailPage({
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                 Why Choose Our {title}?
               </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                {description}
-              </p>
+              <div className="text-lg text-muted-foreground mb-8" dangerouslySetInnerHTML={{ __html: description }} />
               <div className="grid sm:grid-cols-2 gap-4">
                 {benefits.map((benefit, index) => (
                   <motion.div
