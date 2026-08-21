@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
 import { SEO } from '@/components/SEO';
+import { ArticleSchema } from '@/components/SchemaMarkup';
 import { Calendar, Clock, User, ArrowLeft, Linkedin, Twitter, Facebook, Link2, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
@@ -48,6 +49,8 @@ export function BlogDetailPage({
   relatedPosts,
 }: BlogDetailPageProps) {
   const { toast } = useToast();
+  const { pathname } = useLocation();
+  const fullUrl = `https://softurecs.com${pathname}`;
 
   const handleShare = (platform: string) => {
     const url = window.location.href;
@@ -84,11 +87,20 @@ export function BlogDetailPage({
         description={excerpt}
         keywords={seoKeywords}
         image={image}
+        url={fullUrl}
         type="article"
         article={{
           publishedTime: date,
           author: author.name,
         }}
+      />
+      <ArticleSchema
+        headline={title}
+        description={excerpt}
+        image={image}
+        datePublished={date}
+        authorName={author.name}
+        url={fullUrl}
       />
       {/* Hero Section */}
       <section className="pt-32 pb-12 bg-gradient-to-br from-primary via-navy to-navy-light">
