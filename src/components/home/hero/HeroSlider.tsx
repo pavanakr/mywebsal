@@ -128,7 +128,7 @@ const slides = [
 ];
 
 const FloatingMetric = ({ label, value, trend, trendColor }: any) => (
-  <div className="bg-white/90 backdrop-blur-sm p-3 rounded-xl shadow-lg border border-slate-100/50 flex flex-col min-w-[120px]">
+  <div className="bg-white/95 backdrop-blur-md p-3.5 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col min-w-[130px] hover:scale-105 transition-transform duration-300">
     <span className="text-[10px] font-bold text-slate-400 uppercase tracking-tight">{label}</span>
     <div className="flex items-end justify-between mt-1">
       <span className="text-lg font-bold text-slate-900 leading-none">{value}</span>
@@ -189,10 +189,10 @@ const VisualComposition = ({ slide }: { slide: typeof slides[0] }) => {
       transition={{ duration: 0.8 }}
     >
       {/* Background Glows */}
-      <div className={`absolute inset-0 bg-gradient-to-tr ${slide.colors.bgGlow} rounded-full blur-[100px] opacity-40 animate-pulse`} />
+      <div className={`absolute inset-0 bg-gradient-to-tr ${slide.colors.bgGlow} rounded-full blur-[120px] opacity-30 animate-pulse-slow`} />
       
       {/* Main Dashboard Container */}
-      <div className="relative z-10 w-full h-full bg-white rounded-[2rem] shadow-2xl border border-white/20 overflow-hidden flex flex-col">
+      <div className="relative z-10 w-full h-full bg-white rounded-3xl shadow-[0_32px_64px_-12px_rgba(0,0,0,0.14)] border border-slate-100 overflow-hidden flex flex-col">
         {/* Dashboard Header */}
         <div className="h-12 border-b border-slate-100 flex items-center justify-between px-6 bg-slate-50/50">
           <div className="flex items-center gap-3">
@@ -323,16 +323,16 @@ const VisualComposition = ({ slide }: { slide: typeof slides[0] }) => {
 };
 
 const TrustBar = () => (
-  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-8 border-y border-white/10 mt-8 mb-6">
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-10 border-y border-white/5 mt-12 mb-8">
     {[
-        { val: "500+", label: "Clients" },
-        { val: "50+", label: "Industries" },
-        { val: "70+", label: "Countries" },
-        { val: "24/7", label: "Support" },
+        { val: "500+", label: "Clients Globally" },
+        { val: "50+", label: "Industry Verticals" },
+        { val: "70+", label: "Countries Served" },
+        { val: "24/7", label: "Expert Support" },
     ].map((item, i) => (
-        <div key={i} className="text-center">
-            <div className="text-xl md:text-2xl font-bold text-white">{item.val}</div>
-            <div className="text-[10px] text-slate-400 uppercase tracking-widest">{item.label}</div>
+        <div key={i} className="text-center group">
+            <div className="text-2xl md:text-3xl font-bold text-white mb-1 group-hover:text-blue-400 transition-colors duration-300">{item.val}</div>
+            <div className="text-[10px] text-slate-500 uppercase tracking-[0.2em] font-medium">{item.label}</div>
         </div>
     ))}
   </div>
