@@ -155,6 +155,10 @@ import USA from "./pages/international/USA";
 import UK from "./pages/international/UK";
 import UAE from "./pages/international/UAE";
 import Singapore from "./pages/international/Singapore";
+// Local SEO pages
+import HyderabadLanding from "./pages/seo/HyderabadLanding";
+import KPHBLanding from "./pages/seo/KPHBLanding";
+import KukatpallyLanding from "./pages/seo/KukatpallyLanding";
 
 const queryClient = new QueryClient();
 
