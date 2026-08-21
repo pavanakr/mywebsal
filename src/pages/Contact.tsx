@@ -34,13 +34,13 @@ const Contact = () => {
     <Layout>
       <SEO 
         title="Contact Softurecs AI Labs"
-        description="Contact Softurecs AI Labs for AI solutions & software development. Free consultation, 24-hour response. Call +91 7396080902 or email info@softurecsailabs.com."
-        keywords="contact Softurecs, software development inquiry, AI solutions contact, IT consulting Hyderabad"
+        description="Contact Softurecs AI Labs for AI solutions & software development in Hyderabad, India. Free consultation, 24-hour response. Call +91 7396080902 or email info@softurecsailabs.com."
+        keywords="contact Softurecs, software development inquiry, AI solutions contact, IT consulting Hyderabad, software company India, custom software development"
       />
       <LocalBusinessSchema city="Hyderabad" region="Telangana" />
       <PageHero
-        title="Contact Softurecs AI Labs – Let's Build Your Digital Solution"
-        description="Talk to Our Software Experts. Get a Free Consultation. Start Your Digital Transformation."
+        title="Contact Softurecs AI Labs – Software Development Experts in Hyderabad"
+        description="Talk to Our Software Experts in India. Get a Free AI & Software Consultation. Start Your Digital Transformation."
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'Contact Us' }
