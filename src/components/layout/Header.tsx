@@ -2,6 +2,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import salLogo from '@/assets/sal-logo.png.asset.json';
+
 import { 
   Menu, X, ChevronDown, ChevronRight, Code, Smartphone, Cloud, Cpu, Globe, Layers, Sun, Moon, RefreshCw,
   Building2, Server, Users, Handshake, Award, MessageSquare, Network, Briefcase,
@@ -534,9 +536,10 @@ export function Header() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
-                <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-gradient-to-br from-primary via-navy to-accent flex items-center justify-center shadow-2xl shadow-primary/40 transition-all duration-300">
-                  <span className="text-white font-extrabold text-2xl lg:text-3xl">S</span>
+                <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl flex items-center justify-center transition-all duration-300">
+                  <img src={salLogo.url} alt="Softurecs AI Labs logo" className="w-full h-full object-contain" />
                 </div>
+
                 {/* Subtle glow effect */}
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent to-primary opacity-0 group-hover:opacity-30 blur-lg transition-opacity duration-300" />
               </motion.div>
