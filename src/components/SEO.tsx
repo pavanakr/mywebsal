@@ -1,4 +1,7 @@
 import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
+
+export const SITE_URL = 'https://softurecs.com';
 
 interface SEOProps {
   title: string;
@@ -18,13 +21,20 @@ export const SEO = ({
   title,
   description,
   keywords,
-  image = 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&h=630&fit=crop',
+  image = `${SITE_URL}/og-image.png`,
   url,
   type = 'website',
   article,
 }: SEOProps) => {
   const siteName = 'Softurecs AI Labs';
-  const fullTitle = `${title} | ${siteName}`;
+  const { pathname } = useLocation();
+  const cleanTitle = title
+    .replace(/\s*[|\-–]\s*Softurecs AI Labs\s*$/i, '')
+    .trim();
+  const fullTitle = /softurecs/i.test(cleanTitle)
+    ? cleanTitle
+    : `${cleanTitle} | ${siteName}`;
+  const canonical = url ?? `${SITE_URL}${pathname === '/' ? '/' : pathname.replace(/\/$/, '')}`;
   
   return (
     <Helmet>
@@ -40,7 +50,7 @@ export const SEO = ({
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
-      {url && <meta property="og:url" content={url} />}
+      <meta property="og:url" content={canonical} />
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
@@ -60,7 +70,7 @@ export const SEO = ({
       )}
       
       {/* Canonical URL */}
-      {url && <link rel="canonical" href={url} />}
+      <link rel="canonical" href={canonical} />
     </Helmet>
   );
 };
