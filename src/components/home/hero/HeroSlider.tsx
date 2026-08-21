@@ -173,7 +173,7 @@ const PremiumFloatingCard = ({ icon: Icon, title, status, color, className, dela
         <div className="text-[10px] font-bold text-slate-900 leading-none mb-1">{title}</div>
         <div className="flex items-center gap-1.5">
           <div className={`w-1.5 h-1.5 rounded-full animate-pulse ${colorParts[3]}`} />
-          <div className="text-[9px] font-bold text-slate-500 uppercase tracking-wider">{status}</div>
+          <div className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">{status}</div>
         </div>
       </div>
     </motion.div>
@@ -201,7 +201,7 @@ const VisualComposition = ({ slide }: { slide: typeof slides[0] }) => {
               <div className="w-2.5 h-2.5 rounded-full bg-amber-400" />
               <div className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
             </div>
-            <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider ml-2">
+            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] ml-2">
               {slide.visual.type === 'chatbot' ? 'AI Chatbot Logic' : 
                slide.visual.type === 'automation' ? 'Automation Workflow' :
                slide.visual.type === 'real-estate' ? 'Property CRM' :
@@ -381,13 +381,13 @@ export function HeroSlider() {
             className="absolute inset-0"
           >
             {/* Primary Soft Glows matching slide colors */}
-            <div className={`absolute top-[-10%] right-[-10%] w-[60%] h-[70%] rounded-full blur-[120px] opacity-40 mix-blend-screen bg-gradient-to-br ${slides[currentSlide].colors.bgGlow}`} />
-            <div className={`absolute bottom-[-20%] left-[-10%] w-[50%] h-[60%] rounded-full blur-[120px] opacity-30 mix-blend-screen bg-gradient-to-tr ${slides[currentSlide].colors.bgGlow}`} />
+            <div className={`absolute top-[-20%] right-[-10%] w-[80%] h-[80%] rounded-full blur-[140px] opacity-25 mix-blend-screen bg-gradient-to-br ${slides[currentSlide].colors.bgGlow}`} />
+            <div className={`absolute bottom-[-30%] left-[-20%] w-[70%] h-[70%] rounded-full blur-[140px] opacity-20 mix-blend-screen bg-gradient-to-tr ${slides[currentSlide].colors.bgGlow}`} />
             
             {/* Multi-color accents (Blue, Purple, Magenta) */}
-            <div className="absolute top-[20%] left-[10%] w-[40%] h-[40%] rounded-full blur-[100px] opacity-20 bg-blue-600/30 mix-blend-soft-light" />
-            <div className="absolute bottom-[10%] right-[20%] w-[35%] h-[35%] rounded-full blur-[100px] opacity-20 bg-purple-600/30 mix-blend-soft-light" />
-            <div className="absolute top-[40%] right-[30%] w-[20%] h-[20%] rounded-full blur-[80px] opacity-15 bg-magenta-500/20 mix-blend-screen" />
+            <div className="absolute top-[20%] left-[10%] w-[40%] h-[40%] rounded-full blur-[120px] opacity-15 bg-blue-600/20 mix-blend-soft-light" />
+            <div className="absolute bottom-[10%] right-[20%] w-[35%] h-[35%] rounded-full blur-[120px] opacity-15 bg-purple-600/20 mix-blend-soft-light" />
+            <div className="absolute top-[40%] right-[30%] w-[20%] h-[20%] rounded-full blur-[100px] opacity-10 bg-magenta-500/15 mix-blend-screen" />
           </motion.div>
         </AnimatePresence>
 
