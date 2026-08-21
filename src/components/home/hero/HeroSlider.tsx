@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, ArrowRight, Bot, Zap, MessageSquare, Database, Layout, PieChart, Users, Phone, Send, BarChart3, Workflow, Building2, TrendingUp, Cpu } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ArrowRight, Bot, Zap, MessageSquare, Database, Layout, PieChart, Users, Phone, Send, BarChart3, Workflow, Building2, TrendingUp, Cpu, Globe, Rocket } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -13,7 +13,20 @@ const slides = [
     primaryCta: "Explore AI Solutions",
     secondaryCta: "Book a Free Consultation",
     link: "/services/ai-chatbot",
-    colors: { badge: "bg-blue-500", gradient: "from-blue-600 via-violet-600 to-cyan-500", highlight: "from-cyan-400 to-blue-400" },
+    colors: { 
+      badge: "bg-blue-500", 
+      gradient: "from-blue-600 via-violet-600 to-cyan-500", 
+      highlight: "from-cyan-400 to-blue-400",
+      bgGlow: "from-blue-900/40 via-violet-900/20 to-transparent"
+    },
+    visual: {
+      title: "AI Core",
+      stats: [
+        { label: "Uptime", val: "99.9%" },
+        { label: "Accuracy", val: "94%" }
+      ],
+      icon: Bot
+    }
   },
   {
     id: 2,
@@ -23,7 +36,20 @@ const slides = [
     primaryCta: "Explore AI Automation",
     secondaryCta: "Book a Free Consultation",
     link: "/services/ai-automation",
-    colors: { badge: "bg-violet-500", gradient: "from-violet-600 via-magenta-600 to-blue-600", highlight: "from-violet-400 to-magenta-400" },
+    colors: { 
+      badge: "bg-purple-500", 
+      gradient: "from-purple-600 via-magenta-600 to-blue-600", 
+      highlight: "from-purple-400 to-magenta-400",
+      bgGlow: "from-purple-900/40 via-magenta-900/20 to-transparent"
+    },
+    visual: {
+      title: "Flow Engine",
+      stats: [
+        { label: "Tasks", val: "12.5k" },
+        { label: "Saved", val: "400h" }
+      ],
+      icon: Workflow
+    }
   },
   {
     id: 3,
@@ -33,7 +59,20 @@ const slides = [
     primaryCta: "Explore Real Estate CRM",
     secondaryCta: "Book a Free Consultation",
     link: "/solutions/real-estate-crm",
-    colors: { badge: "bg-teal-500", gradient: "from-blue-600 via-teal-600 to-violet-600", highlight: "from-teal-400 to-blue-400" },
+    colors: { 
+      badge: "bg-teal-500", 
+      gradient: "from-teal-600 via-blue-600 to-violet-600", 
+      highlight: "from-teal-400 to-blue-400",
+      bgGlow: "from-teal-900/40 via-blue-900/20 to-transparent"
+    },
+    visual: {
+      title: "RE Dashboard",
+      stats: [
+        { label: "Listings", val: "482" },
+        { label: "Closures", val: "+18%" }
+      ],
+      icon: Building2
+    }
   },
   {
     id: 4,
@@ -43,7 +82,20 @@ const slides = [
     primaryCta: "Explore WhatsApp CRM",
     secondaryCta: "Book a Free Consultation",
     link: "/solutions/whatsapp-crm",
-    colors: { badge: "bg-green-500", gradient: "from-green-600 via-cyan-600 to-blue-600", highlight: "from-green-400 to-cyan-400" },
+    colors: { 
+      badge: "bg-green-500", 
+      gradient: "from-green-600 via-teal-600 to-blue-600", 
+      highlight: "from-green-400 to-teal-400",
+      bgGlow: "from-green-900/40 via-teal-900/20 to-transparent"
+    },
+    visual: {
+      title: "Meta Connect",
+      stats: [
+        { label: "Msgs", val: "50k+" },
+        { label: "Leads", val: "1.2k" }
+      ],
+      icon: MessageSquare
+    }
   },
   {
     id: 5,
@@ -53,7 +105,20 @@ const slides = [
     primaryCta: "Explore CRM Solutions",
     secondaryCta: "Book a Free Consultation",
     link: "/services/crm-solutions",
-    colors: { badge: "bg-blue-500", gradient: "from-blue-600 via-purple-600 to-cyan-600", highlight: "from-blue-400 to-purple-400" },
+    colors: { 
+      badge: "bg-indigo-500", 
+      gradient: "from-indigo-600 via-purple-600 to-blue-600", 
+      highlight: "from-indigo-400 to-purple-400",
+      bgGlow: "from-indigo-900/40 via-purple-900/20 to-transparent"
+    },
+    visual: {
+      title: "Biz OS",
+      stats: [
+        { label: "Revenue", val: "+32%" },
+        { label: "Retention", val: "98%" }
+      ],
+      icon: Database
+    }
   },
 ];
 
@@ -74,7 +139,8 @@ const FloatingCard = ({ icon: Icon, title, val, color, className }: any) => (
   </motion.div>
 );
 
-const VisualComposition = ({ type }: { type: number }) => {
+const VisualComposition = ({ slide }: { slide: typeof slides[0] }) => {
+  const Icon = slide.visual.icon;
   return (
     <motion.div 
       className="relative w-full max-w-lg aspect-square flex items-center justify-center"
@@ -82,7 +148,7 @@ const VisualComposition = ({ type }: { type: number }) => {
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.6 }}
     >
-      <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/20 to-purple-900/20 rounded-full blur-3xl animate-pulse" />
+      <div className={`absolute inset-0 bg-gradient-to-tr ${slide.colors.bgGlow} rounded-full blur-3xl animate-pulse`} />
       
       <div className="relative z-10 w-[340px] h-[240px] bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl flex flex-col gap-4 overflow-hidden">
         <div className="flex justify-between items-center pb-2 border-b border-white/5">
@@ -91,23 +157,24 @@ const VisualComposition = ({ type }: { type: number }) => {
              <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
              <div className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
            </div>
-           <div className="text-[10px] text-slate-400 font-bold uppercase">Production Live</div>
+           <div className="text-[10px] text-slate-400 font-bold uppercase">{slide.visual.title} Active</div>
         </div>
         <div className="flex-1 grid grid-cols-2 gap-4">
-          <div className="bg-white/5 rounded-lg border border-white/5 p-3 flex flex-col justify-end">
-            <div className="text-[10px] text-slate-400 uppercase">Growth</div>
-            <div className="text-xl text-white font-bold">+27.4%</div>
-          </div>
-          <div className="bg-white/5 rounded-lg border border-white/5 p-3 flex flex-col justify-end">
-            <div className="text-[10px] text-slate-400 uppercase">Leads</div>
-            <div className="text-xl text-white font-bold">1,204</div>
-          </div>
+          {slide.visual.stats.map((stat, i) => (
+            <div key={i} className="bg-white/5 rounded-lg border border-white/5 p-3 flex flex-col justify-end">
+              <div className="text-[10px] text-slate-400 uppercase">{stat.label}</div>
+              <div className="text-xl text-white font-bold">{stat.val}</div>
+            </div>
+          ))}
+        </div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-5">
+           <Icon className="w-32 h-32 text-white" />
         </div>
       </div>
 
-      <FloatingCard icon={Bot} title="AI Assistant" val="Ready" color="cyan" className="top-10 -left-5 w-44" />
-      <FloatingCard icon={Workflow} title="Workflow" val="Active" color="violet" className="bottom-10 -right-5 w-44" />
-      <FloatingCard icon={TrendingUp} title="Revenue" val="+12%" color="blue" className="top-40 -right-10 w-40" />
+      <FloatingCard icon={slide.visual.icon} title="Status" val="Production" color="blue" className="top-10 -left-5 w-44" />
+      <FloatingCard icon={Rocket} title="Performance" val="Optimized" color="violet" className="bottom-10 -right-5 w-44" />
+      <FloatingCard icon={TrendingUp} title="Impact" val="High" color="cyan" className="top-40 -right-10 w-40" />
     </motion.div>
   );
 };
@@ -152,9 +219,18 @@ export function HeroSlider() {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      <div className="absolute inset-0 z-0 opacity-40">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-900/40 via-transparent to-transparent" />
-      </div>
+      <AnimatePresence mode="wait">
+        <motion.div 
+          key={currentSlide}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
+          className="absolute inset-0 z-0 opacity-40"
+        >
+          <div className={`absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] ${slides[currentSlide].colors.bgGlow}`} />
+        </motion.div>
+      </AnimatePresence>
 
       <div className="container-custom relative z-10">
         <div className="min-h-[500px] flex items-center">
@@ -162,9 +238,9 @@ export function HeroSlider() {
             <motion.div
               key={currentSlide}
               className="grid lg:grid-cols-2 gap-12 items-center w-full"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.6 }}
             >
               <div className="space-y-6 text-center lg:text-left">
@@ -204,10 +280,20 @@ export function HeroSlider() {
               </div>
 
               <div className="flex items-center justify-center">
-                <VisualComposition type={slides[currentSlide].id} />
+                <VisualComposition slide={slides[currentSlide]} />
               </div>
             </motion.div>
           </AnimatePresence>
+        </div>
+
+        <div className="flex justify-center lg:justify-start gap-2 mt-8">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrentSlide(i)}
+              className={`h-1.5 rounded-full transition-all duration-300 ${currentSlide === i ? 'w-8 bg-white' : 'w-2 bg-white/20'}`}
+            />
+          ))}
         </div>
       </div>
     </section>
