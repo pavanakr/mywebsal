@@ -107,7 +107,7 @@ export function HeroSlider() {
                   <span className="text-xs font-bold text-white tracking-widest uppercase">{slides[currentSlide].badge}</span>
                 </div>
                 
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-black text-white leading-[1.1] tracking-tighter">
+                <h1 className="text-4xl md:text-8xl lg:text-9xl font-display font-black text-white leading-[0.9] tracking-tighter uppercase italic">
                   {currentSlide === 0 ? (
                     <>AI Chatbots & <br /><span className="bg-gradient-to-r from-blue-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">Smart Automation</span></>
                   ) : (
