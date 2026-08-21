@@ -148,7 +148,7 @@ export function HeroSlider() {
 
   return (
     <section 
-      className="relative w-full overflow-hidden bg-[#050816] py-12 md:py-16"
+      className="relative w-full overflow-hidden bg-[#050816] pt-24 pb-12 md:pt-32 md:pb-16"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
