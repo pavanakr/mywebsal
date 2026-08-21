@@ -52,9 +52,9 @@ export default function HyderabadLanding() {
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
                 Premier Software Development in the Heart of Hyderabad
               </h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                SOFTURECS AI LABS PRIVATE LIMITED is a leading software company in Hyderabad, Telangana. We provide comprehensive digital solutions to startups and enterprises across the region, from HITEC City to Uppal. Our expertise in AI and custom software development helps Hyderabad businesses scale efficiently in the modern digital economy.
-              </p>
+              <div className="text-lg text-muted-foreground mb-6">
+                SOFTURECS AI LABS PRIVATE LIMITED is a leading software company in Hyderabad, Telangana. We provide comprehensive digital solutions to startups and enterprises across the region, from HITEC City to Uppal. Our expertise in <Link to='/services/ai-development' className='text-accent hover:underline'>AI development</Link> and <Link to='/services/custom-software' className='text-accent hover:underline'>custom software development</Link> helps Hyderabad businesses scale efficiently. As a premier provider of <Link to='/services/crm-development' className='text-accent hover:underline'>CRM development</Link> in Hyderabad, we empower local businesses with modern sales tools.
+              </div>
               <ul className="space-y-4 mb-8">
                 {[
                   'Custom Software Development Hyderabad',
