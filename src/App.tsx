@@ -146,6 +146,7 @@ import InsightsPortfolio from "./pages/insights/InsightsPortfolio";
 import InsightsBlogs from "./pages/insights/Blogs";
 import InsightsFAQs from "./pages/insights/FAQs";
 import InsightsPressReleases from "./pages/insights/PressReleases";
+import InsightsResources from "./pages/insights/Resources";
 import CaseStudyDetail from "./pages/insights/CaseStudyDetail";
 import Sitemap from "./pages/Sitemap";
 // Programmatic SEO pages
