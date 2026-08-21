@@ -1,45 +1,297 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, ArrowRight, Bot, Zap, Building2, MessageSquare, Database, Users, CheckCircle2, Headphones, Layout, Smartphone, Code } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ArrowRight, Bot, Zap, MessageSquare, Database, Layout, ShieldCheck, PieChart, Users, Phone, Send, BarChart3, Workflow, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
 const slides = [
   {
     id: 1,
-    title: "AI Chatbots & Smart Automation",
-    subtitle: "Automate conversations, qualify leads, provide 24/7 support and streamline your business operations with intelligent AI.",
-    cta: "Explore AI Solutions",
-    link: "/services/ai-chatbot",
     badge: "AI-POWERED SOLUTIONS",
-    gradient: "from-blue-600 via-indigo-600 to-violet-700",
-    stats: [
-      { label: "Happy Clients", value: "100+", icon: Users },
-      { label: "Projects Delivered", value: "250+", icon: Database },
-      { label: "Experience", value: "6+", icon: CheckCircle2 },
-      { label: "Support", value: "24/7", icon: Headphones }
-    ],
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1920",
-    alt: "AI Chatbot Interface"
+    title: "AI Chatbots That Work 24/7",
+    description: "Automate customer conversations, qualify leads and deliver intelligent support with AI-powered chatbots.",
+    primaryCta: "Explore AI Solutions",
+    secondaryCta: "Book a Free Consultation",
+    link: "/services/ai-chatbot",
+    color: "cyan",
   },
   {
     id: 2,
-    title: "Real Estate CRM Built for Growth",
-    subtitle: "Manage properties, leads, agents, follow-ups and sales from one intelligent platform.",
-    cta: "Explore Real Estate CRM",
+    badge: "AI AUTOMATION",
+    title: "Automate Your Business With AI",
+    description: "Connect leads, conversations, follow-ups and business workflows with intelligent automation.",
+    primaryCta: "Explore AI Automation",
+    secondaryCta: "Book a Free Consultation",
+    link: "/services/ai-automation",
+    color: "violet",
+  },
+  {
+    id: 3,
+    badge: "REAL ESTATE CRM",
+    title: "Smarter CRM for Real Estate Growth",
+    description: "Manage properties, leads, agents, follow-ups and sales from one powerful CRM platform.",
+    primaryCta: "Explore Real Estate CRM",
+    secondaryCta: "Book a Free Consultation",
     link: "/solutions/real-estate-crm",
-    badge: "PROPERTY TECH",
-    gradient: "from-indigo-600 via-blue-700 to-slate-800",
-    stats: [
-      { label: "Property Managed", value: "10k+", icon: Building2 },
-      { label: "Lead Conversion", value: "+45%", icon: Users },
-      { label: "ROI Growth", value: "3x", icon: Zap },
-      { label: "Global Reach", value: "50+", icon: Database }
-    ],
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1920",
-    alt: "Real Estate CRM Dashboard"
-  }
+    color: "teal",
+  },
+  {
+    id: 4,
+    badge: "WHATSAPP + META API",
+    title: "Turn Conversations Into Customers",
+    description: "Connect WhatsApp and Meta APIs with your CRM to manage conversations, leads and automation.",
+    primaryCta: "Explore WhatsApp CRM",
+    secondaryCta: "Book a Free Consultation",
+    link: "/solutions/whatsapp-crm",
+    color: "green",
+  },
+  {
+    id: 5,
+    badge: "ALL-IN-ONE CRM",
+    title: "One CRM. Your Entire Business.",
+    description: "Bring sales, customer management, automation and business operations together in one powerful platform.",
+    primaryCta: "Explore CRM Solutions",
+    secondaryCta: "Book a Free Consultation",
+    link: "/services/crm-solutions",
+    color: "blue",
+  },
 ];
+
+const VisualComponent = ({ type }: { type: number }) => {
+  const containerVariants = {
+    initial: { opacity: 0, scale: 0.9 },
+    animate: { opacity: 1, scale: 1 },
+  };
+
+  if (type === 1) { // AI Chatbots
+    return (
+      <motion.div variants={containerVariants} className="relative w-full max-w-lg aspect-[4/3] rounded-2xl bg-slate-900/50 border border-white/10 backdrop-blur-xl p-6 shadow-2xl overflow-hidden">
+        <div className="flex items-center justify-between mb-6 border-b border-white/5 pb-4">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-full bg-cyan-500/20 flex items-center justify-center">
+              <Bot className="w-5 h-5 text-cyan-400" />
+            </div>
+            <span className="text-white font-medium">AI Assistant</span>
+          </div>
+          <div className="flex gap-1.5">
+            <div className="w-2 h-2 rounded-full bg-red-500/50" />
+            <div className="w-2 h-2 rounded-full bg-amber-500/50" />
+            <div className="w-2 h-2 rounded-full bg-green-500/50" />
+          </div>
+        </div>
+        <div className="space-y-4">
+          <div className="flex gap-3">
+            <div className="w-8 h-8 rounded-full bg-slate-800 flex-shrink-0" />
+            <div className="bg-slate-800/80 rounded-2xl rounded-tl-none p-3 text-sm text-slate-300 max-w-[80%]">
+              Hello! How can I help you today?
+            </div>
+          </div>
+          <div className="flex gap-3 justify-end">
+            <div className="bg-cyan-600 rounded-2xl rounded-tr-none p-3 text-sm text-white max-w-[80%]">
+              I'm looking for a CRM solution.
+            </div>
+          </div>
+          <div className="flex gap-3">
+            <div className="w-8 h-8 rounded-full bg-cyan-500/20 flex items-center justify-center flex-shrink-0">
+              <Bot className="w-5 h-5 text-cyan-400" />
+            </div>
+            <div className="bg-slate-800/80 rounded-2xl rounded-tl-none p-3 text-sm text-slate-300 max-w-[80%]">
+              Great! We have specialized CRMs for Real Estate and Business Automation. What industry are you in?
+            </div>
+          </div>
+        </div>
+        <motion.div 
+          className="absolute bottom-6 right-6 bg-slate-800 border border-white/10 rounded-xl p-4 shadow-xl w-48"
+          animate={{ y: [0, -10, 0] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <div className="flex items-center gap-2 mb-2">
+            <Users className="w-4 h-4 text-cyan-400" />
+            <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Lead Status</span>
+          </div>
+          <div className="text-white font-bold text-lg">Qualified</div>
+          <div className="h-1.5 w-full bg-slate-700 rounded-full mt-2 overflow-hidden">
+            <div className="h-full w-[85%] bg-cyan-500" />
+          </div>
+        </motion.div>
+      </motion.div>
+    );
+  }
+
+  if (type === 2) { // Automation
+    return (
+      <motion.div variants={containerVariants} className="relative w-full max-w-lg aspect-[4/3] rounded-2xl bg-slate-900/50 border border-white/10 backdrop-blur-xl p-8 shadow-2xl flex flex-col items-center justify-center">
+        <div className="grid grid-cols-1 gap-6 w-full max-w-[280px] relative z-10">
+          <div className="bg-slate-800 border border-white/10 rounded-xl p-4 flex items-center gap-4 relative">
+            <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400">
+              <Send className="w-6 h-6" />
+            </div>
+            <div>
+              <div className="text-xs text-slate-500 uppercase font-bold">Inbound</div>
+              <div className="text-white font-medium text-sm">Lead Capture</div>
+            </div>
+            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 h-6 w-px bg-slate-700" />
+          </div>
+          
+          <div className="bg-slate-800 border border-white/10 rounded-xl p-4 flex items-center gap-4 relative">
+            <div className="w-10 h-10 rounded-lg bg-violet-500/20 flex items-center justify-center text-violet-400">
+              <Workflow className="w-6 h-6" />
+            </div>
+            <div>
+              <div className="text-xs text-slate-500 uppercase font-bold">Processing</div>
+              <div className="text-white font-medium text-sm">AI Engine</div>
+            </div>
+            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 h-6 w-px bg-slate-700" />
+          </div>
+
+          <div className="bg-slate-800 border border-white/10 rounded-xl p-4 flex items-center gap-4">
+            <div className="w-10 h-10 rounded-lg bg-cyan-500/20 flex items-center justify-center text-cyan-400">
+              <Database className="w-6 h-6" />
+            </div>
+            <div>
+              <div className="text-xs text-slate-500 uppercase font-bold">Storage</div>
+              <div className="text-white font-medium text-sm">CRM Update</div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] opacity-20 pointer-events-none">
+          <div className="w-full h-full border-[20px] border-violet-500/20 rounded-full animate-[spin_20s_linear_infinite]" />
+        </div>
+      </motion.div>
+    );
+  }
+
+  if (type === 3) { // Real Estate CRM
+    return (
+      <motion.div variants={containerVariants} className="relative w-full max-w-lg aspect-[4/3] rounded-2xl bg-slate-900/50 border border-white/10 backdrop-blur-xl p-6 shadow-2xl">
+        <div className="flex items-center justify-between mb-8">
+          <h4 className="text-white font-bold flex items-center gap-2">
+            <Building2 className="w-5 h-5 text-teal-400" />
+            Property Pipeline
+          </h4>
+          <div className="flex items-center gap-4">
+            <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Total Sales: <span className="text-teal-400">$2.4M</span></div>
+          </div>
+        </div>
+        <div className="grid grid-cols-2 gap-4">
+          {[
+            { name: "Luxury Villa", price: "$850k", status: "Negotiation", img: "teal" },
+            { name: "Downtown Office", price: "$1.2M", status: "Closing", img: "indigo" },
+            { name: "Skyline Apt", price: "$420k", status: "Interested", img: "blue" },
+            { name: "Garden Estate", price: "$680k", status: "Viewing", img: "purple" }
+          ].map((item, i) => (
+            <div key={i} className="bg-slate-800/50 border border-white/5 rounded-xl p-3">
+              <div className={`w-full h-20 rounded-lg bg-${item.img}-500/20 mb-3 flex items-center justify-center`}>
+                <Building2 className={`w-8 h-8 text-${item.img}-400/50`} />
+              </div>
+              <div className="text-white font-bold text-xs mb-1">{item.name}</div>
+              <div className="flex justify-between items-center">
+                <span className="text-teal-400 font-bold text-[10px]">{item.price}</span>
+                <span className="text-[8px] px-1.5 py-0.5 rounded-full bg-slate-700 text-slate-300 font-medium">{item.status}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </motion.div>
+    );
+  }
+
+  if (type === 4) { // WhatsApp + Meta API
+    return (
+      <motion.div variants={containerVariants} className="relative w-full max-w-lg aspect-[4/3] rounded-2xl bg-slate-900/50 border border-white/10 backdrop-blur-xl p-6 shadow-2xl flex items-center justify-center">
+        <div className="relative">
+          <div className="bg-[#25D366]/10 border border-[#25D366]/30 p-8 rounded-full animate-pulse">
+            <div className="bg-[#25D366]/20 border border-[#25D366]/40 p-8 rounded-full">
+              <Phone className="w-16 h-16 text-[#25D366]" />
+            </div>
+          </div>
+          
+          <motion.div 
+            className="absolute -top-12 -right-12 bg-slate-800 border border-white/10 rounded-2xl p-4 shadow-2xl w-56"
+            initial={{ x: 20, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.5 }}
+          >
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center">
+                <MessageSquare className="w-4 h-4 text-green-400" />
+              </div>
+              <div>
+                <div className="text-[10px] text-slate-500 font-bold uppercase">WhatsApp API</div>
+                <div className="text-white text-xs font-medium">New Lead Received</div>
+              </div>
+            </div>
+            <div className="text-[10px] text-slate-400 italic">"I'd like to book a demo for next Monday..."</div>
+          </motion.div>
+          
+          <motion.div 
+            className="absolute -bottom-8 -left-16 bg-slate-800 border border-white/10 rounded-2xl p-4 shadow-2xl w-48"
+            initial={{ x: -20, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.8 }}
+          >
+            <div className="flex items-center gap-2 mb-2">
+              <Zap className="w-4 h-4 text-amber-400" />
+              <span className="text-[10px] text-slate-400 font-bold uppercase">Auto-Response</span>
+            </div>
+            <div className="text-white text-xs font-medium italic">Sent: "Meeting confirmed!"</div>
+          </motion.div>
+        </div>
+      </motion.div>
+    );
+  }
+
+  if (type === 5) { // All-in-One CRM
+    return (
+      <motion.div variants={containerVariants} className="relative w-full max-w-lg aspect-[4/3] rounded-2xl bg-slate-900/50 border border-white/10 backdrop-blur-xl p-6 shadow-2xl overflow-hidden">
+        <div className="flex items-center justify-between mb-8 border-b border-white/5 pb-4">
+          <div className="flex items-center gap-2">
+            <Layout className="w-5 h-5 text-blue-400" />
+            <span className="text-white font-bold">Master Dashboard</span>
+          </div>
+          <div className="flex gap-4">
+             <div className="h-4 w-12 rounded bg-slate-800 animate-pulse" />
+             <div className="h-4 w-12 rounded bg-slate-800 animate-pulse" />
+          </div>
+        </div>
+        
+        <div className="grid grid-cols-3 gap-4 mb-6">
+          {[
+            { label: "Leads", val: "1,284", color: "blue" },
+            { label: "Revenue", val: "$48k", color: "violet" },
+            { label: "Growth", val: "+12%", color: "cyan" }
+          ].map((stat, i) => (
+            <div key={i} className="bg-slate-800/40 rounded-xl p-3 border border-white/5">
+              <div className="text-[9px] text-slate-500 font-bold uppercase mb-1">{stat.label}</div>
+              <div className="text-white font-bold text-lg">{stat.val}</div>
+            </div>
+          ))}
+        </div>
+
+        <div className="bg-slate-800/40 rounded-xl p-4 border border-white/5 h-32 relative">
+          <div className="flex items-end justify-between h-full gap-2">
+            {[40, 60, 45, 80, 55, 90, 70].map((h, i) => (
+              <motion.div 
+                key={i} 
+                className="w-full bg-blue-500/30 border-t-2 border-blue-400 rounded-t-sm" 
+                initial={{ height: 0 }}
+                animate={{ height: `${h}%` }}
+                transition={{ delay: 1 + (i * 0.1) }}
+              />
+            ))}
+          </div>
+          <div className="absolute top-4 left-4 flex items-center gap-2">
+            <BarChart3 className="w-4 h-4 text-blue-400" />
+            <span className="text-[10px] text-slate-400 font-bold uppercase">Performance Trend</span>
+          </div>
+        </div>
+      </motion.div>
+    );
+  }
+
+  return null;
+};
 
 export function HeroSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -65,228 +317,121 @@ export function HeroSlider() {
 
   return (
     <section 
-      className="relative w-full bg-[#0A0F1E] pt-24 md:pt-32 pb-16 overflow-hidden"
+      className="relative w-full overflow-hidden bg-[#0F1B3D] py-12 md:py-20"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Background Neural Mesh / Abstract Grid */}
-      <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:40px_40px]" />
+      {/* Abstract Background Elements */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-600/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2" />
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none" />
       </div>
 
       <div className="container-custom relative z-10">
-        {/* Main Hero Container */}
-        <div className="relative rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-[#0F172A] via-[#1E1B4B] to-[#0F172A] border border-white/5 shadow-2xl min-h-[600px] flex items-center">
+        <div className="relative min-h-[500px] md:min-h-[600px] flex items-center">
           
-          {/* Transitioning Background Gradients */}
           <AnimatePresence mode="wait">
             <motion.div
               key={currentSlide}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.4 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 1 }}
-              className={`absolute inset-0 bg-gradient-to-br ${slides[currentSlide].gradient} mix-blend-overlay`}
-            />
+              className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center w-full"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            >
+              {/* Content Side (Left) */}
+              <div className="order-2 lg:order-1 text-center lg:text-left space-y-6 md:space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300 text-[10px] md:text-xs font-bold tracking-widest uppercase backdrop-blur-sm"
+                >
+                  <span className={`w-2 h-2 rounded-full bg-${slides[currentSlide].color}-500 animate-pulse`} />
+                  {slides[currentSlide].badge}
+                </motion.div>
+                
+                <div className="space-y-4">
+                  {currentSlide === 0 ? (
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-[1.15] max-w-2xl mx-auto lg:mx-0">
+                      {slides[currentSlide].title}
+                    </h1>
+                  ) : (
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-[1.15] max-w-2xl mx-auto lg:mx-0">
+                      {slides[currentSlide].title}
+                    </h2>
+                  )}
+                  
+                  <p className="text-base md:text-lg text-slate-400 leading-relaxed max-w-lg mx-auto lg:mx-0">
+                    {slides[currentSlide].description}
+                  </p>
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                  <Link to={slides[currentSlide].link} className="w-full sm:w-auto">
+                    <Button size="lg" className="w-full sm:w-auto bg-[#3b6fa0] hover:bg-[#3b6fa0]/90 text-white rounded-xl h-12 md:h-14 px-8 font-bold text-sm md:text-base group transition-all duration-300 shadow-lg shadow-blue-900/20">
+                      {slides[currentSlide].primaryCta} 
+                      <ArrowRight className="ml-2 w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
+                  <Link to="/contact" className="w-full sm:w-auto">
+                    <Button size="lg" variant="outline" className="w-full sm:w-auto border-white/10 text-white hover:bg-white/5 rounded-xl h-12 md:h-14 px-8 font-bold text-sm md:text-base backdrop-blur-sm">
+                      {slides[currentSlide].secondaryCta}
+                    </Button>
+                  </Link>
+                </div>
+                
+                <div className="flex items-center justify-center lg:justify-start gap-6 pt-4 border-t border-white/5">
+                   <div className="flex -space-x-2">
+                     {[1,2,3].map(i => (
+                       <div key={i} className="w-8 h-8 rounded-full border-2 border-[#0F1B3D] bg-slate-800" />
+                     ))}
+                   </div>
+                   <div className="text-[10px] md:text-xs text-slate-500 font-medium">
+                     Trusted by <span className="text-white font-bold">500+ Companies</span> globally
+                   </div>
+                </div>
+              </div>
+
+              {/* Visual Side (Right) */}
+              <div className="order-1 lg:order-2 flex items-center justify-center lg:justify-end">
+                <VisualComponent type={slides[currentSlide].id} />
+              </div>
+            </motion.div>
           </AnimatePresence>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center p-8 md:p-16 w-full">
-            
-            {/* Content Side */}
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentSlide}
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 30 }}
-                transition={{ duration: 0.6 }}
-                className="space-y-6 z-10"
-              >
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm">
-                  <Bot className="w-4 h-4 text-yellow-400" />
-                  <span className="text-xs font-bold text-white tracking-widest uppercase">{slides[currentSlide].badge}</span>
-                </div>
-                
-                <h1 className="text-4xl md:text-8xl lg:text-9xl font-display font-black text-white leading-[0.9] tracking-tighter uppercase italic">
-                  {currentSlide === 0 ? (
-                    <>AI Chatbots & <br /><span className="bg-gradient-to-r from-blue-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">Smart Automation</span></>
-                  ) : (
-                    slides[currentSlide].title
-                  )}
-                </h1>
-                
-                <p className="text-lg text-slate-300 max-w-xl leading-relaxed">
-                  {slides[currentSlide].subtitle}
-                </p>
-
-                <div className="flex flex-wrap gap-4 pt-4">
-                  <Link to={slides[currentSlide].link}>
-                    <Button size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white rounded-xl h-14 px-8 text-lg font-bold shadow-lg shadow-blue-500/20 group">
-                      {slides[currentSlide].cta} <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </Link>
-                  <Link to="/contact">
-                    <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 rounded-xl h-14 px-8 text-lg backdrop-blur-sm transition-all">
-                      Book a Free Consultation
-                    </Button>
-                  </Link>
-                </div>
-
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-white/10">
-                  {slides[currentSlide].stats.map((stat, idx) => (
-                    <div key={idx} className="flex flex-col gap-1">
-                      <div className="flex items-center gap-2 text-white font-bold text-2xl">
-                        <stat.icon className="w-4 h-4 text-blue-400" />
-                        {stat.value}
-                      </div>
-                      <div className="text-[10px] text-slate-400 uppercase tracking-widest font-semibold">{stat.label}</div>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            </AnimatePresence>
-
-            {/* Visual Side (Mockups) */}
-            <div className="relative h-[450px] lg:h-[550px] hidden md:flex items-center justify-center">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentSlide}
-                  initial={{ opacity: 0, scale: 0.9, rotateY: 10 }}
-                  animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-                  exit={{ opacity: 0, scale: 1.1, rotateY: -10 }}
-                  transition={{ duration: 0.8 }}
-                  className="relative w-full h-full flex items-center justify-center"
-                >
-                  {/* Floating AI Robot (Simulated for design) */}
-                  <motion.div 
-                    animate={{ y: [0, -20, 0] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                    className="relative z-20"
-                  >
-                    <div className="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/5">
-                      <Bot className="w-32 h-32 md:w-48 md:h-48 text-blue-400 drop-shadow-[0_0_30px_rgba(59,130,246,0.5)]" />
-                    </div>
-                  </motion.div>
-
-                  {/* UI Panels / Dashboards (Simulated) */}
-                  <motion.div 
-                    animate={{ x: [0, 10, 0] }}
-                    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute top-0 right-0 z-30 bg-[#0F172A]/80 backdrop-blur-xl border border-white/10 p-6 rounded-3xl shadow-2xl w-64 md:w-72"
-                  >
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-xs font-bold text-white uppercase tracking-widest">AI Active</span>
-                      <div className="flex gap-1">
-                        <div className="w-1.5 h-1.5 rounded-full bg-red-500" />
-                        <div className="w-1.5 h-1.5 rounded-full bg-yellow-500" />
-                        <div className="w-1.5 h-1.5 rounded-full bg-green-500" />
-                      </div>
-                    </div>
-                    <div className="space-y-3">
-                      <div className="h-2 w-full bg-white/10 rounded-full" />
-                      <div className="h-2 w-2/3 bg-white/10 rounded-full" />
-                      <div className="h-10 w-full bg-blue-600/20 border border-blue-500/30 rounded-xl flex items-center px-3 gap-2">
-                        <div className="w-4 h-4 rounded-full bg-blue-500 animate-pulse" />
-                        <div className="h-1.5 w-20 bg-blue-400/50 rounded-full" />
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  <motion.div 
-                    animate={{ y: [0, 15, 0] }}
-                    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                    className="absolute bottom-10 left-0 z-30 bg-white/5 backdrop-blur-xl border border-white/10 p-6 rounded-3xl shadow-2xl w-64"
-                  >
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-xl bg-green-500/20 flex items-center justify-center">
-                        <Zap className="w-6 h-6 text-green-400" />
-                      </div>
-                      <div className="h-2 w-24 bg-white/20 rounded-full" />
-                    </div>
-                    <div className="space-y-2">
-                      <div className="flex justify-between text-[10px] text-slate-400 mb-1">
-                        <span>Automation Rate</span>
-                        <span>86%</span>
-                      </div>
-                      <div className="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
-                        <div className="h-full bg-green-500 w-[86%]" />
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  {/* Glows */}
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none" />
-                  <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-purple-600/20 rounded-full blur-[100px] pointer-events-none" />
-                </motion.div>
-              </AnimatePresence>
-            </div>
-          </div>
-
-          {/* Slider Controls */}
-          <div className="absolute bottom-8 left-0 right-0 px-8 md:px-16 flex items-center justify-between z-40">
-            <div className="flex gap-2">
-              {slides.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setCurrentSlide(idx)}
-                  className={`h-1.5 transition-all duration-300 rounded-full ${
-                    currentSlide === idx ? 'w-10 bg-blue-500' : 'w-4 bg-white/20 hover:bg-white/40'
-                  }`}
-                  aria-label={`Slide ${idx + 1}`}
-                />
-              ))}
-            </div>
-            <div className="flex gap-3">
-              <button 
-                onClick={prevSlide}
-                className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-white/10 transition-all backdrop-blur-md group"
-              >
-                <ChevronLeft className="w-6 h-6 group-hover:-translate-x-0.5 transition-transform" />
-              </button>
-              <button 
-                onClick={nextSlide}
-                className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-white/10 transition-all backdrop-blur-md group"
-              >
-                <ChevronRight className="w-6 h-6 group-hover:translate-x-0.5 transition-transform" />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Below Slider Service Cards - 100% Match Reference Design */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mt-12">
-            {[
-                { title: "Real Estate CRM", icon: Building2, color: "text-blue-600", bg: "bg-blue-50/50", href: "/solutions/real-estate-crm", desc: "Manage properties, leads, agents and sales effortlessly." },
-                { title: "All-in-One CRM", icon: Database, color: "text-green-600", bg: "bg-green-50/50", href: "/services/crm-solutions", desc: "One platform for sales, marketing, support and automation." },
-                { title: "WhatsApp CRM", icon: MessageSquare, color: "text-purple-600", bg: "bg-purple-50/50", href: "/solutions/whatsapp-crm", desc: "Manage WhatsApp conversations, automate replies and leads." },
-                { title: "AI Chatbots", icon: Bot, color: "text-orange-600", bg: "bg-orange-50/50", href: "/services/ai-chatbot", desc: "Intelligent chatbots for 24/7 support, lead gen and engagement." },
-                { title: "AI Automations", icon: Zap, color: "text-blue-500", bg: "bg-sky-50/50", href: "/services/ai-automation", desc: "Automate workflows, save time and boost productivity." },
-                { title: "Custom Software", icon: Code, color: "text-pink-600", bg: "bg-pink-50/50", href: "/services/custom-software", desc: "Tailored web, mobile & SaaS solutions built for your needs." },
-            ].map((card, i) => (
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  key={i}
-                >
-                  <Link 
-                    to={card.href}
-                    className="group h-full bg-white p-6 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-blue-100 transition-all flex flex-col items-start"
-                  >
-                    <div className={`w-12 h-12 ${card.bg} ${card.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                      <card.icon className="w-6 h-6" />
-                    </div>
-                    <h3 className="font-bold text-slate-900 text-lg mb-2">{card.title}</h3>
-                    <p className="text-xs text-slate-500 leading-relaxed mb-6 flex-grow">
-                      {card.desc}
-                    </p>
-                    <span className={`${card.color} text-[10px] font-bold flex items-center uppercase tracking-widest group-hover:gap-2 transition-all`}>
-                      Explore <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform" />
-                    </span>
-                  </Link>
-                </motion.div>
+          {/* Slider Pagination */}
+          <div className="absolute -bottom-10 lg:bottom-0 left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0 flex gap-3 z-20">
+            {slides.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentSlide(idx)}
+                className={`h-1.5 transition-all duration-500 rounded-full ${
+                  currentSlide === idx ? 'w-10 bg-[#3b6fa0]' : 'w-4 bg-white/10 hover:bg-white/30'
+                }`}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
             ))}
+          </div>
+
+          {/* Navigation Arrows */}
+          <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 hidden md:flex justify-between pointer-events-none z-20">
+            <button 
+              onClick={prevSlide} 
+              className="p-3 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/10 backdrop-blur-md pointer-events-auto transition-all -translate-x-6 hover:translate-x-0"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            <button 
+              onClick={nextSlide} 
+              className="p-3 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/10 backdrop-blur-md pointer-events-auto transition-all translate-x-6 hover:translate-x-0"
+              aria-label="Next slide"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
         </div>
       </div>
     </section>
