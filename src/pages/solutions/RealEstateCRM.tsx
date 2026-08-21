@@ -46,7 +46,7 @@ const RealEstateCRM = () => {
     >
       <div className="container-custom py-12 border-t border-border/50">
         <h3 className="text-2xl font-bold mb-8 text-center">Related CRM Solutions</h3>
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-4 gap-6">
           <a href="/whatsapp-crm" className="p-6 bg-card border border-border/50 rounded-2xl hover:border-accent/50 transition-all text-center">
             <MessageSquare className="w-8 h-8 mx-auto mb-4 text-accent" />
             <h4 className="font-bold mb-2">WhatsApp CRM</h4>
@@ -56,6 +56,11 @@ const RealEstateCRM = () => {
             <Zap className="w-8 h-8 mx-auto mb-4 text-accent" />
             <h4 className="font-bold mb-2">Meta API CRM</h4>
             <p className="text-sm text-muted-foreground">Official WhatsApp Cloud API for high-volume real estate alerts.</p>
+          </a>
+          <a href="/all-in-one-crm" className="p-6 bg-card border border-border/50 rounded-2xl hover:border-accent/50 transition-all text-center">
+            <Zap className="w-8 h-8 mx-auto mb-4 text-accent" />
+            <h4 className="font-bold mb-2">All-in-One CRM</h4>
+            <p className="text-sm text-muted-foreground">Unified platform for sales, marketing, and support.</p>
           </a>
           <a href="/services/ai-chatbot" className="p-6 bg-card border border-border/50 rounded-2xl hover:border-accent/50 transition-all text-center">
             <Bot className="w-8 h-8 mx-auto mb-4 text-accent" />

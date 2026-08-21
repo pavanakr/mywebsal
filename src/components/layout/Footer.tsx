@@ -4,58 +4,58 @@ import { ChevronDown, ArrowUp, MessageCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const services = [
+  { name: 'Custom Software Development', href: '/services/custom-software' },
+  { name: 'Web Development', href: '/services/web-development' },
   { name: 'Mobile App Development', href: '/services/mobile-apps' },
-  { name: 'iOS App Development', href: '/services/ios-development' },
-  { name: 'Android App Development', href: '/services/android-development' },
-  { name: 'Hybrid App Development', href: '/services/hybrid-development' },
-  { name: 'Software Consulting Services', href: '/services/software-consulting' },
-  { name: 'Web Development Services', href: '/services/web-development' },
-  { name: 'UI/UX Development', href: '/services/ui-ux' },
-  { name: 'Data Analytics Services', href: '/services/data-analytics' },
-  { name: 'Ecommerce App Development', href: '/services/ecommerce' },
+  { name: 'SaaS Development', href: '/services/saas' },
+  { name: 'CRM Development', href: '/services/crm-development' },
+  { name: 'AI Development', href: '/services/ai-development' },
+  { name: 'AI Chatbot Development', href: '/services/ai-chatbot' },
+  { name: 'API Development', href: '/services/api-development' },
 ];
 
-const solutions = [
+const crmSolutions = [
   { name: 'Real Estate CRM', href: '/real-estate-crm' },
-  { name: 'WhatsApp CRM', href: '/whatsapp-crm' },
-  { name: 'Multi CRM Platform', href: '/multi-crm' },
+  { name: 'Multi CRM', href: '/multi-crm' },
   { name: 'All-in-One CRM', href: '/all-in-one-crm' },
   { name: 'Meta API CRM', href: '/meta-api-crm' },
-  { name: 'Software Company Hyderabad', href: '/software-development-company-hyderabad' },
-  { name: 'Software Company KPHB', href: '/software-development-company-kphb' },
-  { name: 'Software Company Kukatpally', href: '/software-development-company-kukatpally' },
+  { name: 'WhatsApp CRM', href: '/whatsapp-crm' },
+];
+
+const aiSolutions = [
   { name: 'AI Chatbot Development', href: '/services/ai-chatbot' },
+  { name: 'AI Automation', href: '/services/ai-automation' },
+  { name: 'Conversational AI', href: '/services/conversational-ai' },
 ];
 
-const technologies = [
-  { name: 'Blockchain App Development', href: '/technologies/blockchain' },
-  { name: 'Artificial Intelligence Solutions', href: '/services/ai-development' },
-  { name: 'Fintech App Development', href: '/technologies/fintech' },
-  { name: 'Cryptocurrency Wallet', href: '/technologies/blockchain' },
-  { name: 'IoT App Development', href: '/technologies/iot' },
-  { name: 'Salesforce Solutions', href: '/technologies/salesforce' },
-  { name: 'Cloud Computing', href: '/technologies/cloud' },
-  { name: 'Machine Learning Solutions', href: '/technologies/machine-learning' },
-  { name: 'Big Data Solutions', href: '/services/big-data' },
+const locations = [
+  { name: 'Software Development Company in India', href: '/software-development-company-india' },
+  { name: 'Software Development Company in Hyderabad', href: '/software-development-company-hyderabad' },
+  { name: 'Software Development Company in KPHB', href: '/software-development-company-kphb' },
+  { name: 'Software Development Company in Kukatpally', href: '/software-development-company-kukatpally' },
 ];
 
-const hireDevelopers = [
-  { name: 'Hire Dedicated Developers', href: '/hire/dedicated-developers' },
-  { name: 'Hire Mobile App Developers', href: '/hire/mobile-developers' },
-  { name: 'Hire Android App Developers', href: '/hire/android-developers' },
-  { name: 'Hire iOS App Developers', href: '/hire/ios-developers' },
-  { name: 'Hire Laravel Developers', href: '/hire/laravel-developers' },
-  { name: 'Hire Flutter Developers', href: '/hire/flutter-developers' },
-  { name: 'Hire Nodejs Developers', href: '/hire/nodejs-developers' },
-  { name: 'Hire Java Developers', href: '/hire/java-developers' },
-  { name: 'Hire Game Developers', href: '/hire/game-developers' },
+const company = [
+  { name: 'About', href: '/about' },
+  { name: 'Industries', href: '/industries' },
+  { name: 'Insights', href: '/insights' },
+  { name: 'Contact', href: '/contact' },
+  { name: 'Careers', href: '/careers' },
+];
+
+const legal = [
+  { name: 'Privacy Policy', href: '/privacy-policy' },
+  { name: 'Terms & Conditions', href: '/terms' },
+  { name: 'Cookie Policy', href: '/cookie-policy' },
 ];
 
 const footerColumns = [
-  { title: 'Services', items: services },
-  { title: 'Solutions', items: solutions },
-  { title: 'Trending Technologies', items: technologies },
-  { title: 'Hire Developers', items: hireDevelopers },
+  { title: 'SERVICES', items: services },
+  { title: 'CRM SOLUTIONS', items: crmSolutions },
+  { title: 'AI SOLUTIONS', items: aiSolutions },
+  { title: 'LOCATIONS', items: locations },
+  { title: 'COMPANY', items: company },
+  { title: 'LEGAL', items: legal },
 ];
 
 // Mobile Accordion Component
@@ -155,7 +155,7 @@ export function Footer() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={containerVariants}
-            className="hidden lg:grid lg:grid-cols-4 gap-8"
+            className="hidden lg:grid lg:grid-cols-6 gap-8"
           >
             {footerColumns.map((column, columnIndex) => (
               <motion.div key={column.title} variants={itemVariants}>
@@ -258,53 +258,17 @@ export function Footer() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <div className="container-custom py-6">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-center">
               {/* Copyright */}
               <motion.p 
-                className="text-gray-600 text-sm text-center md:text-left"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                className="text-gray-600 text-sm"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
                 transition={{ duration: 0.5 }}
               >
                 © {new Date().getFullYear()} <span className="font-medium text-gray-800">SOFTURECS AI LABS PRIVATE LIMITED</span>. All rights reserved.
               </motion.p>
-
-              {/* Policy Links */}
-              <motion.div 
-                className="flex items-center gap-2 text-sm flex-wrap justify-center md:justify-end"
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
-                transition={{ duration: 0.5 }}
-              >
-                <Link to="/sitemap" className="text-gray-600 hover:text-blue-600 transition-colors">
-                  Sitemap
-                </Link>
-                <span className="text-gray-400">|</span>
-                <Link to="/shipping-policy" className="text-gray-600 hover:text-blue-600 transition-colors">
-                  Shipping Policy
-                </Link>
-                <span className="text-gray-400">|</span>
-                <Link to="/refund-policy" className="text-gray-600 hover:text-blue-600 transition-colors">
-                  Refund Policy
-                </Link>
-                <span className="text-gray-400">|</span>
-                <Link to="/privacy-policy" className="text-gray-600 hover:text-blue-600 transition-colors">
-                  Privacy Policy
-                </Link>
-                <span className="text-gray-400">|</span>
-                <Link to="/terms" className="text-gray-600 hover:text-blue-600 transition-colors">
-                  Terms & Conditions
-                </Link>
-                <span className="text-gray-400">|</span>
-                <Link 
-                  to="/contact" 
-                  className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-1.5 rounded-full hover:from-blue-700 hover:to-indigo-700 transition-all font-medium shadow-sm hover:shadow-md"
-                >
-                  Contact Us
-                </Link>
-              </motion.div>
             </div>
           </div>
         </motion.div>
