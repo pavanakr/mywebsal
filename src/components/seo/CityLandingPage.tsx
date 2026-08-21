@@ -25,7 +25,7 @@ const cityData: Record<string, CityData> = {
     region: 'Telangana',
     phone: '+91 7396080902',
     timezone: 'IST',
-    description: 'As a leading AI software development company headquartered in Hyderabad, Softurecs AI Labs delivers cutting-edge digital solutions to businesses across Telangana and beyond. Our team of 50+ expert engineers specializes in AI, machine learning, cloud computing, and custom software development. Located in the heart of India\'s tech hub, we combine local expertise with global delivery standards.',
+    description: 'As a leading AI software development company headquartered in Hyderabad, SOFTURECS AI LABS PRIVATE LIMITED delivers cutting-edge digital solutions to businesses across Telangana and beyond. Our team of expert engineers specializes in AI, machine learning, cloud computing, and custom software development. Located in the heart of India\'s tech hub, we combine local expertise with global delivery standards.',
     localBenefits: ['Headquarters with dedicated support', 'Same timezone collaboration', 'On-site meetings available', 'Local talent pool access'],
   },
   'bengaluru': {
