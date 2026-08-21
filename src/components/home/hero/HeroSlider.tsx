@@ -153,7 +153,7 @@ const PremiumFloatingCard = ({ icon: Icon, title, status, color, className, dela
 
   return (
     <motion.div
-      className={`absolute z-30 flex items-center gap-3 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-xl border border-white/50 ${className}`}
+      className={`absolute z-30 flex items-center gap-3 bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl shadow-lg border border-slate-200/50 ${className}`}
       initial={{ opacity: 0, scale: 0.8, y: 20 }}
       animate={{ 
         opacity: 1, 
@@ -183,7 +183,7 @@ const PremiumFloatingCard = ({ icon: Icon, title, status, color, className, dela
 const VisualComposition = ({ slide }: { slide: typeof slides[0] }) => {
   return (
     <motion.div 
-      className="relative w-full max-w-2xl aspect-[4/3] flex items-center justify-center p-4"
+      className="relative w-full max-w-2xl aspect-[16/10] flex items-center justify-center p-4"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
@@ -359,7 +359,7 @@ export function HeroSlider() {
   return (
     <section 
       id="hero-slider"
-      className="relative w-full overflow-hidden bg-[#040612] pt-24 pb-12 md:pt-32 md:pb-16 min-h-[750px] flex items-center"
+      className="relative w-full overflow-hidden bg-[#040612] pt-32 pb-16 md:pt-40 md:pb-20 min-h-[850px] md:min-h-[750px] flex items-center"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
