@@ -33,7 +33,7 @@ const Contact = () => {
     <Layout>
       <SEO 
         title="Contact Softurecs AI Labs"
-        description="Contact Softurecs AI Labs for AI solutions & software development. Free consultation, 24-hour response. Call +91 7396080902 or email info@softurecs.com."
+        description="Contact Softurecs AI Labs for AI solutions & software development. Free consultation, 24-hour response. Call +91 7396080902 or email info@softurecsailabs.com."
         keywords="contact Softurecs, software development inquiry, AI solutions contact, IT consulting Hyderabad"
       />
       <PageHero
@@ -156,13 +156,13 @@ const Contact = () => {
               <div className="bg-card p-6 rounded-2xl border border-border/50">
                 <h3 className="text-lg font-semibold text-foreground mb-4">Quick Contact</h3>
                 <div className="space-y-4">
-                  <a href="mailto:info@softurecs.com" className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors">
+                  <a href="mailto:info@softurecsailabs.com" className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors">
                     <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
                       <Mail className="w-5 h-5 text-accent" />
                     </div>
                     <div>
                       <div className="text-sm text-muted-foreground">Email</div>
-                      <div className="font-medium text-foreground">info@softurecs.com</div>
+                      <div className="font-medium text-foreground">info@softurecsailabs.com</div>
                     </div>
                   </a>
                   <a href="tel:+917396080902" className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors">
@@ -323,7 +323,7 @@ const Contact = () => {
                       </motion.a>
                       
                       <motion.a 
-                        href="mailto:info@softurecs.com"
+                        href="mailto:info@softurecsailabs.com"
                         className="flex items-center gap-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl px-5 py-4 transition-all group"
                         whileHover={{ scale: 1.02, y: -2 }}
                         whileTap={{ scale: 0.98 }}
@@ -333,7 +333,7 @@ const Contact = () => {
                         </div>
                         <div>
                           <div className="text-xs text-slate-500 uppercase tracking-wider">Email</div>
-                          <div className="text-white font-medium">info@softurecs.com</div>
+                          <div className="text-white font-medium">info@softurecsailabs.com</div>
                         </div>
                       </motion.a>
                     </div>

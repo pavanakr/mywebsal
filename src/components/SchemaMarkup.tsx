@@ -49,7 +49,7 @@ export const OrganizationSchema = ({ type = 'Organization' }: OrganizationSchema
         "@type": "ContactPoint",
         "telephone": "+91-7396080902",
         "contactType": "sales",
-        "email": "info@softurecs.com",
+        "email": "info@softurecsailabs.com",
         "areaServed": ["IN", "US", "GB", "AE", "EU"],
         "availableLanguage": ["English", "Hindi"]
       }
@@ -279,7 +279,7 @@ export const LocalBusinessSchema = ({
     "logo": "https://softurecs.com/logo.png",
     "image": "https://softurecs.com/og-image.jpg",
     "telephone": "+91-7396080902",
-    "email": "info@softurecs.com",
+    "email": "info@softurecsailabs.com",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",

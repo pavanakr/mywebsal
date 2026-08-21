@@ -333,7 +333,7 @@ const Terms = () => {
               </p>
               <div className="space-y-2 text-slate-700 dark:text-slate-300">
                 <p><strong>Company:</strong> SOFTURECS AI LABS PRIVATE LIMITED</p>
-                <p><strong>Email:</strong> info@softurecs.com</p>
+                <p><strong>Email:</strong> info@softurecsailabs.com</p>
                 <p><strong>Phone:</strong> +91 7396080902</p>
                 <p><strong>Address:</strong> 5th Floor, Trinity Corporate Building, KPHB, Hyderabad, Telangana - 500072, India</p>
               </div>
