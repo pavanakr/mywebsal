@@ -1,4 +1,4 @@
-import { MessageSquare, Cpu, Zap, Search } from 'lucide-react';
+import { MessageSquare, Cpu, Zap, Search, Bot } from 'lucide-react';
 import { ServiceDetailPage } from '@/components/services/ServiceDetailPage';
 
 const MetaAPICRM = () => {
@@ -42,7 +42,23 @@ const MetaAPICRM = () => {
         'E-commerce Order Alerts',
         'Customer Interaction Center'
       ]}
-    />
+    >
+      <div className="container-custom py-12 border-t border-border/50">
+        <h3 className="text-2xl font-bold mb-8 text-center">Related Messaging Solutions</h3>
+        <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+          <a href="/whatsapp-crm" className="p-6 bg-card border border-border/50 rounded-2xl hover:border-accent/50 transition-all text-center">
+            <MessageSquare className="w-8 h-8 mx-auto mb-4 text-accent" />
+            <h4 className="font-bold mb-2">WhatsApp CRM</h4>
+            <p className="text-sm text-muted-foreground">Customer management right inside WhatsApp conversations.</p>
+          </a>
+          <a href="/services/ai-chatbot" className="p-6 bg-card border border-border/50 rounded-2xl hover:border-accent/50 transition-all text-center">
+            <Bot className="w-8 h-8 mx-auto mb-4 text-accent" />
+            <h4 className="font-bold mb-2">AI Chatbot</h4>
+            <p className="text-sm text-muted-foreground">Intelligent virtual assistants for global scale support.</p>
+          </a>
+        </div>
+      </div>
+    </ServiceDetailPage>
   );
 };
 

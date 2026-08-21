@@ -1,4 +1,4 @@
-import { Building2, Home, Users, BarChart3, MessageSquare, Zap, Search } from 'lucide-react';
+import { Building2, Home, Users, BarChart3, MessageSquare, Zap, Search, Bot } from 'lucide-react';
 import { ServiceDetailPage } from '@/components/services/ServiceDetailPage';
 
 const RealEstateCRM = () => {

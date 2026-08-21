@@ -1,4 +1,4 @@
-import { Bot, MessageSquare, Zap, Search } from 'lucide-react';
+import { Bot, MessageSquare, Zap, Search, Building2 } from 'lucide-react';
 import { ServiceDetailPage } from '@/components/services/ServiceDetailPage';
 
 const WhatsAppCRM = () => {
@@ -42,7 +42,23 @@ const WhatsAppCRM = () => {
         'Service Industry Booking',
         'Customer Support Ticketing'
       ]}
-    />
+    >
+      <div className="container-custom py-12 border-t border-border/50">
+        <h3 className="text-2xl font-bold mb-8 text-center">Related CRM Solutions</h3>
+        <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+          <a href="/all-in-one-crm" className="p-6 bg-card border border-border/50 rounded-2xl hover:border-accent/50 transition-all text-center">
+            <Zap className="w-8 h-8 mx-auto mb-4 text-accent" />
+            <h4 className="font-bold mb-2">All-in-One CRM</h4>
+            <p className="text-sm text-muted-foreground">The complete sales, marketing, and automation suite.</p>
+          </a>
+          <a href="/real-estate-crm" className="p-6 bg-card border border-border/50 rounded-2xl hover:border-accent/50 transition-all text-center">
+            <Building2 className="w-8 h-8 mx-auto mb-4 text-accent" />
+            <h4 className="font-bold mb-2">Real Estate CRM</h4>
+            <p className="text-sm text-muted-foreground">Specialized property and lead management tools.</p>
+          </a>
+        </div>
+      </div>
+    </ServiceDetailPage>
   );
 };
 

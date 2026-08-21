@@ -36,6 +36,7 @@ interface ServiceDetailProps {
   useCases: string[];
   heroImage?: string;
   seoKeywords?: string;
+  children?: React.ReactNode;
 }
 
 export function ServiceDetailPage({
@@ -51,6 +52,7 @@ export function ServiceDetailPage({
   useCases,
   heroImage,
   seoKeywords,
+  children,
 }: ServiceDetailProps) {
   const fullTitle = `${title} Services`;
   const defaultKeywords = `${title.toLowerCase()}, softurecs ai labs, software development, enterprise solutions, custom software, ${technologies.slice(0, 5).join(', ').toLowerCase()}`;
