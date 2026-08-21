@@ -34,51 +34,39 @@ const Contact = () => {
 
 Continue from the current hero.
 
-Now improve ONLY the right side of the hero.
+Now add premium floating UI cards around the right-side dashboard.
 
-Create a premium SaaS dashboard visual similar to the attached reference.
+Add these cards:
 
-Show:
+1. AI Assistant — Active
 
-- AI Assistant
+2. Analytics — +12.5%
 
-- Total Conversations
+3. Automation — 98%
 
-- Qualified Leads
+4. WhatsApp — Live
 
-- Automation Rate
+5. Lead Qualified — Added to CRM
 
-- Analytics
+Use different accent colors:
 
-- Recent Activities
+- blue
 
-- WhatsApp
+- cyan
 
-- Chat
+- purple
 
-- Email
+- green
 
-Use a clean white/light dashboard inside the colorful hero.
+- pink
 
-Add:
+Use subtle glassmorphism, borders, shadows and soft glow.
 
-- rounded cards
+Add very subtle floating animation.
 
-- subtle shadows
+Do not overcrowd the hero.
 
-- blue/purple/cyan accents
-
-- glass effects
-
-- soft glow
-
-The dashboard must look like a real AI CRM product, not an empty placeholder.
-
-Do not change the left-side content.
-
-Do not change navbar or other sections.
-
-Test responsive behavior.`;
+Do not change the existing layout or left-side content.`;
 
   return (
     <Layout>

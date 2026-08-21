@@ -123,7 +123,7 @@ const slides = [
 ];
 
 const FloatingMetric = ({ label, value, trend, trendColor }: any) => (
-  <div className="bg-white p-3 rounded-xl shadow-lg border border-slate-100 flex flex-col min-w-[120px]">
+  <div className="bg-white/90 backdrop-blur-sm p-3 rounded-xl shadow-lg border border-slate-100/50 flex flex-col min-w-[120px]">
     <span className="text-[10px] font-bold text-slate-400 uppercase tracking-tight">{label}</span>
     <div className="flex items-end justify-between mt-1">
       <span className="text-lg font-bold text-slate-900 leading-none">{value}</span>
@@ -133,6 +133,47 @@ const FloatingMetric = ({ label, value, trend, trendColor }: any) => (
     </div>
   </div>
 );
+
+const PremiumFloatingCard = ({ icon: Icon, title, status, color, className, delay = 0 }: any) => {
+  const colorMap: Record<string, string> = {
+    blue: 'from-blue-500 to-indigo-600 shadow-blue-500/20 text-blue-600 bg-blue-50',
+    cyan: 'from-cyan-400 to-blue-500 shadow-cyan-500/20 text-cyan-600 bg-cyan-50',
+    purple: 'from-purple-500 to-violet-600 shadow-purple-500/20 text-purple-600 bg-purple-50',
+    green: 'from-emerald-400 to-teal-600 shadow-emerald-500/20 text-emerald-600 bg-emerald-50',
+    pink: 'from-pink-500 to-rose-600 shadow-pink-500/20 text-pink-600 bg-pink-50',
+  };
+
+  const selectedColor = colorMap[color] || colorMap.blue;
+  const colorParts = selectedColor.split(' ');
+
+  return (
+    <motion.div
+      className={`absolute z-30 flex items-center gap-3 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-xl border border-white/50 ${className}`}
+      initial={{ opacity: 0, scale: 0.8, y: 20 }}
+      animate={{ 
+        opacity: 1, 
+        scale: 1, 
+        y: [0, -8, 0],
+      }}
+      transition={{ 
+        opacity: { duration: 0.5, delay },
+        scale: { duration: 0.5, delay },
+        y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: delay + 0.2 }
+      }}
+    >
+      <div className={`w-9 h-9 rounded-xl bg-gradient-to-tr ${colorParts[0]} ${colorParts[1]} flex items-center justify-center shadow-lg ${colorParts[2]}`}>
+        <Icon className="w-5 h-5 text-white" />
+      </div>
+      <div>
+        <div className="text-[10px] font-bold text-slate-900 leading-none mb-1">{title}</div>
+        <div className="flex items-center gap-1.5">
+          <div className={`w-1.5 h-1.5 rounded-full animate-pulse ${colorParts[3]}`} />
+          <div className="text-[9px] font-bold text-slate-500 uppercase tracking-wider">{status}</div>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
 
 const VisualComposition = ({ slide }: { slide: typeof slides[0] }) => {
   return (
@@ -245,63 +286,84 @@ const VisualComposition = ({ slide }: { slide: typeof slides[0] }) => {
         </div>
       </div>
 
-      {/* Floating Elements (AI Assistant & Workflow) */}
-      <motion.div 
-        className="absolute -left-12 top-1/2 -translate-y-1/2 z-20 w-48 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-white p-4"
-        animate={{ y: [0, -10, 0] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <div className="flex items-center gap-3 mb-3">
-          <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center shadow-lg">
-            <Bot className="w-6 h-6 text-white" />
-          </div>
-          <div>
-            <div className="text-xs font-bold text-slate-900">Hello! 👋</div>
-            <div className="text-[9px] text-slate-500 font-medium leading-tight">How can I help you today?</div>
-          </div>
-        </div>
-        <div className="space-y-2">
-          <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
-            <motion.div className="h-full bg-indigo-500" initial={{ width: 0 }} animate={{ width: '70%' }} transition={{ duration: 1 }} />
-          </div>
-          <div className="text-[8px] text-indigo-600 font-bold text-right uppercase tracking-wider">AI Processing...</div>
-        </div>
-      </motion.div>
+      {/* Floating UI Cards */}
+      <PremiumFloatingCard 
+        icon={Bot} 
+        title="AI Assistant" 
+        status="Active" 
+        color="blue" 
+        className="-left-16 top-[20%]"
+        delay={0.2}
+      />
 
+      <PremiumFloatingCard 
+        icon={TrendingUp} 
+        title="Analytics" 
+        status="+12.5%" 
+        color="purple" 
+        className="-right-12 top-[45%]"
+        delay={0.4}
+      />
+
+      <PremiumFloatingCard 
+        icon={Zap} 
+        title="Automation" 
+        status="98%" 
+        color="green" 
+        className="-left-8 bottom-[15%]"
+        delay={0.6}
+      />
+
+      <PremiumFloatingCard 
+        icon={MessageSquare} 
+        title="WhatsApp" 
+        status="Live" 
+        color="cyan" 
+        className="right-[5%] -top-8"
+        delay={0.8}
+      />
+
+      <PremiumFloatingCard 
+        icon={Users} 
+        title="Lead Qualified" 
+        status="Added to CRM" 
+        color="pink" 
+        className="left-[10%] -bottom-6"
+        delay={1}
+      />
+
+      {/* Workflow Visual Card (Simplified and Integrated) */}
       <motion.div 
-        className="absolute -right-8 top-[15%] z-20 w-40 bg-gradient-to-br from-indigo-600 to-violet-700 rounded-2xl shadow-2xl border border-white/10 p-4 text-white"
+        className="absolute -right-8 top-[10%] z-20 w-40 bg-gradient-to-br from-indigo-600/90 to-violet-700/90 backdrop-blur-md rounded-2xl shadow-2xl border border-white/10 p-4 text-white hidden md:block"
         animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
       >
-        <div className="text-[9px] font-bold text-indigo-200 uppercase tracking-widest mb-3">Automation Workflow</div>
-        <div className="space-y-4 relative">
+        <div className="text-[9px] font-bold text-indigo-200 uppercase tracking-widest mb-3">Workflow Engine</div>
+        <div className="space-y-3 relative">
           {[
-            { label: 'New Lead', sub: 'Lead captured', icon: Users },
-            { label: 'AI Processing', sub: 'Intent identified', icon: Bot },
-            { label: 'Smart Response', sub: 'AI replies instantly', icon: Zap }
+            { label: 'Capture', icon: Users },
+            { label: 'Process', icon: Bot },
+            { label: 'Respond', icon: Zap }
           ].map((step, i) => (
             <div key={i} className="flex items-center gap-2 relative z-10">
-              <div className="w-6 h-6 rounded-lg bg-white/20 flex items-center justify-center">
-                <step.icon className="w-3 h-3 text-white" />
+              <div className="w-5 h-5 rounded bg-white/20 flex items-center justify-center">
+                <step.icon className="w-2.5 h-2.5 text-white" />
               </div>
-              <div>
-                <div className="text-[9px] font-bold">{step.label}</div>
-                <div className="text-[7px] text-indigo-200">{step.sub}</div>
-              </div>
+              <div className="text-[9px] font-bold">{step.label}</div>
             </div>
           ))}
-          {/* Connector Line */}
-          <div className="absolute left-3 top-2 w-[1px] h-[calc(100%-12px)] bg-gradient-to-b from-white/40 to-transparent z-0" />
+          <div className="absolute left-2.5 top-2 w-[1px] h-[calc(100%-12px)] bg-gradient-to-b from-white/40 to-transparent z-0" />
         </div>
       </motion.div>
       
       {/* Small Floating Icons */}
-      <div className="absolute bottom-[10%] left-[20%] z-20 w-10 h-10 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg text-white">
-        <Phone className="w-5 h-5" />
+      <div className="absolute bottom-[5%] left-[25%] z-20 w-8 h-8 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg text-white">
+        <Phone className="w-4 h-4" />
       </div>
-      <div className="absolute bottom-[5%] right-[30%] z-20 w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center shadow-lg text-white">
-        <Mail className="w-4 h-4" />
+      <div className="absolute top-[5%] left-[20%] z-20 w-6 h-6 rounded-full bg-indigo-500 flex items-center justify-center shadow-lg text-white">
+        <Mail className="w-3 h-3" />
       </div>
+    </motion.div>
     </motion.div>
   );
 };
