@@ -8,7 +8,7 @@ const RealEstateCRM = () => {
       color="from-sky-500 to-blue-600"
       title="Real Estate CRM"
       tagline="Enterprise-Grade Property & Lead Management CRM"
-      description="Streamline your real estate business with our specialized CRM. Designed for brokers, developers, and agents in India to manage properties, leads, and sales pipelines with WhatsApp & AI automation."
+      description="Streamline your real estate business with our specialized CRM. Designed for brokers, developers, and agents in India to manage properties, leads, and sales pipelines with <a href='/whatsapp-crm' class='text-accent hover:underline'>WhatsApp CRM</a> & <a href='/meta-api-crm' class='text-accent hover:underline'>Meta API CRM</a> automation. Boost your sales efficiency with our <a href='/services/ai-chatbot' class='text-accent hover:underline'>AI Chatbot</a> integration."
       benefits={[
         'Automated lead tracking',
         'Real estate sales pipeline',
