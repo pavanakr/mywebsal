@@ -32,372 +32,251 @@ const Contact = () => {
 
   const commandPlaceholder = `'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
 
-The current hero slider layout is now structurally good.
+The slider functionality is working.
 
-DO NOT rebuild the slider structure again.
+The problem is now VISUAL QUALITY and CONVERSION.
 
-DO NOT change the navbar.
+Do NOT rebuild the slider.
 
-DO NOT change the hero layout, typography structure, buttons, arrows, pagination, or content positioning.
+Keep:
 
-ONLY improve the VISUAL DESIGN, COLORS, BACKGROUNDS AND SERVICE VISUALS.
+- current layout
 
-The current hero is too dark and mostly navy blue.
+- current typography
 
-I want a PREMIUM, COLORFUL AI + SAAS HERO SLIDER.
+- current navigation
 
-================================
-COLOR DIRECTION
+- current CTA positions
 
-Use a sophisticated multi-color gradient system:
+- current responsiveness
 
-Deep Navy
-
-Electric Blue
-
-Bright Blue
-
-Cyan
-
-Violet
-
-Purple
-
-Magenta
-
-Subtle Pink
-
-Teal
-
-Green accents where relevant
-
-The colors should blend smoothly.
-
-Do NOT make the entire background one dark navy color.
-
-Use layered gradients and soft color zones.
-
-Example visual direction:
-
-Navy → Blue → Violet → Purple → Cyan
-
-Use different dominant colors for different slides.
-
-Keep the overall SOFTURECS AI LABS branding professional.
+ONLY improve the visual experience.
 
 ================================
-SLIDE-SPECIFIC COLORS
 
-SLIDE 1 — AI CHATBOTS
+CURRENT PROBLEMS
 
-Dominant:
-Blue + Violet + Cyan
+1. Too much empty space on the right side.
 
-Add subtle:
-Purple/Pink glow
+2. The AI dashboard looks like a placeholder.
 
-Visual:
-AI chatbot + conversation UI + AI assistant.
+3. It does not communicate software company credibility.
 
-The AI visual should have bright cyan/blue/purple accents.
+4. The hero does not showcase our actual products.
+
+5. It looks like a template instead of a premium software company.
 
 ================================
-SLIDE 2 — AI AUTOMATION
 
-Dominant:
-Purple + Magenta + Electric Blue
+NEW DIRECTION
 
-Add:
-Cyan workflow highlights.
+Transform the hero into a PRODUCT-FIRST HERO.
 
-Show a colorful automation workflow:
+Instead of abstract cards, showcase realistic software products.
 
-Lead Capture
-↓
-AI Processing
-↓
-Smart Response
-↓
-Lead Qualification
-↓
-CRM
-
-Each workflow stage can have a subtle different accent color.
-
-================================
-SLIDE 3 — REAL ESTATE CRM
-
-Dominant:
-Blue + Teal + Violet
-
-Add:
-Subtle green/cyan accents.
-
-Show:
-
-property cards
-
-leads
-
-agents
-
-sales pipeline
-
-analytics
-
-Use a bright, premium dashboard visual instead of a generic photograph.
-
-================================
-SLIDE 4 — WHATSAPP + META API
-
-Dominant:
-Green + Cyan + Blue
-
-Add:
-Purple gradient around the CRM side.
-
-Show:
-
-WhatsApp
-→ AI Response
-→ Lead
-→ CRM
-→ Follow-up
-
-The WhatsApp element can use a recognizable green accent, but do not make the entire slide green.
-
-================================
-SLIDE 5 — ALL-IN-ONE CRM
-
-Dominant:
-Blue + Purple + Cyan
-
-Show a modern colorful CRM dashboard containing:
-
-Leads
-
-Customers
-
-Sales
-
-Revenue
-
-Analytics
-
-Automation
-
-Tasks
-
-================================
-BACKGROUND
-
-Replace the flat dark background with a premium layered background.
-
-Use:
-
-large soft gradient blobs
-
-subtle blue/purple radial gradients
-
-abstract flowing shapes
-
-subtle technology lines
-
-very light particles
-
-soft glow around important visual elements
-
-smooth color transitions
-
-Keep the background sophisticated.
-
-Do NOT use excessive particles.
-
-Do NOT use a black background.
-
-Do NOT make it look like a gaming website.
-
-================================
-RIGHT-SIDE VISUAL
-
-The right-side visual is currently too empty.
-
-Make the visual much richer.
-
-Create a large modern UI composition containing:
-
-MAIN DASHBOARD
-+
-FLOATING AI ASSISTANT CARD
-+
-AUTOMATION CARD
-+
-ANALYTICS CARD
-+
-CHANNEL/CRM CARD
-
-Use different accent colors for these cards.
-
-Cards should be light/white or translucent with subtle gradients.
-
-Example:
-
-AI Assistant
-cyan/purple
-
-Automation
-violet/blue
-
-Analytics
-blue/cyan
-
-WhatsApp
-green
-
-CRM
-purple/blue
-
-================================
-GLASS EFFECT
-
-Use subtle glassmorphism for floating cards:
-
-translucent backgrounds
-
-light borders
-
-soft blur
-
-subtle shadows
-
-slight gradient borders
-
-Do NOT overuse glassmorphism.
-
-================================
-CTA BUTTONS
-
-Make the primary CTA more colorful.
-
-Use a premium gradient:
-
-Blue → Purple
-
-or
-
-Blue → Violet → Pink
-
-Secondary CTA:
-transparent/glass style with a clean white border.
-
-Keep text highly readable.
-
-================================
-BADGE
-
-The service badge should use a small colorful accent matching the slide.
+For each slide create realistic product UI mockups.
 
 Examples:
 
-AI CHATBOTS
-blue/purple
+REAL ESTATE CRM:
 
-AI AUTOMATION
-purple/magenta
+- property management dashboard
 
-REAL ESTATE CRM
-blue/teal
+- lead pipeline
 
-WHATSAPP + META API
-green/cyan
+- agent management
 
-ALL-IN-ONE CRM
-blue/violet
+- property listings
+
+- follow-up system
+
+WHATSAPP CRM:
+
+- WhatsApp inbox
+
+- customer chat
+
+- lead capture
+
+- automation workflow
+
+- CRM integration
+
+AI CHATBOT:
+
+- AI assistant
+
+- live conversations
+
+- lead qualification
+
+- AI recommendations
+
+- support automation
+
+AI AUTOMATION:
+
+- workflow builder
+
+- automation nodes
+
+- triggers
+
+- actions
+
+- reporting
+
+ALL-IN-ONE CRM:
+
+- dashboard
+
+- sales pipeline
+
+- customer management
+
+- tasks
+
+- analytics
+
+- revenue tracking
 
 ================================
-TEXT
 
-Keep the existing typography structure.
+RIGHT SIDE VISUAL
 
-Do NOT make the headline larger.
+Replace generic floating cards.
 
-Do NOT create one-word-per-line headlines.
+Create a hero composition using:
 
-Keep the headline white with one important keyword highlighted using a subtle gradient color.
+MAIN PRODUCT SCREENSHOT
 
-Example:
++
 
-AI Chatbots
-That Work
-24/7
+3-4 floating mini cards
 
-"AI" or "24/7" can have a blue/purple/cyan gradient accent.
+Examples:
+
+Lead Captured
+
++27 Leads Today
+
+AI Active
+
+Revenue Growth
+
+Automation Running
+
+WhatsApp Connected
+
+Cards should feel useful and realistic.
 
 ================================
-ANIMATION
 
-Add subtle premium animation:
+SOCIAL PROOF
 
-floating dashboard cards
+Below CTA buttons add:
 
-slow gradient movement
+500+ Clients
 
-soft glow movement
+50+ Industries
 
-subtle floating AI elements
+70+ Countries
 
-workflow pulse
+24/7 Support
 
-dashboard chart animation
-
-Keep animations smooth and professional.
-
-Do NOT use distracting animations.
-
-Do NOT make text bounce or move aggressively.
-
-Respect prefers-reduced-motion.
+Display in a premium trust bar.
 
 ================================
-IMPORTANT
 
-Keep the CURRENT slider structure because it is now acceptable.
+ADD TRUST ELEMENTS
 
-Only upgrade:
+Below the hero content add:
 
-colors
+Trusted by Businesses Worldwide
 
-gradients
+Show:
 
-visual richness
+CRM
 
-dashboard visuals
+AI
 
-floating cards
+Automation
 
-backgrounds
+WhatsApp
 
-CTA appearance
+Meta API
 
-service-specific visual accents
+Software Development
 
-subtle animations
+as premium technology badges.
 
-The final result should feel like:
+================================
 
-PREMIUM AI COMPANY
-+
-ENTERPRISE SaaS
-+
-MODERN CRM
-+
-BUSINESS AUTOMATION
+VISUAL STYLE
 
-It should immediately communicate that SOFTURECS AI LABS provides AI, CRM, WhatsApp, automation and software solutions.
+Use:
 
-Make the result colorful, premium and visually rich without becoming flashy.
+- realistic SaaS dashboards
 
-After implementation, test desktop, tablet and mobile and ensure there is no horizontal overflow or layout break.''`;
+- CRM interfaces
+
+- analytics charts
+
+- AI assistant panels
+
+- workflow diagrams
+
+- WhatsApp inbox visuals
+
+Do NOT use generic placeholders.
+
+Do NOT use empty decorative cards.
+
+Do NOT use stock office photos.
+
+================================
+
+BACKGROUND
+
+Reduce darkness by 30%.
+
+Add:
+
+- subtle blue gradients
+
+- purple highlights
+
+- glass panels
+
+- soft lighting
+
+The product UI should become the hero focus.
+
+================================
+
+CONVERSION FOCUS
+
+When visitors land on the page they should immediately understand:
+
+1. We build CRM software.
+
+2. We provide AI solutions.
+
+3. We provide WhatsApp automation.
+
+4. We provide custom software.
+
+5. We are a professional software company.
+
+The hero should look similar in quality to modern SaaS companies rather than a generic website template.
+
+Enhance visuals only.
+
+Do not change layout structure.
+
+Do not change responsiveness.
+
+Do not change navigation.`;
 
   return (
     <Layout>
