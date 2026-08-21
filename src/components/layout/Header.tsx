@@ -2,6 +2,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import salLogo from '@/assets/sal-logo.png.asset.json';
+
 import { 
   Menu, X, ChevronDown, ChevronRight, Code, Smartphone, Cloud, Cpu, Globe, Layers, Sun, Moon, RefreshCw,
   Building2, Server, Users, Handshake, Award, MessageSquare, Network, Briefcase,
