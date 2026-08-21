@@ -364,7 +364,6 @@ const VisualComposition = ({ slide }: { slide: typeof slides[0] }) => {
         <Mail className="w-3 h-3" />
       </div>
     </motion.div>
-    </motion.div>
   );
 };
 
