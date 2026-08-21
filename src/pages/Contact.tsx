@@ -30,7 +30,7 @@ const Contact = () => {
     setFormData({ name: '', email: '', company: '', phone: '', service: '', message: '' });
   };
 
-  const commandPlaceholder = "'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n\nenhance slider tittles size and make it some more attractive design";
+  const commandPlaceholder = "'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n\ntittle is overlapping to header so make it in single line with some small size at slider";
 
   return (
     <Layout>
