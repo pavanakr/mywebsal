@@ -139,9 +139,9 @@ export const ServiceIndustryPage = () => {
   return (
     <Layout>
       <SEO
-        title={`${serviceInfo.name} for ${industryInfo.name}`}
-        description={`Expert ${serviceInfo.name.toLowerCase()} services for the ${industryInfo.name.toLowerCase()} industry. HIPAA/PCI compliant solutions from Softurecs AI Labs.`}
-        keywords={`${serviceInfo.name.toLowerCase()} ${industryInfo.name.toLowerCase()}, ${industryInfo.name.toLowerCase()} software, ${serviceInfo.slug}, ${industryInfo.slug} solutions`}
+        title={`${serviceInfo.name} for ${industryInfo.name} Industry`}
+        description={`SOFTURECS AI LABS: Expert ${serviceInfo.name.toLowerCase()} services tailored for the ${industryInfo.name.toLowerCase()} industry. Scalable, secure, and compliant solutions.`}
+        keywords={`${serviceInfo.name.toLowerCase()} for ${industryInfo.name.toLowerCase()}, ${industryInfo.name.toLowerCase()} software development, ${serviceInfo.slug}, ${industryInfo.slug} solutions`}
       />
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://softurecs.com/' },

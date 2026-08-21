@@ -1,5 +1,6 @@
 # Robots.txt for SOFTURECS AI LABS PRIVATE LIMITED
 # Website: https://softurecs.com
+# Updated: 2026-08-21
 
 # Allow all search engines
 User-agent: *

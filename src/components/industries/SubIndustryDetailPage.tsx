@@ -47,13 +47,13 @@ export function SubIndustryDetailPage({
   benefits,
   stats,
 }: SubIndustryDetailProps) {
-  const seoKeywords = `${name.toLowerCase()}, ${parentIndustry.toLowerCase()} solutions, ${technologies.slice(0, 4).join(', ').toLowerCase()}, enterprise software, digital transformation`;
+  const seoKeywords = `${name.toLowerCase()} software, ${parentIndustry.toLowerCase()} solutions, ${technologies.slice(0, 4).join(', ').toLowerCase()}, enterprise software, digital transformation`;
 
   return (
     <Layout>
       <SEO
-        title={`${name} - ${parentIndustry} Solutions`}
-        description={description}
+        title={`${name} - Specialized ${parentIndustry} Software`}
+        description={`Custom ${name.toLowerCase()} development for the ${parentIndustry.toLowerCase()} sector. ${description}`}
         keywords={seoKeywords}
       />
       

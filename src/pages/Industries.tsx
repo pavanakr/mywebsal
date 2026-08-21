@@ -155,9 +155,9 @@ const Industries = () => {
   return (
     <Layout>
       <SEO
-        title="Industry Solutions | Softurecs AI Labs"
-        description="Industry-focused software for healthcare, fintech, retail & logistics. Tailored digital transformation solutions with deep domain expertise."
-        keywords="industry software solutions, healthcare technology, fintech solutions, retail ecommerce, logistics software"
+        title="Industry-Specific Software Solutions"
+        description="SOFTURECS AI LABS: Tailored software solutions for healthcare, fintech, e-commerce, logistics, and real estate. Industry expertise meets tech innovation."
+        keywords="healthcare software solutions, fintech development, retail e-commerce systems, logistics technology, real estate CRM software"
       />
       <PageHero
         title="Industry-Focused Software Solutions for Digital Growth"

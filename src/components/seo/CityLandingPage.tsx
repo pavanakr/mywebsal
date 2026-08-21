@@ -170,9 +170,9 @@ export const CityLandingPage = () => {
   return (
     <Layout>
       <SEO
-        title={`Software Development Company in ${formattedCity}`}
-        description={`Leading AI & software development company in ${formattedCity}. Custom apps, cloud solutions & digital transformation. Contact Softurecs AI Labs today.`}
-        keywords={`software development ${formattedCity}, AI company ${formattedCity}, mobile app development ${formattedCity}, IT services ${cityInfo.region}`}
+        title={`Top AI Software Development Company in ${formattedCity}`}
+        description={`SOFTURECS AI LABS: Leading AI & software development company serving ${formattedCity}. Custom apps, cloud solutions & digital transformation for ${cityInfo.region} businesses.`}
+        keywords={`software development ${formattedCity}, AI company ${formattedCity}, mobile app development ${formattedCity}, custom software ${formattedCity}, IT services ${cityInfo.region}`}
       />
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://softurecs.com/' },

@@ -61,8 +61,8 @@ export function IndustryDetailPage({
   return (
     <Layout>
       <SEO
-        title={`${name} Industry Solutions`}
-        description={description}
+        title={`${name} Industry Software Solutions`}
+        description={`SOFTURECS AI LABS provides expert software solutions for the ${name.toLowerCase()} industry. ${tagline}`}
         keywords={seoKeywords || defaultKeywords}
       />
       

@@ -78,9 +78,9 @@ const Services = () => {
   return (
     <Layout>
       <SEO
-        title="Software Development Services"
-        description="End-to-end AI-powered software development services. Custom apps, cloud solutions & digital transformation trusted by 700+ global clients."
-        keywords="software development services, AI solutions, mobile app development, cloud services, custom software development"
+        title="AI-Powered Software Development Services"
+        description="SOFTURECS AI LABS: Comprehensive software development services. Specialized in AI automation, mobile apps, big data, and cloud transformation."
+        keywords="AI development services, custom software development, mobile app development company, enterprise AI solutions, cloud transformation services"
       />
       <PageHero
         title="End-to-End Software Development Services Powered by AI"

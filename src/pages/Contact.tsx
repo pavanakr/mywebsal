@@ -74,7 +74,7 @@ const Contact = () => {
                       <label className="block text-sm font-medium text-foreground mb-2">Full Name *</label>
                       <Input
                         required
-                        placeholder="'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            use CSS to completely hide the Lovable badge (the 'Made with Lovable' element), without breaking the layout"
+                        placeholder="John Smith"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       />
@@ -84,7 +84,7 @@ const Contact = () => {
                       <Input
                         type="email"
                         required
-                        placeholder="'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            use CSS to completely hide the Lovable badge (the 'Made with Lovable' element), without breaking the layout"
+                        placeholder="john@company.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       />
@@ -94,7 +94,7 @@ const Contact = () => {
                     <div>
                       <label className="block text-sm font-medium text-foreground mb-2">Company</label>
                       <Input
-                        placeholder="'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            use CSS to completely hide the Lovable badge (the 'Made with Lovable' element), without breaking the layout"
+                        placeholder="Your Company"
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                       />
@@ -103,7 +103,7 @@ const Contact = () => {
                       <label className="block text-sm font-medium text-foreground mb-2">Phone Number</label>
                       <Input
                         type="tel"
-                        placeholder="'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            use CSS to completely hide the Lovable badge (the 'Made with Lovable' element), without breaking the layout"
+                        placeholder="+91 9876543210"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       />
@@ -131,7 +131,7 @@ const Contact = () => {
                     <Textarea
                       required
                       rows={5}
-                      placeholder="'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            use CSS to completely hide the Lovable badge (the 'Made with Lovable' element), without breaking the layout"
+                      placeholder="Describe your project requirements..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     />

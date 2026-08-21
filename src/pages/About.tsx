@@ -72,9 +72,9 @@ const About = () => {
   return (
     <Layout>
       <SEO
-        title="About Softurecs AI Labs"
-        description="Learn about Softurecs AI Labs, a leading AI-driven software company in Hyderabad. 5+ years delivering 200+ projects worldwide with innovative solutions."
-        keywords="about softurecs, AI software company, Hyderabad IT company, software development company India"
+        title="About Softurecs AI Labs | AI Software Innovators"
+        description="SOFTURECS AI LABS PRIVATE LIMITED: Leading AI-driven software company in Hyderabad. Discover our mission to bridge business gaps with intelligent technology."
+        keywords="about softurecs ai labs, AI software company India, Hyderabad IT innovations, tech company mission, Pavan Kumar Naramala"
       />
       <OrganizationSchema />
       <BreadcrumbSchema items={[

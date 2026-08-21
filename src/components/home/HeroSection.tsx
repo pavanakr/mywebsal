@@ -52,8 +52,7 @@ export function HeroSection() {
             </div>
 
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-[5.25rem] font-extrabold text-primary-foreground leading-[1.05] tracking-tight">
-              Architecting the{' '}
-              <span className="text-accent">Intelligence</span> of Tomorrow
+              Leading <span className="text-accent">AI Software</span> Development Company
             </h1>
 
             <p className="text-lg md:text-xl text-primary-foreground/70 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
