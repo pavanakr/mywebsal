@@ -155,7 +155,7 @@ export function Footer() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={containerVariants}
-            className="hidden lg:grid lg:grid-cols-4 gap-8"
+            className="hidden lg:grid lg:grid-cols-6 gap-8"
           >
             {footerColumns.map((column, columnIndex) => (
               <motion.div key={column.title} variants={itemVariants}>
