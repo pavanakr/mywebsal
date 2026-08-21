@@ -8,8 +8,8 @@ const slides = [
   {
     id: 1,
     badge: "AI-POWERED SOLUTIONS",
-    title: { main: "AI Chatbots That Work", highlight: "24/7" },
-    description: "Automate customer conversations, qualify leads and deliver intelligent support with AI-powered chatbots.",
+    title: { main: "AI Chatbots &", highlight: "Smart Automation" },
+    description: "Automate conversations, qualify leads, provide 24/7 support and streamline your business operations with intelligent AI.",
     primaryCta: "Explore AI Solutions",
     secondaryCta: "Book a Free Consultation",
     link: "/services/ai-chatbot",
@@ -30,10 +30,10 @@ const slides = [
   },
   {
     id: 2,
-    badge: "AI AUTOMATION",
-    title: { main: "Automate Your Business", highlight: "With AI" },
-    description: "Connect leads, conversations, follow-ups and business workflows with intelligent automation.",
-    primaryCta: "Explore AI Automation",
+    badge: "AI-POWERED SOLUTIONS",
+    title: { main: "AI Chatbots &", highlight: "Smart Automation" },
+    description: "Automate conversations, qualify leads, provide 24/7 support and streamline your business operations with intelligent AI.",
+    primaryCta: "Explore AI Solutions",
     secondaryCta: "Book a Free Consultation",
     link: "/services/ai-automation",
     colors: { 
@@ -53,10 +53,10 @@ const slides = [
   },
   {
     id: 3,
-    badge: "REAL ESTATE CRM",
-    title: { main: "Smarter CRM for", highlight: "Real Estate Growth" },
-    description: "Manage properties, leads, agents, follow-ups and sales from one powerful CRM platform.",
-    primaryCta: "Explore Real Estate CRM",
+    badge: "AI-POWERED SOLUTIONS",
+    title: { main: "AI Chatbots &", highlight: "Smart Automation" },
+    description: "Automate conversations, qualify leads, provide 24/7 support and streamline your business operations with intelligent AI.",
+    primaryCta: "Explore AI Solutions",
     secondaryCta: "Book a Free Consultation",
     link: "/solutions/real-estate-crm",
     colors: { 
@@ -76,10 +76,10 @@ const slides = [
   },
   {
     id: 4,
-    badge: "WHATSAPP + META API",
-    title: { main: "Turn Conversations", highlight: "Into Customers" },
-    description: "Connect WhatsApp and Meta APIs with your CRM to manage conversations, leads and automation.",
-    primaryCta: "Explore WhatsApp CRM",
+    badge: "AI-POWERED SOLUTIONS",
+    title: { main: "AI Chatbots &", highlight: "Smart Automation" },
+    description: "Automate conversations, qualify leads, provide 24/7 support and streamline your business operations with intelligent AI.",
+    primaryCta: "Explore AI Solutions",
     secondaryCta: "Book a Free Consultation",
     link: "/solutions/whatsapp-crm",
     colors: { 
@@ -99,10 +99,10 @@ const slides = [
   },
   {
     id: 5,
-    badge: "ALL-IN-ONE CRM",
-    title: { main: "One CRM.", highlight: "Your Entire Business." },
-    description: "Bring sales, customer management, automation and business operations together in one powerful platform.",
-    primaryCta: "Explore CRM Solutions",
+    badge: "AI-POWERED SOLUTIONS",
+    title: { main: "AI Chatbots &", highlight: "Smart Automation" },
+    description: "Automate conversations, qualify leads, provide 24/7 support and streamline your business operations with intelligent AI.",
+    primaryCta: "Explore AI Solutions",
     secondaryCta: "Book a Free Consultation",
     link: "/services/crm-solutions",
     colors: { 
@@ -467,29 +467,29 @@ export function HeroSlider() {
               transition={{ duration: 0.6 }}
             >
               <div className="space-y-6 text-center lg:text-left">
-                <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 text-white text-[10px] font-bold tracking-widest uppercase backdrop-blur-sm ${slides[currentSlide].colors.badge}`}>
+                <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 text-white text-[10px] font-bold tracking-[0.2em] uppercase backdrop-blur-md ${slides[currentSlide].colors.badge}`}>
                   {slides[currentSlide].badge}
                 </div>
                 
-                <h1 className="text-4xl md:text-6xl font-bold text-white leading-[1.1]">
-                  {slides[currentSlide].title.main} <br />
-                  <span className={`bg-clip-text text-transparent bg-gradient-to-r ${slides[currentSlide].colors.highlight}`}>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight lg:leading-[1.15] max-w-2xl">
+                  {slides[currentSlide].title.main}
+                  <span className={`block mt-2 bg-clip-text text-transparent bg-gradient-to-r ${slides[currentSlide].colors.highlight}`}>
                     {slides[currentSlide].title.highlight}
                   </span>
                 </h1>
                 
-                <p className="text-slate-300 leading-relaxed max-w-lg mx-auto lg:mx-0">
+                <p className="text-slate-300 text-lg leading-relaxed max-w-lg mx-auto lg:mx-0 opacity-90">
                   {slides[currentSlide].description}
                 </p>
 
-                <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-5 pt-4">
                   <Link to={slides[currentSlide].link}>
-                    <Button size="lg" className={`bg-gradient-to-r ${slides[currentSlide].colors.gradient} hover:opacity-90 rounded-xl h-14 px-8 font-bold shadow-xl`}>
+                    <Button size="lg" className={`bg-gradient-to-r ${slides[currentSlide].colors.gradient} hover:opacity-90 rounded-2xl h-14 px-10 font-bold shadow-2xl transition-all hover:scale-[1.02] active:scale-[0.98]`}>
                       {slides[currentSlide].primaryCta} <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
                   </Link>
                   <Link to="/contact">
-                    <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 rounded-xl h-14 px-8 font-bold">
+                    <Button size="lg" variant="outline" className="bg-white/5 backdrop-blur-md border-white/20 text-white hover:bg-white/10 rounded-2xl h-14 px-10 font-bold transition-all hover:scale-[1.02] active:scale-[0.98]">
                       {slides[currentSlide].secondaryCta}
                     </Button>
                   </Link>
