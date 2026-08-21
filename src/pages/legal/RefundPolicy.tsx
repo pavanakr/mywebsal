@@ -202,7 +202,7 @@ const RefundPolicy = () => {
               </p>
               <div className="space-y-4">
                 {[
-                  { step: 1, title: 'Submit Request', desc: 'Email info@softurecs.com with subject "Refund Request - [Project Name]"' },
+                  { step: 1, title: 'Submit Request', desc: 'Email info@softurecsailabs.com with subject "Refund Request - [Project Name]"' },
                   { step: 2, title: 'Provide Details', desc: 'Include project ID, payment details, amount requested, and reason for refund' },
                   { step: 3, title: 'Review Period', desc: 'Our team will review your request within 5 business days' },
                   { step: 4, title: 'Resolution', desc: 'You will receive a written response with our decision and next steps' },
@@ -281,7 +281,7 @@ const RefundPolicy = () => {
                 For any questions regarding our refund policy or to initiate a refund request, please contact us:
               </p>
               <div className="space-y-2 text-slate-700 dark:text-slate-300">
-                <p><strong>Email:</strong> info@softurecs.com</p>
+                <p><strong>Email:</strong> info@softurecsailabs.com</p>
                 <p><strong>Phone:</strong> +91 7396080902</p>
                 <p><strong>Address:</strong> 5th Floor, Trinity Corporate Building, KPHB, Hyderabad, Telangana - 500072</p>
                 <p><strong>Business Hours:</strong> Monday - Saturday, 9:00 AM - 7:00 PM IST</p>

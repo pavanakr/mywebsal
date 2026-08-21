@@ -255,9 +255,9 @@ export function SubIndustryDetailPage({
                   <Phone className="w-5 h-5" />
                   <span className="font-medium">+91 7396080902</span>
                 </a>
-                <a href="mailto:info@softurecs.com" className="flex items-center gap-2 hover:text-primary/80 transition-colors">
+                <a href="mailto:info@softurecsailabs.com" className="flex items-center gap-2 hover:text-primary/80 transition-colors">
                   <Mail className="w-5 h-5" />
-                  <span className="font-medium">info@softurecs.com</span>
+                  <span className="font-medium">info@softurecsailabs.com</span>
                 </a>
               </div>
             </div>
