@@ -153,7 +153,7 @@ const PremiumFloatingCard = ({ icon: Icon, title, status, color, className, dela
 
   return (
     <motion.div
-      className={`absolute z-30 flex items-center gap-3 bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl shadow-lg border border-slate-200/50 ${className}`}
+      className={`absolute z-30 flex items-center gap-3 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-lg shadow-lg border border-slate-200/50 ${className}`}
       initial={{ opacity: 0, scale: 0.8, y: 20 }}
       animate={{ 
         opacity: 1, 
@@ -189,7 +189,7 @@ const VisualComposition = ({ slide }: { slide: typeof slides[0] }) => {
       transition={{ duration: 0.8 }}
     >
       {/* Background Glows */}
-      <div className={`absolute inset-0 bg-gradient-to-tr ${slide.colors.bgGlow} rounded-full blur-[120px] opacity-30 animate-pulse-slow`} />
+      <div className={`absolute inset-0 bg-gradient-to-tr ${slide.colors.bgGlow} rounded-full blur-[100px] opacity-20 animate-pulse-slow`} />
       
       {/* Main Dashboard Container */}
       <div className="relative z-10 w-full h-full bg-white rounded-3xl shadow-[0_32px_64px_-12px_rgba(0,0,0,0.14)] border border-slate-100 overflow-hidden flex flex-col">
@@ -245,47 +245,47 @@ const VisualComposition = ({ slide }: { slide: typeof slides[0] }) => {
         </div>
       </div>
 
-      {/* Conditional Floating UI Cards */}
+      {/* Conditional Floating UI Cards - Positioned to stay clear of text and dashboard core */}
       {slide.visual.type === 'chatbot' && (
         <>
-          <PremiumFloatingCard icon={Bot} title="AI Assistant" status="Active" color="blue" className="-left-16 top-[20%]" delay={0.2} />
-          <PremiumFloatingCard icon={MessageSquare} title="WhatsApp" status="Live" color="cyan" className="right-[5%] -top-8" delay={0.4} />
+          <PremiumFloatingCard icon={Bot} title="AI Assistant" status="Active" color="blue" className="-left-8 top-[15%] hidden md:flex" delay={0.2} />
+          <PremiumFloatingCard icon={MessageSquare} title="WhatsApp" status="Live" color="cyan" className="right-[8%] -top-4 hidden md:flex" delay={0.4} />
         </>
       )}
 
       {slide.visual.type === 'automation' && (
         <>
-          <PremiumFloatingCard icon={Zap} title="Automation" status="98%" color="green" className="-left-8 bottom-[15%]" delay={0.2} />
-          <PremiumFloatingCard icon={TrendingUp} title="Efficiency" status="+45%" color="purple" className="-right-12 top-[45%]" delay={0.4} />
+          <PremiumFloatingCard icon={Zap} title="Automation" status="98%" color="green" className="-left-4 bottom-[20%] hidden md:flex" delay={0.2} />
+          <PremiumFloatingCard icon={TrendingUp} title="Efficiency" status="+45%" color="purple" className="-right-8 top-[40%] hidden md:flex" delay={0.4} />
         </>
       )}
 
       {slide.visual.type === 'real-estate' && (
         <>
-          <PremiumFloatingCard icon={Building2} title="Properties" status="482 Active" color="blue" className="-left-16 top-[20%]" delay={0.2} />
-          <PremiumFloatingCard icon={Users} title="New Lead" status="Real Estate" color="pink" className="left-[10%] -bottom-6" delay={0.4} />
+          <PremiumFloatingCard icon={Building2} title="Properties" status="482 Active" color="blue" className="-left-8 top-[15%] hidden md:flex" delay={0.2} />
+          <PremiumFloatingCard icon={Users} title="New Lead" status="Real Estate" color="pink" className="left-[15%] -bottom-4 hidden md:flex" delay={0.4} />
         </>
       )}
 
       {slide.visual.type === 'whatsapp' && (
         <>
-          <PremiumFloatingCard icon={MessageSquare} title="WhatsApp API" status="Connected" color="green" className="right-[5%] -top-8" delay={0.2} />
-          <PremiumFloatingCard icon={Bot} title="AI Agent" status="Responding" color="cyan" className="-left-16 top-[20%]" delay={0.4} />
+          <PremiumFloatingCard icon={MessageSquare} title="WhatsApp API" status="Connected" color="green" className="right-[8%] -top-4 hidden md:flex" delay={0.2} />
+          <PremiumFloatingCard icon={Bot} title="AI Agent" status="Responding" color="cyan" className="-left-8 top-[15%] hidden md:flex" delay={0.4} />
         </>
       )}
 
       {slide.visual.type === 'complete-crm' && (
         <>
-          <PremiumFloatingCard icon={Database} title="Cloud DB" status="Synced" color="blue" className="-left-8 bottom-[15%]" delay={0.2} />
-          <PremiumFloatingCard icon={TrendingUp} title="Analytics" status="+12.5%" color="purple" className="-right-12 top-[45%]" delay={0.4} />
+          <PremiumFloatingCard icon={Database} title="Cloud DB" status="Synced" color="blue" className="-left-4 bottom-[20%] hidden md:flex" delay={0.2} />
+          <PremiumFloatingCard icon={TrendingUp} title="Analytics" status="+12.5%" color="purple" className="-right-8 top-[40%] hidden md:flex" delay={0.4} />
         </>
       )}
 
       {/* Conditional Enhanced Workflow Visual Card for Automation/WhatsApp slides */}
       {(slide.visual.type === 'automation' || slide.visual.type === 'whatsapp') && (
         <motion.div 
-          className="absolute -right-12 top-[10%] z-20 w-48 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-white/50 p-4 hidden md:block"
-          animate={{ y: [0, 10, 0] }}
+          className="absolute -right-8 top-[12%] z-20 w-44 bg-white/95 backdrop-blur-md rounded-xl shadow-xl border border-white/50 p-3 hidden lg:block"
+          animate={{ y: [0, 8, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
         >
           <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
@@ -319,12 +319,12 @@ const VisualComposition = ({ slide }: { slide: typeof slides[0] }) => {
         </motion.div>
       )}
       
-      {/* Small Floating Icons */}
-      <div className="absolute bottom-[5%] left-[25%] z-20 w-8 h-8 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg text-white">
+      {/* Small Floating Icons - Hidden on small screens to avoid clutter */}
+      <div className="absolute bottom-[8%] left-[28%] z-20 w-8 h-8 rounded-full bg-[#25D366] items-center justify-center shadow-lg text-white hidden md:flex hover:scale-110 transition-transform">
         <Phone className="w-4 h-4" />
       </div>
-      <div className="absolute top-[5%] left-[20%] z-20 w-6 h-6 rounded-full bg-indigo-500 flex items-center justify-center shadow-lg text-white">
-        <Mail className="w-3 h-3" />
+      <div className="absolute top-[8%] left-[22%] z-20 w-7 h-7 rounded-full bg-indigo-500 items-center justify-center shadow-lg text-white hidden md:flex hover:scale-110 transition-transform">
+        <Mail className="w-3.5 h-3.5" />
       </div>
     </motion.div>
   );
@@ -367,7 +367,7 @@ export function HeroSlider() {
   return (
     <section 
       id="hero-slider"
-      className="relative w-full overflow-hidden bg-[#040612] pt-32 pb-16 md:pt-40 md:pb-20 min-h-[850px] md:min-h-[750px] flex items-center"
+      className="relative w-full overflow-hidden bg-[#040612] pt-28 pb-12 md:pt-36 md:pb-16 min-h-[700px] md:min-h-[750px] flex items-center"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -389,13 +389,13 @@ export function HeroSlider() {
             className="absolute inset-0"
           >
             {/* Primary Soft Glows matching slide colors */}
-            <div className={`absolute top-[-20%] right-[-10%] w-[80%] h-[80%] rounded-full blur-[140px] opacity-25 mix-blend-screen bg-gradient-to-br ${slides[currentSlide].colors.bgGlow}`} />
-            <div className={`absolute bottom-[-30%] left-[-20%] w-[70%] h-[70%] rounded-full blur-[140px] opacity-20 mix-blend-screen bg-gradient-to-tr ${slides[currentSlide].colors.bgGlow}`} />
+            <div className={`absolute top-[-15%] right-[-10%] w-[55%] h-[65%] rounded-full blur-[110px] opacity-15 mix-blend-screen bg-gradient-to-br ${slides[currentSlide].colors.bgGlow}`} />
+            <div className={`absolute bottom-[-25%] left-[-15%] w-[45%] h-[55%] rounded-full blur-[110px] opacity-12 mix-blend-screen bg-gradient-to-tr ${slides[currentSlide].colors.bgGlow}`} />
             
             {/* Multi-color accents (Blue, Purple, Magenta) */}
-            <div className="absolute top-[20%] left-[10%] w-[40%] h-[40%] rounded-full blur-[120px] opacity-15 bg-blue-600/20 mix-blend-soft-light" />
-            <div className="absolute bottom-[10%] right-[20%] w-[35%] h-[35%] rounded-full blur-[120px] opacity-15 bg-purple-600/20 mix-blend-soft-light" />
-            <div className="absolute top-[40%] right-[30%] w-[20%] h-[20%] rounded-full blur-[100px] opacity-10 bg-magenta-500/15 mix-blend-screen" />
+            <div className="absolute top-[20%] left-[10%] w-[40%] h-[40%] rounded-full blur-[100px] opacity-10 bg-blue-600/15 mix-blend-soft-light" />
+            <div className="absolute bottom-[10%] right-[20%] w-[35%] h-[35%] rounded-full blur-[100px] opacity-10 bg-purple-600/15 mix-blend-soft-light" />
+            <div className="absolute top-[40%] right-[30%] w-[20%] h-[20%] rounded-full blur-[80px] opacity-8 bg-magenta-500/10 mix-blend-screen" />
           </motion.div>
         </AnimatePresence>
 
@@ -420,7 +420,7 @@ export function HeroSlider() {
                   {slides[currentSlide].badge}
                 </div>
                 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight lg:leading-[1.15] max-w-2xl">
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight lg:leading-[1.15] max-w-2xl">
                   {slides[currentSlide].title.main}
                   <span className={`block mt-2 bg-clip-text text-transparent bg-gradient-to-r ${slides[currentSlide].colors.highlight}`}>
                     {slides[currentSlide].title.highlight}
@@ -433,12 +433,12 @@ export function HeroSlider() {
 
                 <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-5 pt-4">
                   <Link to={slides[currentSlide].link}>
-                    <Button size="lg" className={`bg-gradient-to-r ${slides[currentSlide].colors.gradient} hover:opacity-90 rounded-xl h-16 px-10 font-bold shadow-[0_20px_40px_-10px_rgba(0,0,0,0.3)] transition-all hover:scale-[1.02] active:scale-[0.98] border-none group`}>
+                    <Button size="lg" className={`bg-gradient-to-r ${slides[currentSlide].colors.gradient} hover:opacity-90 rounded-xl h-14 px-8 font-bold shadow-[0_20px_40px_-10px_rgba(0,0,0,0.3)] transition-all hover:scale-[1.02] active:scale-[0.98] border-none group`}>
                       {slides[currentSlide].primaryCta} <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </Link>
                   <Link to="/contact">
-                    <Button size="lg" variant="outline" className="bg-white/5 backdrop-blur-md border-white/20 text-white hover:bg-white/10 rounded-xl h-16 px-10 font-bold transition-all hover:scale-[1.02] active:scale-[0.98] shadow-xl">
+                    <Button size="lg" variant="outline" className="bg-white/5 backdrop-blur-md border-white/20 text-white hover:bg-white/10 rounded-xl h-14 px-8 font-bold transition-all hover:scale-[1.02] active:scale-[0.98] shadow-xl">
                       {slides[currentSlide].secondaryCta}
                     </Button>
                   </Link>
