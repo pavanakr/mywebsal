@@ -102,8 +102,8 @@ const Blogs = () => {
   return (
     <Layout>
       <SEO
-        title="Technology Blogs | Softurecs AI Labs"
-        description="Expert insights on AI, software development & digital transformation. Latest tech trends, guides & best practices from Softurecs AI Labs."
+        title="Technology Blogs | SOFTURECS AI LABS PRIVATE LIMITED"
+        description="Expert insights on AI, software development & digital transformation. Latest tech trends, guides & best practices from SOFTURECS AI LABS PRIVATE LIMITED."
         keywords="technology blog, AI trends, software development tips, digital transformation insights, tech articles"
       />
       <PageHero

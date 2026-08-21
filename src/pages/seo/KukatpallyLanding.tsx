@@ -12,7 +12,7 @@ export default function KukatpallyLanding() {
   return (
     <Layout>
       <SEO 
-        title="Software Development Company in Kukatpally, Hyderabad | Softurecs AI Labs"
+        title="Software Development Company in Kukatpally, Hyderabad | SOFTURECS AI LABS PRIVATE LIMITED"
         description="Leading software development company in Kukatpally. Specializing in AI, CRM development, and custom software for Kukatpally businesses. Expert IT services Hyderabad."
         keywords="software company Kukatpally, software development Kukatpally, IT company Kukatpally, CRM development Kukatpally, AI development Kukatpally, SaaS development Kukatpally"
       />
@@ -59,7 +59,7 @@ export default function KukatpallyLanding() {
             >
               <h2 className="text-3xl font-bold mb-6">Empowering Kukatpally Businesses with Modern Software</h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Located strategically to serve one of Hyderabad's most active commercial districts, Softurecs AI Labs provides premier software development services in Kukatpally. We cater to the technological needs of industries ranging from retail to high-end consulting.
+                Located strategically to serve one of Hyderabad's most active commercial districts, SOFTURECS AI LABS PRIVATE LIMITED provides premier software development services in Kukatpally. We cater to the technological needs of industries ranging from retail to high-end consulting.
               </p>
               
               <div className="space-y-4 mb-8">

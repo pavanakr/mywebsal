@@ -40,7 +40,7 @@ export default function Partnerships() {
     <Layout>
       <SEO 
         title="Our Partnerships"
-        description="Discover Softurecs AI Labs' strategic partnerships with AWS, Microsoft, Google Cloud, and leading technology providers. 50+ active partners across 15+ countries."
+        description="Discover SOFTURECS AI LABS PRIVATE LIMITED' strategic partnerships with AWS, Microsoft, Google Cloud, and leading technology providers. 50+ active partners across 15+ countries."
         keywords="technology partnerships, AWS partner, Microsoft partner, Google Cloud partner, software development partnerships"
       />
       
@@ -77,7 +77,7 @@ export default function Partnerships() {
                 Partnership Philosophy
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                At Softurecs AI Labs, we believe in the power of collaboration. Our partnerships 
+                At SOFTURECS AI LABS PRIVATE LIMITED, we believe in the power of collaboration. Our partnerships 
                 are built on mutual trust, shared values, and a commitment to delivering 
                 exceptional value to our clients.
               </p>
@@ -180,7 +180,7 @@ export default function Partnerships() {
           >
             <h2 className="text-3xl font-bold text-foreground mb-4">Partnership Benefits</h2>
             <p className="text-lg text-muted-foreground">
-              What you gain when you partner with Softurecs AI Labs.
+              What you gain when you partner with SOFTURECS AI LABS PRIVATE LIMITED.
             </p>
           </motion.div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

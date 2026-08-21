@@ -19,7 +19,7 @@ export default function HyderabadLanding() {
   return (
     <Layout>
       <SEO 
-        title="Software Development Company in Hyderabad | Softurecs AI Labs"
+        title="Software Development Company in Hyderabad | SOFTURECS AI LABS PRIVATE LIMITED"
         description="Top-rated software development company in Hyderabad. Expert AI solutions, custom CRM, and SaaS development services in Telangana. Hire expert developers today."
         keywords="software company in Hyderabad, software development company Hyderabad, software solutions Hyderabad, CRM development Hyderabad, AI development Hyderabad"
       />
@@ -53,7 +53,7 @@ export default function HyderabadLanding() {
                 Premier Software Development in the Heart of Hyderabad
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Softurecs AI Labs is a leading software company in Hyderabad, Telangana. We provide comprehensive digital solutions to startups and enterprises across the region, from HITEC City to Uppal. Our expertise in AI and custom software development helps Hyderabad businesses scale efficiently in the modern digital economy.
+                SOFTURECS AI LABS PRIVATE LIMITED is a leading software company in Hyderabad, Telangana. We provide comprehensive digital solutions to startups and enterprises across the region, from HITEC City to Uppal. Our expertise in AI and custom software development helps Hyderabad businesses scale efficiently in the modern digital economy.
               </p>
               <ul className="space-y-4 mb-8">
                 {[

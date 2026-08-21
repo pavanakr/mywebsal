@@ -35,7 +35,7 @@ const USA = () => {
   return (
     <Layout>
       <SEO
-        title="Software Development Company USA | Softurecs AI Labs"
+        title="Software Development Company USA | SOFTURECS AI LABS PRIVATE LIMITED"
         description="Top software development company serving USA. Custom AI solutions, mobile apps, web development & digital transformation. Trusted by Fortune 500 companies."
         keywords="software development company USA, AI development USA, mobile app development USA, custom software USA, IT outsourcing India to USA"
       />
@@ -152,7 +152,7 @@ const USA = () => {
                 Your Trusted Technology Partner in USA
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Softurecs AI Labs has been serving American businesses since 2015. We understand the unique challenges 
+                SOFTURECS AI LABS PRIVATE LIMITED has been serving American businesses since 2015. We understand the unique challenges 
                 of the US market - from regulatory compliance to high scalability demands. Our teams work in US timezones, 
                 ensuring seamless collaboration and rapid delivery.
               </p>

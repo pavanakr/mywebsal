@@ -35,7 +35,7 @@ const Singapore = () => {
   return (
     <Layout>
       <SEO
-        title="Software Development Company Singapore | Softurecs AI Labs"
+        title="Software Development Company Singapore | SOFTURECS AI LABS PRIVATE LIMITED"
         description="Leading software development company serving Singapore & APAC. AI solutions, fintech apps & Smart Nation initiatives. Trusted by enterprises across Asia."
         keywords="software development company Singapore, AI development Singapore, mobile app development Singapore, fintech software Singapore, IT outsourcing India to Singapore"
       />
@@ -152,7 +152,7 @@ const Singapore = () => {
                 Your Trusted Technology Partner in Singapore
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Softurecs AI Labs supports Singapore's Smart Nation initiative with cutting-edge 
+                SOFTURECS AI LABS PRIVATE LIMITED supports Singapore's Smart Nation initiative with cutting-edge 
                 AI and digital solutions. From Marina Bay's financial giants to emerging startups, 
                 we deliver innovation that powers Singapore's position as Asia's technology hub.
               </p>

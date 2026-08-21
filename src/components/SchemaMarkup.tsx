@@ -26,7 +26,7 @@ export const OrganizationSchema = ({ type = 'Organization' }: OrganizationSchema
     "@context": "https://schema.org",
     "@type": type,
     "name": "SOFTURECS AI LABS PRIVATE LIMITED",
-    "alternateName": "Softurecs AI Labs",
+    "alternateName": "SOFTURECS AI LABS PRIVATE LIMITED",
     "url": "https://softurecs.com",
     "logo": "https://softurecs.com/logo.png",
     "description": "AI-driven software solutions company specializing in digital transformation, custom software development, and enterprise AI applications.",
@@ -117,7 +117,7 @@ export const WebPageSchema = ({ title, description, url, breadcrumbs, type = 'We
     "url": url,
     "isPartOf": {
       "@type": "WebSite",
-      "name": "Softurecs AI Labs",
+      "name": "SOFTURECS AI LABS PRIVATE LIMITED",
       "url": "https://softurecs.com"
     },
     "publisher": {
@@ -254,7 +254,7 @@ export const ArticleSchema = ({
     "dateModified": dateModified || datePublished,
     "author": {
       "@type": "Person",
-      "name": author || "Softurecs AI Labs"
+      "name": author || "SOFTURECS AI LABS PRIVATE LIMITED"
     },
     "publisher": {
       "@type": "Organization",
@@ -290,7 +290,7 @@ export const LocalBusinessSchema = ({
     "@type": "LocalBusiness",
     "@id": "https://softurecs.com/#localbusiness",
     "name": "SOFTURECS AI LABS PRIVATE LIMITED",
-    "alternateName": "Softurecs AI Labs",
+    "alternateName": "SOFTURECS AI LABS PRIVATE LIMITED",
     "description": `Leading AI & software development company serving ${city}. Custom software, mobile apps, cloud solutions & digital transformation services.`,
     "url": "https://softurecs.com",
     "logo": "https://softurecs.com/logo.png",

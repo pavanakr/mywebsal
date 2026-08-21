@@ -56,7 +56,7 @@ export default function CareersAtSofturecs() {
                 Build Your Future With Us
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                At Softurecs AI Labs, we believe that our people are our greatest asset. 
+                At SOFTURECS AI LABS PRIVATE LIMITED, we believe that our people are our greatest asset. 
                 We foster a culture of innovation, learning, and collaboration where every 
                 team member can thrive and grow.
               </p>
@@ -163,7 +163,7 @@ export default function CareersAtSofturecs() {
           >
             <h2 className="text-3xl font-bold text-foreground mb-4">Open Positions</h2>
             <p className="text-lg text-muted-foreground">
-              Find your next opportunity at Softurecs AI Labs.
+              Find your next opportunity at SOFTURECS AI LABS PRIVATE LIMITED.
             </p>
           </motion.div>
           <div className="grid gap-4 max-w-4xl mx-auto">

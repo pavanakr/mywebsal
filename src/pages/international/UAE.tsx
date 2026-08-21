@@ -35,7 +35,7 @@ const UAE = () => {
   return (
     <Layout>
       <SEO
-        title="Software Development Company UAE | Softurecs AI Labs"
+        title="Software Development Company UAE | SOFTURECS AI LABS PRIVATE LIMITED"
         description="Top software development company serving UAE & Dubai. AI solutions, mobile apps, fintech & smart city applications. Trusted by government and enterprises."
         keywords="software development company UAE, AI development Dubai, mobile app development UAE, fintech software Dubai, IT outsourcing India to UAE"
       />
@@ -152,7 +152,7 @@ const UAE = () => {
                 Your Trusted Technology Partner in UAE
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Softurecs AI Labs supports UAE Vision 2031 with cutting-edge smart city solutions and 
+                SOFTURECS AI LABS PRIVATE LIMITED supports UAE Vision 2031 with cutting-edge smart city solutions and 
                 digital transformation services. From Dubai's ambitious tech initiatives to Abu Dhabi's 
                 government projects, we deliver innovation that powers the Emirates' digital future.
               </p>

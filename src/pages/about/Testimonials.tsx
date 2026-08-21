@@ -13,7 +13,7 @@ export default function Testimonials() {
       name: 'Sarah Johnson',
       role: 'CTO',
       company: 'TechVentures Inc.',
-      content: 'Softurecs AI Labs transformed our legacy systems into a modern, scalable platform. Their expertise in cloud architecture and AI integration exceeded our expectations.',
+      content: 'SOFTURECS AI LABS PRIVATE LIMITED transformed our legacy systems into a modern, scalable platform. Their expertise in cloud architecture and AI integration exceeded our expectations.',
       rating: 5,
     },
     {
@@ -57,7 +57,7 @@ export default function Testimonials() {
     <Layout>
       <SEO 
         title="Client Testimonials"
-        description="Read what our satisfied clients say about Softurecs AI Labs. Discover success stories from 700+ happy clients across healthcare, fintech, e-commerce, and more."
+        description="Read what our satisfied clients say about SOFTURECS AI LABS PRIVATE LIMITED. Discover success stories from 700+ happy clients across healthcare, fintech, e-commerce, and more."
         keywords="client testimonials, customer reviews, software development reviews, Softurecs reviews, client success stories"
       />
       
@@ -153,7 +153,7 @@ export default function Testimonials() {
           >
             <Quote className="w-16 h-16 text-accent mx-auto mb-8" />
             <p className="text-2xl md:text-3xl text-foreground mb-8 italic">
-              "Softurecs AI Labs is not just a vendor, they're a true technology partner. 
+              "SOFTURECS AI LABS PRIVATE LIMITED is not just a vendor, they're a true technology partner. 
               Their commitment to our success is evident in every interaction."
             </p>
             <div>

@@ -35,7 +35,7 @@ const UK = () => {
   return (
     <Layout>
       <SEO
-        title="Software Development Company UK | Softurecs AI Labs"
+        title="Software Development Company UK | SOFTURECS AI LABS PRIVATE LIMITED"
         description="Leading software development company serving UK businesses. GDPR-compliant AI solutions, fintech apps & digital transformation. Trusted by London enterprises."
         keywords="software development company UK, AI development London, mobile app development UK, fintech software UK, IT outsourcing India to UK"
       />
@@ -152,7 +152,7 @@ const UK = () => {
                 Your Trusted Technology Partner in United Kingdom
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Softurecs AI Labs serves UK businesses with GDPR-compliant, enterprise-grade software solutions. 
+                SOFTURECS AI LABS PRIVATE LIMITED serves UK businesses with GDPR-compliant, enterprise-grade software solutions. 
                 From London's financial district to tech startups across Britain, we deliver innovation with 
                 regulatory compliance built-in from day one.
               </p>

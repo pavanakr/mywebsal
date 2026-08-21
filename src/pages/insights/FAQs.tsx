@@ -107,7 +107,7 @@ const FAQs = () => {
   return (
     <Layout>
       <SEO
-        title="Frequently Asked Questions | Softurecs AI Labs"
+        title="Frequently Asked Questions | SOFTURECS AI LABS PRIVATE LIMITED"
         description="Get answers to common questions about our software development services, process, engagement models, and technology stack."
         keywords="FAQ, software development questions, technology services FAQ, engagement models"
       />

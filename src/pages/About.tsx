@@ -62,7 +62,7 @@ const About = () => {
   return (
     <Layout>
       <SEO
-        title="About Softurecs AI Labs | Leading AI & Software Company India"
+        title="About SOFTURECS AI LABS PRIVATE LIMITED | Leading AI & Software Company India"
         description="SOFTURECS AI LABS PRIVATE LIMITED: Leading AI software development company in Hyderabad, India. Discover our mission to deliver enterprise AI & custom software."
         keywords="about softurecs ai labs, AI software company India, Hyderabad IT innovations, tech company mission, Pavan Kumar Naramala, custom software development"
       />
@@ -308,7 +308,7 @@ const About = () => {
                 Why Choose Us
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Why Businesses Choose Softurecs AI Labs
+                Why Businesses Choose SOFTURECS AI LABS PRIVATE LIMITED
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
                 We combine technical excellence with business acumen to deliver AI-powered solutions that don't just work—they drive measurable results.

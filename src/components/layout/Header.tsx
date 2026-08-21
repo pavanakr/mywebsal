@@ -537,7 +537,7 @@ export function Header() {
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
                 <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl flex items-center justify-center transition-all duration-300">
-                  <img src={salLogo.url} alt="Softurecs AI Labs logo" className="w-full h-full object-contain" />
+                  <img src={salLogo.url} alt="SOFTURECS AI LABS PRIVATE LIMITED logo" className="w-full h-full object-contain" />
                 </div>
 
                 {/* Subtle glow effect */}

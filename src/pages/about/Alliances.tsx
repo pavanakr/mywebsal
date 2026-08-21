@@ -62,7 +62,7 @@ export default function Alliances() {
     <Layout>
       <SEO 
         title="Strategic Alliances"
-        description="Explore Softurecs AI Labs' strategic alliances with AWS, Microsoft Azure, Google Cloud, Salesforce, and global technology leaders across 15+ countries."
+        description="Explore SOFTURECS AI LABS PRIVATE LIMITED' strategic alliances with AWS, Microsoft Azure, Google Cloud, Salesforce, and global technology leaders across 15+ countries."
         keywords="strategic alliances, AWS advanced partner, Microsoft Gold partner, technology alliances, global IT partnerships"
       />
       

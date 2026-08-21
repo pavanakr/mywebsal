@@ -9,7 +9,7 @@ const Terms = () => {
     <Layout>
       <SEO
         title="Terms & Conditions"
-        description="Softurecs AI Labs terms and conditions for software development services. Read our service agreement, intellectual property rights, confidentiality, and liability terms."
+        description="SOFTURECS AI LABS PRIVATE LIMITED terms and conditions for software development services. Read our service agreement, intellectual property rights, confidentiality, and liability terms."
         keywords="terms and conditions, service agreement, software development terms, intellectual property, liability"
       />
       <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">

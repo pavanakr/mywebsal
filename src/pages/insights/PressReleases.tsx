@@ -15,7 +15,7 @@ const pressReleases = [
     title: "Softurecs Achieves ISO 27001 Certification for Information Security",
     date: "January 3, 2026",
     year: "2026",
-    excerpt: "Softurecs AI Labs has achieved ISO 27001 certification, demonstrating our commitment to the highest standards of information security management.",
+    excerpt: "SOFTURECS AI LABS PRIVATE LIMITED has achieved ISO 27001 certification, demonstrating our commitment to the highest standards of information security management.",
     category: "Company News",
   },
   {
@@ -102,8 +102,8 @@ const PressReleases = () => {
   return (
     <Layout>
       <SEO
-        title="Press Releases | Softurecs AI Labs"
-        description="Stay updated with the latest news, announcements, and achievements from Softurecs AI Labs."
+        title="Press Releases | SOFTURECS AI LABS PRIVATE LIMITED"
+        description="Stay updated with the latest news, announcements, and achievements from SOFTURECS AI LABS PRIVATE LIMITED."
         keywords="press releases, company news, software development news, tech announcements"
       />
       <PageHero
