@@ -153,7 +153,7 @@ const PremiumFloatingCard = ({ icon: Icon, title, status, color, className, dela
 
   return (
     <motion.div
-      className={`absolute z-30 flex items-center gap-3 bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl shadow-lg border border-slate-200/50 ${className}`}
+      className={`absolute z-30 flex items-center gap-3 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-lg shadow-lg border border-slate-200/50 ${className}`}
       initial={{ opacity: 0, scale: 0.8, y: 20 }}
       animate={{ 
         opacity: 1, 
@@ -189,7 +189,7 @@ const VisualComposition = ({ slide }: { slide: typeof slides[0] }) => {
       transition={{ duration: 0.8 }}
     >
       {/* Background Glows */}
-      <div className={`absolute inset-0 bg-gradient-to-tr ${slide.colors.bgGlow} rounded-full blur-[120px] opacity-30 animate-pulse-slow`} />
+      <div className={`absolute inset-0 bg-gradient-to-tr ${slide.colors.bgGlow} rounded-full blur-[100px] opacity-20 animate-pulse-slow`} />
       
       {/* Main Dashboard Container */}
       <div className="relative z-10 w-full h-full bg-white rounded-3xl shadow-[0_32px_64px_-12px_rgba(0,0,0,0.14)] border border-slate-100 overflow-hidden flex flex-col">
@@ -367,7 +367,7 @@ export function HeroSlider() {
   return (
     <section 
       id="hero-slider"
-      className="relative w-full overflow-hidden bg-[#040612] pt-32 pb-16 md:pt-40 md:pb-20 min-h-[850px] md:min-h-[750px] flex items-center"
+      className="relative w-full overflow-hidden bg-[#040612] pt-28 pb-12 md:pt-36 md:pb-16 min-h-[700px] md:min-h-[750px] flex items-center"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -389,13 +389,13 @@ export function HeroSlider() {
             className="absolute inset-0"
           >
             {/* Primary Soft Glows matching slide colors */}
-            <div className={`absolute top-[-20%] right-[-10%] w-[80%] h-[80%] rounded-full blur-[140px] opacity-25 mix-blend-screen bg-gradient-to-br ${slides[currentSlide].colors.bgGlow}`} />
-            <div className={`absolute bottom-[-30%] left-[-20%] w-[70%] h-[70%] rounded-full blur-[140px] opacity-20 mix-blend-screen bg-gradient-to-tr ${slides[currentSlide].colors.bgGlow}`} />
+            <div className={`absolute top-[-10%] right-[-10%] w-[60%] h-[70%] rounded-full blur-[120px] opacity-20 mix-blend-screen bg-gradient-to-br ${slides[currentSlide].colors.bgGlow}`} />
+            <div className={`absolute bottom-[-20%] left-[-10%] w-[50%] h-[60%] rounded-full blur-[120px] opacity-15 mix-blend-screen bg-gradient-to-tr ${slides[currentSlide].colors.bgGlow}`} />
             
             {/* Multi-color accents (Blue, Purple, Magenta) */}
-            <div className="absolute top-[20%] left-[10%] w-[40%] h-[40%] rounded-full blur-[120px] opacity-15 bg-blue-600/20 mix-blend-soft-light" />
-            <div className="absolute bottom-[10%] right-[20%] w-[35%] h-[35%] rounded-full blur-[120px] opacity-15 bg-purple-600/20 mix-blend-soft-light" />
-            <div className="absolute top-[40%] right-[30%] w-[20%] h-[20%] rounded-full blur-[100px] opacity-10 bg-magenta-500/15 mix-blend-screen" />
+            <div className="absolute top-[20%] left-[10%] w-[40%] h-[40%] rounded-full blur-[100px] opacity-10 bg-blue-600/15 mix-blend-soft-light" />
+            <div className="absolute bottom-[10%] right-[20%] w-[35%] h-[35%] rounded-full blur-[100px] opacity-10 bg-purple-600/15 mix-blend-soft-light" />
+            <div className="absolute top-[40%] right-[30%] w-[20%] h-[20%] rounded-full blur-[80px] opacity-8 bg-magenta-500/10 mix-blend-screen" />
           </motion.div>
         </AnimatePresence>
 
@@ -420,7 +420,7 @@ export function HeroSlider() {
                   {slides[currentSlide].badge}
                 </div>
                 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight lg:leading-[1.15] max-w-2xl">
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight lg:leading-[1.15] max-w-2xl">
                   {slides[currentSlide].title.main}
                   <span className={`block mt-2 bg-clip-text text-transparent bg-gradient-to-r ${slides[currentSlide].colors.highlight}`}>
                     {slides[currentSlide].title.highlight}
@@ -433,12 +433,12 @@ export function HeroSlider() {
 
                 <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-5 pt-4">
                   <Link to={slides[currentSlide].link}>
-                    <Button size="lg" className={`bg-gradient-to-r ${slides[currentSlide].colors.gradient} hover:opacity-90 rounded-xl h-16 px-10 font-bold shadow-[0_20px_40px_-10px_rgba(0,0,0,0.3)] transition-all hover:scale-[1.02] active:scale-[0.98] border-none group`}>
+                    <Button size="lg" className={`bg-gradient-to-r ${slides[currentSlide].colors.gradient} hover:opacity-90 rounded-xl h-14 px-8 font-bold shadow-[0_20px_40px_-10px_rgba(0,0,0,0.3)] transition-all hover:scale-[1.02] active:scale-[0.98] border-none group`}>
                       {slides[currentSlide].primaryCta} <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </Link>
                   <Link to="/contact">
-                    <Button size="lg" variant="outline" className="bg-white/5 backdrop-blur-md border-white/20 text-white hover:bg-white/10 rounded-xl h-16 px-10 font-bold transition-all hover:scale-[1.02] active:scale-[0.98] shadow-xl">
+                    <Button size="lg" variant="outline" className="bg-white/5 backdrop-blur-md border-white/20 text-white hover:bg-white/10 rounded-xl h-14 px-8 font-bold transition-all hover:scale-[1.02] active:scale-[0.98] shadow-xl">
                       {slides[currentSlide].secondaryCta}
                     </Button>
                   </Link>
