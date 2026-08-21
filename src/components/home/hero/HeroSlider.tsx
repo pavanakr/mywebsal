@@ -234,6 +234,7 @@ const VisualComposition = ({ slide }: { slide: typeof slides[0] }) => {
              {slide.visual.type === 'complete-crm' && <Database className="w-24 h-24 text-indigo-300 opacity-50" />}
           </div>
 
+        </div>
       </div>
 
       {/* Floating UI Cards */}
