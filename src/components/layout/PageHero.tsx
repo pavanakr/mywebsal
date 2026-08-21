@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { BreadcrumbSchema } from '@/components/SchemaMarkup';
 import { ChevronRight, LucideIcon } from 'lucide-react';
 
 interface BreadcrumbItem {
@@ -32,8 +33,18 @@ export function PageHero({
   stats,
   variant = 'split',
 }: PageHeroProps) {
+  const { pathname } = useLocation();
+  const siteUrl = 'https://softurecs.com';
+  
+  const schemaItems = breadcrumbs.map((crumb, idx) => ({
+    name: crumb.label,
+    url: crumb.href ? `${siteUrl}${crumb.href}` : `${siteUrl}${pathname}`
+  }));
+
   return (
-    <section className="relative pt-28 pb-14 md:pt-36 md:pb-20 bg-gradient-to-br from-primary via-navy to-navy-light overflow-hidden">
+    <>
+      <BreadcrumbSchema items={schemaItems} />
+      <section className="relative pt-28 pb-14 md:pt-36 md:pb-20 bg-gradient-to-br from-primary via-navy to-navy-light overflow-hidden">
       {/* Architectural background: subtle grid + soft glow orbs */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-[520px] h-[520px] bg-gradient-to-bl from-accent/30 via-accent/5 to-transparent rounded-full blur-3xl" />
@@ -187,6 +198,6 @@ export function PageHero({
       </div>
 
       <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-background to-transparent" />
-    </section>
+    </>
   );
 }
