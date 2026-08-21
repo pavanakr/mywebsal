@@ -95,11 +95,11 @@ export function BlogDetailPage({
         }}
       />
       <ArticleSchema
-        headline={title}
+        title={title}
         description={excerpt}
         image={image}
         datePublished={date}
-        authorName={author.name}
+        author={author.name}
         url={fullUrl}
       />
       {/* Hero Section */}
