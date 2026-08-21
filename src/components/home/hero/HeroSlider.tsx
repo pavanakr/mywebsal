@@ -245,47 +245,47 @@ const VisualComposition = ({ slide }: { slide: typeof slides[0] }) => {
         </div>
       </div>
 
-      {/* Conditional Floating UI Cards */}
+      {/* Conditional Floating UI Cards - Positioned to stay clear of text and dashboard core */}
       {slide.visual.type === 'chatbot' && (
         <>
-          <PremiumFloatingCard icon={Bot} title="AI Assistant" status="Active" color="blue" className="-left-16 top-[20%]" delay={0.2} />
-          <PremiumFloatingCard icon={MessageSquare} title="WhatsApp" status="Live" color="cyan" className="right-[5%] -top-8" delay={0.4} />
+          <PremiumFloatingCard icon={Bot} title="AI Assistant" status="Active" color="blue" className="-left-8 top-[15%] hidden md:flex" delay={0.2} />
+          <PremiumFloatingCard icon={MessageSquare} title="WhatsApp" status="Live" color="cyan" className="right-[8%] -top-4 hidden md:flex" delay={0.4} />
         </>
       )}
 
       {slide.visual.type === 'automation' && (
         <>
-          <PremiumFloatingCard icon={Zap} title="Automation" status="98%" color="green" className="-left-8 bottom-[15%]" delay={0.2} />
-          <PremiumFloatingCard icon={TrendingUp} title="Efficiency" status="+45%" color="purple" className="-right-12 top-[45%]" delay={0.4} />
+          <PremiumFloatingCard icon={Zap} title="Automation" status="98%" color="green" className="-left-4 bottom-[20%] hidden md:flex" delay={0.2} />
+          <PremiumFloatingCard icon={TrendingUp} title="Efficiency" status="+45%" color="purple" className="-right-8 top-[40%] hidden md:flex" delay={0.4} />
         </>
       )}
 
       {slide.visual.type === 'real-estate' && (
         <>
-          <PremiumFloatingCard icon={Building2} title="Properties" status="482 Active" color="blue" className="-left-16 top-[20%]" delay={0.2} />
-          <PremiumFloatingCard icon={Users} title="New Lead" status="Real Estate" color="pink" className="left-[10%] -bottom-6" delay={0.4} />
+          <PremiumFloatingCard icon={Building2} title="Properties" status="482 Active" color="blue" className="-left-8 top-[15%] hidden md:flex" delay={0.2} />
+          <PremiumFloatingCard icon={Users} title="New Lead" status="Real Estate" color="pink" className="left-[15%] -bottom-4 hidden md:flex" delay={0.4} />
         </>
       )}
 
       {slide.visual.type === 'whatsapp' && (
         <>
-          <PremiumFloatingCard icon={MessageSquare} title="WhatsApp API" status="Connected" color="green" className="right-[5%] -top-8" delay={0.2} />
-          <PremiumFloatingCard icon={Bot} title="AI Agent" status="Responding" color="cyan" className="-left-16 top-[20%]" delay={0.4} />
+          <PremiumFloatingCard icon={MessageSquare} title="WhatsApp API" status="Connected" color="green" className="right-[8%] -top-4 hidden md:flex" delay={0.2} />
+          <PremiumFloatingCard icon={Bot} title="AI Agent" status="Responding" color="cyan" className="-left-8 top-[15%] hidden md:flex" delay={0.4} />
         </>
       )}
 
       {slide.visual.type === 'complete-crm' && (
         <>
-          <PremiumFloatingCard icon={Database} title="Cloud DB" status="Synced" color="blue" className="-left-8 bottom-[15%]" delay={0.2} />
-          <PremiumFloatingCard icon={TrendingUp} title="Analytics" status="+12.5%" color="purple" className="-right-12 top-[45%]" delay={0.4} />
+          <PremiumFloatingCard icon={Database} title="Cloud DB" status="Synced" color="blue" className="-left-4 bottom-[20%] hidden md:flex" delay={0.2} />
+          <PremiumFloatingCard icon={TrendingUp} title="Analytics" status="+12.5%" color="purple" className="-right-8 top-[40%] hidden md:flex" delay={0.4} />
         </>
       )}
 
       {/* Conditional Enhanced Workflow Visual Card for Automation/WhatsApp slides */}
       {(slide.visual.type === 'automation' || slide.visual.type === 'whatsapp') && (
         <motion.div 
-          className="absolute -right-12 top-[10%] z-20 w-48 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-white/50 p-4 hidden md:block"
-          animate={{ y: [0, 10, 0] }}
+          className="absolute -right-8 top-[12%] z-20 w-44 bg-white/95 backdrop-blur-md rounded-xl shadow-xl border border-white/50 p-3 hidden lg:block"
+          animate={{ y: [0, 8, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
         >
           <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
@@ -319,12 +319,12 @@ const VisualComposition = ({ slide }: { slide: typeof slides[0] }) => {
         </motion.div>
       )}
       
-      {/* Small Floating Icons */}
-      <div className="absolute bottom-[5%] left-[25%] z-20 w-8 h-8 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg text-white">
+      {/* Small Floating Icons - Hidden on small screens to avoid clutter */}
+      <div className="absolute bottom-[8%] left-[28%] z-20 w-8 h-8 rounded-full bg-[#25D366] items-center justify-center shadow-lg text-white hidden md:flex hover:scale-110 transition-transform">
         <Phone className="w-4 h-4" />
       </div>
-      <div className="absolute top-[5%] left-[20%] z-20 w-6 h-6 rounded-full bg-indigo-500 flex items-center justify-center shadow-lg text-white">
-        <Mail className="w-3 h-3" />
+      <div className="absolute top-[8%] left-[22%] z-20 w-7 h-7 rounded-full bg-indigo-500 items-center justify-center shadow-lg text-white hidden md:flex hover:scale-110 transition-transform">
+        <Mail className="w-3.5 h-3.5" />
       </div>
     </motion.div>
   );
