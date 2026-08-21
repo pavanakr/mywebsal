@@ -111,6 +111,11 @@ import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
 import RefundPolicy from "./pages/legal/RefundPolicy";
 import ShippingPolicy from "./pages/legal/ShippingPolicy";
 import Terms from "./pages/legal/Terms";
+import RealEstateCRM from "./pages/solutions/RealEstateCRM";
+import MultiCRM from "./pages/solutions/MultiCRM";
+import AllInOneCRM from "./pages/solutions/AllInOneCRM";
+import MetaAPICRM from "./pages/solutions/MetaAPICRM";
+import WhatsAppCRM from "./pages/solutions/WhatsAppCRM";
 // Case study pages
 import HealthPulse from "./pages/portfolio/HealthPulse";
 import FinVault from "./pages/portfolio/FinVault";
@@ -210,6 +215,12 @@ const App = () => (
             <Route path="/solutions/grocery" element={<Grocery />} />
             <Route path="/solutions/fantasy-sports" element={<FantasySports />} />
             <Route path="/solutions/ai-chatbot" element={<AIChatbotSolutions />} />
+            {/* CRM Solutions */}
+            <Route path="/real-estate-crm" element={<RealEstateCRM />} />
+            <Route path="/multi-crm" element={<MultiCRM />} />
+            <Route path="/all-in-one-crm" element={<AllInOneCRM />} />
+            <Route path="/meta-api-crm" element={<MetaAPICRM />} />
+            <Route path="/whatsapp-crm" element={<WhatsAppCRM />} />
             {/* Technologies */}
             <Route path="/technologies/blockchain" element={<Blockchain />} />
             <Route path="/technologies/artificial-intelligence" element={<ArtificialIntelligence />} />
