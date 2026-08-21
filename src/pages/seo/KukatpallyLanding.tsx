@@ -73,9 +73,11 @@ export default function KukatpallyLanding() {
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4 items-center">
                 <Link to="/services/custom-software" className="text-accent hover:underline font-medium">Software Development</Link>
+                <span className="text-border">|</span>
                 <Link to="/services/crm-development" className="text-accent hover:underline font-medium">CRM Solutions</Link>
+                <span className="text-border">|</span>
                 <Link to="/services/ai-automation" className="text-accent hover:underline font-medium">AI & Automation</Link>
               </div>
             </motion.div>
