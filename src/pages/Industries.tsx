@@ -160,8 +160,8 @@ const Industries = () => {
         keywords="healthcare software solutions, fintech development, retail e-commerce systems, logistics technology, real estate CRM software"
       />
       <PageHero
-        title="Industry-Focused Software Solutions for Digital Growth"
-        description="Technology Solutions Across Multiple Industries. Tailored Digital Platforms for Business Success."
+        title="Custom Software Solutions for Healthcare, Fintech & Real Estate"
+        description="Industry-Specific Digital Transformation. Specialized CRM & Enterprise Software for Global Market Leaders."
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'Industries' }

@@ -83,8 +83,8 @@ const Services = () => {
         keywords="AI development services, custom software development, mobile app development company, enterprise AI solutions, cloud transformation services"
       />
       <PageHero
-        title="End-to-End Software Development Services Powered by AI"
-        description="Custom Software & Application Development. AI-Driven Digital Transformation Services. Scalable, Secure & Future-Ready Solutions."
+        title="Software Development Company in India & AI Services"
+        description="Enterprise Custom Software & Application Development. AI-Driven Digital Transformation Services for Global Businesses."
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'Services' }

@@ -76,8 +76,8 @@ const Portfolio = () => {
         keywords="software project portfolio, case studies, AI project success stories, mobile app development examples, digital transformation projects"
       />
       <PageHero
-        title="Transforming Ideas Into Digital Success Stories"
-        description="Explore our portfolio of innovative solutions that have helped businesses achieve their digital transformation goals and drive real business results."
+        title="AI & Software Development Portfolio – Success Stories from India"
+        description="Explore our successful digital transformation projects. Delivering high-performance custom software and AI solutions worldwide."
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'Insights', href: '/insights' },
