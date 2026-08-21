@@ -30,7 +30,572 @@ const Contact = () => {
     setFormData({ name: '', email: '', company: '', phone: '', service: '', message: '' });
   };
 
-  const commandPlaceholder = "'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n\nIMPORTANT: The current homepage hero slider has been damaged and the UI is not acceptable.\n\nI want you to COMPLETELY REBUILD ONLY THE HOMEPAGE HERO SLIDER from scratch.\n\nDo NOT try to fix the current slider styling.\nDo NOT preserve the current slider layout.\nDo NOT use the current oversized typography layout.\n\nKeep the existing:\n\ntop announcement bar\n\nnavbar\n\nlogo\n\nnavigation\n\nGet in Touch button\n\nexisting website branding\n\nall sections below the hero\n\nONLY replace the hero slider.\n\n================================\nDESIGN GOAL\n\nCreate a premium, modern, colorful SaaS + AI technology hero slider for:\n\nSOFTURECS AI LABS PRIVATE LIMITED\n\nThe hero should look like a professional international software/AI company's website.\n\nThink:\n\npremium SaaS\n\nAI technology\n\nCRM platform\n\nbusiness automation\n\nmodern enterprise software\n\nIt must NOT look like:\n\na poster\n\na template\n\na gaming website\n\na generic stock-image website\n\na typography-only design\n\n================================\nHERO LAYOUT\n\nUse a balanced 2-column layout.\n\nLEFT SIDE:\n\nsmall category badge\n\nstrong headline\n\nshort description\n\nprimary CTA\n\nsecondary CTA\n\noptional small trust/stat row\n\nRIGHT SIDE:\n\nlarge professional visual\n\nCRM dashboard / AI interface / automation workflow\n\nfloating UI cards\n\nsubtle decorative technology elements\n\nKeep both sides visually balanced.\n\nDo NOT allow the headline to occupy most of the screen.\n\nDo NOT break the headline into one word per line.\n\nMaximum headline width should be controlled.\n\nUse normal professional line breaks.\n\nHero should have comfortable padding.\n\n================================\nSLIDE 1 — AI CHATBOTS\n\nBadge:\nAI-POWERED SOLUTIONS\n\nHeadline:\nAI Chatbots That Work 24/7\n\nDescription:\nAutomate customer conversations, qualify leads and deliver intelligent support with AI-powered chatbots.\n\nPrimary CTA:\nExplore AI Solutions\n\nSecondary CTA:\nBook a Free Consultation\n\nVisual:\nCreate a premium AI chatbot interface showing:\n\nAI assistant\n\ncustomer conversation\n\nlead qualification\n\nresponse suggestions\n\nanalytics\n\nCRM connection\n\nUse blue + purple + cyan visual accents.\n\n================================\nSLIDE 2 — AI AUTOMATION\n\nBadge:\nAI AUTOMATION\n\nHeadline:\nAutomate Your Business With AI\n\nDescription:\nConnect leads, conversations, follow-ups and business workflows with intelligent automation.\n\nPrimary CTA:\nExplore AI Automation\n\nSecondary CTA:\nBook a Free Consultation\n\nVisual should show an elegant automation workflow:\n\nLead Capture\n↓\nAI Processing\n↓\nSmart Response\n↓\nLead Qualification\n↓\nCRM\n\nUse blue, violet, purple and cyan accents.\n\n================================\nSLIDE 3 — REAL ESTATE CRM\n\nBadge:\nREAL ESTATE CRM\n\nHeadline:\nSmarter CRM for Real Estate Growth\n\nDescription:\nManage properties, leads, agents, follow-ups and sales from one powerful CRM platform.\n\nPrimary CTA:\nExplore Real Estate CRM\n\nSecondary CTA:\nBook a Free Consultation\n\nVisual:\nPremium real estate CRM dashboard showing:\n\nproperty cards\n\nleads\n\nsales pipeline\n\nagents\n\nanalytics\n\nfollow-up reminders\n\nUse blue + teal + violet accents.\n\n================================\nSLIDE 4 — WHATSAPP + META API\n\nBadge:\nWHATSAPP + META API\n\nHeadline:\nTurn Conversations Into Customers\n\nDescription:\nConnect WhatsApp and Meta APIs with your CRM to manage conversations, leads and automation.\n\nPrimary CTA:\nExplore WhatsApp CRM\n\nSecondary CTA:\nBook a Free Consultation\n\nVisual:\nShow:\nWhatsApp conversation\n→ AI response\n→ lead capture\n→ CRM\n→ sales follow-up\n\nUse green/cyan/purple accents while maintaining the company brand.\n\n================================\nSLIDE 5 — ALL-IN-ONE CRM\n\nBadge:\nALL-IN-ONE CRM\n\nHeadline:\nOne CRM. Your Entire Business.\n\nDescription:\nBring sales, customer management, automation and business operations together in one powerful platform.\n\nPrimary CTA:\nExplore CRM Solutions\n\nSecondary CTA:\nBook a Free Consultation\n\nVisual:\nModern CRM dashboard showing:\n\nleads\n\nsales pipeline\n\ncustomers\n\nanalytics\n\nautomation\n\ntasks\n\nrevenue\n\nUse blue + purple + cyan gradients.\n\n================================\nVISUAL DESIGN\n\nUse a premium gradient-based technology background.\n\nPreferred palette:\n\nDeep Navy\nElectric Blue\nRoyal Blue\nViolet\nPurple\nCyan\n\nUse gradients subtly.\n\nDo NOT make the entire hero neon.\n\nDo NOT use excessive glow.\n\nDo NOT use huge empty spaces.\n\nDo NOT use a single dark laptop photograph.\n\nDo NOT use generic office stock photography.\n\nUse UI/dashboard-style visuals that communicate our actual services.\n\nCreate depth using:\n\ndashboard panels\n\nfloating cards\n\ncharts\n\nworkflow nodes\n\nAI assistant cards\n\nsubtle abstract shapes\n\nsoft gradients\n\nlight glass effects\n\n================================\nTYPOGRAPHY\n\nThis is VERY IMPORTANT.\n\nDo NOT use:\n\nREAL\nESTATE\nCRM\nBUILT\nFOR\n...\n\nDo NOT put one word per line.\n\nUse a maximum of 2–3 lines for the main headline.\n\nExample:\n\nSmarter CRM\nfor Real Estate Growth\n\nor:\n\nAI Chatbots\nThat Work 24/7\n\nHeadline should be approximately:\n48–64px desktop\n\nand responsive down to:\n32–40px mobile.\n\nDo not use extremely oversized typography.\n\n================================\nSLIDER BEHAVIOR\n\nUse a reliable existing slider library if the project already has one.\n\nIf not, implement a lightweight reliable slider.\n\nRequirements:\n\n5 slides\n\nautoplay every 5 seconds\n\nsmooth transition\n\nprevious arrow\n\nnext arrow\n\npagination dots\n\nkeyboard navigation\n\ntouch/swipe support\n\npause on hover\n\npause when user interacts\n\nmobile responsive\n\ntablet responsive\n\ndesktop responsive\n\nreduced-motion support\n\nDo not allow slides to overlap each other.\n\nDo not allow content from one slide to appear on another.\n\nDo not allow horizontal scrolling.\n\nDo not allow the hero to break the page layout.\n\n================================\nHEIGHT\n\nKeep the hero visually compact and premium.\n\nDesktop:\napproximately 560–650px\n\nTablet:\napproximately 520–600px\n\nMobile:\nauto height based on content.\n\nDo NOT create an extremely tall hero.\n\n================================\nRESPONSIVE DESIGN\n\nDesktop:\n2-column layout.\n\nTablet:\nbalanced 2-column layout where possible.\n\nMobile:\nstack:\n\nBadge\nHeadline\nDescription\nCTA\nVisual\n\nThe visual must remain visible.\n\nDo NOT crop the important AI/CRM visual.\n\nDo NOT create horizontal overflow.\n\n================================\nCTA\n\nPrimary CTA:\nUse the existing website CTA/routing wherever possible.\n\nSecondary CTA:\nBook a Free Consultation\n\nDo not create broken links.\n\nDo not remove existing CTA functionality.\n\n================================\nSEO\n\nHomepage must have ONLY ONE H1.\n\nUse the first slide headline as the homepage H1.\n\nOther slide headlines must use H2 or appropriate semantic elements.\n\nDo not put important text inside images.\n\nAdd meaningful alt text to visual images.\n\nDo not keyword stuff.\n\n================================\nPERFORMANCE\n\nUse optimized images/assets.\n\nFirst slide visual should load with priority.\n\nLazy-load other slide visuals when appropriate.\n\nAvoid unnecessary libraries.\n\nAvoid heavy animations.\n\nPrevent layout shift.\n\n================================\nIMPORTANT — PRESERVE WEBSITE\n\nDO NOT MODIFY:\n\nannouncement bar\n\nnavbar\n\nlogo\n\nnavigation\n\nAbout section\n\nServices section\n\nIndustries section\n\nInsights section\n\nfooter\n\nchatbot\n\nfloating buttons\n\nother homepage sections\n\nONLY rebuild the hero slider.\n\nBefore coding, inspect the current hero implementation and remove the broken hero-specific layout/styles safely.\n\nMake sure old hero CSS does not conflict with the new slider.\n\n================================\nFINAL QA\n\nAfter rebuilding:\n\nTest:\n\nDesktop 1920px\n\nDesktop 1440px\n\nLaptop 1366px\n\nTablet\n\nMobile 390px\n\nMobile 375px\n\nVerify:\n\nno oversized text\n\nno broken layout\n\nno overlapping slides\n\nno horizontal scrollbar\n\nimages display correctly\n\narrows work\n\ndots work\n\nautoplay works\n\nswipe works\n\nCTA links work\n\nnavbar remains unchanged\n\nhero does not cover the navbar\n\nhero does not affect sections below it\n\npage remains responsive\n\nThe final result must look like a polished, premium AI + SaaS company website.\n\nREBUILD THE HERO SLIDER FROM SCRATCH.\";
+  const commandPlaceholder = `'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
+
+IMPORTANT: The current homepage hero slider has been damaged and the UI is not acceptable.
+
+I want you to COMPLETELY REBUILD ONLY THE HOMEPAGE HERO SLIDER from scratch.
+
+Do NOT try to fix the current slider styling.
+Do NOT preserve the current slider layout.
+Do NOT use the current oversized typography layout.
+
+Keep the existing:
+
+top announcement bar
+
+navbar
+
+logo
+
+navigation
+
+Get in Touch button
+
+existing website branding
+
+all sections below the hero
+
+ONLY replace the hero slider.
+
+================================
+DESIGN GOAL
+
+Create a premium, modern, colorful SaaS + AI technology hero slider for:
+
+SOFTURECS AI LABS PRIVATE LIMITED
+
+The hero should look like a professional international software/AI company's website.
+
+Think:
+
+premium SaaS
+
+AI technology
+
+CRM platform
+
+business automation
+
+modern enterprise software
+
+It must NOT look like:
+
+a poster
+
+a template
+
+a gaming website
+
+a generic stock-image website
+
+a typography-only design
+
+================================
+HERO LAYOUT
+
+Use a balanced 2-column layout.
+
+LEFT SIDE:
+
+small category badge
+
+strong headline
+
+short description
+
+primary CTA
+
+secondary CTA
+
+optional small trust/stat row
+
+RIGHT SIDE:
+
+large professional visual
+
+CRM dashboard / AI interface / automation workflow
+
+floating UI cards
+
+subtle decorative technology elements
+
+Keep both sides visually balanced.
+
+Do NOT allow the headline to occupy most of the screen.
+
+Do NOT break the headline into one word per line.
+
+Maximum headline width should be controlled.
+
+Use normal professional line breaks.
+
+Hero should have comfortable padding.
+
+================================
+SLIDE 1 — AI CHATBOTS
+
+Badge:
+AI-POWERED SOLUTIONS
+
+Headline:
+AI Chatbots That Work 24/7
+
+Description:
+Automate customer conversations, qualify leads and deliver intelligent support with AI-powered chatbots.
+
+Primary CTA:
+Explore AI Solutions
+
+Secondary CTA:
+Book a Free Consultation
+
+Visual:
+Create a premium AI chatbot interface showing:
+
+AI assistant
+
+customer conversation
+
+lead qualification
+
+response suggestions
+
+analytics
+
+CRM connection
+
+Use blue + purple + cyan visual accents.
+
+================================
+SLIDE 2 — AI AUTOMATION
+
+Badge:
+AI AUTOMATION
+
+Headline:
+Automate Your Business With AI
+
+Description:
+Connect leads, conversations, follow-ups and business workflows with intelligent automation.
+
+Primary CTA:
+Explore AI Automation
+
+Secondary CTA:
+Book a Free Consultation
+
+Visual should show an elegant automation workflow:
+
+Lead Capture
+↓
+AI Processing
+↓
+Smart Response
+↓
+Lead Qualification
+↓
+CRM
+
+Use blue, violet, purple and cyan accents.
+
+================================
+SLIDE 3 — REAL ESTATE CRM
+
+Badge:
+REAL ESTATE CRM
+
+Headline:
+Smarter CRM for Real Estate Growth
+
+Description:
+Manage properties, leads, agents, follow-ups and sales from one powerful CRM platform.
+
+Primary CTA:
+Explore Real Estate CRM
+
+Secondary CTA:
+Book a Free Consultation
+
+Visual:
+Premium real estate CRM dashboard showing:
+
+property cards
+
+leads
+
+sales pipeline
+
+agents
+
+analytics
+
+follow-up reminders
+
+Use blue + teal + violet accents.
+
+================================
+SLIDE 4 — WHATSAPP + META API
+
+Badge:
+WHATSAPP + META API
+
+Headline:
+Turn Conversations Into Customers
+
+Description:
+Connect WhatsApp and Meta APIs with your CRM to manage conversations, leads and automation.
+
+Primary CTA:
+Explore WhatsApp CRM
+
+Secondary CTA:
+Book a Free Consultation
+
+Visual:
+Show:
+WhatsApp conversation
+→ AI response
+→ lead capture
+→ CRM
+→ sales follow-up
+
+Use green/cyan/purple accents while maintaining the company brand.
+
+================================
+SLIDE 5 — ALL-IN-ONE CRM
+
+Badge:
+ALL-IN-ONE CRM
+
+Headline:
+One CRM. Your Entire Business.
+
+Description:
+Bring sales, customer management, automation and business operations together in one powerful platform.
+
+Primary CTA:
+Explore CRM Solutions
+
+Secondary CTA:
+Book a Free Consultation
+
+Visual:
+Modern CRM dashboard showing:
+
+leads
+
+sales pipeline
+
+customers
+
+analytics
+
+automation
+
+tasks
+
+revenue
+
+Use blue + purple + cyan gradients.
+
+================================
+VISUAL DESIGN
+
+Use a premium gradient-based technology background.
+
+Preferred palette:
+
+Deep Navy
+Electric Blue
+Royal Blue
+Violet
+Purple
+Cyan
+
+Use gradients subtly.
+
+Do NOT make the entire hero neon.
+
+Do NOT use excessive glow.
+
+Do NOT use huge empty spaces.
+
+Do NOT use a single dark laptop photograph.
+
+Do NOT use generic office stock photography.
+
+Use UI/dashboard-style visuals that communicate our actual services.
+
+Create depth using:
+
+dashboard panels
+
+floating cards
+
+charts
+
+workflow nodes
+
+AI assistant cards
+
+subtle abstract shapes
+
+soft gradients
+
+light glass effects
+
+================================
+TYPOGRAPHY
+
+This is VERY IMPORTANT.
+
+Do NOT use:
+
+REAL
+ESTATE
+CRM
+BUILT
+FOR
+...
+
+Do NOT put one word per line.
+
+Use a maximum of 2–3 lines for the main headline.
+
+Example:
+
+Smarter CRM
+for Real Estate Growth
+
+or:
+
+AI Chatbots
+That Work 24/7
+
+Headline should be approximately:
+48–64px desktop
+
+and responsive down to:
+32–40px mobile.
+
+Do not use extremely oversized typography.
+
+================================
+SLIDER BEHAVIOR
+
+Use a reliable existing slider library if the project already has one.
+
+If not, implement a lightweight reliable slider.
+
+Requirements:
+
+5 slides
+
+autoplay every 5 seconds
+
+smooth transition
+
+previous arrow
+
+next arrow
+
+pagination dots
+
+keyboard navigation
+
+touch/swipe support
+
+pause on hover
+
+pause when user interacts
+
+mobile responsive
+
+tablet responsive
+
+desktop responsive
+
+reduced-motion support
+
+Do not allow slides to overlap each other.
+
+Do not allow content from one slide to appear on another.
+
+Do not allow horizontal scrolling.
+
+Do not allow the hero to break the page layout.
+
+================================
+HEIGHT
+
+Keep the hero visually compact and premium.
+
+Desktop:
+approximately 560–650px
+
+Tablet:
+approximately 520–600px
+
+Mobile:
+auto height based on content.
+
+Do NOT create an extremely tall hero.
+
+================================
+RESPONSIVE DESIGN
+
+Desktop:
+2-column layout.
+
+Tablet:
+balanced 2-column layout where possible.
+
+Mobile:
+stack:
+
+Badge
+Headline
+Description
+CTA
+Visual
+
+The visual must remain visible.
+
+Do NOT crop the important AI/CRM visual.
+
+Do NOT create horizontal overflow.
+
+================================
+CTA
+
+Primary CTA:
+Use the existing website CTA/routing wherever possible.
+
+Secondary CTA:
+Book a Free Consultation
+
+Do not create broken links.
+
+Do not remove existing CTA functionality.
+
+================================
+SEO
+
+Homepage must have ONLY ONE H1.
+
+Use the first slide headline as the homepage H1.
+
+Other slide headlines must use H2 or appropriate semantic elements.
+
+Do not put important text inside images.
+
+Add meaningful alt text to visual images.
+
+Do not keyword stuff.
+
+================================
+PERFORMANCE
+
+Use optimized images/assets.
+
+First slide visual should load with priority.
+
+Lazy-load other slide visuals when appropriate.
+
+Avoid unnecessary libraries.
+
+Avoid heavy animations.
+
+Prevent layout shift.
+
+================================
+IMPORTANT — PRESERVE WEBSITE
+
+DO NOT MODIFY:
+
+announcement bar
+
+navbar
+
+logo
+
+navigation
+
+About section
+
+Services section
+
+Industries section
+
+Insights section
+
+footer
+
+chatbot
+
+floating buttons
+
+other homepage sections
+
+ONLY rebuild the hero slider.
+
+Before coding, inspect the current hero implementation and remove the broken hero-specific layout/styles safely.
+
+Make sure old hero CSS does not conflict with the new slider.
+
+================================
+FINAL QA
+
+After rebuilding:
+
+Test:
+
+Desktop 1920px
+
+Desktop 1440px
+
+Laptop 1366px
+
+Tablet
+
+Mobile 390px
+
+Mobile 375px
+
+Verify:
+
+no oversized text
+
+no broken layout
+
+no overlapping slides
+
+no horizontal scrollbar
+
+images display correctly
+
+arrows work
+
+dots work
+
+autoplay works
+
+swipe works
+
+CTA links work
+
+navbar remains unchanged
+
+hero does not cover the navbar
+
+hero does not affect sections below it
+
+page remains responsive
+
+The final result must look like a polished, premium AI + SaaS company website.
+
+REBUILD THE HERO SLIDER FROM SCRATCH.''`;
 
   return (
     <Layout>
@@ -343,9 +908,7 @@ const Contact = () => {
                 allowFullScreen 
                 loading="lazy" 
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Office Location"
-              ></iframe>
-              <div className="absolute inset-0 pointer-events-none border-[12px] border-slate-900/50 rounded-3xl" />
+              />
             </motion.div>
           </div>
         </div>
