@@ -32,61 +32,63 @@ const Contact = () => {
 
   const commandPlaceholder = `'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
 
-Continue from the current hero.
+Now improve the 5 hero slides.
 
-Now improve ONLY the left-side hero typography and CTA styling.
+Keep the same premium layout and design system, but give each slide its own visual identity.
 
-Use this content:
+Slide 1:
 
-Badge:
+AI Chatbots
 
-AI-POWERED SOLUTIONS
+Colors: blue + purple + cyan
 
-Headline:
+Visual: AI assistant + chatbot + CRM
 
-AI Chatbots &
+Slide 2:
 
-Smart Automation
+AI Automation
 
-Highlight:
+Colors: purple + magenta + blue
 
-Smart Automation
+Visual: automation workflow
 
-Description:
+Slide 3:
 
-Automate conversations, qualify leads, provide 24/7 support and streamline your business operations with intelligent AI.
+Real Estate CRM
 
-Primary CTA:
+Colors: blue + teal + violet
 
-Explore AI Solutions
+Visual: properties + leads + sales pipeline
 
-Secondary CTA:
+Slide 4:
 
-Book a Free Consultation
+WhatsApp + Meta API CRM
 
-Design:
+Colors: green + cyan + blue + purple
 
-- premium modern typography
+Visual: WhatsApp → AI → Lead → CRM
 
-- headline maximum 2–3 lines
+Slide 5:
 
-- do not break every word into separate lines
+All-in-One CRM
 
-- highlight only the important phrase
+Colors: blue + violet + cyan
 
-- white headline
+Visual: complete CRM dashboard
 
-- gradient highlight
+Each slide must have:
 
-- readable body text
+- different visual
 
-- premium gradient primary button
+- different dominant gradient
 
-- glass secondary button
+- relevant floating cards
 
-Do not make the headline oversized.
+- relevant dashboard elements
 
-Do not change the right-side dashboard.`;
+Do not reuse the same visual on every slide.
+
+Keep the same overall premium design language.`;
 
   return (
     <Layout>
