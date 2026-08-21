@@ -21,9 +21,9 @@ const solutions = [
   { name: 'Multi CRM Platform', href: '/multi-crm' },
   { name: 'All-in-One CRM', href: '/all-in-one-crm' },
   { name: 'Meta API CRM', href: '/meta-api-crm' },
-  { name: 'Ewallet App Development', href: '/solutions/ewallet' },
-  { name: 'eLearning App Development', href: '/solutions/elearning' },
-  { name: 'Healthcare App Development', href: '/solutions/healthcare' },
+  { name: 'Software Company Hyderabad', href: '/software-development-company-hyderabad' },
+  { name: 'Software Company KPHB', href: '/software-development-company-kphb' },
+  { name: 'Software Company Kukatpally', href: '/software-development-company-kukatpally' },
   { name: 'AI Chatbot Development', href: '/services/ai-chatbot' },
 ];
 
