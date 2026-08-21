@@ -237,90 +237,79 @@ const VisualComposition = ({ slide }: { slide: typeof slides[0] }) => {
         </div>
       </div>
 
-      {/* Floating UI Cards */}
-      <PremiumFloatingCard 
-        icon={Bot} 
-        title="AI Assistant" 
-        status="Active" 
-        color="blue" 
-        className="-left-16 top-[20%]"
-        delay={0.2}
-      />
+      {/* Conditional Floating UI Cards */}
+      {slide.visual.type === 'chatbot' && (
+        <>
+          <PremiumFloatingCard icon={Bot} title="AI Assistant" status="Active" color="blue" className="-left-16 top-[20%]" delay={0.2} />
+          <PremiumFloatingCard icon={MessageSquare} title="WhatsApp" status="Live" color="cyan" className="right-[5%] -top-8" delay={0.4} />
+        </>
+      )}
 
-      <PremiumFloatingCard 
-        icon={TrendingUp} 
-        title="Analytics" 
-        status="+12.5%" 
-        color="purple" 
-        className="-right-12 top-[45%]"
-        delay={0.4}
-      />
+      {slide.visual.type === 'automation' && (
+        <>
+          <PremiumFloatingCard icon={Zap} title="Automation" status="98%" color="green" className="-left-8 bottom-[15%]" delay={0.2} />
+          <PremiumFloatingCard icon={TrendingUp} title="Efficiency" status="+45%" color="purple" className="-right-12 top-[45%]" delay={0.4} />
+        </>
+      )}
 
-      <PremiumFloatingCard 
-        icon={Zap} 
-        title="Automation" 
-        status="98%" 
-        color="green" 
-        className="-left-8 bottom-[15%]"
-        delay={0.6}
-      />
+      {slide.visual.type === 'real-estate' && (
+        <>
+          <PremiumFloatingCard icon={Building2} title="Properties" status="482 Active" color="blue" className="-left-16 top-[20%]" delay={0.2} />
+          <PremiumFloatingCard icon={Users} title="New Lead" status="Real Estate" color="pink" className="left-[10%] -bottom-6" delay={0.4} />
+        </>
+      )}
 
-      <PremiumFloatingCard 
-        icon={MessageSquare} 
-        title="WhatsApp" 
-        status="Live" 
-        color="cyan" 
-        className="right-[5%] -top-8"
-        delay={0.8}
-      />
+      {slide.visual.type === 'whatsapp' && (
+        <>
+          <PremiumFloatingCard icon={MessageSquare} title="WhatsApp API" status="Connected" color="green" className="right-[5%] -top-8" delay={0.2} />
+          <PremiumFloatingCard icon={Bot} title="AI Agent" status="Responding" color="cyan" className="-left-16 top-[20%]" delay={0.4} />
+        </>
+      )}
 
-      <PremiumFloatingCard 
-        icon={Users} 
-        title="Lead Qualified" 
-        status="Added to CRM" 
-        color="pink" 
-        className="left-[10%] -bottom-6"
-        delay={1}
-      />
+      {slide.visual.type === 'complete-crm' && (
+        <>
+          <PremiumFloatingCard icon={Database} title="Cloud DB" status="Synced" color="blue" className="-left-8 bottom-[15%]" delay={0.2} />
+          <PremiumFloatingCard icon={TrendingUp} title="Analytics" status="+12.5%" color="purple" className="-right-12 top-[45%]" delay={0.4} />
+        </>
+      )}
 
-      {/* Enhanced Workflow Visual Card */}
-      <motion.div 
-        className="absolute -right-12 top-[10%] z-20 w-48 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-white/50 p-4 hidden md:block"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-      >
-        <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
-          <Zap className="w-3 h-3 text-emerald-500" />
-          AI Automation Flow
-        </div>
-        <div className="space-y-4 relative">
-          {[
-            { label: 'New Lead', icon: Users, color: 'text-blue-500', bg: 'bg-blue-50' },
-            { label: 'AI Processing', icon: Bot, color: 'text-purple-500', bg: 'bg-purple-50' },
-            { label: 'Smart Response', icon: Send, color: 'text-cyan-500', bg: 'bg-cyan-50' },
-            { label: 'Lead Qualified', icon: MessageSquare, color: 'text-pink-500', bg: 'bg-pink-50' },
-            { label: 'Added to CRM', icon: Database, color: 'text-emerald-500', bg: 'bg-emerald-50' }
-          ].map((step, i, arr) => (
-            <div key={i} className="relative">
-              <div className="flex items-center gap-3 relative z-10">
-                <div className={`w-8 h-8 rounded-lg ${step.bg} flex items-center justify-center shadow-sm border border-slate-100`}>
-                  <step.icon className={`w-4 h-4 ${step.color}`} />
+      {/* Conditional Enhanced Workflow Visual Card for Automation/WhatsApp slides */}
+      {(slide.visual.type === 'automation' || slide.visual.type === 'whatsapp') && (
+        <motion.div 
+          className="absolute -right-12 top-[10%] z-20 w-48 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-white/50 p-4 hidden md:block"
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+        >
+          <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+            <Zap className="w-3 h-3 text-emerald-500" />
+            AI Automation Flow
+          </div>
+          <div className="space-y-4 relative">
+            {[
+              { label: 'New Lead', icon: Users, color: 'text-blue-500', bg: 'bg-blue-50' },
+              { label: 'AI Processing', icon: Bot, color: 'text-purple-500', bg: 'bg-purple-50' },
+              { label: 'Added to CRM', icon: Database, color: 'text-emerald-500', bg: 'bg-emerald-50' }
+            ].map((step, i, arr) => (
+              <div key={i} className="relative">
+                <div className="flex items-center gap-3 relative z-10">
+                  <div className={`w-8 h-8 rounded-lg ${step.bg} flex items-center justify-center shadow-sm border border-slate-100`}>
+                    <step.icon className={`w-4 h-4 ${step.color}`} />
+                  </div>
+                  <div className="text-[10px] font-bold text-slate-700">{step.label}</div>
+                  {i < arr.length - 1 && (
+                    <motion.div 
+                      className={`absolute left-4 top-8 w-[1px] h-4 bg-gradient-to-b from-slate-200 to-transparent z-0`}
+                      animate={{ opacity: [0.3, 1, 0.3] }}
+                      transition={{ duration: 2, repeat: Infinity, delay: i * 0.4 }}
+                    />
+                  )}
                 </div>
-                <div className="text-[10px] font-bold text-slate-700">{step.label}</div>
-                {i < arr.length - 1 && (
-                  <motion.div 
-                    className={`absolute left-4 top-8 w-[1px] h-4 bg-gradient-to-b from-slate-200 to-transparent z-0`}
-                    animate={{ opacity: [0.3, 1, 0.3] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: i * 0.4 }}
-                  />
-                )}
               </div>
-            </div>
-          ))}
-          {/* Animated pulses on connections */}
-          <div className="absolute left-[15px] top-4 w-[2px] h-[calc(100%-24px)] bg-slate-100 z-0" />
-        </div>
-      </motion.div>
+            ))}
+            <div className="absolute left-[15px] top-4 w-[2px] h-[calc(100%-24px)] bg-slate-100 z-0" />
+          </div>
+        </motion.div>
+      )}
       
       {/* Small Floating Icons */}
       <div className="absolute bottom-[5%] left-[25%] z-20 w-8 h-8 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg text-white">
