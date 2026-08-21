@@ -420,6 +420,9 @@ export function ServiceDetailPage({
         </div>
       </section>
 
+      {/* Additional SEO Content / FAQs */}
+      {children}
+
       {/* Enhanced content: impact stats, differentiators, FAQ */}
       <PageEnhancements title={title} kind="service" highlights={useCases} />
 
