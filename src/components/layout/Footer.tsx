@@ -39,6 +39,7 @@ const company = [
   { name: 'About', href: '/about' },
   { name: 'Industries', href: '/industries' },
   { name: 'Insights', href: '/insights' },
+  { name: 'Resources', href: '/insights/resources' },
   { name: 'Contact', href: '/contact' },
   { name: 'Careers', href: '/careers' },
 ];

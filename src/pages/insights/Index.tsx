@@ -42,6 +42,13 @@ const insightCategories = [
     href: "/insights/press-releases",
     gradient: "from-pink-500 to-rose-500",
   },
+  {
+    title: "Resources",
+    description: "Expert guides and deep dives into CRM, AI, and Software Development.",
+    icon: Lightbulb,
+    href: "/insights/resources",
+    gradient: "from-blue-600 to-indigo-600",
+  },
 ];
 
 const stats = [

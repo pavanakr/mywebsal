@@ -146,6 +146,7 @@ import InsightsPortfolio from "./pages/insights/InsightsPortfolio";
 import InsightsBlogs from "./pages/insights/Blogs";
 import InsightsFAQs from "./pages/insights/FAQs";
 import InsightsPressReleases from "./pages/insights/PressReleases";
+import InsightsResources from "./pages/insights/Resources";
 import CaseStudyDetail from "./pages/insights/CaseStudyDetail";
 import Sitemap from "./pages/Sitemap";
 // Programmatic SEO pages
@@ -319,6 +320,7 @@ const App = () => (
             <Route path="/insights/blogs" element={<InsightsBlogs />} />
             <Route path="/insights/faqs" element={<InsightsFAQs />} />
             <Route path="/insights/press-releases" element={<InsightsPressReleases />} />
+            <Route path="/insights/resources" element={<InsightsResources />} />
             {/* Other */}
             <Route path="/careers" element={<Careers />} />
             <Route path="/contact" element={<Contact />} />

@@ -10,11 +10,14 @@ import { Input } from '@/components/ui/input';
 
 const categories = [
   "All",
-  "Technology",
-  "AI & ML",
-  "Cloud",
-  "Development",
-  "Business",
+  "CRM",
+  "Real Estate CRM",
+  "WhatsApp CRM",
+  "Meta API",
+  "AI",
+  "SaaS",
+  "Software Development",
+  "Business Automation",
 ];
 
 const blogs = [
