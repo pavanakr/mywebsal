@@ -80,6 +80,36 @@ const posts = [
     category: 'DevOps',
     href: '/blog/devops-culture',
   },
+  {
+    title: 'How Real Estate CRM Software Transforms Property Management',
+    excerpt: 'Specialized CRM solutions for lead management and property tracking.',
+    author: 'Softurecs Team',
+    date: 'Aug 21, 2026',
+    readTime: '10 min read',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop',
+    category: 'CRM',
+    href: '/blog/real-estate-crm-automation',
+  },
+  {
+    title: 'Scaling Customer Support with AI Chatbots',
+    excerpt: 'Redefining customer engagement with Conversational AI.',
+    author: 'AI Specialists',
+    date: 'Aug 21, 2026',
+    readTime: '12 min read',
+    image: 'https://images.unsplash.com/photo-1531746790731-6c087fecd05a?w=600&h=400&fit=crop',
+    category: 'AI',
+    href: '/blog/ai-chatbots-guide',
+  },
+  {
+    title: 'Why Hyderabad is the Hub for Software Development',
+    excerpt: 'Analyzing the technology ecosystem in Hyderabad and KPHB.',
+    author: 'Tech Analyst',
+    date: 'Aug 21, 2026',
+    readTime: '9 min read',
+    image: 'https://images.unsplash.com/photo-1577083552431-6e5fd01988ec?w=600&h=400&fit=crop',
+    category: 'Local',
+    href: '/blog/software-development-hub-hyderabad',
+  },
 ];
 
 const Blog = () => {
