@@ -260,16 +260,22 @@
   backface-visibility: hidden;
 }
 
-/* Hide specific badge/branding element */
+/* Hide specific badge/branding element while protecting hero slider */
 #lovable-badge, 
 .lovable-badge,
 [class*="lovable-badge"],
 #lovable-branding,
 .lovable-branding,
-[id^="lovable-"],
-[class^="lovable-"] {
+[id^="lovable-"]:not(#hero-slider),
+[class^="lovable-"]:not(.lovable-badge) {
   display: none !important;
   visibility: hidden !important;
   opacity: 0 !important;
   pointer-events: none !important;
+}
+
+#hero-slider {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
