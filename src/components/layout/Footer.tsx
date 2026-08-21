@@ -4,58 +4,58 @@ import { ChevronDown, ArrowUp, MessageCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const services = [
+  { name: 'Custom Software Development', href: '/services/custom-software' },
+  { name: 'Web Development', href: '/services/web-development' },
   { name: 'Mobile App Development', href: '/services/mobile-apps' },
-  { name: 'iOS App Development', href: '/services/ios-development' },
-  { name: 'Android App Development', href: '/services/android-development' },
-  { name: 'Hybrid App Development', href: '/services/hybrid-development' },
-  { name: 'Software Consulting Services', href: '/services/software-consulting' },
-  { name: 'Web Development Services', href: '/services/web-development' },
-  { name: 'UI/UX Development', href: '/services/ui-ux' },
-  { name: 'Data Analytics Services', href: '/services/data-analytics' },
-  { name: 'Ecommerce App Development', href: '/services/ecommerce' },
+  { name: 'SaaS Development', href: '/services/saas' },
+  { name: 'CRM Development', href: '/services/crm-development' },
+  { name: 'AI Development', href: '/services/ai-development' },
+  { name: 'AI Chatbot Development', href: '/services/ai-chatbot' },
+  { name: 'API Development', href: '/services/api-development' },
 ];
 
-const solutions = [
+const crmSolutions = [
   { name: 'Real Estate CRM', href: '/real-estate-crm' },
-  { name: 'WhatsApp CRM', href: '/whatsapp-crm' },
-  { name: 'Multi CRM Platform', href: '/multi-crm' },
+  { name: 'Multi CRM', href: '/multi-crm' },
   { name: 'All-in-One CRM', href: '/all-in-one-crm' },
   { name: 'Meta API CRM', href: '/meta-api-crm' },
-  { name: 'Software Company Hyderabad', href: '/software-development-company-hyderabad' },
-  { name: 'Software Company KPHB', href: '/software-development-company-kphb' },
-  { name: 'Software Company Kukatpally', href: '/software-development-company-kukatpally' },
+  { name: 'WhatsApp CRM', href: '/whatsapp-crm' },
+];
+
+const aiSolutions = [
   { name: 'AI Chatbot Development', href: '/services/ai-chatbot' },
+  { name: 'AI Automation', href: '/services/ai-automation' },
+  { name: 'Conversational AI', href: '/services/conversational-ai' },
 ];
 
-const technologies = [
-  { name: 'Blockchain App Development', href: '/technologies/blockchain' },
-  { name: 'Artificial Intelligence Solutions', href: '/services/ai-development' },
-  { name: 'Fintech App Development', href: '/technologies/fintech' },
-  { name: 'Cryptocurrency Wallet', href: '/technologies/blockchain' },
-  { name: 'IoT App Development', href: '/technologies/iot' },
-  { name: 'Salesforce Solutions', href: '/technologies/salesforce' },
-  { name: 'Cloud Computing', href: '/technologies/cloud' },
-  { name: 'Machine Learning Solutions', href: '/technologies/machine-learning' },
-  { name: 'Big Data Solutions', href: '/services/big-data' },
+const locations = [
+  { name: 'Software Development Company in India', href: '/software-development-company-india' },
+  { name: 'Software Development Company in Hyderabad', href: '/software-development-company-hyderabad' },
+  { name: 'Software Development Company in KPHB', href: '/software-development-company-kphb' },
+  { name: 'Software Development Company in Kukatpally', href: '/software-development-company-kukatpally' },
 ];
 
-const hireDevelopers = [
-  { name: 'Hire Dedicated Developers', href: '/hire/dedicated-developers' },
-  { name: 'Hire Mobile App Developers', href: '/hire/mobile-developers' },
-  { name: 'Hire Android App Developers', href: '/hire/android-developers' },
-  { name: 'Hire iOS App Developers', href: '/hire/ios-developers' },
-  { name: 'Hire Laravel Developers', href: '/hire/laravel-developers' },
-  { name: 'Hire Flutter Developers', href: '/hire/flutter-developers' },
-  { name: 'Hire Nodejs Developers', href: '/hire/nodejs-developers' },
-  { name: 'Hire Java Developers', href: '/hire/java-developers' },
-  { name: 'Hire Game Developers', href: '/hire/game-developers' },
+const company = [
+  { name: 'About', href: '/about' },
+  { name: 'Industries', href: '/industries' },
+  { name: 'Insights', href: '/insights' },
+  { name: 'Contact', href: '/contact' },
+  { name: 'Careers', href: '/careers' },
+];
+
+const legal = [
+  { name: 'Privacy Policy', href: '/privacy-policy' },
+  { name: 'Terms & Conditions', href: '/terms' },
+  { name: 'Cookie Policy', href: '/cookie-policy' },
 ];
 
 const footerColumns = [
-  { title: 'Services', items: services },
-  { title: 'Solutions', items: solutions },
-  { title: 'Trending Technologies', items: technologies },
-  { title: 'Hire Developers', items: hireDevelopers },
+  { title: 'SERVICES', items: services },
+  { title: 'CRM SOLUTIONS', items: crmSolutions },
+  { title: 'AI SOLUTIONS', items: aiSolutions },
+  { title: 'LOCATIONS', items: locations },
+  { title: 'COMPANY', items: company },
+  { title: 'LEGAL', items: legal },
 ];
 
 // Mobile Accordion Component
