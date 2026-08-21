@@ -32,59 +32,53 @@ const Contact = () => {
 
   const commandPlaceholder = `'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
 
-Update ONLY the homepage hero slider.
+Continue from the current hero.
 
-Use the attached reference image as the visual design reference.
+Now improve ONLY the right side of the hero.
 
-Keep the existing:
+Create a premium SaaS dashboard visual similar to the attached reference.
 
-- navbar
+Show:
 
-- announcement bar
+- AI Assistant
 
-- hero layout
+- Total Conversations
 
-- slider controls
+- Qualified Leads
 
-- CTA functionality
+- Automation Rate
 
-- responsive behavior
+- Analytics
 
-Do not modify any other section.
+- Recent Activities
 
-Change the hero visual style to match the reference:
+- WhatsApp
 
-- premium AI SaaS design
+- Chat
 
-- deep navy base
+- Email
 
-- electric blue
+Use a clean white/light dashboard inside the colorful hero.
 
-- purple
+Add:
 
-- violet
+- rounded cards
 
-- cyan
+- subtle shadows
 
-- magenta/pink accents
+- blue/purple/cyan accents
 
-- smooth multi-color gradients
+- glass effects
 
 - soft glow
 
-- subtle abstract technology background
+The dashboard must look like a real AI CRM product, not an empty placeholder.
 
-- rounded hero container
+Do not change the left-side content.
 
-Do NOT keep the hero as a plain dark navy background.
+Do not change navbar or other sections.
 
-Do NOT use a generic laptop image.
-
-Make the background colorful, premium and professional.
-
-First implement ONLY the background, gradients and overall visual styling.
-
-Test desktop and mobile.`;
+Test responsive behavior.`;
 
   return (
     <Layout>
