@@ -16,14 +16,14 @@ const services = [
 ];
 
 const solutions = [
+  { name: 'Real Estate CRM', href: '/real-estate-crm' },
+  { name: 'WhatsApp CRM', href: '/whatsapp-crm' },
+  { name: 'Multi CRM Platform', href: '/multi-crm' },
+  { name: 'All-in-One CRM', href: '/all-in-one-crm' },
+  { name: 'Meta API CRM', href: '/meta-api-crm' },
   { name: 'Ewallet App Development', href: '/solutions/ewallet' },
   { name: 'eLearning App Development', href: '/solutions/elearning' },
-  { name: 'Real Estate App Development', href: '/solutions/real-estate' },
   { name: 'Healthcare App Development', href: '/solutions/healthcare' },
-  { name: 'Food Delivery App Development', href: '/solutions/food-delivery' },
-  { name: 'Dating App Development', href: '/solutions/dating' },
-  { name: 'Grocery Delivery App Development', href: '/solutions/grocery' },
-  { name: 'Fantasy Sports App Development', href: '/solutions/fantasy-sports' },
   { name: 'AI Chatbot Development', href: '/services/ai-chatbot' },
 ];
 
