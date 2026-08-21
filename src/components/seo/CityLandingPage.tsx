@@ -34,7 +34,7 @@ const cityData: Record<string, CityData> = {
     region: 'Karnataka',
     phone: '+91 7396080902',
     timezone: 'IST',
-    description: 'Softurecs AI Labs serves Bengaluru\'s thriving startup ecosystem and enterprise clients with innovative AI-powered software solutions. Our expertise in mobile app development, cloud services, and digital transformation helps businesses in Karnataka compete globally. Partner with us for scalable, secure, and future-ready technology solutions.',
+    description: 'SOFTURECS AI LABS PRIVATE LIMITED serves Bengaluru\'s thriving startup ecosystem and enterprise clients with innovative AI-powered software solutions. Our expertise in mobile app development, cloud services, and digital transformation helps businesses in Karnataka compete globally. Partner with us for scalable, secure, and future-ready technology solutions.',
     localBenefits: ['Startup ecosystem expertise', 'Enterprise-grade solutions', 'Agile development teams', 'Quick turnaround times'],
   },
   'chennai': {
@@ -43,7 +43,7 @@ const cityData: Record<string, CityData> = {
     region: 'Tamil Nadu',
     phone: '+91 7396080902',
     timezone: 'IST',
-    description: 'Serving Chennai\'s manufacturing and IT sectors, Softurecs AI Labs provides tailored software solutions that drive operational efficiency. From AI automation to custom ERP systems, we help Tamil Nadu businesses modernize their technology infrastructure and achieve digital excellence.',
+    description: 'Serving Chennai\'s manufacturing and IT sectors, SOFTURECS AI LABS PRIVATE LIMITED provides tailored software solutions that drive operational efficiency. From AI automation to custom ERP systems, we help Tamil Nadu businesses modernize their technology infrastructure and achieve digital excellence.',
     localBenefits: ['Manufacturing industry expertise', 'Legacy modernization', 'Cost-effective solutions', 'Bilingual support'],
   },
   'pune': {
@@ -52,7 +52,7 @@ const cityData: Record<string, CityData> = {
     region: 'Maharashtra',
     phone: '+91 7396080902',
     timezone: 'IST',
-    description: 'Softurecs AI Labs partners with Pune\'s automotive and IT companies to deliver innovative software solutions. Our AI and machine learning expertise helps businesses in Maharashtra automate processes, gain insights, and accelerate growth through technology.',
+    description: 'SOFTURECS AI LABS PRIVATE LIMITED partners with Pune\'s automotive and IT companies to deliver innovative software solutions. Our AI and machine learning expertise helps businesses in Maharashtra automate processes, gain insights, and accelerate growth through technology.',
     localBenefits: ['Automotive industry focus', 'R&D collaboration', 'Quality engineering', 'Skilled talent access'],
   },
   'mumbai': {
@@ -61,7 +61,7 @@ const cityData: Record<string, CityData> = {
     region: 'Maharashtra',
     phone: '+91 7396080902',
     timezone: 'IST',
-    description: 'As India\'s financial capital, Mumbai demands enterprise-grade software solutions. Softurecs AI Labs delivers secure fintech applications, banking software, and digital transformation services to BFSI clients and enterprises across Maharashtra.',
+    description: 'As India\'s financial capital, Mumbai demands enterprise-grade software solutions. SOFTURECS AI LABS PRIVATE LIMITED delivers secure fintech applications, banking software, and digital transformation services to BFSI clients and enterprises across Maharashtra.',
     localBenefits: ['BFSI domain expertise', 'Compliance-ready solutions', 'High-security standards', 'Enterprise scalability'],
   },
   'delhi': {
@@ -70,7 +70,7 @@ const cityData: Record<string, CityData> = {
     region: 'NCR',
     phone: '+91 7396080902',
     timezone: 'IST',
-    description: 'Softurecs AI Labs serves Delhi NCR with comprehensive software development services. From government projects to private enterprises, we deliver AI-powered solutions that meet the diverse technology needs of India\'s capital region.',
+    description: 'SOFTURECS AI LABS PRIVATE LIMITED serves Delhi NCR with comprehensive software development services. From government projects to private enterprises, we deliver AI-powered solutions that meet the diverse technology needs of India\'s capital region.',
     localBenefits: ['Government project experience', 'Multi-sector expertise', 'Large team capacity', 'NCR coverage'],
   },
   'noida': {
@@ -79,7 +79,7 @@ const cityData: Record<string, CityData> = {
     region: 'Uttar Pradesh',
     phone: '+91 7396080902',
     timezone: 'IST',
-    description: 'Located in the IT hub of Uttar Pradesh, Softurecs AI Labs provides Noida businesses with cutting-edge software solutions. Our expertise in AI, mobile development, and cloud services helps companies in Noida\'s tech corridor achieve digital transformation.',
+    description: 'Located in the IT hub of Uttar Pradesh, SOFTURECS AI LABS PRIVATE LIMITED provides Noida businesses with cutting-edge software solutions. Our expertise in AI, mobile development, and cloud services helps companies in Noida\'s tech corridor achieve digital transformation.',
     localBenefits: ['Tech corridor presence', 'Startup support', 'Rapid prototyping', 'Competitive pricing'],
   },
   'gurugram': {
@@ -88,7 +88,7 @@ const cityData: Record<string, CityData> = {
     region: 'Haryana',
     phone: '+91 7396080902',
     timezone: 'IST',
-    description: 'Serving Gurugram\'s corporate hub, Softurecs AI Labs delivers enterprise software solutions to Fortune 500 companies and ambitious startups alike. Our AI and automation expertise helps businesses in Haryana optimize operations and drive growth.',
+    description: 'Serving Gurugram\'s corporate hub, SOFTURECS AI LABS PRIVATE LIMITED delivers enterprise software solutions to Fortune 500 companies and ambitious startups alike. Our AI and automation expertise helps businesses in Haryana optimize operations and drive growth.',
     localBenefits: ['Corporate hub expertise', 'MNC experience', 'Enterprise solutions', 'Professional services'],
   },
   // International Cities
@@ -98,7 +98,7 @@ const cityData: Record<string, CityData> = {
     region: 'NY',
     phone: '+1 (555) 123-4567',
     timezone: 'EST',
-    description: 'Softurecs AI Labs serves New York\'s dynamic business landscape with innovative AI and software solutions. From Wall Street fintech to Brooklyn startups, we deliver scalable, secure applications that meet the demanding standards of America\'s largest market.',
+    description: 'SOFTURECS AI LABS PRIVATE LIMITED serves New York\'s dynamic business landscape with innovative AI and software solutions. From Wall Street fintech to Brooklyn startups, we deliver scalable, secure applications that meet the demanding standards of America\'s largest market.',
     localBenefits: ['US timezone support', 'Fintech expertise', 'Enterprise compliance', 'Dedicated US team'],
   },
   'san-francisco': {
@@ -107,7 +107,7 @@ const cityData: Record<string, CityData> = {
     region: 'CA',
     phone: '+1 (555) 123-4567',
     timezone: 'PST',
-    description: 'In the heart of Silicon Valley, Softurecs AI Labs partners with San Francisco\'s tech innovators to build next-generation software. Our AI, machine learning, and cloud expertise aligns with the Bay Area\'s culture of innovation and disruption.',
+    description: 'In the heart of Silicon Valley, SOFTURECS AI LABS PRIVATE LIMITED partners with San Francisco\'s tech innovators to build next-generation software. Our AI, machine learning, and cloud expertise aligns with the Bay Area\'s culture of innovation and disruption.',
     localBenefits: ['Silicon Valley standards', 'Startup mentality', 'Latest technologies', 'Venture-backed projects'],
   },
   'london': {
@@ -116,7 +116,7 @@ const cityData: Record<string, CityData> = {
     region: 'England',
     phone: '+44 20 1234 5678',
     timezone: 'GMT',
-    description: 'Softurecs AI Labs serves London\'s diverse business community with GDPR-compliant software solutions. From Canary Wharf financial services to Shoreditch startups, we deliver AI-powered applications that meet European standards and drive business growth.',
+    description: 'SOFTURECS AI LABS PRIVATE LIMITED serves London\'s diverse business community with GDPR-compliant software solutions. From Canary Wharf financial services to Shoreditch startups, we deliver AI-powered applications that meet European standards and drive business growth.',
     localBenefits: ['GDPR compliance', 'UK timezone support', 'Financial services focus', 'European expansion'],
   },
   'dubai': {
@@ -125,7 +125,7 @@ const cityData: Record<string, CityData> = {
     region: 'Middle East',
     phone: '+971 4 123 4567',
     timezone: 'GST',
-    description: 'Softurecs AI Labs partners with Dubai\'s ambitious enterprises to deliver world-class software solutions. Our expertise in AI, mobile apps, and digital transformation supports the UAE\'s vision for a smart, technology-driven future.',
+    description: 'SOFTURECS AI LABS PRIVATE LIMITED partners with Dubai\'s ambitious enterprises to deliver world-class software solutions. Our expertise in AI, mobile apps, and digital transformation supports the UAE\'s vision for a smart, technology-driven future.',
     localBenefits: ['Middle East presence', 'Arabic support', 'Government projects', 'Smart city expertise'],
   },
   'singapore': {
@@ -134,7 +134,7 @@ const cityData: Record<string, CityData> = {
     region: 'APAC',
     phone: '+65 6123 4567',
     timezone: 'SGT',
-    description: 'Serving Singapore\'s position as Asia\'s tech hub, Softurecs AI Labs delivers enterprise software solutions that meet the highest standards. Our AI and cloud expertise helps businesses in Singapore and APAC achieve digital excellence.',
+    description: 'Serving Singapore\'s position as Asia\'s tech hub, SOFTURECS AI LABS PRIVATE LIMITED delivers enterprise software solutions that meet the highest standards. Our AI and cloud expertise helps businesses in Singapore and APAC achieve digital excellence.',
     localBenefits: ['APAC hub', 'Multi-currency support', 'Regional expertise', 'Fintech specialization'],
   },
 };
@@ -197,7 +197,7 @@ export const CityLandingPage = () => {
               AI Software Development Company in {formattedCity}
             </h1>
             <p className="text-xl text-primary-foreground/80 mb-8">
-              Transform your business with cutting-edge AI solutions, custom software, and digital transformation services from Softurecs AI Labs.
+              Transform your business with cutting-edge AI solutions, custom software, and digital transformation services from SOFTURECS AI LABS PRIVATE LIMITED.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/contact">
@@ -344,7 +344,7 @@ export const CityLandingPage = () => {
         <div className="container-custom text-center">
           <h2 className="text-3xl font-bold text-foreground mb-4">See Our Work</h2>
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Explore case studies from clients across industries who trusted Softurecs AI Labs for their digital transformation.
+            Explore case studies from clients across industries who trusted SOFTURECS AI LABS PRIVATE LIMITED for their digital transformation.
           </p>
           <Link to="/insights/case-studies">
             <Button variant="outline" size="lg">
