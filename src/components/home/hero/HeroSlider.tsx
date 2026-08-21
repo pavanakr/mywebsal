@@ -150,7 +150,7 @@ const VisualComposition = ({ slide }: { slide: typeof slides[0] }) => {
     >
       <div className={`absolute inset-0 bg-gradient-to-tr ${slide.colors.bgGlow} rounded-full blur-3xl animate-pulse`} />
       
-      <div className="relative z-10 w-[340px] h-[240px] bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl flex flex-col gap-4 overflow-hidden">
+      <div className="relative z-10 w-[340px] h-[240px] bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-3xl p-6 shadow-[0_0_50px_rgba(0,0,0,0.3)] flex flex-col gap-4 overflow-hidden">
         <div className="flex justify-between items-center pb-2 border-b border-white/5">
            <div className="flex gap-2">
              <div className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
@@ -216,23 +216,41 @@ export function HeroSlider() {
   return (
     <section 
       id="hero-slider"
-      className="relative w-full overflow-hidden bg-[#050816] pt-24 pb-12 md:pt-32 md:pb-16 min-h-[700px] block"
-      style={{ display: 'block', visibility: 'visible', opacity: 1 }}
+      className="relative w-full overflow-hidden bg-[#040612] pt-24 pb-12 md:pt-32 md:pb-16 min-h-[750px] flex items-center"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      <AnimatePresence mode="wait">
-        <motion.div 
-          key={currentSlide}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1 }}
-          className="absolute inset-0 z-0 opacity-40"
-        >
-          <div className={`absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] ${slides[currentSlide].colors.bgGlow}`} />
-        </motion.div>
-      </AnimatePresence>
+      {/* Dynamic Visual Background */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        {/* Deep Navy Base with subtle patterns */}
+        <div className="absolute inset-0 bg-[#040612]" />
+        
+        {/* Technology Grid Mask */}
+        <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px]" />
+
+        <AnimatePresence mode="wait">
+          <motion.div 
+            key={currentSlide}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.2 }}
+            className="absolute inset-0"
+          >
+            {/* Primary Soft Glows matching slide colors */}
+            <div className={`absolute top-[-10%] right-[-10%] w-[60%] h-[70%] rounded-full blur-[120px] opacity-40 mix-blend-screen bg-gradient-to-br ${slides[currentSlide].colors.bgGlow}`} />
+            <div className={`absolute bottom-[-20%] left-[-10%] w-[50%] h-[60%] rounded-full blur-[120px] opacity-30 mix-blend-screen bg-gradient-to-tr ${slides[currentSlide].colors.bgGlow}`} />
+            
+            {/* Multi-color accents (Blue, Purple, Magenta) */}
+            <div className="absolute top-[20%] left-[10%] w-[40%] h-[40%] rounded-full blur-[100px] opacity-20 bg-blue-600/30 mix-blend-soft-light" />
+            <div className="absolute bottom-[10%] right-[20%] w-[35%] h-[35%] rounded-full blur-[100px] opacity-20 bg-purple-600/30 mix-blend-soft-light" />
+            <div className="absolute top-[40%] right-[30%] w-[20%] h-[20%] rounded-full blur-[80px] opacity-15 bg-magenta-500/20 mix-blend-screen" />
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Floating abstract lighting particles */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(59,130,246,0.05)_0%,_transparent_50%)]" />
+      </div>
 
       <div className="container-custom relative z-10">
         <div className="min-h-[500px] flex items-center">

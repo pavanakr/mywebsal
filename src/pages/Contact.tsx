@@ -32,251 +32,59 @@ const Contact = () => {
 
   const commandPlaceholder = `'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
 
-The slider functionality is working.
+Update ONLY the homepage hero slider.
 
-The problem is now VISUAL QUALITY and CONVERSION.
+Use the attached reference image as the visual design reference.
 
-Do NOT rebuild the slider.
+Keep the existing:
 
-Keep:
+- navbar
 
-- current layout
+- announcement bar
 
-- current typography
+- hero layout
 
-- current navigation
+- slider controls
 
-- current CTA positions
+- CTA functionality
 
-- current responsiveness
+- responsive behavior
 
-ONLY improve the visual experience.
+Do not modify any other section.
 
-================================
+Change the hero visual style to match the reference:
 
-CURRENT PROBLEMS
+- premium AI SaaS design
 
-1. Too much empty space on the right side.
+- deep navy base
 
-2. The AI dashboard looks like a placeholder.
+- electric blue
 
-3. It does not communicate software company credibility.
+- purple
 
-4. The hero does not showcase our actual products.
+- violet
 
-5. It looks like a template instead of a premium software company.
+- cyan
 
-================================
+- magenta/pink accents
 
-NEW DIRECTION
+- smooth multi-color gradients
 
-Transform the hero into a PRODUCT-FIRST HERO.
+- soft glow
 
-Instead of abstract cards, showcase realistic software products.
+- subtle abstract technology background
 
-For each slide create realistic product UI mockups.
+- rounded hero container
 
-Examples:
+Do NOT keep the hero as a plain dark navy background.
 
-REAL ESTATE CRM:
+Do NOT use a generic laptop image.
 
-- property management dashboard
+Make the background colorful, premium and professional.
 
-- lead pipeline
+First implement ONLY the background, gradients and overall visual styling.
 
-- agent management
-
-- property listings
-
-- follow-up system
-
-WHATSAPP CRM:
-
-- WhatsApp inbox
-
-- customer chat
-
-- lead capture
-
-- automation workflow
-
-- CRM integration
-
-AI CHATBOT:
-
-- AI assistant
-
-- live conversations
-
-- lead qualification
-
-- AI recommendations
-
-- support automation
-
-AI AUTOMATION:
-
-- workflow builder
-
-- automation nodes
-
-- triggers
-
-- actions
-
-- reporting
-
-ALL-IN-ONE CRM:
-
-- dashboard
-
-- sales pipeline
-
-- customer management
-
-- tasks
-
-- analytics
-
-- revenue tracking
-
-================================
-
-RIGHT SIDE VISUAL
-
-Replace generic floating cards.
-
-Create a hero composition using:
-
-MAIN PRODUCT SCREENSHOT
-
-+
-
-3-4 floating mini cards
-
-Examples:
-
-Lead Captured
-
-+27 Leads Today
-
-AI Active
-
-Revenue Growth
-
-Automation Running
-
-WhatsApp Connected
-
-Cards should feel useful and realistic.
-
-================================
-
-SOCIAL PROOF
-
-Below CTA buttons add:
-
-500+ Clients
-
-50+ Industries
-
-70+ Countries
-
-24/7 Support
-
-Display in a premium trust bar.
-
-================================
-
-ADD TRUST ELEMENTS
-
-Below the hero content add:
-
-Trusted by Businesses Worldwide
-
-Show:
-
-CRM
-
-AI
-
-Automation
-
-WhatsApp
-
-Meta API
-
-Software Development
-
-as premium technology badges.
-
-================================
-
-VISUAL STYLE
-
-Use:
-
-- realistic SaaS dashboards
-
-- CRM interfaces
-
-- analytics charts
-
-- AI assistant panels
-
-- workflow diagrams
-
-- WhatsApp inbox visuals
-
-Do NOT use generic placeholders.
-
-Do NOT use empty decorative cards.
-
-Do NOT use stock office photos.
-
-================================
-
-BACKGROUND
-
-Reduce darkness by 30%.
-
-Add:
-
-- subtle blue gradients
-
-- purple highlights
-
-- glass panels
-
-- soft lighting
-
-The product UI should become the hero focus.
-
-================================
-
-CONVERSION FOCUS
-
-When visitors land on the page they should immediately understand:
-
-1. We build CRM software.
-
-2. We provide AI solutions.
-
-3. We provide WhatsApp automation.
-
-4. We provide custom software.
-
-5. We are a professional software company.
-
-The hero should look similar in quality to modern SaaS companies rather than a generic website template.
-
-Enhance visuals only.
-
-Do not change layout structure.
-
-Do not change responsiveness.
-
-Do not change navigation.`;
+Test desktop and mobile.`;
 
   return (
     <Layout>
