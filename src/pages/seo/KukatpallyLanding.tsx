@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { MapPin, CheckCircle2, ArrowRight, Server, Smartphone, Monitor, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { CTASection } from '@/components/home/CTASection';
-import { BreadcrumbSchema } from '@/components/SchemaMarkup';
+import { BreadcrumbSchema, LocalBusinessSchema } from '@/components/SchemaMarkup';
 
 export default function KukatpallyLanding() {
   return (
@@ -16,6 +16,7 @@ export default function KukatpallyLanding() {
         description="Leading software development company in Kukatpally. Specializing in AI, CRM development, and custom software for Kukatpally businesses. Expert IT services Hyderabad."
         keywords="software company Kukatpally, software development Kukatpally, IT company Kukatpally, CRM development Kukatpally, AI development Kukatpally, SaaS development Kukatpally"
       />
+      <LocalBusinessSchema city="Kukatpally" region="Telangana" />
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://softurecs.com/' },
         { name: 'Kukatpally', url: 'https://softurecs.com/software-development-company-kukatpally/' }

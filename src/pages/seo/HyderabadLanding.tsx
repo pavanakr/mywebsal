@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { MapPin, CheckCircle2, ArrowRight, Code2, Database, Shield, Zap, LayoutPanelTop, BrainCircuit } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { CTASection } from '@/components/home/CTASection';
-import { BreadcrumbSchema } from '@/components/SchemaMarkup';
+import { BreadcrumbSchema, LocalBusinessSchema } from '@/components/SchemaMarkup';
 
 export default function HyderabadLanding() {
   const services = [
@@ -23,6 +23,7 @@ export default function HyderabadLanding() {
         description="Top-rated software development company in Hyderabad. Expert AI solutions, custom CRM, and SaaS development services in Telangana. Hire expert developers today."
         keywords="software company in Hyderabad, software development company Hyderabad, software solutions Hyderabad, CRM development Hyderabad, AI development Hyderabad"
       />
+      <LocalBusinessSchema city="Hyderabad" region="Telangana" />
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://softurecs.com/' },
         { name: 'Hyderabad', url: 'https://softurecs.com/software-development-company-hyderabad/' }

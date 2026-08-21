@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
 import { PageHero } from '@/components/layout/PageHero';
 import { SEO } from '@/components/SEO';
+import { LocalBusinessSchema } from '@/components/SchemaMarkup';
 import { Mail, Phone, MapPin, Send, Clock, Globe, MessageCircle, Headphones } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -36,6 +37,7 @@ const Contact = () => {
         description="Contact Softurecs AI Labs for AI solutions & software development. Free consultation, 24-hour response. Call +91 7396080902 or email info@softurecsailabs.com."
         keywords="contact Softurecs, software development inquiry, AI solutions contact, IT consulting Hyderabad"
       />
+      <LocalBusinessSchema city="Hyderabad" region="Telangana" />
       <PageHero
         title="Contact Softurecs AI Labs – Let's Build Your Digital Solution"
         description="Talk to Our Software Experts. Get a Free Consultation. Start Your Digital Transformation."

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { MapPin, CheckCircle2, ArrowRight, Laptop, Cpu, Globe, Rocket } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { CTASection } from '@/components/home/CTASection';
-import { BreadcrumbSchema } from '@/components/SchemaMarkup';
+import { BreadcrumbSchema, LocalBusinessSchema } from '@/components/SchemaMarkup';
 
 export default function KPHBLanding() {
   return (
@@ -16,6 +16,7 @@ export default function KPHBLanding() {
         description="Looking for a software company in KPHB? Softurecs AI Labs provides expert AI development, CRM software, and IT services in KPHB Housing Board Colony, Hyderabad."
         keywords="software company KPHB, software development KPHB, IT company KPHB, CRM development KPHB, AI development KPHB, SaaS development KPHB"
       />
+      <LocalBusinessSchema city="KPHB" region="Telangana" />
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://softurecs.com/' },
         { name: 'KPHB', url: 'https://softurecs.com/software-development-company-kphb/' }
