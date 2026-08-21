@@ -61,4 +61,29 @@ export const seoConfig: Record<string, PageSEOConfig> = {
     description: 'Custom CRM software development services in India. Specialized in WhatsApp CRM, Real Estate CRM, and all-in-one business automation tools.',
     keywords: 'CRM software development, WhatsApp CRM India, Real Estate CRM Hyderabad, custom CRM solutions, sales CRM software',
   },
+  '/real-estate-crm': {
+    title: 'Best Real Estate CRM Software in Hyderabad, India | Softurecs',
+    description: 'Premier Real Estate CRM software in India. Optimize lead management, property listings, and sales automation for real estate agents and developers in Hyderabad.',
+    keywords: 'real estate CRM, real estate CRM software, real estate CRM India, real estate CRM Hyderabad, property CRM, real estate lead management, real estate sales CRM, real estate WhatsApp CRM, real estate automation',
+  },
+  '/multi-crm': {
+    title: 'Multi CRM Platform | Multi-Business & Multi-Industry CRM Solutions',
+    description: 'Scalable Multi CRM platform for multi-business enterprises. Centralized control, multi-tenant architecture, and custom CRM solutions for diverse industries.',
+    keywords: 'multi CRM, multi-business CRM, multi-industry CRM, CRM platform, customizable CRM, multi-tenant CRM',
+  },
+  '/all-in-one-crm': {
+    title: 'All-in-One CRM Software | Integrated Sales & Marketing Automation',
+    description: 'Complete All-in-One CRM software. Unified sales, marketing, WhatsApp automation, and AI-powered lead management in one platform.',
+    keywords: 'all-in-one CRM, CRM automation, sales CRM, marketing CRM, WhatsApp CRM, AI CRM',
+  },
+  '/meta-api-crm': {
+    title: 'Meta API CRM | Official WhatsApp Cloud API Integration Services',
+    description: 'Official Meta API CRM integration. Build high-volume WhatsApp Business API solutions for enterprise communication and customer engagement.',
+    keywords: 'Meta API CRM, WhatsApp Cloud API CRM, Meta WhatsApp CRM, WhatsApp Business API CRM, WhatsApp CRM software',
+  },
+  '/whatsapp-crm': {
+    title: 'WhatsApp CRM Software | Sales & Customer Support Automation',
+    description: 'Leading WhatsApp CRM software for sales and support. Automate customer management and close deals faster with integrated WhatsApp sales tools.',
+    keywords: 'WhatsApp CRM, WhatsApp CRM software, WhatsApp sales CRM, WhatsApp automation CRM, WhatsApp customer management',
+  },
 };
