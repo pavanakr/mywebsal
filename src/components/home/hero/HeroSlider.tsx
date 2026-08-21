@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, ArrowRight, Bot, Zap, MessageSquare, Database, Layout, PieChart, Users, Phone, Send, BarChart3, Workflow, Building2, TrendingUp, Cpu, Globe, Rocket, Mail } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ArrowRight, Bot, Zap, MessageSquare, Database, Layout, PieChart, Users, Phone, Send, BarChart3, Workflow, Building2, TrendingUp, Cpu, Globe, Rocket, Mail, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -226,12 +226,20 @@ const VisualComposition = ({ slide }: { slide: typeof slides[0] }) => {
           </div>
 
           {/* Visualization area dependent on type */}
-          <div className="flex-1 bg-slate-50 rounded-2xl p-6 border border-slate-100 flex items-center justify-center relative overflow-hidden">
-             {slide.visual.type === 'chatbot' && <Bot className="w-24 h-24 text-blue-300 opacity-50" />}
-             {slide.visual.type === 'automation' && <Workflow className="w-24 h-24 text-purple-300 opacity-50" />}
-             {slide.visual.type === 'real-estate' && <Building2 className="w-24 h-24 text-teal-300 opacity-50" />}
-             {slide.visual.type === 'whatsapp' && <MessageSquare className="w-24 h-24 text-green-300 opacity-50" />}
-             {slide.visual.type === 'complete-crm' && <Database className="w-24 h-24 text-indigo-300 opacity-50" />}
+          <div className="flex-1 bg-slate-50 rounded-2xl p-6 border border-slate-100 flex items-center justify-center relative overflow-hidden group/viz">
+             <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/50 to-transparent opacity-0 group-hover/viz:opacity-100 transition-opacity duration-700" />
+             {slide.visual.type === 'chatbot' && <Bot className="w-24 h-24 text-blue-300 opacity-50 group-hover/viz:scale-110 group-hover/viz:text-blue-400 transition-all duration-700" />}
+             {slide.visual.type === 'automation' && <Workflow className="w-24 h-24 text-purple-300 opacity-50 group-hover/viz:scale-110 group-hover/viz:text-purple-400 transition-all duration-700" />}
+             {slide.visual.type === 'real-estate' && <Building2 className="w-24 h-24 text-teal-300 opacity-50 group-hover/viz:scale-110 group-hover/viz:text-teal-400 transition-all duration-700" />}
+             {slide.visual.type === 'whatsapp' && <MessageSquare className="w-24 h-24 text-green-300 opacity-50 group-hover/viz:scale-110 group-hover/viz:text-green-400 transition-all duration-700" />}
+             {slide.visual.type === 'complete-crm' && <Database className="w-24 h-24 text-indigo-300 opacity-50 group-hover/viz:scale-110 group-hover/viz:text-indigo-400 transition-all duration-700" />}
+             <motion.div 
+               className="absolute bottom-4 right-4"
+               animate={{ rotate: 360 }}
+               transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+             >
+               <Sparkles className="w-5 h-5 text-indigo-200" />
+             </motion.div>
           </div>
 
         </div>
