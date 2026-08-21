@@ -27,6 +27,10 @@ export default function KukatpallyLanding() {
         badge="Kukatpally Technology Hub"
         variant="centered"
         icon={MapPin}
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'Kukatpally' }
+        ]}
       />
 
       <section className="section-padding bg-background">

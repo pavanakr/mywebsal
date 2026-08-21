@@ -34,6 +34,10 @@ export default function HyderabadLanding() {
         badge="Telangana Tech Hub"
         variant="centered"
         icon={MapPin}
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'Hyderabad' }
+        ]}
       />
 
       <section className="section-padding bg-background">

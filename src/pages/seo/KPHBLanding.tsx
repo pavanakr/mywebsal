@@ -27,6 +27,10 @@ export default function KPHBLanding() {
         badge="KPHB Tech Hub"
         variant="centered"
         icon={MapPin}
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'KPHB' }
+        ]}
       />
 
       <section className="section-padding bg-background">
