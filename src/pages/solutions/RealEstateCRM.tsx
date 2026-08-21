@@ -43,7 +43,46 @@ const RealEstateCRM = () => {
         'Property Inventory Tracking',
         'Sales Performance Reporting'
       ]}
-    />
+    >
+      <div className="container-custom py-12 border-t border-border/50">
+        <h3 className="text-2xl font-bold mb-8 text-center">Related CRM Solutions</h3>
+        <div className="grid md:grid-cols-3 gap-6">
+          <a href="/whatsapp-crm" className="p-6 bg-card border border-border/50 rounded-2xl hover:border-accent/50 transition-all text-center">
+            <MessageSquare className="w-8 h-8 mx-auto mb-4 text-accent" />
+            <h4 className="font-bold mb-2">WhatsApp CRM</h4>
+            <p className="text-sm text-muted-foreground">Automate lead capture and communication via WhatsApp.</p>
+          </a>
+          <a href="/meta-api-crm" className="p-6 bg-card border border-border/50 rounded-2xl hover:border-accent/50 transition-all text-center">
+            <Zap className="w-8 h-8 mx-auto mb-4 text-accent" />
+            <h4 className="font-bold mb-2">Meta API CRM</h4>
+            <p className="text-sm text-muted-foreground">Official WhatsApp Cloud API for high-volume real estate alerts.</p>
+          </a>
+          <a href="/services/ai-chatbot" className="p-6 bg-card border border-border/50 rounded-2xl hover:border-accent/50 transition-all text-center">
+            <Bot className="w-8 h-8 mx-auto mb-4 text-accent" />
+            <h4 className="font-bold mb-2">AI Chatbot</h4>
+            <p className="text-sm text-muted-foreground">24/7 AI assistants to qualify property inquiries instantly.</p>
+          </a>
+        </div>
+      </div>
+      
+      <div className="container-custom py-12 border-t border-border/50">
+        <h3 className="text-2xl font-bold mb-8 text-center">Real Estate CRM FAQ</h3>
+        <div className="max-w-3xl mx-auto space-y-6">
+          <div className="bg-card p-6 rounded-2xl border border-border/50">
+            <h4 className="font-bold mb-2">Is the CRM mobile-friendly?</h4>
+            <p className="text-muted-foreground">Yes, our Real Estate CRM is fully responsive and accessible via mobile devices, ensuring agents can manage leads on the go.</p>
+          </div>
+          <div className="bg-card p-6 rounded-2xl border border-border/50">
+            <h4 className="font-bold mb-2">Can I integrate my existing property listings?</h4>
+            <p className="text-muted-foreground">Absolutely. We provide MLS/IDX integration and custom data migration services to bring all your existing properties into the new CRM.</p>
+          </div>
+          <div className="bg-card p-6 rounded-2xl border border-border/50">
+            <h4 className="font-bold mb-2">How does the WhatsApp integration work?</h4>
+            <p className="text-muted-foreground">The CRM connects to the WhatsApp Business API, allowing you to send automated alerts, property details, and follow-up messages directly to clients.</p>
+          </div>
+        </div>
+      </div>
+    </ServiceDetailPage>
   );
 };
 
