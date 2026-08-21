@@ -155,6 +155,10 @@ import USA from "./pages/international/USA";
 import UK from "./pages/international/UK";
 import UAE from "./pages/international/UAE";
 import Singapore from "./pages/international/Singapore";
+// Local SEO pages
+import HyderabadLanding from "./pages/seo/HyderabadLanding";
+import KPHBLanding from "./pages/seo/KPHBLanding";
+import KukatpallyLanding from "./pages/seo/KukatpallyLanding";
 
 const queryClient = new QueryClient();
 
@@ -316,6 +320,10 @@ const App = () => (
             <Route path="/international/uk" element={<UK />} />
             <Route path="/international/uae" element={<UAE />} />
             <Route path="/international/singapore" element={<Singapore />} />
+            {/* Local SEO Pages */}
+            <Route path="/software-development-company-hyderabad" element={<HyderabadLanding />} />
+            <Route path="/software-development-company-kphb" element={<KPHBLanding />} />
+            <Route path="/software-development-company-kukatpally" element={<KukatpallyLanding />} />
             {/* City-based SEO pages */}
             <Route path="/software-development-company-in-:city" element={<CityLandingPage />} />
             {/* Service + Industry programmatic pages */}
