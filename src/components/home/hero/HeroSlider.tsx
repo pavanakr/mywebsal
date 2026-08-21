@@ -407,7 +407,8 @@ export function HeroSlider() {
               transition={{ duration: 0.6 }}
             >
               <div className="space-y-6 text-center lg:text-left">
-                <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 text-white text-[10px] font-bold tracking-[0.2em] uppercase backdrop-blur-md ${slides[currentSlide].colors.badge}`}>
+                <div className={`inline-flex items-center gap-2 px-5 py-2 rounded-full border border-white/10 text-white text-[11px] font-bold tracking-[0.25em] uppercase backdrop-blur-md shadow-xl ${slides[currentSlide].colors.badge}`}>
+                  <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                   {slides[currentSlide].badge}
                 </div>
                 
@@ -424,12 +425,12 @@ export function HeroSlider() {
 
                 <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-5 pt-4">
                   <Link to={slides[currentSlide].link}>
-                    <Button size="lg" className={`bg-gradient-to-r ${slides[currentSlide].colors.gradient} hover:opacity-90 rounded-2xl h-14 px-10 font-bold shadow-2xl transition-all hover:scale-[1.02] active:scale-[0.98]`}>
-                      {slides[currentSlide].primaryCta} <ArrowRight className="ml-2 w-5 h-5" />
+                    <Button size="lg" className={`bg-gradient-to-r ${slides[currentSlide].colors.gradient} hover:opacity-90 rounded-xl h-16 px-10 font-bold shadow-[0_20px_40px_-10px_rgba(0,0,0,0.3)] transition-all hover:scale-[1.02] active:scale-[0.98] border-none group`}>
+                      {slides[currentSlide].primaryCta} <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </Link>
                   <Link to="/contact">
-                    <Button size="lg" variant="outline" className="bg-white/5 backdrop-blur-md border-white/20 text-white hover:bg-white/10 rounded-2xl h-14 px-10 font-bold transition-all hover:scale-[1.02] active:scale-[0.98]">
+                    <Button size="lg" variant="outline" className="bg-white/5 backdrop-blur-md border-white/20 text-white hover:bg-white/10 rounded-xl h-16 px-10 font-bold transition-all hover:scale-[1.02] active:scale-[0.98] shadow-xl">
                       {slides[currentSlide].secondaryCta}
                     </Button>
                   </Link>
@@ -449,13 +450,15 @@ export function HeroSlider() {
           </AnimatePresence>
         </div>
 
-        <div className="flex justify-center lg:justify-start gap-2 mt-8">
+        <div className="flex justify-center lg:justify-start gap-4 mt-12">
           {slides.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrentSlide(i)}
-              className={`h-1.5 rounded-full transition-all duration-300 ${currentSlide === i ? 'w-8 bg-white' : 'w-2 bg-white/20'}`}
-            />
+              className="group relative p-2"
+            >
+              <div className={`h-1.5 rounded-full transition-all duration-500 ${currentSlide === i ? 'w-10 bg-white' : 'w-3 bg-white/30 group-hover:bg-white/50'}`} />
+            </button>
           ))}
         </div>
       </div>
