@@ -215,7 +215,9 @@ export function HeroSlider() {
 
   return (
     <section 
-      className="relative w-full overflow-hidden bg-[#050816] pt-24 pb-12 md:pt-32 md:pb-16"
+      id="hero-slider"
+      className="relative w-full overflow-hidden bg-[#050816] pt-24 pb-12 md:pt-32 md:pb-16 min-h-[700px] block"
+      style={{ display: 'block', visibility: 'visible', opacity: 1 }}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
