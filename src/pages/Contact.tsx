@@ -32,63 +32,75 @@ const Contact = () => {
 
   const commandPlaceholder = `'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
 
-Now improve the 5 hero slides.
+Perform a final visual polish ONLY on the homepage hero slider.
 
-Keep the same premium layout and design system, but give each slide its own visual identity.
+Do not redesign it.
 
-Slide 1:
+Improve:
 
-AI Chatbots
+- spacing
 
-Colors: blue + purple + cyan
+- alignment
 
-Visual: AI assistant + chatbot + CRM
+- gradient quality
 
-Slide 2:
+- dashboard proportions
 
-AI Automation
+- floating card positioning
 
-Colors: purple + magenta + blue
+- shadows
 
-Visual: automation workflow
+- borders
 
-Slide 3:
+- glow
 
-Real Estate CRM
+- CTA hover effects
 
-Colors: blue + teal + violet
+- slider arrows
 
-Visual: properties + leads + sales pipeline
+- pagination
 
-Slide 4:
+- animation smoothness
 
-WhatsApp + Meta API CRM
+Make sure the hero looks like a premium global AI/SaaS company website.
 
-Colors: green + cyan + blue + purple
+Check that it is not:
 
-Visual: WhatsApp → AI → Lead → CRM
+- too dark
 
-Slide 5:
+- too empty
 
-All-in-One CRM
+- too colorful
 
-Colors: blue + violet + cyan
+- cluttered
 
-Visual: complete CRM dashboard
+- oversized
 
-Each slide must have:
+- poster-like
 
-- different visual
+Test:
 
-- different dominant gradient
+Desktop
 
-- relevant floating cards
+Tablet
 
-- relevant dashboard elements
+Mobile
 
-Do not reuse the same visual on every slide.
+Fix:
 
-Keep the same overall premium design language.`;
+- overlapping elements
+
+- horizontal scrolling
+
+- text overflow
+
+- broken images
+
+- slider bugs
+
+- responsive issues
+
+Do not modify the navbar or any section below the hero.`;
 
   return (
     <Layout>

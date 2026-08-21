@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, ArrowRight, Bot, Zap, MessageSquare, Database, Layout, PieChart, Users, Phone, Send, BarChart3, Workflow, Building2, TrendingUp, Cpu, Globe, Rocket, Mail } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ArrowRight, Bot, Zap, MessageSquare, Database, Layout, PieChart, Users, Phone, Send, BarChart3, Workflow, Building2, TrendingUp, Cpu, Globe, Rocket, Mail, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -128,7 +128,7 @@ const slides = [
 ];
 
 const FloatingMetric = ({ label, value, trend, trendColor }: any) => (
-  <div className="bg-white/90 backdrop-blur-sm p-3 rounded-xl shadow-lg border border-slate-100/50 flex flex-col min-w-[120px]">
+  <div className="bg-white/95 backdrop-blur-md p-3.5 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col min-w-[130px] hover:scale-105 transition-transform duration-300">
     <span className="text-[10px] font-bold text-slate-400 uppercase tracking-tight">{label}</span>
     <div className="flex items-end justify-between mt-1">
       <span className="text-lg font-bold text-slate-900 leading-none">{value}</span>
@@ -153,7 +153,7 @@ const PremiumFloatingCard = ({ icon: Icon, title, status, color, className, dela
 
   return (
     <motion.div
-      className={`absolute z-30 flex items-center gap-3 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-xl border border-white/50 ${className}`}
+      className={`absolute z-30 flex items-center gap-3 bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl shadow-lg border border-slate-200/50 ${className}`}
       initial={{ opacity: 0, scale: 0.8, y: 20 }}
       animate={{ 
         opacity: 1, 
@@ -173,7 +173,7 @@ const PremiumFloatingCard = ({ icon: Icon, title, status, color, className, dela
         <div className="text-[10px] font-bold text-slate-900 leading-none mb-1">{title}</div>
         <div className="flex items-center gap-1.5">
           <div className={`w-1.5 h-1.5 rounded-full animate-pulse ${colorParts[3]}`} />
-          <div className="text-[9px] font-bold text-slate-500 uppercase tracking-wider">{status}</div>
+          <div className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">{status}</div>
         </div>
       </div>
     </motion.div>
@@ -183,16 +183,16 @@ const PremiumFloatingCard = ({ icon: Icon, title, status, color, className, dela
 const VisualComposition = ({ slide }: { slide: typeof slides[0] }) => {
   return (
     <motion.div 
-      className="relative w-full max-w-2xl aspect-[4/3] flex items-center justify-center p-4"
+      className="relative w-full max-w-2xl aspect-[16/10] flex items-center justify-center p-4"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
       {/* Background Glows */}
-      <div className={`absolute inset-0 bg-gradient-to-tr ${slide.colors.bgGlow} rounded-full blur-[100px] opacity-40 animate-pulse`} />
+      <div className={`absolute inset-0 bg-gradient-to-tr ${slide.colors.bgGlow} rounded-full blur-[120px] opacity-30 animate-pulse-slow`} />
       
       {/* Main Dashboard Container */}
-      <div className="relative z-10 w-full h-full bg-white rounded-[2rem] shadow-2xl border border-white/20 overflow-hidden flex flex-col">
+      <div className="relative z-10 w-full h-full bg-white rounded-3xl shadow-[0_32px_64px_-12px_rgba(0,0,0,0.14)] border border-slate-100 overflow-hidden flex flex-col">
         {/* Dashboard Header */}
         <div className="h-12 border-b border-slate-100 flex items-center justify-between px-6 bg-slate-50/50">
           <div className="flex items-center gap-3">
@@ -201,7 +201,7 @@ const VisualComposition = ({ slide }: { slide: typeof slides[0] }) => {
               <div className="w-2.5 h-2.5 rounded-full bg-amber-400" />
               <div className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
             </div>
-            <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider ml-2">
+            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] ml-2">
               {slide.visual.type === 'chatbot' ? 'AI Chatbot Logic' : 
                slide.visual.type === 'automation' ? 'Automation Workflow' :
                slide.visual.type === 'real-estate' ? 'Property CRM' :
@@ -226,12 +226,20 @@ const VisualComposition = ({ slide }: { slide: typeof slides[0] }) => {
           </div>
 
           {/* Visualization area dependent on type */}
-          <div className="flex-1 bg-slate-50 rounded-2xl p-6 border border-slate-100 flex items-center justify-center relative overflow-hidden">
-             {slide.visual.type === 'chatbot' && <Bot className="w-24 h-24 text-blue-300 opacity-50" />}
-             {slide.visual.type === 'automation' && <Workflow className="w-24 h-24 text-purple-300 opacity-50" />}
-             {slide.visual.type === 'real-estate' && <Building2 className="w-24 h-24 text-teal-300 opacity-50" />}
-             {slide.visual.type === 'whatsapp' && <MessageSquare className="w-24 h-24 text-green-300 opacity-50" />}
-             {slide.visual.type === 'complete-crm' && <Database className="w-24 h-24 text-indigo-300 opacity-50" />}
+          <div className="flex-1 bg-slate-50 rounded-2xl p-6 border border-slate-100 flex items-center justify-center relative overflow-hidden group/viz">
+             <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/50 to-transparent opacity-0 group-hover/viz:opacity-100 transition-opacity duration-700" />
+             {slide.visual.type === 'chatbot' && <Bot className="w-24 h-24 text-blue-300 opacity-50 group-hover/viz:scale-110 group-hover/viz:text-blue-400 transition-all duration-700" />}
+             {slide.visual.type === 'automation' && <Workflow className="w-24 h-24 text-purple-300 opacity-50 group-hover/viz:scale-110 group-hover/viz:text-purple-400 transition-all duration-700" />}
+             {slide.visual.type === 'real-estate' && <Building2 className="w-24 h-24 text-teal-300 opacity-50 group-hover/viz:scale-110 group-hover/viz:text-teal-400 transition-all duration-700" />}
+             {slide.visual.type === 'whatsapp' && <MessageSquare className="w-24 h-24 text-green-300 opacity-50 group-hover/viz:scale-110 group-hover/viz:text-green-400 transition-all duration-700" />}
+             {slide.visual.type === 'complete-crm' && <Database className="w-24 h-24 text-indigo-300 opacity-50 group-hover/viz:scale-110 group-hover/viz:text-indigo-400 transition-all duration-700" />}
+             <motion.div 
+               className="absolute bottom-4 right-4"
+               animate={{ rotate: 360 }}
+               transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+             >
+               <Sparkles className="w-5 h-5 text-indigo-200" />
+             </motion.div>
           </div>
 
         </div>
@@ -323,16 +331,16 @@ const VisualComposition = ({ slide }: { slide: typeof slides[0] }) => {
 };
 
 const TrustBar = () => (
-  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-8 border-y border-white/10 mt-8 mb-6">
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-10 border-y border-white/5 mt-12 mb-8">
     {[
-        { val: "500+", label: "Clients" },
-        { val: "50+", label: "Industries" },
-        { val: "70+", label: "Countries" },
-        { val: "24/7", label: "Support" },
+        { val: "500+", label: "Clients Globally" },
+        { val: "50+", label: "Industry Verticals" },
+        { val: "70+", label: "Countries Served" },
+        { val: "24/7", label: "Expert Support" },
     ].map((item, i) => (
-        <div key={i} className="text-center">
-            <div className="text-xl md:text-2xl font-bold text-white">{item.val}</div>
-            <div className="text-[10px] text-slate-400 uppercase tracking-widest">{item.label}</div>
+        <div key={i} className="text-center group">
+            <div className="text-2xl md:text-3xl font-bold text-white mb-1 group-hover:text-blue-400 transition-colors duration-300">{item.val}</div>
+            <div className="text-[10px] text-slate-500 uppercase tracking-[0.2em] font-medium">{item.label}</div>
         </div>
     ))}
   </div>
@@ -359,7 +367,7 @@ export function HeroSlider() {
   return (
     <section 
       id="hero-slider"
-      className="relative w-full overflow-hidden bg-[#040612] pt-24 pb-12 md:pt-32 md:pb-16 min-h-[750px] flex items-center"
+      className="relative w-full overflow-hidden bg-[#040612] pt-32 pb-16 md:pt-40 md:pb-20 min-h-[850px] md:min-h-[750px] flex items-center"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -381,13 +389,13 @@ export function HeroSlider() {
             className="absolute inset-0"
           >
             {/* Primary Soft Glows matching slide colors */}
-            <div className={`absolute top-[-10%] right-[-10%] w-[60%] h-[70%] rounded-full blur-[120px] opacity-40 mix-blend-screen bg-gradient-to-br ${slides[currentSlide].colors.bgGlow}`} />
-            <div className={`absolute bottom-[-20%] left-[-10%] w-[50%] h-[60%] rounded-full blur-[120px] opacity-30 mix-blend-screen bg-gradient-to-tr ${slides[currentSlide].colors.bgGlow}`} />
+            <div className={`absolute top-[-20%] right-[-10%] w-[80%] h-[80%] rounded-full blur-[140px] opacity-25 mix-blend-screen bg-gradient-to-br ${slides[currentSlide].colors.bgGlow}`} />
+            <div className={`absolute bottom-[-30%] left-[-20%] w-[70%] h-[70%] rounded-full blur-[140px] opacity-20 mix-blend-screen bg-gradient-to-tr ${slides[currentSlide].colors.bgGlow}`} />
             
             {/* Multi-color accents (Blue, Purple, Magenta) */}
-            <div className="absolute top-[20%] left-[10%] w-[40%] h-[40%] rounded-full blur-[100px] opacity-20 bg-blue-600/30 mix-blend-soft-light" />
-            <div className="absolute bottom-[10%] right-[20%] w-[35%] h-[35%] rounded-full blur-[100px] opacity-20 bg-purple-600/30 mix-blend-soft-light" />
-            <div className="absolute top-[40%] right-[30%] w-[20%] h-[20%] rounded-full blur-[80px] opacity-15 bg-magenta-500/20 mix-blend-screen" />
+            <div className="absolute top-[20%] left-[10%] w-[40%] h-[40%] rounded-full blur-[120px] opacity-15 bg-blue-600/20 mix-blend-soft-light" />
+            <div className="absolute bottom-[10%] right-[20%] w-[35%] h-[35%] rounded-full blur-[120px] opacity-15 bg-purple-600/20 mix-blend-soft-light" />
+            <div className="absolute top-[40%] right-[30%] w-[20%] h-[20%] rounded-full blur-[100px] opacity-10 bg-magenta-500/15 mix-blend-screen" />
           </motion.div>
         </AnimatePresence>
 
@@ -407,7 +415,8 @@ export function HeroSlider() {
               transition={{ duration: 0.6 }}
             >
               <div className="space-y-6 text-center lg:text-left">
-                <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 text-white text-[10px] font-bold tracking-[0.2em] uppercase backdrop-blur-md ${slides[currentSlide].colors.badge}`}>
+                <div className={`inline-flex items-center gap-2 px-5 py-2 rounded-full border border-white/10 text-white text-[11px] font-bold tracking-[0.25em] uppercase backdrop-blur-md shadow-xl ${slides[currentSlide].colors.badge}`}>
+                  <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                   {slides[currentSlide].badge}
                 </div>
                 
@@ -424,12 +433,12 @@ export function HeroSlider() {
 
                 <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-5 pt-4">
                   <Link to={slides[currentSlide].link}>
-                    <Button size="lg" className={`bg-gradient-to-r ${slides[currentSlide].colors.gradient} hover:opacity-90 rounded-2xl h-14 px-10 font-bold shadow-2xl transition-all hover:scale-[1.02] active:scale-[0.98]`}>
-                      {slides[currentSlide].primaryCta} <ArrowRight className="ml-2 w-5 h-5" />
+                    <Button size="lg" className={`bg-gradient-to-r ${slides[currentSlide].colors.gradient} hover:opacity-90 rounded-xl h-16 px-10 font-bold shadow-[0_20px_40px_-10px_rgba(0,0,0,0.3)] transition-all hover:scale-[1.02] active:scale-[0.98] border-none group`}>
+                      {slides[currentSlide].primaryCta} <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </Link>
                   <Link to="/contact">
-                    <Button size="lg" variant="outline" className="bg-white/5 backdrop-blur-md border-white/20 text-white hover:bg-white/10 rounded-2xl h-14 px-10 font-bold transition-all hover:scale-[1.02] active:scale-[0.98]">
+                    <Button size="lg" variant="outline" className="bg-white/5 backdrop-blur-md border-white/20 text-white hover:bg-white/10 rounded-xl h-16 px-10 font-bold transition-all hover:scale-[1.02] active:scale-[0.98] shadow-xl">
                       {slides[currentSlide].secondaryCta}
                     </Button>
                   </Link>
@@ -449,13 +458,15 @@ export function HeroSlider() {
           </AnimatePresence>
         </div>
 
-        <div className="flex justify-center lg:justify-start gap-2 mt-8">
+        <div className="flex justify-center lg:justify-start gap-4 mt-12">
           {slides.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrentSlide(i)}
-              className={`h-1.5 rounded-full transition-all duration-300 ${currentSlide === i ? 'w-8 bg-white' : 'w-2 bg-white/20'}`}
-            />
+              className="group relative p-2"
+            >
+              <div className={`h-1.5 rounded-full transition-all duration-500 ${currentSlide === i ? 'w-10 bg-white' : 'w-3 bg-white/30 group-hover:bg-white/50'}`} />
+            </button>
           ))}
         </div>
       </div>
