@@ -4,11 +4,11 @@ import { ChevronDown, ArrowUp, MessageCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const services = [
-  { name: 'Custom Software Development', href: '/services/custom-software' },
+  { name: 'Big Data Solutions', href: '/services/big-data' },
   { name: 'Web Development', href: '/services/web-development' },
   { name: 'Mobile App Development', href: '/services/mobile-apps' },
   { name: 'SaaS Development', href: '/services/saas' },
-  { name: 'CRM Development', href: '/services/crm-development' },
+  { name: 'Custom Software Development', href: '/services/custom-software' },
   { name: 'AI Development', href: '/services/ai-development' },
   { name: 'AI Chatbot Development', href: '/services/ai-chatbot' },
   { name: 'API Development', href: '/services/api-development' },

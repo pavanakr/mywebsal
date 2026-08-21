@@ -159,6 +159,7 @@ import UK from "./pages/international/UK";
 import UAE from "./pages/international/UAE";
 import Singapore from "./pages/international/Singapore";
 // Local SEO pages
+import IndiaLanding from "./pages/seo/IndiaLanding";
 import HyderabadLanding from "./pages/seo/HyderabadLanding";
 import KPHBLanding from "./pages/seo/KPHBLanding";
 import KukatpallyLanding from "./pages/seo/KukatpallyLanding";
@@ -329,6 +330,7 @@ const App = () => (
             <Route path="/international/uae" element={<UAE />} />
             <Route path="/international/singapore" element={<Singapore />} />
             {/* Local SEO Pages */}
+            <Route path="/software-development-company-india" element={<IndiaLanding />} />
             <Route path="/software-development-company-hyderabad" element={<HyderabadLanding />} />
             <Route path="/software-development-company-kphb" element={<KPHBLanding />} />
             <Route path="/software-development-company-kukatpally" element={<KukatpallyLanding />} />
