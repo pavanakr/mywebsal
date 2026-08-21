@@ -108,10 +108,10 @@ export const BreadcrumbSchema = ({ items }: BreadcrumbSchemaProps) => {
 };
 
 // WebPage Schema - Use on all pages
-export const WebPageSchema = ({ title, description, url, breadcrumbs }: WebPageSchemaProps) => {
+export const WebPageSchema = ({ title, description, url, breadcrumbs, type = 'WebPage' }: WebPageSchemaProps & { type?: string }) => {
   const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
+    "@type": type,
     "name": title,
     "description": description,
     "url": url,
@@ -151,11 +151,13 @@ export const WebPageSchema = ({ title, description, url, breadcrumbs }: WebPageS
 export const ServiceSchema = ({ 
   name, 
   description, 
-  url 
+  url,
+  image
 }: { 
   name: string; 
   description: string; 
   url: string;
+  image?: string;
 }) => {
   const schema = {
     "@context": "https://schema.org",
@@ -164,14 +166,29 @@ export const ServiceSchema = ({
     "name": name,
     "description": description,
     "url": url,
+    "image": image,
     "provider": {
       "@type": "Organization",
       "name": "SOFTURECS AI LABS PRIVATE LIMITED",
-      "url": "https://softurecs.com"
+      "url": "https://softurecs.com",
+      "logo": "https://softurecs.com/logo.png"
     },
     "areaServed": {
-      "@type": "Place",
-      "name": "Worldwide"
+      "@type": "Country",
+      "name": "India"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "AI & Software Development Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": name
+          }
+        }
+      ]
     }
   };
 
