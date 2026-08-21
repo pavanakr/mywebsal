@@ -175,17 +175,17 @@ export function HeroSlider() {
                 </motion.div>
                 
                 {slides[currentSlide].isH1 ? (
-                  <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-extrabold text-white leading-[1.05] mb-6 drop-shadow-2xl">
+                  <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-black text-white leading-[1.02] mb-8 drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] tracking-tight">
                     {slides[currentSlide].title.split(' ').map((word, i) => (
-                      <span key={i} className={i >= slides[currentSlide].title.split(' ').length - 2 ? "bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent" : ""}>
+                      <span key={i} className={i >= slides[currentSlide].title.split(' ').length - 2 ? "bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent inline-block hover:scale-[1.02] transition-transform duration-300 cursor-default" : "inline-block hover:scale-[1.02] transition-transform duration-300 cursor-default"}>
                         {word}{' '}
                       </span>
                     ))}
                   </h1>
                 ) : (
-                  <h2 className="text-5xl md:text-6xl lg:text-7xl font-display font-extrabold text-white leading-[1.05] mb-6 drop-shadow-2xl">
+                  <h2 className="text-5xl md:text-7xl lg:text-8xl font-display font-black text-white leading-[1.02] mb-8 drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] tracking-tight">
                     {slides[currentSlide].title.split(' ').map((word, i) => (
-                      <span key={i} className={i >= slides[currentSlide].title.split(' ').length - 2 ? "bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent" : ""}>
+                      <span key={i} className={i >= slides[currentSlide].title.split(' ').length - 2 ? "bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent inline-block hover:scale-[1.02] transition-transform duration-300 cursor-default" : "inline-block hover:scale-[1.02] transition-transform duration-300 cursor-default"}>
                         {word}{' '}
                       </span>
                     ))}
