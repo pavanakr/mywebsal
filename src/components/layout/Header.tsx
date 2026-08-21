@@ -115,7 +115,7 @@ const serviceCategories = [
     ]
   },
   { 
-    name: 'Big Data Services', 
+    name: 'Big Data Solutions', 
     href: '/services/big-data', 
     icon: Database,
     description: 'Unlock insights and value from large-scale, complex data systems.',
