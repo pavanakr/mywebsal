@@ -34,47 +34,59 @@ const Contact = () => {
 
 Continue from the current hero.
 
-Improve the AI automation visual.
+Now improve ONLY the left-side hero typography and CTA styling.
 
-Add a clear workflow inside or beside the dashboard:
+Use this content:
 
-New Lead
+Badge:
 
-↓
+AI-POWERED SOLUTIONS
 
-AI Processing
+Headline:
 
-↓
+AI Chatbots &
 
-Smart Response
+Smart Automation
 
-↓
+Highlight:
 
-Lead Qualified
+Smart Automation
 
-↓
+Description:
 
-Added to CRM
+Automate conversations, qualify leads, provide 24/7 support and streamline your business operations with intelligent AI.
 
-Use:
+Primary CTA:
 
-- blue
+Explore AI Solutions
 
-- purple
+Secondary CTA:
 
-- cyan
+Book a Free Consultation
 
-- pink
+Design:
 
-- green accents
+- premium modern typography
 
-Add connecting lines and subtle animated pulses.
+- headline maximum 2–3 lines
 
-Make it look like a real AI automation platform.
+- do not break every word into separate lines
 
-Keep the hero clean and premium.
+- highlight only the important phrase
 
-Do not change the navbar or other homepage sections.`;
+- white headline
+
+- gradient highlight
+
+- readable body text
+
+- premium gradient primary button
+
+- glass secondary button
+
+Do not make the headline oversized.
+
+Do not change the right-side dashboard.`;
 
   return (
     <Layout>
