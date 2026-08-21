@@ -9,7 +9,7 @@ const AIChatbot = () => {
       color="from-green-500 to-emerald-600"
       title="AI Chatbot Development"
       tagline="Intelligent Conversational AI Solutions"
-      description="Build sophisticated AI chatbots and virtual assistants that understand natural language, provide instant support, and deliver personalized experiences across all channels. Our bots integrate seamlessly with <Link to='/services/ai-automation' className='text-accent hover:underline'>AI Automation</Link> workflows and <Link to='/all-in-one-crm' className='text-accent hover:underline'>CRM</Link> platforms. From simple FAQ bots to complex transactional assistants."
+      description={<>Build sophisticated AI chatbots and virtual assistants that understand natural language, provide instant support, and deliver personalized experiences across all channels. Our bots integrate seamlessly with <Link to='/services/ai-automation' className='text-accent hover:underline'>AI Automation</Link> workflows and <Link to='/all-in-one-crm' className='text-accent hover:underline'>CRM</Link> platforms. From simple FAQ bots to complex transactional assistants.</>}
       benefits={[
         '24/7 availability',
         'Multi-channel support',
