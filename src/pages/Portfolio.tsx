@@ -71,9 +71,9 @@ const Portfolio = () => {
   return (
     <Layout>
       <SEO
-        title="Portfolio & Case Studies"
-        description="Explore our portfolio of innovative digital solutions. 1500+ successful projects across healthcare, fintech, e-commerce, and logistics with measurable results."
-        keywords="case studies, portfolio, software projects, digital transformation, success stories, client projects, enterprise solutions"
+        title="Software Project Portfolio & Case Studies"
+        description="Explore SOFTURECS AI LABS software portfolio. 1500+ successful AI, web, and mobile projects across healthcare, fintech, and logistics."
+        keywords="software project portfolio, case studies, AI project success stories, mobile app development examples, digital transformation projects"
       />
       <PageHero
         title="Transforming Ideas Into Digital Success Stories"

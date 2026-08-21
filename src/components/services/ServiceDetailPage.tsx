@@ -52,13 +52,14 @@ export function ServiceDetailPage({
   heroImage,
   seoKeywords,
 }: ServiceDetailProps) {
-  const defaultKeywords = `${title.toLowerCase()}, software development, enterprise solutions, custom software, ${technologies.slice(0, 5).join(', ').toLowerCase()}`;
+  const fullTitle = `${title} Services`;
+  const defaultKeywords = `${title.toLowerCase()}, softurecs ai labs, software development, enterprise solutions, custom software, ${technologies.slice(0, 5).join(', ').toLowerCase()}`;
   
   return (
     <Layout>
       <SEO
-        title={title}
-        description={tagline}
+        title={fullTitle}
+        description={`SOFTURECS AI LABS: Specialized ${title.toLowerCase()} services. ${tagline}`}
         keywords={seoKeywords || defaultKeywords}
       />
       

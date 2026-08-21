@@ -121,9 +121,9 @@ export const HireDeveloperPage = () => {
   return (
     <Layout>
       <SEO
-        title={`Hire ${techInfo.fullName} Developers`}
-        description={`Hire expert ${techInfo.fullName} developers from Softurecs AI Labs. ${techInfo.experience} experience, starting ${techInfo.rate}. Fast onboarding, quality guaranteed.`}
-        keywords={`hire ${techInfo.name.toLowerCase()} developers, ${techInfo.name.toLowerCase()} development team, remote ${techInfo.name.toLowerCase()} developers, ${techInfo.name.toLowerCase()} experts`}
+        title={`Hire Expert ${techInfo.fullName} Developers`}
+        description={`Hire pre-vetted ${techInfo.fullName} developers from Softurecs AI Labs. Scale your team with top ${techInfo.name} talent for your software projects.`}
+        keywords={`hire ${techInfo.name.toLowerCase()} developers, remote ${techInfo.name.toLowerCase()} development team, ${techInfo.name.toLowerCase()} experts for hire, staff augmentation ${techInfo.name.toLowerCase()}`}
       />
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://softurecs.com/' },

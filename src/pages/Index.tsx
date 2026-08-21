@@ -15,9 +15,9 @@ const Index = () => {
   return (
     <Layout>
       <SEO
-        title="AI-Driven Software Solutions"
-        description="Softurecs AI Labs - Enterprise AI & software development company in Hyderabad. Custom apps, cloud solutions & digital transformation for global businesses."
-        keywords="AI software company, software development India, custom software development, digital transformation, mobile app development"
+        title="AI-Driven Software Development Company"
+        description="SOFTURECS AI LABS PRIVATE LIMITED - Transform your business with cutting-edge AI-driven software solutions, CRM systems, and custom web & mobile apps in Hyderabad."
+        keywords="AI software company, software development Hyderabad, custom software development, digital transformation, CRM software, mobile app development, AI automation"
       />
       <OrganizationSchema />
       <LocalBusinessSchema city="Hyderabad" region="Telangana" country="India" />
