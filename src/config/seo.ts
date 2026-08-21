@@ -86,4 +86,19 @@ export const seoConfig: Record<string, PageSEOConfig> = {
     description: 'Leading WhatsApp CRM software for sales and support. Automate customer management and close deals faster with integrated WhatsApp sales tools.',
     keywords: 'WhatsApp CRM, WhatsApp CRM software, WhatsApp sales CRM, WhatsApp automation CRM, WhatsApp customer management',
   },
+  '/software-development-company-hyderabad': {
+    title: 'Software Development Company in Hyderabad | Softurecs AI Labs',
+    description: 'Top-rated software development company in Hyderabad. Expert AI solutions, custom CRM, and SaaS development services in Telangana. Hire expert developers today.',
+    keywords: 'software company in Hyderabad, software development company Hyderabad, software solutions Hyderabad, CRM development Hyderabad, AI development Hyderabad, SaaS development Hyderabad, custom software development Hyderabad',
+  },
+  '/software-development-company-kphb': {
+    title: 'Software Development Company in KPHB, Hyderabad | Softurecs AI Labs',
+    description: 'Looking for a software company in KPHB? Softurecs AI Labs provides expert AI development, CRM software, and IT services in KPHB Housing Board Colony, Hyderabad.',
+    keywords: 'software company KPHB, software development KPHB, IT company KPHB, CRM development KPHB, AI development KPHB, SaaS development KPHB',
+  },
+  '/software-development-company-kukatpally': {
+    title: 'Software Development Company in Kukatpally, Hyderabad | Softurecs AI Labs',
+    description: 'Leading software development company in Kukatpally. Specializing in AI, CRM development, and custom software for Kukatpally businesses. Expert IT services Hyderabad.',
+    keywords: 'software company Kukatpally, software development Kukatpally, IT company Kukatpally, CRM development Kukatpally, AI development Kukatpally, SaaS development Kukatpally',
+  },
 };
