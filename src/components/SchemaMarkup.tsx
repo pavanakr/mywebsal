@@ -300,10 +300,10 @@ export const LocalBusinessSchema = ({
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "5th Floor, Trinity Corporate Building, KPHB",
+      "streetAddress": "5th Floor, Trinity Corporate Building",
       "addressLocality": "Hyderabad",
       "addressRegion": "Telangana",
-      "postalCode": "500085",
+      "postalCode": "500081",
       "addressCountry": "IN"
     },
     "geo": {

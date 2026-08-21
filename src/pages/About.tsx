@@ -92,7 +92,7 @@ const About = () => {
             className="text-center max-w-4xl mx-auto"
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-medium mb-6">
-              About SOFTURECS AI LABS
+              About SOFTURECS AI LABS PRIVATE LIMITED
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
               Leading Software Development Company in Hyderabad – AI Specialists
