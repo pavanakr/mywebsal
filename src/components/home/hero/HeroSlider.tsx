@@ -389,8 +389,8 @@ export function HeroSlider() {
             className="absolute inset-0"
           >
             {/* Primary Soft Glows matching slide colors */}
-            <div className={`absolute top-[-10%] right-[-10%] w-[60%] h-[70%] rounded-full blur-[120px] opacity-20 mix-blend-screen bg-gradient-to-br ${slides[currentSlide].colors.bgGlow}`} />
-            <div className={`absolute bottom-[-20%] left-[-10%] w-[50%] h-[60%] rounded-full blur-[120px] opacity-15 mix-blend-screen bg-gradient-to-tr ${slides[currentSlide].colors.bgGlow}`} />
+            <div className={`absolute top-[-15%] right-[-10%] w-[55%] h-[65%] rounded-full blur-[110px] opacity-15 mix-blend-screen bg-gradient-to-br ${slides[currentSlide].colors.bgGlow}`} />
+            <div className={`absolute bottom-[-25%] left-[-15%] w-[45%] h-[55%] rounded-full blur-[110px] opacity-12 mix-blend-screen bg-gradient-to-tr ${slides[currentSlide].colors.bgGlow}`} />
             
             {/* Multi-color accents (Blue, Purple, Magenta) */}
             <div className="absolute top-[20%] left-[10%] w-[40%] h-[40%] rounded-full blur-[100px] opacity-10 bg-blue-600/15 mix-blend-soft-light" />
