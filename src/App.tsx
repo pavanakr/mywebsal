@@ -320,6 +320,7 @@ const App = () => (
             <Route path="/insights/blogs" element={<InsightsBlogs />} />
             <Route path="/insights/faqs" element={<InsightsFAQs />} />
             <Route path="/insights/press-releases" element={<InsightsPressReleases />} />
+            <Route path="/insights/resources" element={<InsightsResources />} />
             {/* Other */}
             <Route path="/careers" element={<Careers />} />
             <Route path="/contact" element={<Contact />} />

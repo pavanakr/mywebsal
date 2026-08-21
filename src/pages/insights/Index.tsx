@@ -41,6 +41,7 @@ const insightCategories = [
     icon: Newspaper,
     href: "/insights/press-releases",
     gradient: "from-pink-500 to-rose-500",
+  },
   {
     title: "Resources",
     description: "Expert guides and deep dives into CRM, AI, and Software Development.",
