@@ -34,39 +34,47 @@ const Contact = () => {
 
 Continue from the current hero.
 
-Now add premium floating UI cards around the right-side dashboard.
+Improve the AI automation visual.
 
-Add these cards:
+Add a clear workflow inside or beside the dashboard:
 
-1. AI Assistant — Active
+New Lead
 
-2. Analytics — +12.5%
+↓
 
-3. Automation — 98%
+AI Processing
 
-4. WhatsApp — Live
+↓
 
-5. Lead Qualified — Added to CRM
+Smart Response
 
-Use different accent colors:
+↓
+
+Lead Qualified
+
+↓
+
+Added to CRM
+
+Use:
 
 - blue
 
-- cyan
-
 - purple
 
-- green
+- cyan
 
 - pink
 
-Use subtle glassmorphism, borders, shadows and soft glow.
+- green accents
 
-Add very subtle floating animation.
+Add connecting lines and subtle animated pulses.
 
-Do not overcrowd the hero.
+Make it look like a real AI automation platform.
 
-Do not change the existing layout or left-side content.`;
+Keep the hero clean and premium.
+
+Do not change the navbar or other homepage sections.`;
 
   return (
     <Layout>
