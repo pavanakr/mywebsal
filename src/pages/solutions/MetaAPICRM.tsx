@@ -8,7 +8,7 @@ const MetaAPICRM = () => {
       color="from-green-600 to-emerald-700"
       title="Meta API CRM"
       tagline="Official Meta API & WhatsApp CRM Integration"
-      description="Leverage the power of the official Meta Business API. We build high-volume, reliable <a href='/whatsapp-crm' class='text-accent hover:underline'>WhatsApp CRM</a> and <a href='/all-in-one-crm' class='text-accent hover:underline'>All-in-One CRM</a> solutions that scale with your business communications."
+      description="Leverage the power of the official Meta Business API. We build high-volume, reliable <Link to='/whatsapp-crm' className='text-accent hover:underline'>WhatsApp CRM</Link> and <Link to='/all-in-one-crm' className='text-accent hover:underline'>All-in-One CRM</Link> solutions that scale with your business communications."
       benefits={[
         'Official Meta compliance',
         'High-volume messaging',
