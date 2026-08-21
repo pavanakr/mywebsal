@@ -127,6 +127,9 @@ import MicroservicesArchitecture from "./pages/blog/MicroservicesArchitecture";
 import CloudMigration from "./pages/blog/CloudMigration";
 import SaasSecurity from "./pages/blog/SaasSecurity";
 import DevOpsCulture from "./pages/blog/DevOpsCulture";
+import RealEstateCRMArticle from "./pages/blog/RealEstateCRMArticle";
+import AIChatbotsArticle from "./pages/blog/AIChatbotsArticle";
+import HyderabadSoftwareArticle from "./pages/blog/HyderabadSoftwareArticle";
 // About sub-pages
 import CompanyProfile from "./pages/about/CompanyProfile";
 import Infrastructure from "./pages/about/Infrastructure";
@@ -244,6 +247,11 @@ const App = () => (
             <Route path="/hire/nodejs-developers" element={<NodejsDevelopers />} />
             <Route path="/hire/java-developers" element={<JavaDevelopers />} />
             <Route path="/hire/game-developers" element={<GameDevelopers />} />
+            {/* Blog Articles */}
+            <Route path="/blog/real-estate-crm-automation" element={<RealEstateCRMArticle />} />
+            <Route path="/blog/ai-chatbots-guide" element={<AIChatbotsArticle />} />
+            <Route path="/blog/software-development-hub-hyderabad" element={<HyderabadSoftwareArticle />} />
+            <Route path="/blog/whatsapp-crm-guide" element={<RealEstateCRMArticle />} /> {/* Mock redirect or reuse */}
             {/* Legal */}
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/refund-policy" element={<RefundPolicy />} />
