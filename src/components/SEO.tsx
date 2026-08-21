@@ -26,10 +26,10 @@ export const SEO = ({
   type = 'website',
   article,
 }: SEOProps) => {
-  const siteName = 'Softurecs AI Labs';
+  const siteName = 'SOFTURECS AI LABS PRIVATE LIMITED';
   const { pathname } = useLocation();
   const cleanTitle = title
-    .replace(/\s*[|\-–]\s*Softurecs AI Labs\s*$/i, '')
+    .replace(/\s*[|\-–]\s*SOFTURECS AI LABS PRIVATE LIMITED\s*$/i, '')
     .trim();
   const fullTitle = /softurecs/i.test(cleanTitle)
     ? cleanTitle

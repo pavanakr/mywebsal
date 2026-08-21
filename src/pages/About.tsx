@@ -43,19 +43,9 @@ const team = [
     isFounder: true,
   },
   {
-    name: 'Priya Sharma',
-    role: 'Chief Technology Officer',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop',
-  },
-  {
-    name: 'Rahul Krishnan',
-    role: 'VP of Engineering',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop',
-  },
-  {
-    name: 'Ananya Reddy',
-    role: 'Head of AI & ML',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop',
+    name: 'Software Engineering Team',
+    role: 'AI & Full-Stack Experts',
+    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=300&h=300&fit=crop',
   },
 ];
 
