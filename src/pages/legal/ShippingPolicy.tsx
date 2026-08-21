@@ -9,7 +9,7 @@ const ShippingPolicy = () => {
     <Layout>
       <SEO
         title="Shipping & Delivery Policy"
-        description="Softurecs AI Labs shipping and delivery policy for digital products and software development services. Learn about project timelines, delivery methods, and milestone schedules."
+        description="SOFTURECS AI LABS PRIVATE LIMITED shipping and delivery policy for digital products and software development services. Learn about project timelines, delivery methods, and milestone schedules."
         keywords="software delivery policy, digital product delivery, project timeline, software development schedule"
       />
       <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
@@ -61,7 +61,7 @@ const ShippingPolicy = () => {
                 1. Nature of Our Products
               </h2>
               <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
-                All products and services offered by Softurecs AI Labs are digital in nature. Our offerings include:
+                All products and services offered by SOFTURECS AI LABS PRIVATE LIMITED are digital in nature. Our offerings include:
               </p>
               <ul className="space-y-3 text-slate-600 dark:text-slate-300">
                 {[
@@ -243,7 +243,7 @@ const ShippingPolicy = () => {
             <section>
               <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">7. No Physical Shipping</h2>
               <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                To reiterate, Softurecs AI Labs does not engage in physical shipping of any kind. We do not:
+                To reiterate, SOFTURECS AI LABS PRIVATE LIMITED does not engage in physical shipping of any kind. We do not:
               </p>
               <ul className="mt-3 space-y-2 text-slate-600 dark:text-slate-300">
                 <li>• Ship physical hardware, devices, or equipment</li>

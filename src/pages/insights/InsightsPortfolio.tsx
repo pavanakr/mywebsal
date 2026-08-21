@@ -108,7 +108,7 @@ const InsightsPortfolio = () => {
   return (
     <Layout>
       <SEO
-        title="Our Portfolio | Softurecs AI Labs"
+        title="Our Portfolio | SOFTURECS AI LABS PRIVATE LIMITED"
         description="Explore our diverse portfolio of web apps, mobile apps, e-commerce, healthcare, fintech, and AI/ML projects."
         keywords="software portfolio, web applications, mobile apps, e-commerce, healthcare software, fintech solutions"
       />

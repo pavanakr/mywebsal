@@ -101,8 +101,8 @@ const CaseStudies = () => {
   return (
     <Layout>
       <SEO
-        title="Case Studies | Softurecs AI Labs"
-        description="Real success stories from healthcare, fintech, e-commerce & logistics. See how Softurecs AI Labs delivers measurable results for global clients."
+        title="Case Studies | SOFTURECS AI LABS PRIVATE LIMITED"
+        description="Real success stories from healthcare, fintech, e-commerce & logistics. See how SOFTURECS AI LABS PRIVATE LIMITED delivers measurable results for global clients."
         keywords="software case studies, client success stories, healthcare software, fintech solutions, e-commerce platform"
       />
       <PageHero

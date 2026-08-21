@@ -59,13 +59,13 @@ export default function AwardsRecognition() {
   return (
     <Layout>
       <SEO 
-        title="Awards & Recognition | Softurecs AI Labs"
+        title="Awards & Recognition | SOFTURECS AI LABS PRIVATE LIMITED"
         description="25+ industry awards for AI excellence and digital innovation. Clutch Top 10 ranked, ISO 27001 certified software development company."
         keywords="software awards, Clutch top company, ISO certified, AI solutions awards, IT company recognition"
       />
       
       <PageHero
-        title="Awards & Industry Recognition Earned by Softurecs AI Labs"
+        title="Awards & Industry Recognition Earned by SOFTURECS AI LABS PRIVATE LIMITED"
         description="Recognized for Innovation & Quality. Trusted by Clients Across Industries. Commitment to Excellence."
         breadcrumbs={[
           { label: 'Home', href: '/' },

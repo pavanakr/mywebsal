@@ -58,7 +58,7 @@ export default function Infrastructure() {
   return (
     <Layout>
       <SEO 
-        title="Infrastructure | Softurecs AI Labs"
+        title="Infrastructure | SOFTURECS AI LABS PRIVATE LIMITED"
         description="Enterprise-grade cloud infrastructure with AWS, Azure & GCP. ISO 27001 certified, 99.9% uptime guarantee, and 24/7 monitoring for secure development."
         keywords="cloud infrastructure, AWS Azure GCP, ISO 27001 certified, enterprise security, DevOps infrastructure"
       />

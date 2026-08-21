@@ -19,7 +19,7 @@ const aboutMenuItems = [
     name: 'Company Profile', 
     href: '/about/company-profile', 
     icon: Building2,
-    description: "Discover Softurecs' journey, expertise, and commitment to digital excellence.",
+    description: "Discover SOFTURECS AI LABS PRIVATE LIMITED's journey, expertise, and commitment to digital excellence.",
     gradient: 'from-blue-400 via-cyan-400 to-teal-400',
     bgGradient: 'from-blue-50 to-cyan-50 dark:from-blue-950/50 dark:to-cyan-950/50'
   },
@@ -32,7 +32,7 @@ const aboutMenuItems = [
     bgGradient: 'from-violet-50 to-purple-50 dark:from-violet-950/50 dark:to-purple-950/50'
   },
   { 
-    name: 'Careers @ Softurecs', 
+    name: 'Careers @ SOFTURECS', 
     href: '/about/careers', 
     icon: Briefcase,
     description: 'Join our team to build future-ready digital solutions together.',
@@ -51,7 +51,7 @@ const aboutMenuItems = [
     name: 'Leadership', 
     href: '/about/leadership', 
     icon: Users,
-    description: "Meet the visionary minds driving Softurecs' growth and innovation.",
+    description: "Meet the visionary minds driving SOFTURECS AI LABS PRIVATE LIMITED's growth and innovation.",
     gradient: 'from-sky-400 via-blue-400 to-indigo-400',
     bgGradient: 'from-sky-50 to-blue-50 dark:from-sky-950/50 dark:to-blue-950/50'
   },
@@ -537,7 +537,7 @@ export function Header() {
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
                 <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl flex items-center justify-center transition-all duration-300">
-                  <img src={salLogo.url} alt="Softurecs AI Labs logo" className="w-full h-full object-contain" />
+                  <img src={salLogo.url} alt="SOFTURECS AI LABS PRIVATE LIMITED logo" className="w-full h-full object-contain" />
                 </div>
 
                 {/* Subtle glow effect */}

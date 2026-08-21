@@ -7,17 +7,17 @@ export interface PageSEOConfig {
 
 export const seoConfig: Record<string, PageSEOConfig> = {
   '/': {
-    title: 'AI Software Development Company in Hyderabad, India | Softurecs AI Labs',
+    title: 'AI Software Development Company in Hyderabad, India | SOFTURECS AI LABS PRIVATE LIMITED',
     description: 'SOFTURECS AI LABS: Premier AI software development company in Hyderabad, India. Experts in custom software development, CRM software, AI chatbots, and SaaS solutions.',
     keywords: 'AI software company India, software development company Hyderabad, custom software development, CRM software India, AI chatbot development, SaaS development India',
   },
   '/about': {
-    title: 'About Softurecs AI Labs | Leading AI & Software Innovation in India',
-    description: 'Discover Softurecs AI Labs, a top-tier software company in Hyderabad. Learn about our mission to deliver enterprise-grade AI and custom software solutions globally.',
+    title: 'About SOFTURECS AI LABS PRIVATE LIMITED | Leading AI & Software Innovation in India',
+    description: 'Discover SOFTURECS AI LABS PRIVATE LIMITED, a top-tier software company in Hyderabad. Learn about our mission to deliver enterprise-grade AI and custom software solutions globally.',
     keywords: 'about softurecs, AI software innovations, tech company Hyderabad, custom software company India, tech leadership, Pavan Kumar Naramala',
   },
   '/services': {
-    title: 'Custom Software Development & AI Automation Services | Softurecs AI Labs',
+    title: 'Custom Software Development & AI Automation Services | SOFTURECS AI LABS PRIVATE LIMITED',
     description: 'Transform your business with our AI-powered software development services. Specialized in mobile app development, web applications, CRM, and cloud solutions.',
     keywords: 'software development services, AI automation, custom web development, mobile app development India, CRM development services, enterprise software',
   },
@@ -28,11 +28,11 @@ export const seoConfig: Record<string, PageSEOConfig> = {
   },
   '/portfolio': {
     title: 'Software Project Portfolio | AI & Custom Development Success Stories',
-    description: 'Explore our portfolio of successful software projects. 1500+ digital transformation case studies in AI, CRM, and mobile apps delivered by Softurecs AI Labs.',
+    description: 'Explore our portfolio of successful software projects. 1500+ digital transformation case studies in AI, CRM, and mobile apps delivered by SOFTURECS AI LABS PRIVATE LIMITED.',
     keywords: 'software case studies, project portfolio, AI development examples, mobile app success stories, custom software portfolio, digital transformation India',
   },
   '/contact': {
-    title: 'Contact Softurecs AI Labs | Free Software & AI Consultation in Hyderabad',
+    title: 'Contact SOFTURECS AI LABS PRIVATE LIMITED | Free Software & AI Consultation in Hyderabad',
     description: 'Partner with a leading AI software company in Hyderabad. Contact us for custom software development, CRM solutions, and AI automation. 24-hour response.',
     keywords: 'contact software company Hyderabad, AI consultation India, software development inquiry, hire dedicated developers India, IT consulting Hyderabad',
   },
@@ -87,17 +87,17 @@ export const seoConfig: Record<string, PageSEOConfig> = {
     keywords: 'WhatsApp CRM, WhatsApp CRM software, WhatsApp sales CRM, WhatsApp automation CRM, WhatsApp customer management',
   },
   '/software-development-company-hyderabad': {
-    title: 'Software Development Company in Hyderabad | Softurecs AI Labs',
+    title: 'Software Development Company in Hyderabad | SOFTURECS AI LABS PRIVATE LIMITED',
     description: 'Top-rated software development company in Hyderabad. Expert AI solutions, custom CRM, and SaaS development services in Telangana. Hire expert developers today.',
     keywords: 'software company in Hyderabad, software development company Hyderabad, software solutions Hyderabad, CRM development Hyderabad, AI development Hyderabad, SaaS development Hyderabad, custom software development Hyderabad',
   },
   '/software-development-company-kphb': {
-    title: 'Software Development Company in KPHB, Hyderabad | Softurecs AI Labs',
-    description: 'Looking for a software company in KPHB? Softurecs AI Labs provides expert AI development, CRM software, and IT services in KPHB Housing Board Colony, Hyderabad.',
+    title: 'Software Development Company in KPHB, Hyderabad | SOFTURECS AI LABS PRIVATE LIMITED',
+    description: 'Looking for a software company in KPHB? SOFTURECS AI LABS PRIVATE LIMITED provides expert AI development, CRM software, and IT services in KPHB Housing Board Colony, Hyderabad.',
     keywords: 'software company KPHB, software development KPHB, IT company KPHB, CRM development KPHB, AI development KPHB, SaaS development KPHB',
   },
   '/software-development-company-kukatpally': {
-    title: 'Software Development Company in Kukatpally, Hyderabad | Softurecs AI Labs',
+    title: 'Software Development Company in Kukatpally, Hyderabad | SOFTURECS AI LABS PRIVATE LIMITED',
     description: 'Leading software development company in Kukatpally. Specializing in AI, CRM development, and custom software for Kukatpally businesses. Expert IT services Hyderabad.',
     keywords: 'software company Kukatpally, software development Kukatpally, IT company Kukatpally, CRM development Kukatpally, AI development Kukatpally, SaaS development Kukatpally',
   },

@@ -18,7 +18,7 @@ export default function IndiaLanding() {
   return (
     <Layout>
       <SEO 
-        title="Software Development Company in India | Softurecs AI Labs"
+        title="Software Development Company in India | SOFTURECS AI LABS PRIVATE LIMITED"
         description="Premier software development company in India. We provide AI-driven software solutions, custom CRM, and mobile apps to businesses across India and globally."
         keywords="software development company India, AI software India, custom software India, CRM development India, IT services India, offshore development India"
       />
@@ -52,7 +52,7 @@ export default function IndiaLanding() {
                 India's Trusted Partner for AI & Custom Software
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Softurecs AI Labs is a premier software development company in India, dedicated to helping businesses leverage the power of artificial intelligence and modern technology. From our headquarters in Hyderabad, we serve a diverse range of industries across the Indian subcontinent and international markets.
+                SOFTURECS AI LABS PRIVATE LIMITED is a premier software development company in India, dedicated to helping businesses leverage the power of artificial intelligence and modern technology. From our headquarters in Hyderabad, we serve a diverse range of industries across the Indian subcontinent and international markets.
               </p>
               <div className="space-y-4 mb-8">
                 {[

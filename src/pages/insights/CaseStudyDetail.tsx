@@ -151,7 +151,7 @@ const CaseStudyDetail = () => {
   return (
     <Layout>
       <SEO
-        title={`${caseStudy.title} | Case Study | Softurecs AI Labs`}
+        title={`${caseStudy.title} | Case Study | SOFTURECS AI LABS PRIVATE LIMITED`}
         description={caseStudy.overview}
         keywords={`case study, ${caseStudy.industry.toLowerCase()}, software development, ${caseStudy.client}`}
       />

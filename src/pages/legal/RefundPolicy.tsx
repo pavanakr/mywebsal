@@ -9,7 +9,7 @@ const RefundPolicy = () => {
     <Layout>
       <SEO
         title="Refund Policy"
-        description="Softurecs AI Labs refund policy for software development services. Learn about our fair refund terms for projects, milestones, and staff augmentation services."
+        description="SOFTURECS AI LABS PRIVATE LIMITED refund policy for software development services. Learn about our fair refund terms for projects, milestones, and staff augmentation services."
         keywords="refund policy, software development refund, project cancellation, milestone refund, payment terms"
       />
       <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">

@@ -9,7 +9,7 @@ const PrivacyPolicy = () => {
     <Layout>
       <SEO
         title="Privacy Policy"
-        description="Softurecs AI Labs privacy policy. Learn how we collect, use, protect, and share your personal information when you use our software development services."
+        description="SOFTURECS AI LABS PRIVATE LIMITED privacy policy. Learn how we collect, use, protect, and share your personal information when you use our software development services."
         keywords="privacy policy, data protection, personal information, GDPR, data security"
       />
       <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">

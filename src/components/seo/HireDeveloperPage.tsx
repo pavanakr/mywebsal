@@ -122,7 +122,7 @@ export const HireDeveloperPage = () => {
     <Layout>
       <SEO
         title={`Hire Expert ${techInfo.fullName} Developers`}
-        description={`Hire pre-vetted ${techInfo.fullName} developers from Softurecs AI Labs. Scale your team with top ${techInfo.name} talent for your software projects.`}
+        description={`Hire pre-vetted ${techInfo.fullName} developers from SOFTURECS AI LABS PRIVATE LIMITED. Scale your team with top ${techInfo.name} talent for your software projects.`}
         keywords={`hire ${techInfo.name.toLowerCase()} developers, remote ${techInfo.name.toLowerCase()} development team, ${techInfo.name.toLowerCase()} experts for hire, staff augmentation ${techInfo.name.toLowerCase()}`}
       />
       <BreadcrumbSchema items={[
@@ -227,7 +227,7 @@ export const HireDeveloperPage = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-foreground mb-4">
-              Why Hire from Softurecs AI Labs
+              Why Hire from SOFTURECS AI LABS PRIVATE LIMITED
             </h2>
           </motion.div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

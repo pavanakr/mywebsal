@@ -53,8 +53,8 @@ const International = () => {
   return (
     <Layout>
       <SEO
-        title="Global Software Development Services | Softurecs AI Labs"
-        description="Softurecs AI Labs serves clients across USA, UK, UAE, Singapore & 15+ countries. Enterprise software, AI solutions & digital transformation with local compliance."
+        title="Global Software Development Services | SOFTURECS AI LABS PRIVATE LIMITED"
+        description="SOFTURECS AI LABS PRIVATE LIMITED serves clients across USA, UK, UAE, Singapore & 15+ countries. Enterprise software, AI solutions & digital transformation with local compliance."
         keywords="global software development, international IT services, offshore development India, software outsourcing, AI development worldwide"
       />
       <BreadcrumbSchema items={[
@@ -66,7 +66,7 @@ const International = () => {
 
       <PageHero
         title="Global Software Development Services"
-        description="From Hyderabad to the world — Softurecs AI Labs serves enterprises across 15+ countries with localized, compliant, and cutting-edge technology solutions."
+        description="From Hyderabad to the world — SOFTURECS AI LABS PRIVATE LIMITED serves enterprises across 15+ countries with localized, compliant, and cutting-edge technology solutions."
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'International' }

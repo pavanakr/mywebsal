@@ -55,7 +55,7 @@ const Insights = () => {
     <Layout>
       <SEO
         title="Softurecs Insights"
-        description="Technology trends, case studies & expert insights from Softurecs AI Labs. Explore our knowledge base on AI, software development & digital transformation."
+        description="Technology trends, case studies & expert insights from SOFTURECS AI LABS PRIVATE LIMITED. Explore our knowledge base on AI, software development & digital transformation."
         keywords="technology insights, software trends, AI articles, case studies, tech expertise"
       />
       <PageHero

@@ -12,8 +12,8 @@ export default function KPHBLanding() {
   return (
     <Layout>
       <SEO 
-        title="Software Development Company in KPHB, Hyderabad | Softurecs AI Labs"
-        description="Looking for a software company in KPHB? Softurecs AI Labs provides expert AI development, CRM software, and IT services in KPHB Housing Board Colony, Hyderabad."
+        title="Software Development Company in KPHB, Hyderabad | SOFTURECS AI LABS PRIVATE LIMITED"
+        description="Looking for a software company in KPHB? SOFTURECS AI LABS PRIVATE LIMITED provides expert AI development, CRM software, and IT services in KPHB Housing Board Colony, Hyderabad."
         keywords="software company KPHB, software development KPHB, IT company KPHB, CRM development KPHB, AI development KPHB, SaaS development KPHB"
       />
       <LocalBusinessSchema city="KPHB" region="Telangana" />
@@ -39,7 +39,7 @@ export default function KPHBLanding() {
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">Innovative Software Solutions in KPHB Colony</h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Softurecs AI Labs brings world-class software development capabilities to the doorstep of businesses in KPHB (Kukatpally Housing Board). As a local IT company in KPHB, we understand the unique requirements of growing enterprises in this vibrant commercial area.
+              SOFTURECS AI LABS PRIVATE LIMITED brings world-class software development capabilities to the doorstep of businesses in KPHB (Kukatpally Housing Board). As a local IT company in KPHB, we understand the unique requirements of growing enterprises in this vibrant commercial area.
             </p>
             
             <div className="grid sm:grid-cols-2 gap-8 mb-12">

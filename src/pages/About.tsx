@@ -43,19 +43,9 @@ const team = [
     isFounder: true,
   },
   {
-    name: 'Priya Sharma',
-    role: 'Chief Technology Officer',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop',
-  },
-  {
-    name: 'Rahul Krishnan',
-    role: 'VP of Engineering',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop',
-  },
-  {
-    name: 'Ananya Reddy',
-    role: 'Head of AI & ML',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop',
+    name: 'Software Engineering Team',
+    role: 'AI & Full-Stack Experts',
+    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=300&h=300&fit=crop',
   },
 ];
 
@@ -72,7 +62,7 @@ const About = () => {
   return (
     <Layout>
       <SEO
-        title="About Softurecs AI Labs | Leading AI & Software Company India"
+        title="About SOFTURECS AI LABS PRIVATE LIMITED | Leading AI & Software Company India"
         description="SOFTURECS AI LABS PRIVATE LIMITED: Leading AI software development company in Hyderabad, India. Discover our mission to deliver enterprise AI & custom software."
         keywords="about softurecs ai labs, AI software company India, Hyderabad IT innovations, tech company mission, Pavan Kumar Naramala, custom software development"
       />
@@ -92,7 +82,7 @@ const About = () => {
             className="text-center max-w-4xl mx-auto"
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-medium mb-6">
-              About SOFTURECS AI LABS
+              About SOFTURECS AI LABS PRIVATE LIMITED
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
               Leading Software Development Company in Hyderabad – AI Specialists
@@ -318,7 +308,7 @@ const About = () => {
                 Why Choose Us
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Why Businesses Choose Softurecs AI Labs
+                Why Businesses Choose SOFTURECS AI LABS PRIVATE LIMITED
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
                 We combine technical excellence with business acumen to deliver AI-powered solutions that don't just work—they drive measurable results.

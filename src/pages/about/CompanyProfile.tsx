@@ -11,13 +11,13 @@ export default function CompanyProfile() {
     <Layout>
       <SEO 
         title="Company Profile"
-        description="Learn about Softurecs AI Labs - a leading enterprise software development company in Hyderabad, India. 15+ years experience, 250+ engineers, 1500+ projects delivered."
-        keywords="Softurecs AI Labs, software development company, IT company Hyderabad, enterprise software, AI solutions company"
+        description="Learn about SOFTURECS AI LABS PRIVATE LIMITED - a leading enterprise software development company in Hyderabad, India. 15+ years experience, 250+ engineers, 1500+ projects delivered."
+        keywords="SOFTURECS AI LABS PRIVATE LIMITED, software development company, IT company Hyderabad, enterprise software, AI solutions company"
       />
       
       <PageHero
-        title="About Softurecs AI Labs – Innovating Digital Solutions with AI"
-        description="Who We Are & What We Do. Our Vision, Mission & Core Values. Why Businesses Choose Softurecs AI Labs."
+        title="About SOFTURECS AI LABS PRIVATE LIMITED – Innovating Digital Solutions with AI"
+        description="Who We Are & What We Do. Our Vision, Mission & Core Values. Why Businesses Choose SOFTURECS AI LABS PRIVATE LIMITED."
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'About', href: '/about' },
@@ -27,7 +27,7 @@ export default function CompanyProfile() {
         iconColor="from-indigo-500 to-purple-600"
         badge="Our Story"
         image="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop"
-        imageAlt="Softurecs AI Labs Office"
+        imageAlt="SOFTURECS AI LABS PRIVATE LIMITED Office"
         stats={[
           { value: '15+', label: 'Years Experience' },
           { value: '250+', label: 'Expert Team' },
@@ -140,7 +140,7 @@ export default function CompanyProfile() {
           >
             <h2 className="text-3xl font-bold text-foreground mb-4">Our Core Values</h2>
             <p className="text-lg text-muted-foreground">
-              The principles that guide everything we do at Softurecs AI Labs.
+              The principles that guide everything we do at SOFTURECS AI LABS PRIVATE LIMITED.
             </p>
           </motion.div>
           <div className="grid md:grid-cols-4 gap-6">
@@ -194,7 +194,7 @@ export default function CompanyProfile() {
             >
               <h2 className="text-3xl font-bold text-foreground mb-6">Visionary Leadership</h2>
               <p className="text-muted-foreground mb-6">
-                Under the leadership of Pavan Kumar Naramala, Softurecs AI Labs has grown from a small 
+                Under the leadership of Pavan Kumar Naramala, SOFTURECS AI LABS PRIVATE LIMITED has grown from a small 
                 startup to a leading enterprise software company serving clients across the globe.
               </p>
               <p className="text-muted-foreground mb-6">
