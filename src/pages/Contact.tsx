@@ -32,160 +32,85 @@ const Contact = () => {
 
   const commandPlaceholder = `'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
 
-IMPORTANT: The current homepage hero slider has been damaged and the UI is not acceptable.
+The current hero slider layout is now structurally good.
 
-I want you to COMPLETELY REBUILD ONLY THE HOMEPAGE HERO SLIDER from scratch.
+DO NOT rebuild the slider structure again.
 
-Do NOT try to fix the current slider styling.
-Do NOT preserve the current slider layout.
-Do NOT use the current oversized typography layout.
+DO NOT change the navbar.
 
-Keep the existing:
+DO NOT change the hero layout, typography structure, buttons, arrows, pagination, or content positioning.
 
-top announcement bar
+ONLY improve the VISUAL DESIGN, COLORS, BACKGROUNDS AND SERVICE VISUALS.
 
-navbar
+The current hero is too dark and mostly navy blue.
 
-logo
-
-navigation
-
-Get in Touch button
-
-existing website branding
-
-all sections below the hero
-
-ONLY replace the hero slider.
+I want a PREMIUM, COLORFUL AI + SAAS HERO SLIDER.
 
 ================================
-DESIGN GOAL
+COLOR DIRECTION
 
-Create a premium, modern, colorful SaaS + AI technology hero slider for:
+Use a sophisticated multi-color gradient system:
 
-SOFTURECS AI LABS PRIVATE LIMITED
+Deep Navy
 
-The hero should look like a professional international software/AI company's website.
+Electric Blue
 
-Think:
+Bright Blue
 
-premium SaaS
+Cyan
 
-AI technology
+Violet
 
-CRM platform
+Purple
 
-business automation
+Magenta
 
-modern enterprise software
+Subtle Pink
 
-It must NOT look like:
+Teal
 
-a poster
+Green accents where relevant
 
-a template
+The colors should blend smoothly.
 
-a gaming website
+Do NOT make the entire background one dark navy color.
 
-a generic stock-image website
+Use layered gradients and soft color zones.
 
-a typography-only design
+Example visual direction:
 
-================================
-HERO LAYOUT
+Navy → Blue → Violet → Purple → Cyan
 
-Use a balanced 2-column layout.
+Use different dominant colors for different slides.
 
-LEFT SIDE:
-
-small category badge
-
-strong headline
-
-short description
-
-primary CTA
-
-secondary CTA
-
-optional small trust/stat row
-
-RIGHT SIDE:
-
-large professional visual
-
-CRM dashboard / AI interface / automation workflow
-
-floating UI cards
-
-subtle decorative technology elements
-
-Keep both sides visually balanced.
-
-Do NOT allow the headline to occupy most of the screen.
-
-Do NOT break the headline into one word per line.
-
-Maximum headline width should be controlled.
-
-Use normal professional line breaks.
-
-Hero should have comfortable padding.
+Keep the overall SOFTURECS AI LABS branding professional.
 
 ================================
+SLIDE-SPECIFIC COLORS
+
 SLIDE 1 — AI CHATBOTS
 
-Badge:
-AI-POWERED SOLUTIONS
+Dominant:
+Blue + Violet + Cyan
 
-Headline:
-AI Chatbots That Work 24/7
-
-Description:
-Automate customer conversations, qualify leads and deliver intelligent support with AI-powered chatbots.
-
-Primary CTA:
-Explore AI Solutions
-
-Secondary CTA:
-Book a Free Consultation
+Add subtle:
+Purple/Pink glow
 
 Visual:
-Create a premium AI chatbot interface showing:
+AI chatbot + conversation UI + AI assistant.
 
-AI assistant
-
-customer conversation
-
-lead qualification
-
-response suggestions
-
-analytics
-
-CRM connection
-
-Use blue + purple + cyan visual accents.
+The AI visual should have bright cyan/blue/purple accents.
 
 ================================
 SLIDE 2 — AI AUTOMATION
 
-Badge:
-AI AUTOMATION
+Dominant:
+Purple + Magenta + Electric Blue
 
-Headline:
-Automate Your Business With AI
+Add:
+Cyan workflow highlights.
 
-Description:
-Connect leads, conversations, follow-ups and business workflows with intelligent automation.
-
-Primary CTA:
-Explore AI Automation
-
-Secondary CTA:
-Book a Free Consultation
-
-Visual should show an elegant automation workflow:
+Show a colorful automation workflow:
 
 Lead Capture
 ↓
@@ -197,405 +122,282 @@ Lead Qualification
 ↓
 CRM
 
-Use blue, violet, purple and cyan accents.
+Each workflow stage can have a subtle different accent color.
 
 ================================
 SLIDE 3 — REAL ESTATE CRM
 
-Badge:
-REAL ESTATE CRM
+Dominant:
+Blue + Teal + Violet
 
-Headline:
-Smarter CRM for Real Estate Growth
+Add:
+Subtle green/cyan accents.
 
-Description:
-Manage properties, leads, agents, follow-ups and sales from one powerful CRM platform.
-
-Primary CTA:
-Explore Real Estate CRM
-
-Secondary CTA:
-Book a Free Consultation
-
-Visual:
-Premium real estate CRM dashboard showing:
+Show:
 
 property cards
 
 leads
 
-sales pipeline
-
 agents
+
+sales pipeline
 
 analytics
 
-follow-up reminders
-
-Use blue + teal + violet accents.
+Use a bright, premium dashboard visual instead of a generic photograph.
 
 ================================
 SLIDE 4 — WHATSAPP + META API
 
-Badge:
-WHATSAPP + META API
+Dominant:
+Green + Cyan + Blue
 
-Headline:
-Turn Conversations Into Customers
+Add:
+Purple gradient around the CRM side.
 
-Description:
-Connect WhatsApp and Meta APIs with your CRM to manage conversations, leads and automation.
-
-Primary CTA:
-Explore WhatsApp CRM
-
-Secondary CTA:
-Book a Free Consultation
-
-Visual:
 Show:
-WhatsApp conversation
-→ AI response
-→ lead capture
-→ CRM
-→ sales follow-up
 
-Use green/cyan/purple accents while maintaining the company brand.
+WhatsApp
+→ AI Response
+→ Lead
+→ CRM
+→ Follow-up
+
+The WhatsApp element can use a recognizable green accent, but do not make the entire slide green.
 
 ================================
 SLIDE 5 — ALL-IN-ONE CRM
 
-Badge:
-ALL-IN-ONE CRM
+Dominant:
+Blue + Purple + Cyan
 
-Headline:
-One CRM. Your Entire Business.
+Show a modern colorful CRM dashboard containing:
 
-Description:
-Bring sales, customer management, automation and business operations together in one powerful platform.
+Leads
 
-Primary CTA:
-Explore CRM Solutions
+Customers
 
-Secondary CTA:
-Book a Free Consultation
+Sales
 
-Visual:
-Modern CRM dashboard showing:
+Revenue
 
-leads
+Analytics
 
-sales pipeline
+Automation
 
-customers
-
-analytics
-
-automation
-
-tasks
-
-revenue
-
-Use blue + purple + cyan gradients.
+Tasks
 
 ================================
-VISUAL DESIGN
+BACKGROUND
 
-Use a premium gradient-based technology background.
+Replace the flat dark background with a premium layered background.
 
-Preferred palette:
+Use:
 
-Deep Navy
-Electric Blue
-Royal Blue
-Violet
-Purple
-Cyan
+large soft gradient blobs
 
-Use gradients subtly.
+subtle blue/purple radial gradients
 
-Do NOT make the entire hero neon.
+abstract flowing shapes
 
-Do NOT use excessive glow.
+subtle technology lines
 
-Do NOT use huge empty spaces.
+very light particles
 
-Do NOT use a single dark laptop photograph.
+soft glow around important visual elements
 
-Do NOT use generic office stock photography.
+smooth color transitions
 
-Use UI/dashboard-style visuals that communicate our actual services.
+Keep the background sophisticated.
 
-Create depth using:
+Do NOT use excessive particles.
 
-dashboard panels
+Do NOT use a black background.
 
-floating cards
-
-charts
-
-workflow nodes
-
-AI assistant cards
-
-subtle abstract shapes
-
-soft gradients
-
-light glass effects
+Do NOT make it look like a gaming website.
 
 ================================
-TYPOGRAPHY
+RIGHT-SIDE VISUAL
 
-This is VERY IMPORTANT.
+The right-side visual is currently too empty.
 
-Do NOT use:
+Make the visual much richer.
 
-REAL
-ESTATE
-CRM
-BUILT
-FOR
-...
+Create a large modern UI composition containing:
 
-Do NOT put one word per line.
+MAIN DASHBOARD
++
+FLOATING AI ASSISTANT CARD
++
+AUTOMATION CARD
++
+ANALYTICS CARD
++
+CHANNEL/CRM CARD
 
-Use a maximum of 2–3 lines for the main headline.
+Use different accent colors for these cards.
+
+Cards should be light/white or translucent with subtle gradients.
 
 Example:
 
-Smarter CRM
-for Real Estate Growth
+AI Assistant
+cyan/purple
 
-or:
+Automation
+violet/blue
 
-AI Chatbots
-That Work 24/7
+Analytics
+blue/cyan
 
-Headline should be approximately:
-48–64px desktop
+WhatsApp
+green
 
-and responsive down to:
-32–40px mobile.
-
-Do not use extremely oversized typography.
-
-================================
-SLIDER BEHAVIOR
-
-Use a reliable existing slider library if the project already has one.
-
-If not, implement a lightweight reliable slider.
-
-Requirements:
-
-5 slides
-
-autoplay every 5 seconds
-
-smooth transition
-
-previous arrow
-
-next arrow
-
-pagination dots
-
-keyboard navigation
-
-touch/swipe support
-
-pause on hover
-
-pause when user interacts
-
-mobile responsive
-
-tablet responsive
-
-desktop responsive
-
-reduced-motion support
-
-Do not allow slides to overlap each other.
-
-Do not allow content from one slide to appear on another.
-
-Do not allow horizontal scrolling.
-
-Do not allow the hero to break the page layout.
+CRM
+purple/blue
 
 ================================
-HEIGHT
+GLASS EFFECT
 
-Keep the hero visually compact and premium.
+Use subtle glassmorphism for floating cards:
 
-Desktop:
-approximately 560–650px
+translucent backgrounds
 
-Tablet:
-approximately 520–600px
+light borders
 
-Mobile:
-auto height based on content.
+soft blur
 
-Do NOT create an extremely tall hero.
+subtle shadows
 
-================================
-RESPONSIVE DESIGN
+slight gradient borders
 
-Desktop:
-2-column layout.
-
-Tablet:
-balanced 2-column layout where possible.
-
-Mobile:
-stack:
-
-Badge
-Headline
-Description
-CTA
-Visual
-
-The visual must remain visible.
-
-Do NOT crop the important AI/CRM visual.
-
-Do NOT create horizontal overflow.
+Do NOT overuse glassmorphism.
 
 ================================
-CTA
+CTA BUTTONS
 
-Primary CTA:
-Use the existing website CTA/routing wherever possible.
+Make the primary CTA more colorful.
+
+Use a premium gradient:
+
+Blue → Purple
+
+or
+
+Blue → Violet → Pink
 
 Secondary CTA:
-Book a Free Consultation
+transparent/glass style with a clean white border.
 
-Do not create broken links.
-
-Do not remove existing CTA functionality.
+Keep text highly readable.
 
 ================================
-SEO
+BADGE
 
-Homepage must have ONLY ONE H1.
+The service badge should use a small colorful accent matching the slide.
 
-Use the first slide headline as the homepage H1.
+Examples:
 
-Other slide headlines must use H2 or appropriate semantic elements.
+AI CHATBOTS
+blue/purple
 
-Do not put important text inside images.
+AI AUTOMATION
+purple/magenta
 
-Add meaningful alt text to visual images.
+REAL ESTATE CRM
+blue/teal
 
-Do not keyword stuff.
+WHATSAPP + META API
+green/cyan
 
-================================
-PERFORMANCE
-
-Use optimized images/assets.
-
-First slide visual should load with priority.
-
-Lazy-load other slide visuals when appropriate.
-
-Avoid unnecessary libraries.
-
-Avoid heavy animations.
-
-Prevent layout shift.
+ALL-IN-ONE CRM
+blue/violet
 
 ================================
-IMPORTANT — PRESERVE WEBSITE
+TEXT
 
-DO NOT MODIFY:
+Keep the existing typography structure.
 
-announcement bar
+Do NOT make the headline larger.
 
-navbar
+Do NOT create one-word-per-line headlines.
 
-logo
+Keep the headline white with one important keyword highlighted using a subtle gradient color.
 
-navigation
+Example:
 
-About section
+AI Chatbots
+That Work
+24/7
 
-Services section
-
-Industries section
-
-Insights section
-
-footer
-
-chatbot
-
-floating buttons
-
-other homepage sections
-
-ONLY rebuild the hero slider.
-
-Before coding, inspect the current hero implementation and remove the broken hero-specific layout/styles safely.
-
-Make sure old hero CSS does not conflict with the new slider.
+"AI" or "24/7" can have a blue/purple/cyan gradient accent.
 
 ================================
-FINAL QA
+ANIMATION
 
-After rebuilding:
+Add subtle premium animation:
 
-Test:
+floating dashboard cards
 
-Desktop 1920px
+slow gradient movement
 
-Desktop 1440px
+soft glow movement
 
-Laptop 1366px
+subtle floating AI elements
 
-Tablet
+workflow pulse
 
-Mobile 390px
+dashboard chart animation
 
-Mobile 375px
+Keep animations smooth and professional.
 
-Verify:
+Do NOT use distracting animations.
 
-no oversized text
+Do NOT make text bounce or move aggressively.
 
-no broken layout
+Respect prefers-reduced-motion.
 
-no overlapping slides
+================================
+IMPORTANT
 
-no horizontal scrollbar
+Keep the CURRENT slider structure because it is now acceptable.
 
-images display correctly
+Only upgrade:
 
-arrows work
+colors
 
-dots work
+gradients
 
-autoplay works
+visual richness
 
-swipe works
+dashboard visuals
 
-CTA links work
+floating cards
 
-navbar remains unchanged
+backgrounds
 
-hero does not cover the navbar
+CTA appearance
 
-hero does not affect sections below it
+service-specific visual accents
 
-page remains responsive
+subtle animations
 
-The final result must look like a polished, premium AI + SaaS company website.
+The final result should feel like:
 
-REBUILD THE HERO SLIDER FROM SCRATCH.''`;
+PREMIUM AI COMPANY
++
+ENTERPRISE SaaS
++
+MODERN CRM
++
+BUSINESS AUTOMATION
+
+It should immediately communicate that SOFTURECS AI LABS provides AI, CRM, WhatsApp, automation and software solutions.
+
+Make the result colorful, premium and visually rich without becoming flashy.
+
+After implementation, test desktop, tablet and mobile and ensure there is no horizontal overflow or layout break.''`;
 
   return (
     <Layout>
