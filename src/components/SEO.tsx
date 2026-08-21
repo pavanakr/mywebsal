@@ -34,7 +34,7 @@ export const SEO = ({
   const fullTitle = /softurecs/i.test(cleanTitle)
     ? cleanTitle
     : `${cleanTitle} | ${siteName}`;
-  const canonical = url ?? `${SITE_URL}${pathname === '/' ? '/' : pathname.replace(/\/$/, '')}`;
+  const canonical = url ?? `${SITE_URL}${pathname === '/' ? '' : pathname.replace(/\/$/, '')}`;
   
   return (
     <Helmet>
