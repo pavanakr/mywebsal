@@ -46,7 +46,8 @@ const company = [
 const legal = [
   { name: 'Privacy Policy', href: '/privacy-policy' },
   { name: 'Terms & Conditions', href: '/terms' },
-  { name: 'Cookie Policy', href: '/cookie-policy' },
+  { name: 'Refund Policy', href: '/refund-policy' },
+  { name: 'Shipping Policy', href: '/shipping-policy' },
 ];
 
 const footerColumns = [
