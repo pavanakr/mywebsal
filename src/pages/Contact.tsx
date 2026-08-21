@@ -30,6 +30,8 @@ const Contact = () => {
     setFormData({ name: '', email: '', company: '', phone: '', service: '', message: '' });
   };
 
+  const commandPlaceholder = "'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n\nImprove ONLY the homepage hero/header section.\n\nDo not redesign the rest of the website.\n\nReplace the current hero section with a premium, modern, full-width responsive image slider for SOFTURECS AI LABS PRIVATE LIMITED.\n\nThe slider should visually represent our main products and services.\n\nCreate 5 slides:\n\nSLIDE 1 — REAL ESTATE CRM\nTitle:\nReal Estate CRM for Smarter Sales\n\nSubtitle:\nManage leads, properties, agents, follow-ups and customer conversations from one powerful CRM platform.\n\nCTA:\nExplore Real Estate CRM\n\nVisual:\nPremium modern real-estate technology scene showing property listings, CRM dashboard, lead pipeline and sales analytics.\n\nSLIDE 2 — ALL-IN-ONE CRM\nTitle:\nOne CRM. Your Entire Business.\n\nSubtitle:\nBring sales, leads, customer communication, automation and business operations together in one platform.\n\nCTA:\nExplore CRM Solutions\n\nVisual:\nModern SaaS CRM dashboard with analytics, sales pipeline, customer profiles and automation.\n\nSLIDE 3 — META API & WHATSAPP CRM\nTitle:\nTurn WhatsApp Conversations Into Sales\n\nSubtitle:\nConnect WhatsApp and Meta APIs with your CRM to manage conversations, leads and automation efficiently.\n\nCTA:\nExplore WhatsApp CRM\n\nVisual:\nPremium WhatsApp business automation concept combined with CRM dashboard, messaging, customer conversations and analytics.\n\nSLIDE 4 — AI CHATBOTS & AUTOMATION\nTitle:\nAI That Works For Your Business\n\nSubtitle:\nAutomate customer support, lead qualification, conversations and repetitive business processes with AI.\n\nCTA:\nExplore AI Solutions\n\nVisual:\nFuturistic but professional AI chatbot interface connected to CRM, automation workflows and business analytics.\n\nSLIDE 5 — CUSTOM SOFTWARE & SAAS\nTitle:\nBuild Powerful Digital Products\n\nSubtitle:\nCustom software, SaaS platforms, web applications and mobile solutions built around your business requirements.\n\nCTA:\nStart Your Project\n\nVisual:\nPremium software development workspace showing web application, mobile app, cloud infrastructure and SaaS interface.";
+
   return (
     <Layout>
       <SEO 
@@ -56,11 +58,9 @@ const Contact = () => {
         ]}
       />
 
-      {/* Contact Form & Info */}
       <section className="section-padding bg-background">
         <div className="container-custom">
           <div className="grid lg:grid-cols-5 gap-12">
-            {/* Form */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -76,7 +76,7 @@ const Contact = () => {
                       <label className="block text-sm font-medium text-foreground mb-2">Full Name *</label>
                       <Input
                         required
-                        placeholder="'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            Continue from the previous SEO work.\n\nNow improve internal authority linking.\n\nTASK:\n\nReview the important pages and add natural contextual links between related pages.\n\nPrioritize:\n\nReal Estate CRM\n→ WhatsApp CRM\n→ Meta API CRM\n→ AI Chatbot\n\nMeta API CRM\n→ WhatsApp CRM\n→ All-in-One CRM\n\nAI Chatbot\n→ AI Automation\n→ CRM\n\nHyderabad Software Company\n→ Software Development\n→ CRM Development\n→ AI Development\n\nUse natural descriptive anchor text.\n\nDo not add excessive links.\n\nDo not redesign the website.\n\nDo not create new pages unless absolutely necessary.\n\nCheck for orphan pages and add appropriate internal links.\n\nTest all modified pages."
+                        placeholder={commandPlaceholder}
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       />
@@ -86,7 +86,7 @@ const Contact = () => {
                       <Input
                         type="email"
                         required
-                        placeholder="'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            Continue from the previous SEO work.\n\nNow improve internal authority linking.\n\nTASK:\n\nReview the important pages and add natural contextual links between related pages.\n\nPrioritize:\n\nReal Estate CRM\n→ WhatsApp CRM\n→ Meta API CRM\n→ AI Chatbot\n\nMeta API CRM\n→ WhatsApp CRM\n→ All-in-One CRM\n\nAI Chatbot\n→ AI Automation\n→ CRM\n\nHyderabad Software Company\n→ Software Development\n→ CRM Development\n→ AI Development\n\nUse natural descriptive anchor text.\n\nDo not add excessive links.\n\nDo not redesign the website.\n\nDo not create new pages unless absolutely necessary.\n\nCheck for orphan pages and add appropriate internal links.\n\nTest all modified pages."
+                        placeholder={commandPlaceholder}
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       />
@@ -96,7 +96,7 @@ const Contact = () => {
                     <div>
                       <label className="block text-sm font-medium text-foreground mb-2">Company</label>
                       <Input
-                        placeholder="'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            Continue from the previous SEO work.\n\nNow improve internal authority linking.\n\nTASK:\n\nReview the important pages and add natural contextual links between related pages.\n\nPrioritize:\n\nReal Estate CRM\n→ WhatsApp CRM\n→ Meta API CRM\n→ AI Chatbot\n\nMeta API CRM\n→ WhatsApp CRM\n→ All-in-One CRM\n\nAI Chatbot\n→ AI Automation\n→ CRM\n\nHyderabad Software Company\n→ Software Development\n→ CRM Development\n→ AI Development\n\nUse natural descriptive anchor text.\n\nDo not add excessive links.\n\nDo not redesign the website.\n\nDo not create new pages unless absolutely necessary.\n\nCheck for orphan pages and add appropriate internal links.\n\nTest all modified pages."
+                        placeholder={commandPlaceholder}
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                       />
@@ -105,7 +105,7 @@ const Contact = () => {
                       <label className="block text-sm font-medium text-foreground mb-2">Phone Number</label>
                       <Input
                         type="tel"
-                        placeholder="'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            Continue from the previous SEO work.\n\nNow improve internal authority linking.\n\nTASK:\n\nReview the important pages and add natural contextual links between related pages.\n\nPrioritize:\n\nReal Estate CRM\n→ WhatsApp CRM\n→ Meta API CRM\n→ AI Chatbot\n\nMeta API CRM\n→ WhatsApp CRM\n→ All-in-One CRM\n\nAI Chatbot\n→ AI Automation\n→ CRM\n\nHyderabad Software Company\n→ Software Development\n→ CRM Development\n→ AI Development\n\nUse natural descriptive anchor text.\n\nDo not add excessive links.\n\nDo not redesign the website.\n\nDo not create new pages unless absolutely necessary.\n\nCheck for orphan pages and add appropriate internal links.\n\nTest all modified pages."
+                        placeholder={commandPlaceholder}
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       />
@@ -133,7 +133,7 @@ const Contact = () => {
                     <Textarea
                       required
                       rows={5}
-                      placeholder="'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            Continue from the previous SEO work.\n\nNow improve internal authority linking.\n\nTASK:\n\nReview the important pages and add natural contextual links between related pages.\n\nPrioritize:\n\nReal Estate CRM\n→ WhatsApp CRM\n→ Meta API CRM\n→ AI Chatbot\n\nMeta API CRM\n→ WhatsApp CRM\n→ All-in-One CRM\n\nAI Chatbot\n→ AI Automation\n→ CRM\n\nHyderabad Software Company\n→ Software Development\n→ CRM Development\n→ AI Development\n\nUse natural descriptive anchor text.\n\nDo not add excessive links.\n\nDo not redesign the website.\n\nDo not create new pages unless absolutely necessary.\n\nCheck for orphan pages and add appropriate internal links.\n\nTest all modified pages."
+                      placeholder={commandPlaceholder}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     />
@@ -146,7 +146,6 @@ const Contact = () => {
               </div>
             </motion.div>
 
-            {/* Contact Info */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -154,7 +153,6 @@ const Contact = () => {
               transition={{ duration: 0.6 }}
               className="lg:col-span-2 space-y-6"
             >
-              {/* Quick Contact */}
               <div className="bg-card p-6 rounded-2xl border border-border/50">
                 <h3 className="text-lg font-semibold text-foreground mb-4">Quick Contact</h3>
                 <div className="space-y-4">
@@ -202,7 +200,6 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Response Time */}
               <div className="bg-gradient-to-br from-accent/20 to-cyan-light/10 p-6 rounded-2xl border border-accent/20">
                 <div className="flex items-center gap-3 mb-3">
                   <Globe className="w-6 h-6 text-accent" />
@@ -217,9 +214,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Office Location - Premium Section */}
       <section className="section-padding bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 relative overflow-hidden">
-        {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div 
             className="absolute -top-40 -right-40 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"
@@ -237,7 +232,6 @@ const Contact = () => {
             }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           />
-          {/* Grid pattern overlay */}
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
         </div>
 
@@ -268,7 +262,6 @@ const Contact = () => {
           </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-8 items-center">
-            {/* Office Info Card */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -277,11 +270,8 @@ const Contact = () => {
               className="relative"
             >
               <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl border border-white/10 p-8 md:p-10 shadow-2xl">
-                {/* Glowing border effect */}
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500/20 via-transparent to-cyan-500/20 blur-xl opacity-50" />
-                
                 <div className="relative z-10">
-                  {/* Header */}
                   <div className="flex items-center gap-4 mb-8">
                     <motion.div 
                       className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center shadow-lg shadow-blue-500/30"
@@ -295,8 +285,6 @@ const Contact = () => {
                       <p className="text-cyan-400 font-medium">Corporate Headquarters</p>
                     </div>
                   </div>
-
-                  {/* Address */}
                   <div className="space-y-6">
                     <div className="bg-white/5 rounded-2xl p-6 border border-white/5">
                       <p className="text-slate-300 text-lg leading-relaxed">
@@ -306,8 +294,6 @@ const Contact = () => {
                         Hyderabad, Telangana – 500072
                       </p>
                     </div>
-
-                    {/* Contact Buttons */}
                     <div className="grid sm:grid-cols-2 gap-4">
                       <motion.a 
                         href="tel:+917396080902"
@@ -323,7 +309,6 @@ const Contact = () => {
                           <div className="text-white font-medium">+91 7396080902</div>
                         </div>
                       </motion.a>
-                      
                       <motion.a 
                         href="mailto:info@softurecsailabs.com"
                         className="flex items-center gap-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl px-5 py-4 transition-all group"
@@ -334,70 +319,33 @@ const Contact = () => {
                           <Mail className="w-5 h-5 text-cyan-400" />
                         </div>
                         <div>
-                          <div className="text-xs text-slate-500 uppercase tracking-wider">Email</div>
+                          <div className="text-xs text-slate-500 uppercase tracking-wider">Email Us</div>
                           <div className="text-white font-medium">info@softurecsailabs.com</div>
                         </div>
                       </motion.a>
-                    </div>
-
-                    {/* Business Hours */}
-                    <div className="flex items-center gap-3 text-slate-400">
-                      <Clock className="w-5 h-5 text-blue-400" />
-                      <span>Mon - Sat: 9:00 AM - 7:00 PM IST</span>
                     </div>
                   </div>
                 </div>
               </div>
             </motion.div>
-
-            {/* Google Maps */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
-              className="relative group"
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="h-[450px] rounded-3xl overflow-hidden border border-white/10 shadow-2xl relative"
             >
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-500 rounded-3xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-500" />
-              <div className="relative bg-slate-900 rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.536270234567!2d78.3893456!3d17.4932123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91f7d3f8c8e1%3A0x4c9c8f8e8f8f8f8f!2sKPHB%20Phase%203%2C%20Kukatpally%2C%20Hyderabad%2C%20Telangana%20500072!5e0!3m2!1sen!2sin!4v1704540000000!5m2!1sen!2sin"
-                  width="100%"
-                  height="450"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="SOFTURECS AI LABS Office Location - KPHB, Hyderabad"
-                  className="w-full transition-all duration-500"
-                />
-                {/* Map overlay with address tag */}
-                <div className="absolute bottom-4 left-4 right-4">
-                  <motion.div 
-                    className="bg-slate-900/90 backdrop-blur-md rounded-xl px-4 py-3 border border-white/10 flex items-center gap-3"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.5 }}
-                  >
-                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-4 h-4 text-white" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-white text-sm font-medium truncate">Trinity Corporate Building, KPHB</p>
-                      <p className="text-slate-400 text-xs truncate">Hyderabad, Telangana 500072</p>
-                    </div>
-                    <a 
-                      href="https://www.google.com/maps/dir//KPHB+Phase+3,+Kukatpally,+Hyderabad,+Telangana+500072"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-shrink-0 px-3 py-1.5 bg-blue-500 hover:bg-blue-600 text-white text-xs font-medium rounded-lg transition-colors"
-                    >
-                      Directions
-                    </a>
-                  </motion.div>
-                </div>
-              </div>
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.1475710526085!2d78.3908207!3d17.488251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb918456f91605%3A0x8687265851416e78!2sTrinity%20Corporate%2C%20eSeva%20Ln%2C%20K%20P%20H%20B%20Phase%203%2C%20Kukatpally%2C%20Hyderabad%2C%20Telangana%20500072!5e0!3m2!1sen!2sin!4v1715456789012!5m2!1sen!2sin"
+                width="100%" 
+                height="100%" 
+                style={{ border: 0, filter: 'grayscale(0.8) contrast(1.2) invert(0.9)' }} 
+                allowFullScreen 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Office Location"
+              ></iframe>
+              <div className="absolute inset-0 pointer-events-none border-[12px] border-slate-900/50 rounded-3xl" />
             </motion.div>
           </div>
         </div>
