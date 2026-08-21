@@ -95,7 +95,7 @@ const About = () => {
               About SOFTURECS AI LABS
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
-              About Softurecs AI Labs – Innovating Digital Solutions with AI
+              Leading Software Company in Hyderabad – Innovating with AI
             </h1>
             <p className="text-xl text-primary-foreground/70">
               SOFTURECS AI LABS PRIVATE LIMITED is at the forefront of AI-driven software innovation, helping businesses worldwide transform their ideas into powerful digital realities.
