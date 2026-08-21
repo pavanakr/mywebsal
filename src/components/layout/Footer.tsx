@@ -258,53 +258,17 @@ export function Footer() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <div className="container-custom py-6">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-center">
               {/* Copyright */}
               <motion.p 
-                className="text-gray-600 text-sm text-center md:text-left"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                className="text-gray-600 text-sm"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
                 transition={{ duration: 0.5 }}
               >
                 © {new Date().getFullYear()} <span className="font-medium text-gray-800">SOFTURECS AI LABS PRIVATE LIMITED</span>. All rights reserved.
               </motion.p>
-
-              {/* Policy Links */}
-              <motion.div 
-                className="flex items-center gap-2 text-sm flex-wrap justify-center md:justify-end"
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
-                transition={{ duration: 0.5 }}
-              >
-                <Link to="/sitemap" className="text-gray-600 hover:text-blue-600 transition-colors">
-                  Sitemap
-                </Link>
-                <span className="text-gray-400">|</span>
-                <Link to="/shipping-policy" className="text-gray-600 hover:text-blue-600 transition-colors">
-                  Shipping Policy
-                </Link>
-                <span className="text-gray-400">|</span>
-                <Link to="/refund-policy" className="text-gray-600 hover:text-blue-600 transition-colors">
-                  Refund Policy
-                </Link>
-                <span className="text-gray-400">|</span>
-                <Link to="/privacy-policy" className="text-gray-600 hover:text-blue-600 transition-colors">
-                  Privacy Policy
-                </Link>
-                <span className="text-gray-400">|</span>
-                <Link to="/terms" className="text-gray-600 hover:text-blue-600 transition-colors">
-                  Terms & Conditions
-                </Link>
-                <span className="text-gray-400">|</span>
-                <Link 
-                  to="/contact" 
-                  className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-1.5 rounded-full hover:from-blue-700 hover:to-indigo-700 transition-all font-medium shadow-sm hover:shadow-md"
-                >
-                  Contact Us
-                </Link>
-              </motion.div>
             </div>
           </div>
         </motion.div>
