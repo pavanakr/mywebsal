@@ -82,7 +82,7 @@ export default function KPHBLanding() {
               </ul>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link to="/services/custom-software" className="text-accent hover:underline font-medium">Software Development</Link>
               <span className="hidden sm:inline text-border">|</span>
               <Link to="/services/crm-development" className="text-accent hover:underline font-medium">CRM Solutions</Link>
