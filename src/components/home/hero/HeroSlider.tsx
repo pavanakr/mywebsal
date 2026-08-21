@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, ArrowRight, Bot, Zap, MessageSquare, Database, Layout, PieChart, Users, Phone, Send, BarChart3, Workflow, Building2, TrendingUp, Cpu, Globe, Rocket } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ArrowRight, Bot, Zap, MessageSquare, Database, Layout, PieChart, Users, Phone, Send, BarChart3, Workflow, Building2, TrendingUp, Cpu, Globe, Rocket, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -122,59 +122,186 @@ const slides = [
   },
 ];
 
-const FloatingCard = ({ icon: Icon, title, val, color, className }: any) => (
-  <motion.div 
-    className={`absolute bg-white/5 backdrop-blur-md border border-white/10 p-3 rounded-xl shadow-2xl flex items-center gap-3 ${className}`}
-    initial={{ y: 20, opacity: 0 }}
-    animate={{ y: 0, opacity: 1 }}
-    transition={{ type: "spring", stiffness: 100 }}
-  >
-    <div className={`p-2 rounded-lg bg-${color}-500/20 text-${color}-400`}>
-      <Icon className="w-4 h-4" />
+const FloatingMetric = ({ label, value, trend, trendColor }: any) => (
+  <div className="bg-white p-3 rounded-xl shadow-lg border border-slate-100 flex flex-col min-w-[120px]">
+    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-tight">{label}</span>
+    <div className="flex items-end justify-between mt-1">
+      <span className="text-lg font-bold text-slate-900 leading-none">{value}</span>
+      <span className={`text-[10px] font-bold ${trendColor} flex items-center`}>
+        {trend}
+      </span>
     </div>
-    <div>
-      <div className="text-[9px] text-slate-400 font-bold uppercase tracking-wider">{title}</div>
-      <div className="text-white font-bold text-xs">{val}</div>
-    </div>
-  </motion.div>
+  </div>
 );
 
 const VisualComposition = ({ slide }: { slide: typeof slides[0] }) => {
-  const Icon = slide.visual.icon;
   return (
     <motion.div 
-      className="relative w-full max-w-lg aspect-square flex items-center justify-center"
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.6 }}
+      className="relative w-full max-w-2xl aspect-[4/3] flex items-center justify-center p-4"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
     >
-      <div className={`absolute inset-0 bg-gradient-to-tr ${slide.colors.bgGlow} rounded-full blur-3xl animate-pulse`} />
+      {/* Background Glows */}
+      <div className={`absolute inset-0 bg-gradient-to-tr ${slide.colors.bgGlow} rounded-full blur-[100px] opacity-40 animate-pulse`} />
       
-      <div className="relative z-10 w-[340px] h-[240px] bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-3xl p-6 shadow-[0_0_50px_rgba(0,0,0,0.3)] flex flex-col gap-4 overflow-hidden">
-        <div className="flex justify-between items-center pb-2 border-b border-white/5">
-           <div className="flex gap-2">
-             <div className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
-             <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
-             <div className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
-           </div>
-           <div className="text-[10px] text-slate-400 font-bold uppercase">{slide.visual.title} Active</div>
-        </div>
-        <div className="flex-1 grid grid-cols-2 gap-4">
-          {slide.visual.stats.map((stat, i) => (
-            <div key={i} className="bg-white/5 rounded-lg border border-white/5 p-3 flex flex-col justify-end">
-              <div className="text-[10px] text-slate-400 uppercase">{stat.label}</div>
-              <div className="text-xl text-white font-bold">{stat.val}</div>
+      {/* Main Dashboard Container */}
+      <div className="relative z-10 w-full h-full bg-white rounded-[2rem] shadow-2xl border border-white/20 overflow-hidden flex flex-col">
+        {/* Dashboard Header */}
+        <div className="h-12 border-b border-slate-100 flex items-center justify-between px-6 bg-slate-50/50">
+          <div className="flex items-center gap-3">
+            <div className="flex gap-1.5">
+              <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
+              <div className="w-2.5 h-2.5 rounded-full bg-amber-400" />
+              <div className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
             </div>
-          ))}
+            <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider ml-2">AI Automation Dashboard</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-6 h-6 rounded-full bg-slate-200" />
+            <div className="w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center">
+              <Users className="w-3 h-3 text-indigo-600" />
+            </div>
+          </div>
         </div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-5">
-           <Icon className="w-32 h-32 text-white" />
+
+        {/* Dashboard Content */}
+        <div className="flex-1 p-6 flex flex-col gap-6 overflow-hidden">
+          {/* Top Metrics */}
+          <div className="grid grid-cols-3 gap-4">
+            <FloatingMetric label="Total Conversations" value="18,254" trend="+22.5%" trendColor="text-emerald-500" />
+            <FloatingMetric label="Qualified Leads" value="1,250" trend="+18.6%" trendColor="text-emerald-500" />
+            <FloatingMetric label="Automation Rate" value="86%" trend="+15.4%" trendColor="text-emerald-500" />
+          </div>
+
+          {/* Middle Section: Chart & Activity */}
+          <div className="flex-1 grid grid-cols-5 gap-6 min-h-0">
+            {/* Analytics Chart Placeholder */}
+            <div className="col-span-3 bg-slate-50 rounded-2xl p-4 border border-slate-100 flex flex-col">
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-[10px] font-bold text-slate-400 uppercase">Conversation Analytics</span>
+              </div>
+              <div className="flex-1 w-full relative">
+                {/* SVG Curve for Chart */}
+                <svg className="w-full h-full" viewBox="0 0 200 80" preserveAspectRatio="none">
+                  <path 
+                    d="M0 60 Q 25 50, 50 55 T 100 30 T 150 45 T 200 10" 
+                    fill="none" 
+                    stroke="url(#chartGradient)" 
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                  />
+                  <defs>
+                    <linearGradient id="chartGradient" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stopColor="#6366f1" />
+                      <stop offset="100%" stopColor="#06b6d4" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+                {/* Month labels */}
+                <div className="flex justify-between mt-2">
+                  {['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'].map(m => (
+                    <span key={m} className="text-[8px] text-slate-400 font-medium">{m}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Channels & Activity */}
+            <div className="col-span-2 flex flex-col gap-4">
+              <div className="bg-white rounded-2xl p-4 border border-slate-100 shadow-sm flex-1">
+                <span className="text-[10px] font-bold text-slate-400 uppercase block mb-3">Top Channels</span>
+                <div className="space-y-2">
+                  {[
+                    { label: 'WhatsApp', val: '45%', color: 'bg-emerald-500' },
+                    { label: 'Website', val: '30%', color: 'bg-blue-500' },
+                    { label: 'Email', val: '15%', color: 'bg-purple-500' }
+                  ].map(c => (
+                    <div key={c.label} className="flex items-center gap-2">
+                      <div className={`w-1.5 h-1.5 rounded-full ${c.color}`} />
+                      <span className="text-[9px] text-slate-600 font-medium flex-1">{c.label}</span>
+                      <span className="text-[9px] text-slate-400 font-bold">{c.val}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Recent Activities Bar */}
+          <div className="bg-slate-50/80 rounded-xl p-3 border border-slate-100 flex items-center justify-between">
+            <div className="flex items-center gap-4">
+               <div className="flex items-center gap-2">
+                 <div className="w-5 h-5 rounded bg-emerald-100 flex items-center justify-center"><MessageSquare className="w-2.5 h-2.5 text-emerald-600" /></div>
+                 <span className="text-[9px] font-bold text-slate-600">Lead Qualified</span>
+               </div>
+               <div className="flex items-center gap-2">
+                 <div className="w-5 h-5 rounded bg-blue-100 flex items-center justify-center"><Send className="w-2.5 h-2.5 text-blue-600" /></div>
+                 <span className="text-[9px] font-bold text-slate-600">Email Sent</span>
+               </div>
+            </div>
+            <span className="text-[8px] text-slate-400 font-medium italic">Auto-sync active</span>
+          </div>
         </div>
       </div>
 
-      <FloatingCard icon={slide.visual.icon} title="Status" val="Production" color="blue" className="top-10 -left-5 w-44" />
-      <FloatingCard icon={Rocket} title="Performance" val="Optimized" color="violet" className="bottom-10 -right-5 w-44" />
-      <FloatingCard icon={TrendingUp} title="Impact" val="High" color="cyan" className="top-40 -right-10 w-40" />
+      {/* Floating Elements (AI Assistant & Workflow) */}
+      <motion.div 
+        className="absolute -left-12 top-1/2 -translate-y-1/2 z-20 w-48 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-white p-4"
+        animate={{ y: [0, -10, 0] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center shadow-lg">
+            <Bot className="w-6 h-6 text-white" />
+          </div>
+          <div>
+            <div className="text-xs font-bold text-slate-900">Hello! 👋</div>
+            <div className="text-[9px] text-slate-500 font-medium leading-tight">How can I help you today?</div>
+          </div>
+        </div>
+        <div className="space-y-2">
+          <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+            <motion.div className="h-full bg-indigo-500" initial={{ width: 0 }} animate={{ width: '70%' }} transition={{ duration: 1 }} />
+          </div>
+          <div className="text-[8px] text-indigo-600 font-bold text-right uppercase tracking-wider">AI Processing...</div>
+        </div>
+      </motion.div>
+
+      <motion.div 
+        className="absolute -right-8 top-[15%] z-20 w-40 bg-gradient-to-br from-indigo-600 to-violet-700 rounded-2xl shadow-2xl border border-white/10 p-4 text-white"
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+      >
+        <div className="text-[9px] font-bold text-indigo-200 uppercase tracking-widest mb-3">Automation Workflow</div>
+        <div className="space-y-4 relative">
+          {[
+            { label: 'New Lead', sub: 'Lead captured', icon: Users },
+            { label: 'AI Processing', sub: 'Intent identified', icon: Bot },
+            { label: 'Smart Response', sub: 'AI replies instantly', icon: Zap }
+          ].map((step, i) => (
+            <div key={i} className="flex items-center gap-2 relative z-10">
+              <div className="w-6 h-6 rounded-lg bg-white/20 flex items-center justify-center">
+                <step.icon className="w-3 h-3 text-white" />
+              </div>
+              <div>
+                <div className="text-[9px] font-bold">{step.label}</div>
+                <div className="text-[7px] text-indigo-200">{step.sub}</div>
+              </div>
+            </div>
+          ))}
+          {/* Connector Line */}
+          <div className="absolute left-3 top-2 w-[1px] h-[calc(100%-12px)] bg-gradient-to-b from-white/40 to-transparent z-0" />
+        </div>
+      </motion.div>
+      
+      {/* Small Floating Icons */}
+      <div className="absolute bottom-[10%] left-[20%] z-20 w-10 h-10 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg text-white">
+        <Phone className="w-5 h-5" />
+      </div>
+      <div className="absolute bottom-[5%] right-[30%] z-20 w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center shadow-lg text-white">
+        <Mail className="w-4 h-4" />
+      </div>
     </motion.div>
   );
 };
