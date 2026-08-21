@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const slides = [
   {
     id: 1,
-    badge: "AI-POWERED SOLUTIONS",
+    badge: "AI CHATBOTS",
     title: { main: "AI Chatbots &", highlight: "Smart Automation" },
     description: "Automate conversations, qualify leads, provide 24/7 support and streamline your business operations with intelligent AI.",
     primaryCta: "Explore AI Solutions",
@@ -20,6 +20,7 @@ const slides = [
       bgGlow: "from-blue-900/40 via-violet-900/20 to-transparent"
     },
     visual: {
+      type: 'chatbot',
       title: "AI Core",
       stats: [
         { label: "Uptime", val: "99.9%" },
@@ -30,10 +31,10 @@ const slides = [
   },
   {
     id: 2,
-    badge: "AI-POWERED SOLUTIONS",
-    title: { main: "AI Chatbots &", highlight: "Smart Automation" },
-    description: "Automate conversations, qualify leads, provide 24/7 support and streamline your business operations with intelligent AI.",
-    primaryCta: "Explore AI Solutions",
+    badge: "AI AUTOMATION",
+    title: { main: "Intelligent AI", highlight: "Workflow Automation" },
+    description: "Connect leads, conversations, follow-ups and business workflows with intelligent automation.",
+    primaryCta: "Explore AI Automation",
     secondaryCta: "Book a Free Consultation",
     link: "/services/ai-automation",
     colors: { 
@@ -43,6 +44,7 @@ const slides = [
       bgGlow: "from-purple-900/40 via-magenta-900/20 to-transparent"
     },
     visual: {
+      type: 'automation',
       title: "Flow Engine",
       stats: [
         { label: "Tasks", val: "12.5k" },
@@ -53,10 +55,10 @@ const slides = [
   },
   {
     id: 3,
-    badge: "AI-POWERED SOLUTIONS",
-    title: { main: "AI Chatbots &", highlight: "Smart Automation" },
-    description: "Automate conversations, qualify leads, provide 24/7 support and streamline your business operations with intelligent AI.",
-    primaryCta: "Explore AI Solutions",
+    badge: "REAL ESTATE CRM",
+    title: { main: "Smarter CRM for", highlight: "Real Estate Growth" },
+    description: "Manage properties, leads, agents, follow-ups and sales from one powerful CRM platform.",
+    primaryCta: "Explore Real Estate CRM",
     secondaryCta: "Book a Free Consultation",
     link: "/solutions/real-estate-crm",
     colors: { 
@@ -66,6 +68,7 @@ const slides = [
       bgGlow: "from-teal-900/40 via-blue-900/20 to-transparent"
     },
     visual: {
+      type: 'real-estate',
       title: "RE Dashboard",
       stats: [
         { label: "Listings", val: "482" },
@@ -76,19 +79,20 @@ const slides = [
   },
   {
     id: 4,
-    badge: "AI-POWERED SOLUTIONS",
-    title: { main: "AI Chatbots &", highlight: "Smart Automation" },
-    description: "Automate conversations, qualify leads, provide 24/7 support and streamline your business operations with intelligent AI.",
-    primaryCta: "Explore AI Solutions",
+    badge: "WHATSAPP + META API CRM",
+    title: { main: "Turn Conversations", highlight: "Into Customers" },
+    description: "Connect WhatsApp and Meta APIs with your CRM to manage conversations, leads and automation.",
+    primaryCta: "Explore WhatsApp CRM",
     secondaryCta: "Book a Free Consultation",
     link: "/solutions/whatsapp-crm",
     colors: { 
       badge: "bg-green-500", 
-      gradient: "from-green-600 via-teal-600 to-blue-600", 
-      highlight: "from-green-400 to-teal-400",
-      bgGlow: "from-green-900/40 via-teal-900/20 to-transparent"
+      gradient: "from-green-600 via-cyan-600 via-blue-600 to-purple-600", 
+      highlight: "from-green-400 to-cyan-400",
+      bgGlow: "from-green-900/40 via-cyan-900/20 to-transparent"
     },
     visual: {
+      type: 'whatsapp',
       title: "Meta Connect",
       stats: [
         { label: "Msgs", val: "50k+" },
@@ -99,19 +103,20 @@ const slides = [
   },
   {
     id: 5,
-    badge: "AI-POWERED SOLUTIONS",
-    title: { main: "AI Chatbots &", highlight: "Smart Automation" },
-    description: "Automate conversations, qualify leads, provide 24/7 support and streamline your business operations with intelligent AI.",
-    primaryCta: "Explore AI Solutions",
+    badge: "ALL-IN-ONE CRM",
+    title: { main: "One CRM.", highlight: "Your Entire Business." },
+    description: "Bring sales, customer management, automation and business operations together in one powerful platform.",
+    primaryCta: "Explore CRM Solutions",
     secondaryCta: "Book a Free Consultation",
     link: "/services/crm-solutions",
     colors: { 
       badge: "bg-indigo-500", 
-      gradient: "from-indigo-600 via-purple-600 to-blue-600", 
-      highlight: "from-indigo-400 to-purple-400",
-      bgGlow: "from-indigo-900/40 via-purple-900/20 to-transparent"
+      gradient: "from-blue-600 via-violet-600 to-cyan-500", 
+      highlight: "from-blue-400 to-violet-400",
+      bgGlow: "from-blue-900/40 via-violet-900/20 to-transparent"
     },
     visual: {
+      type: 'complete-crm',
       title: "Biz OS",
       stats: [
         { label: "Revenue", val: "+32%" },
