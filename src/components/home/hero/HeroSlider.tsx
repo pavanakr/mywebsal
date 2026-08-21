@@ -201,12 +201,17 @@ const VisualComposition = ({ slide }: { slide: typeof slides[0] }) => {
               <div className="w-2.5 h-2.5 rounded-full bg-amber-400" />
               <div className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
             </div>
-            <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider ml-2">AI Automation Dashboard</span>
+            <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider ml-2">
+              {slide.visual.type === 'chatbot' ? 'AI Chatbot Logic' : 
+               slide.visual.type === 'automation' ? 'Automation Workflow' :
+               slide.visual.type === 'real-estate' ? 'Property CRM' :
+               slide.visual.type === 'whatsapp' ? 'WhatsApp CRM' : 'Business OS'}
+            </span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-6 h-6 rounded-full bg-slate-200" />
             <div className="w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center">
-              <Users className="w-3 h-3 text-indigo-600" />
+              <slide.visual.icon className="w-3 h-3 text-indigo-600" />
             </div>
           </div>
         </div>
@@ -215,80 +220,20 @@ const VisualComposition = ({ slide }: { slide: typeof slides[0] }) => {
         <div className="flex-1 p-6 flex flex-col gap-6 overflow-hidden">
           {/* Top Metrics */}
           <div className="grid grid-cols-3 gap-4">
-            <FloatingMetric label="Total Conversations" value="18,254" trend="+22.5%" trendColor="text-emerald-500" />
-            <FloatingMetric label="Qualified Leads" value="1,250" trend="+18.6%" trendColor="text-emerald-500" />
-            <FloatingMetric label="Automation Rate" value="86%" trend="+15.4%" trendColor="text-emerald-500" />
+            <FloatingMetric label={slide.visual.type === 'real-estate' ? 'Listings' : 'Total Conv.'} value={slide.visual.stats[0].val} trend="+22.5%" trendColor="text-emerald-500" />
+            <FloatingMetric label={slide.visual.type === 'real-estate' ? 'Leads' : 'Qualified'} value={slide.visual.stats[1].val} trend="+18.6%" trendColor="text-emerald-500" />
+            <FloatingMetric label="Performance" value="High" trend="+15.4%" trendColor="text-emerald-500" />
           </div>
 
-          {/* Middle Section: Chart & Activity */}
-          <div className="flex-1 grid grid-cols-5 gap-6 min-h-0">
-            {/* Analytics Chart Placeholder */}
-            <div className="col-span-3 bg-slate-50 rounded-2xl p-4 border border-slate-100 flex flex-col">
-              <div className="flex justify-between items-center mb-4">
-                <span className="text-[10px] font-bold text-slate-400 uppercase">Conversation Analytics</span>
-              </div>
-              <div className="flex-1 w-full relative">
-                {/* SVG Curve for Chart */}
-                <svg className="w-full h-full" viewBox="0 0 200 80" preserveAspectRatio="none">
-                  <path 
-                    d="M0 60 Q 25 50, 50 55 T 100 30 T 150 45 T 200 10" 
-                    fill="none" 
-                    stroke="url(#chartGradient)" 
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                  />
-                  <defs>
-                    <linearGradient id="chartGradient" x1="0" y1="0" x2="1" y2="0">
-                      <stop offset="0%" stopColor="#6366f1" />
-                      <stop offset="100%" stopColor="#06b6d4" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-                {/* Month labels */}
-                <div className="flex justify-between mt-2">
-                  {['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'].map(m => (
-                    <span key={m} className="text-[8px] text-slate-400 font-medium">{m}</span>
-                  ))}
-                </div>
-              </div>
-            </div>
+          {/* Visualization area dependent on type */}
+          <div className="flex-1 bg-slate-50 rounded-2xl p-6 border border-slate-100 flex items-center justify-center relative overflow-hidden">
+             {slide.visual.type === 'chatbot' && <Bot className="w-24 h-24 text-blue-300 opacity-50" />}
+             {slide.visual.type === 'automation' && <Workflow className="w-24 h-24 text-purple-300 opacity-50" />}
+             {slide.visual.type === 'real-estate' && <Building2 className="w-24 h-24 text-teal-300 opacity-50" />}
+             {slide.visual.type === 'whatsapp' && <MessageSquare className="w-24 h-24 text-green-300 opacity-50" />}
+             {slide.visual.type === 'complete-crm' && <Database className="w-24 h-24 text-indigo-300 opacity-50" />}
+          </div>
 
-            {/* Channels & Activity */}
-            <div className="col-span-2 flex flex-col gap-4">
-              <div className="bg-white rounded-2xl p-4 border border-slate-100 shadow-sm flex-1">
-                <span className="text-[10px] font-bold text-slate-400 uppercase block mb-3">Top Channels</span>
-                <div className="space-y-2">
-                  {[
-                    { label: 'WhatsApp', val: '45%', color: 'bg-emerald-500' },
-                    { label: 'Website', val: '30%', color: 'bg-blue-500' },
-                    { label: 'Email', val: '15%', color: 'bg-purple-500' }
-                  ].map(c => (
-                    <div key={c.label} className="flex items-center gap-2">
-                      <div className={`w-1.5 h-1.5 rounded-full ${c.color}`} />
-                      <span className="text-[9px] text-slate-600 font-medium flex-1">{c.label}</span>
-                      <span className="text-[9px] text-slate-400 font-bold">{c.val}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          {/* Recent Activities Bar */}
-          <div className="bg-slate-50/80 rounded-xl p-3 border border-slate-100 flex items-center justify-between">
-            <div className="flex items-center gap-4">
-               <div className="flex items-center gap-2">
-                 <div className="w-5 h-5 rounded bg-emerald-100 flex items-center justify-center"><MessageSquare className="w-2.5 h-2.5 text-emerald-600" /></div>
-                 <span className="text-[9px] font-bold text-slate-600">Lead Qualified</span>
-               </div>
-               <div className="flex items-center gap-2">
-                 <div className="w-5 h-5 rounded bg-blue-100 flex items-center justify-center"><Send className="w-2.5 h-2.5 text-blue-600" /></div>
-                 <span className="text-[9px] font-bold text-slate-600">Email Sent</span>
-               </div>
-            </div>
-            <span className="text-[8px] text-slate-400 font-medium italic">Auto-sync active</span>
-          </div>
-        </div>
       </div>
 
       {/* Floating UI Cards */}
